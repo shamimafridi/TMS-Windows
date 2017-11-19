@@ -1,0 +1,207 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=.;Initial Catalog=TMS;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="Description" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="CompanyName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">XYZ Company</Value>
+    </Setting>
+    <Setting Name="ServerName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">shamim-pc</Value>
+    </Setting>
+    <Setting Name="DateFormat" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">dd-MMM-yyyy</Value>
+    </Setting>
+    <Setting Name="CityCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="CustomerCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="ControlCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="GeneralCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="GeneralCodeFK_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="SubsidiaryCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="SubsidiaryCodeFK_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="ExcelFilePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Program Files\Excel\excel.exe</Value>
+    </Setting>
+    <Setting Name="SubSubsidiaryCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="SoftwareExpireDate" Type="System.DateTime" Scope="Application">
+      <Value Profile="(Default)">2010-11-26</Value>
+    </Setting>
+    <Setting Name="ModuleStartDate" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2009-09-29</Value>
+    </Setting>
+    <Setting Name="Theme" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Green</Value>
+    </Setting>
+    <Setting Name="ColorChecked" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TransactionNo" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="SetupFormMinimumSize" Type="System.Drawing.Size" Scope="Application">
+      <Value Profile="(Default)">310, 0</Value>
+    </Setting>
+    <Setting Name="SupplierCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="BranchCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="VehicleCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="VehicleOwnerCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="GLCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">12</Value>
+    </Setting>
+    <Setting Name="CommissionRate" Type="System.Decimal" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="CommissionGLCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0501</Value>
+    </Setting>
+    <Setting Name="Creditors" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0202</Value>
+    </Setting>
+    <Setting Name="Debtors" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">01010001</Value>
+    </Setting>
+    <Setting Name="ProductCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="DivisionCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="RegionCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="DefaultDivisionCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">001</Value>
+    </Setting>
+    <Setting Name="ShortageGLCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0601</Value>
+    </Setting>
+    <Setting Name="SaleTaxRate" Type="System.Decimal" Scope="Application">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="WHTaxGLCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">06020001</Value>
+    </Setting>
+    <Setting Name="ApplicationName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">B-Leaf {Transport Management System}</Value>
+    </Setting>
+    <Setting Name="TripAdvanceGLCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">010200020002</Value>
+    </Setting>
+    <Setting Name="CurrentYearStartDate" Type="System.DateTime" Scope="Application">
+      <Value Profile="(Default)">2009-01-01</Value>
+    </Setting>
+    <Setting Name="ThisSystemName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">DotNetServer</Value>
+    </Setting>
+    <Setting Name="DaysForWorking" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">400</Value>
+    </Setting>
+    <Setting Name="CashAndBankGLCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0102</Value>
+    </Setting>
+    <Setting Name="FSFExpenseAccount" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">22</Value>
+    </Setting>
+    <Setting Name="FSFAssetsAccount" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">12</Value>
+    </Setting>
+    <Setting Name="FSFIncomeAccount" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">21</Value>
+    </Setting>
+    <Setting Name="FSFLiabilityAccount" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">11</Value>
+    </Setting>
+    <Setting Name="FSFBalanceSheetEnd" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="FSFBalanceSheetStart" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="FSFIncomeStatementEnd" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="FSFIncomeStatementStart" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="FSFSubSubsidiaryCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="FSFSubsidiaryCodeFK_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="FSFGeneralCodeFK_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="FSFSubsidiaryCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="FSFGeneralCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="FSFControlCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="FSFGLCode" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="ShowPostedData" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FreightGLCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0201</Value>
+    </Setting>
+    <Setting Name="ModuleShortName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">GL</Value>
+    </Setting>
+    <Setting Name="ModuleLongName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">General Ledger</Value>
+    </Setting>
+    <Setting Name="TripAdvanceCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">01</Value>
+    </Setting>
+    <Setting Name="TransactionTypeCode_Length" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="DefaultBranchCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">01</Value>
+    </Setting>
+    <Setting Name="IsWithGL" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UrduFontType" Type="System.Drawing.Font" Scope="Application">
+      <Value Profile="(Default)">Microsoft Sans Serif, 11.25pt, style=Bold</Value>
+    </Setting>
+    <Setting Name="DatabaseName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TMS</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

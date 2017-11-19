@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1D8ADB67-3F65-48DE-99F4-2C4254004739}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>BIS Icon.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>BusinessLeaf</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>BusinessLeaf</RootNamespace>
+    <StartupObject>BusinessLeaf.My.MyApplication</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>WindowsForms</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>62ECA5DFCA7A8B169CD8A14035CEE97F6388FD1E</ManifestCertificateThumbprint>
+    <ManifestKeyFile>B-Leaf_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>BusinessLeaf.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>BusinessLeaf.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>none</DebugType>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>BusinessLeaf.xml</DocumentationFile>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>BusinessLeaf.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>
+    </DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>BusinessLeaf.xml</DocumentationFile>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>BusinessLeaf.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>
+    </DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FarPoint.Win, Version=5.0.3511.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL" />
+    <Reference Include="FarPoint.Win.Spread, Version=5.0.3511.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Excel.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Shared.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinDock.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinExplorerBar.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.ExcelExport.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinTabbedMdi.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Management">
+      <Name>System.Management</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\ATErrorProvider\ATErrorProvider\ATErrorProvider.vbproj">
+      <Project>{4E30D223-0E4A-4ED0-B034-9FF6992D605B}</Project>
+      <Name>ATErrorProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ATUrduTextBox\ATUrduTextBox\ATUrduTextBox.vbproj">
+      <Project>{306EA92A-6E2B-4DC1-8EC6-D6022CF169E7}</Project>
+      <Name>ATUrduTextBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessComponents\ATBusinessComponents.vbproj">
+      <Project>{AB65D285-8F6C-4464-82C4-A95CDBCD71A9}</Project>
+      <Name>ATBusinessComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataComponent\ATDataComponents.vbproj">
+      <Name>ATDataComponents</Name>
+      <Project>{7A624CA7-1578-4607-AD81-E5ABA7E236BC}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\ToolControls\ATToolControls.vbproj">
+      <Project>{DB8434F2-6F7A-48FF-B894-B4CD44090C2D}</Project>
+      <Name>ATToolControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="B-Leaf.cd" />
+    <None Include="B-Leaf_TemporaryKey.pfx" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="BIS Icon.ico" />
+    <Content Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </Content>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FrmOption.Designer.vb">
+      <DependentUpon>FrmOption.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOption.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Posting\clsDetail.vb" />
+    <Compile Include="Posting\clsDetails.vb" />
+    <Compile Include="Posting\clsEDObject.vb" />
+    <Compile Include="Posting\clsGLAudit.vb" />
+    <Compile Include="Posting\clsGLAuditBranch.vb" />
+    <Compile Include="Posting\clsGLAuditBranchs.vb" />
+    <Compile Include="Posting\clsGLAuditInvoice.vb" />
+    <Compile Include="Posting\clsGLAuditParty.vb" />
+    <Compile Include="Posting\clsGLAuditPayment.vb" />
+    <Compile Include="Posting\clsGLPosting.vb" />
+    <Compile Include="Posting\clsGLPostingBranch.vb" />
+    <Compile Include="Posting\clsGLPostingBranchs.vb" />
+    <Compile Include="Posting\clsGLPostingInvoice.vb" />
+    <Compile Include="Posting\clsGLPostingInvoiceDetail.vb" />
+    <Compile Include="Posting\clsGLPostingParty.vb" />
+    <Compile Include="Posting\clsGLPostingPayment.vb" />
+    <Compile Include="Posting\clsLabel.vb" />
+    <Compile Include="Posting\clsSecurityAssistant.vb" />
+    <Compile Include="Posting\clsSecurityAssistants.vb" />
+    <Compile Include="Posting\clsSecurityData.vb" />
+    <Compile Include="Posting\clsSecuritySetting.vb" />
+    <Compile Include="Slides\Slide.vb" />
+    <Compile Include="TMS\Branches.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\TransactionTypes.Designer.vb">
+      <DependentUpon>TransactionTypes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TMS\TransactionTypes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\VehicleAdjustments.Designer.vb">
+      <DependentUpon>VehicleAdjustments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TMS\VehicleAdjustments.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\FSFControls.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\FSFGenerals.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\FSFSubsidiaries.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\FSFSubSubsidiaries.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\DestinationPoints.Designer.vb">
+      <DependentUpon>DestinationPoints.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TMS\DestinationPoints.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\ProductValues.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Slides\ProjectViewerSlide.vb" />
+    <Compile Include="TMS\Receipts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\CustomerBills.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\VehicleOwners.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\Vehicles.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\ProductRates.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\Invoices.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\Customers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGrid.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\COAControls.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\COAGenerals.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\COASubsidiaries.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\COASubSubsidiaries.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\Divisions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\Products.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\StationPoints.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\Vouchers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\Cities.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\Suppliers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TMS\OpeningBalances.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\mdlConstants.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Module\mdlFunctions.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Module\StartApplication.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\ReportParameters.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporting\ReportProcess.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Reporting\ReportViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="UserSecurities.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="FrmOption.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmOption.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="TMS\Branches.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Branches.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\TransactionTypes.resx">
+      <DependentUpon>TransactionTypes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\VehicleAdjustments.resx">
+      <DependentUpon>VehicleAdjustments.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\FSFControls.resx">
+      <DependentUpon>FSFControls.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\FSFGenerals.resx">
+      <DependentUpon>FSFGenerals.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\FSFSubsidiaries.resx">
+      <DependentUpon>FSFSubsidiaries.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\FSFSubSubsidiaries.resx">
+      <DependentUpon>FSFSubSubsidiaries.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\DestinationPoints.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DestinationPoints.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\ProductValues.resx">
+      <DependentUpon>ProductValues.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\Receipts.resx">
+      <DependentUpon>Receipts.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\CustomerBills.resx">
+      <DependentUpon>CustomerBills.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\VehicleOwners.resx">
+      <DependentUpon>VehicleOwners.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\Vehicles.resx">
+      <DependentUpon>Vehicles.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\Divisions.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Divisions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\ProductRates.resx">
+      <DependentUpon>ProductRates.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\Invoices.resx">
+      <DependentUpon>Invoices.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\Customers.resx">
+      <DependentUpon>Customers.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventViewer.resx">
+      <DependentUpon>EventViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGrid.resx">
+      <DependentUpon>frmGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSearch.resx">
+      <DependentUpon>FrmSearch.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplash.resx">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\COAControls.resx">
+      <DependentUpon>COAControls.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\COAGenerals.resx">
+      <DependentUpon>COAGenerals.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\COASubsidiaries.resx">
+      <DependentUpon>COASubsidiaries.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\COASubSubsidiaries.resx">
+      <DependentUpon>COASubSubsidiaries.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\Products.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Products.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\StationPoints.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StationPoints.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\Vouchers.resx">
+      <DependentUpon>Vouchers.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\Cities.resx">
+      <DependentUpon>Cities.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\Suppliers.resx">
+      <DependentUpon>Suppliers.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TMS\OpeningBalances.resx">
+      <DependentUpon>OpeningBalances.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management.resx">
+      <DependentUpon>Management.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\ReportParameters.resx">
+      <DependentUpon>ReportParameters.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\ReportViewer.resx">
+      <DependentUpon>ReportViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSecurities.resx">
+      <DependentUpon>UserSecurities.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{CF845C55-C321-4742-B673-E6212D061ED9}" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
