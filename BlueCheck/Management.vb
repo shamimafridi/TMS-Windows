@@ -1045,11 +1045,11 @@ Public Class Management
             Return False
         Else
             Try
-                If BackupDatabase(txtBackupLocation.Text) = True Then
-                    BackupProcess = True
-                Else
-                    BackupProcess = False
-                End If
+                'If BackupDatabase(txtBackupLocation.Text) = True Then
+                '    BackupProcess = True
+                'Else
+                '    BackupProcess = False
+                'End If
                 'Me.Cursor = Cursors.WaitCursor
                 'Dim srv As New SQLDMO.SQLServerClass
                 'Dim a As New SQLDMO.Login
@@ -1081,11 +1081,11 @@ Public Class Management
             Return False
         Else
             Try
-                If RestoreDatabase(txtRestoreLocation.Text) = True Then
-                    Return True
-                Else
-                    Return False
-                End If
+                'If RestoreDatabase(txtRestoreLocation.Text) = True Then
+                '    Return True
+                'Else
+                '    Return False
+                'End If
                 'nSQLServer = New SQLDMO.SQLServer
                 'Me.Cursor = Cursors.WaitCursor
                 'Dim srv As New SQLDMO.SQLServerClass
@@ -1585,107 +1585,115 @@ ERR_AuditTrans:
             MsgBox(ex.Message)
         End Try
     End Sub
-    Function BackupDatabase(ByVal FileName As String) As Boolean
+    'Function BackupDatabase(ByVal FileName As String) As Boolean
 
-        'Dim dbBackup As New Microsoft.SqlServer.Management.Smo.Backup
-        'Dim con As DataConnection = New DataConnection
-        'Dim servercon As New Microsoft.SqlServer.Management.Common.ServerConnection(con.GetConnection)
-        'Dim dbServer As New Microsoft.SqlServer.Management.Smo.Server(servercon)
-        'Dim BackupFolder As String
+    '    Dim dbBackup As New Microsoft.SqlServer.Management.Smo.Backup
+    '    Dim con As DataConnection = New DataConnection
+    '    Dim servercon As New Microsoft.SqlServer.Management.Common.ServerConnection(con.GetConnection)
+    '    Dim dbServer As New Microsoft.SqlServer.Management.Smo.Server(servercon)
+    '    Dim BackupFolder As String
 
-        Try
-            '    pgBar.Maximum = 100
-            '    pgBar.Value = 0
+    '    Try
+    '        pgBar.Maximum = 100
+    '        pgBar.Value = 0
 
-            '    BackupFolder = Microsoft.VisualBasic.Left(FileName, InStrRev(FileName, "\") - 1)
-            '    If IO.Directory.Exists(BackupFolder) = False Then
-            '        IO.Directory.CreateDirectory(BackupFolder)
-            '    End If
-            '    dbBackup.Action = Microsoft.SqlServer.Management.Smo.BackupActionType.Database
-            '    dbBackup.Database = My.Settings.DatabaseName
-            '    dbBackup.Devices.AddDevice(FileName, Microsoft.SqlServer.Management.Smo.DeviceType.File)
-            '    dbBackup.BackupSetName = "AWAPayhrms Database Backup"
-            '    dbBackup.BackupSetDescription = "AWAPayhrms DataBase Backup:" & DateTime.Now.ToShortDateString()
+    '        BackupFolder = Microsoft.VisualBasic.Left(FileName, InStrRev(FileName, "\") - 1)
+    '        If IO.Directory.Exists(BackupFolder) = False Then
+    '            IO.Directory.CreateDirectory(BackupFolder)
+    '        End If
+    '        dbBackup.Action = Microsoft.SqlServer.Management.Smo.BackupActionType.Database
+    '        dbBackup.Database = My.Settings.DatabaseName
+    '        dbBackup.Devices.AddDevice(FileName, Microsoft.SqlServer.Management.Smo.DeviceType.File)
+    '        dbBackup.BackupSetName = "AWAPayhrms Database Backup"
+    '        dbBackup.BackupSetDescription = "AWAPayhrms DataBase Backup:" & DateTime.Now.ToShortDateString()
 
-            'AddHandler dbBackup.PercentComplete, AddressOf ProgressStatusEvent
+    '        'dbBackup.Initialize = True
+    '        'dbBackup.Checksum = True
+    '        'dbBackup.ContinueAfterError = True
+    '        'dbBackup.Incremental = False
+    '        'dbBackup.ExpirationDate = DateTime.Now.AddDays(20)
+    '        'dbBackup.LogTruncation = Microsoft.SqlServer.Management.Smo.BackupTruncateLogType.Truncate
+    '        'dbBackup.FormatMedia = False
 
-            'dbBackup.SqlBackup(dbServer)
-            'BackupDatabase = True
+    '        AddHandler dbBackup.PercentComplete, AddressOf ProgressStatusEvent
 
-            'dbServer = Nothing
-            'dbBackup = Nothing
-            'con = Nothing
-            'servercon.Disconnect()
-            'servercon = Nothing
+    '        dbBackup.SqlBackup(dbServer)
+    '        BackupDatabase = True
 
-        Catch ex As Exception
-            MessageBox.Show(ex.Message & " " & ex.InnerException.ToString, "Backup Database", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            BackupDatabase = False
-            'dbServer = Nothing
-            'dbBackup = Nothing
-            'con = Nothing
-            'servercon.Disconnect()
-            'servercon = Nothing
-        End Try
+    '        dbServer = Nothing
+    '        dbBackup = Nothing
+    '        con = Nothing
+    '        servercon.Disconnect()
+    '        servercon = Nothing
+
+    '    Catch ex As Exception
+    '        MessageBox.Show(ex.Message & " " & ex.InnerException.ToString, "Backup Database", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+    '        BackupDatabase = False
+    '        dbServer = Nothing
+    '        dbBackup = Nothing
+    '        con = Nothing
+    '        servercon.Disconnect()
+    '        servercon = Nothing
+    '    End Try
 
 
-    End Function
+    'End Function
 
     'Private Sub ProgressStatusEvent(ByVal sender As Object, ByVal e As Microsoft.SqlServer.Management.Smo.PercentCompleteEventArgs)
     '    pgBar.Value = e.Percent
     'End Sub
-    Function RestoreDatabase(ByVal filename As String) As Boolean
+    'Function RestoreDatabase(ByVal filename As String) As Boolean
 
-        'Dim dbRestore As New Microsoft.SqlServer.Management.Smo.Restore
-        'Dim con As DataConnection = New DataConnection
-        'Dim servercon As New Microsoft.SqlServer.Management.Common.ServerConnection(con.GetConnection)
-        'Dim dbServer As New Microsoft.SqlServer.Management.Smo.Server(servercon)
+    '    Dim dbRestore As New Microsoft.SqlServer.Management.Smo.Restore
+    '    Dim con As DataConnection = New DataConnection
+    '    Dim servercon As New Microsoft.SqlServer.Management.Common.ServerConnection(con.GetConnection)
+    '    Dim dbServer As New Microsoft.SqlServer.Management.Smo.Server(servercon)
 
-        'Try
-        '    pgBar.Maximum = 100
-        '    pgBar.Value = 0
+    '    Try
+    '        pgBar.Maximum = 100
+    '        pgBar.Value = 0
 
-        '    dbRestore.Action = Microsoft.SqlServer.Management.Smo.RestoreActionType.Database
-        '    dbRestore.Database = My.Settings.DatabaseName
-        '    dbRestore.Devices.AddDevice(filename, Microsoft.SqlServer.Management.Smo.DeviceType.File)
+    '        dbRestore.Action = Microsoft.SqlServer.Management.Smo.RestoreActionType.Database
+    '        dbRestore.Database = My.Settings.DatabaseName
+    '        dbRestore.Devices.AddDevice(filename, Microsoft.SqlServer.Management.Smo.DeviceType.File)
 
-        '    dbRestore.ReplaceDatabase = True
-        '    AddHandler dbRestore.PercentComplete, AddressOf ProgressStatusEvent
+    '        dbRestore.ReplaceDatabase = True
+    '        AddHandler dbRestore.PercentComplete, AddressOf ProgressStatusEvent
 
-        '    dbServer.KillAllProcesses(My.Settings.DatabaseName)
+    '        dbServer.KillAllProcesses(My.Settings.DatabaseName)
 
-        '    dbRestore.SqlRestore(dbServer)
+    '        dbRestore.SqlRestore(dbServer)
 
-        '    RestoreDatabase = True
+    '        RestoreDatabase = True
 
-        '    dbServer = Nothing
-        '    dbRestore = Nothing
-        '    con = Nothing
-        '    servercon.Disconnect()
-        '    servercon = Nothing
+    '        dbServer = Nothing
+    '        dbRestore = Nothing
+    '        con = Nothing
+    '        servercon.Disconnect()
+    '        servercon = Nothing
 
-        'Catch ex As Exception
-        '    MessageBox.Show(ex.Message & " " & ex.InnerException.ToString(), "Restore Database", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        '    RestoreDatabase = False
-        '    dbServer = Nothing
-        '    dbRestore = Nothing
-        '    con = Nothing
-        '    servercon.Disconnect()
-        '    servercon = Nothing
-        'End Try
+    '    Catch ex As Exception
+    '        MessageBox.Show(ex.Message & " " & ex.InnerException.ToString(), "Restore Database", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+    '        RestoreDatabase = False
+    '        dbServer = Nothing
+    '        dbRestore = Nothing
+    '        con = Nothing
+    '        servercon.Disconnect()
+    '        servercon = Nothing
+    '    End Try
 
-    End Function
-    Private Sub LstTransactionNature_ColumnClick(ByVal sender As Object, ByVal e As System.Windows.Forms.ColumnClickEventArgs) Handles LstTransactionNature.ColumnClick
-        Dim item As ListViewItem
-        If LstTransactionNature.CheckedItems.Count = LstTransactionNature.Items.Count Then
-            For Each item In LstTransactionNature.Items
-                item.Checked = False
-            Next
-        ElseIf LstTransactionNature.CheckedItems.Count >= 0 Then
-            For Each item In LstTransactionNature.Items
-                item.Checked = True
-            Next
-        End If
-    End Sub
+    'End Function
+    'Private Sub LstTransactionNature_ColumnClick(ByVal sender As Object, ByVal e As System.Windows.Forms.ColumnClickEventArgs) Handles LstTransactionNature.ColumnClick
+    '    Dim item As ListViewItem
+    '    If LstTransactionNature.CheckedItems.Count = LstTransactionNature.Items.Count Then
+    '        For Each item In LstTransactionNature.Items
+    '            item.Checked = False
+    '        Next
+    '    ElseIf LstTransactionNature.CheckedItems.Count >= 0 Then
+    '        For Each item In LstTransactionNature.Items
+    '            item.Checked = True
+    '        Next
+    '    End If
+    'End Sub
 
 End Class

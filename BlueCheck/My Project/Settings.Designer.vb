@@ -56,15 +56,6 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=TMS;Integrated Security=True")>  _
-        Public ReadOnly Property ConnectionString() As String
-            Get
-                Return CType(Me("ConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("100")>  _
         Public ReadOnly Property Description() As String
             Get
@@ -74,7 +65,7 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("XYZ Company")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Zarwali Group of Companies")>  _
         Public ReadOnly Property CompanyName() As String
             Get
                 Return CType(Me("CompanyName"),String)
@@ -83,7 +74,7 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("shamim-pc")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("DotnetServer")>  _
         Public ReadOnly Property ServerName() As String
             Get
                 Return CType(Me("ServerName"),String)
@@ -602,7 +593,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("GL")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("TMS")>  _
         Public Property ModuleShortName() As String
             Get
                 Return CType(Me("ModuleShortName"),String)
@@ -614,7 +605,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("General Ledger")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Transport Management System")>  _
         Public Property ModuleLongName() As String
             Get
                 Return CType(Me("ModuleLongName"),String)
@@ -678,6 +669,15 @@ Namespace My
         Public ReadOnly Property DatabaseName() As String
             Get
                 Return CType(Me("DatabaseName"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=TMS_ALI;Integrated Security=True")>  _
+        Public ReadOnly Property ConnectionString() As String
+            Get
+                Return CType(Me("ConnectionString"),String)
             End Get
         End Property
     End Class

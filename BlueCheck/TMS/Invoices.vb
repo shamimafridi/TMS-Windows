@@ -89,6 +89,7 @@ Namespace GeneralLedger
             Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
             Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
             Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
+            Dim ValueListItem12 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem
             Dim ValueListItem1 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem
             Dim ValueListItem2 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem
             Dim ValueListItem3 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem
@@ -710,6 +711,8 @@ Namespace GeneralLedger
             'TxtCommissionRate
             '
             Me.TxtCommissionRate.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
+            ValueListItem12.DataValue = "0"
+            ValueListItem12.DisplayText = "0"
             ValueListItem1.DataValue = "5"
             ValueListItem1.DisplayText = "5"
             ValueListItem2.DataValue = "6"
@@ -732,15 +735,14 @@ Namespace GeneralLedger
             ValueListItem10.DisplayText = "14"
             ValueListItem11.DataValue = "15"
             ValueListItem11.DisplayText = "15"
-            Me.TxtCommissionRate.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem1, ValueListItem2, ValueListItem3, ValueListItem4, ValueListItem5, ValueListItem6, ValueListItem7, ValueListItem8, ValueListItem9, ValueListItem10, ValueListItem11})
+            Me.TxtCommissionRate.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem12, ValueListItem1, ValueListItem2, ValueListItem3, ValueListItem4, ValueListItem5, ValueListItem6, ValueListItem7, ValueListItem8, ValueListItem9, ValueListItem10, ValueListItem11})
             Me.TxtCommissionRate.Location = New System.Drawing.Point(412, 464)
             Me.TxtCommissionRate.Name = "TxtCommissionRate"
-            Me.TxtCommissionRate.NullText = "10"
+            Me.TxtCommissionRate.NullText = "0"
             Me.TxtCommissionRate.Size = New System.Drawing.Size(38, 21)
             Me.TxtCommissionRate.TabIndex = 16
             Me.TxtCommissionRate.TabStop = False
             Me.TxtCommissionRate.Tag = "dd.CommissionRate"
-            Me.TxtCommissionRate.Text = "10"
             '
             'Label21
             '

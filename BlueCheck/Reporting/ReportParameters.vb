@@ -1076,6 +1076,7 @@ Public Class ReportParameters
         'cmbToItemListTRL
         '
         Me.cmbToItemListTRL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cmbToItemListTRL.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.cmbToItemListTRL.Location = New System.Drawing.Point(648, 164)
         Me.cmbToItemListTRL.Name = "cmbToItemListTRL"
         Me.cmbToItemListTRL.Size = New System.Drawing.Size(24, 20)
@@ -1167,6 +1168,7 @@ Public Class ReportParameters
         'cmbToPartyCodeListTRL
         '
         Me.cmbToPartyCodeListTRL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cmbToPartyCodeListTRL.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.cmbToPartyCodeListTRL.Location = New System.Drawing.Point(648, 240)
         Me.cmbToPartyCodeListTRL.Name = "cmbToPartyCodeListTRL"
         Me.cmbToPartyCodeListTRL.Size = New System.Drawing.Size(24, 20)
@@ -1244,6 +1246,7 @@ Public Class ReportParameters
         'cmbFromPartyCodeListTRL
         '
         Me.cmbFromPartyCodeListTRL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cmbFromPartyCodeListTRL.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.cmbFromPartyCodeListTRL.Location = New System.Drawing.Point(364, 240)
         Me.cmbFromPartyCodeListTRL.Name = "cmbFromPartyCodeListTRL"
         Me.cmbFromPartyCodeListTRL.Size = New System.Drawing.Size(24, 20)
@@ -1322,6 +1325,7 @@ Public Class ReportParameters
         'cmbFromItemListTRL
         '
         Me.cmbFromItemListTRL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cmbFromItemListTRL.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.cmbFromItemListTRL.Location = New System.Drawing.Point(364, 168)
         Me.cmbFromItemListTRL.Name = "cmbFromItemListTRL"
         Me.cmbFromItemListTRL.Size = New System.Drawing.Size(24, 20)
@@ -1460,6 +1464,7 @@ Public Class ReportParameters
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.Button1.Location = New System.Drawing.Point(636, 222)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(24, 20)
@@ -1470,6 +1475,7 @@ Public Class ReportParameters
         'Button3
         '
         Me.Button3.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button3.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.Button3.Location = New System.Drawing.Point(364, 220)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(24, 20)
@@ -1519,6 +1525,7 @@ Public Class ReportParameters
         'BtnToBranchListIL
         '
         Me.BtnToBranchListIL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnToBranchListIL.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnToBranchListIL.Location = New System.Drawing.Point(636, 190)
         Me.BtnToBranchListIL.Name = "BtnToBranchListIL"
         Me.BtnToBranchListIL.Size = New System.Drawing.Size(24, 20)
@@ -1618,6 +1625,7 @@ Public Class ReportParameters
         'BtnToGLCodeListIL
         '
         Me.BtnToGLCodeListIL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnToGLCodeListIL.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnToGLCodeListIL.Location = New System.Drawing.Point(636, 270)
         Me.BtnToGLCodeListIL.Name = "BtnToGLCodeListIL"
         Me.BtnToGLCodeListIL.Size = New System.Drawing.Size(24, 20)
@@ -1695,6 +1703,7 @@ Public Class ReportParameters
         'BtnFromGLCodeListIL
         '
         Me.BtnFromGLCodeListIL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromGLCodeListIL.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnFromGLCodeListIL.Location = New System.Drawing.Point(364, 268)
         Me.BtnFromGLCodeListIL.Name = "BtnFromGLCodeListIL"
         Me.BtnFromGLCodeListIL.Size = New System.Drawing.Size(24, 20)
@@ -1783,6 +1792,7 @@ Public Class ReportParameters
         'BtnFromBranchListIL
         '
         Me.BtnFromBranchListIL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromBranchListIL.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnFromBranchListIL.Location = New System.Drawing.Point(364, 194)
         Me.BtnFromBranchListIL.Name = "BtnFromBranchListIL"
         Me.BtnFromBranchListIL.Size = New System.Drawing.Size(24, 20)
@@ -1895,6 +1905,7 @@ Public Class ReportParameters
         'BtnToOwnerList
         '
         Me.BtnToOwnerList.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnToOwnerList.BackgroundImage = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnToOwnerList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BtnToOwnerList.Location = New System.Drawing.Point(647, 185)
         Me.BtnToOwnerList.Name = "BtnToOwnerList"
@@ -1917,6 +1928,7 @@ Public Class ReportParameters
         'BtnFromOwnerList
         '
         Me.BtnFromOwnerList.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromOwnerList.BackgroundImage = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnFromOwnerList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BtnFromOwnerList.Location = New System.Drawing.Point(364, 185)
         Me.BtnFromOwnerList.Name = "BtnFromOwnerList"
@@ -1949,6 +1961,7 @@ Public Class ReportParameters
         'BtnToVehicleList
         '
         Me.BtnToVehicleList.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnToVehicleList.BackgroundImage = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnToVehicleList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BtnToVehicleList.Location = New System.Drawing.Point(647, 211)
         Me.BtnToVehicleList.Name = "BtnToVehicleList"
@@ -2063,6 +2076,7 @@ Public Class ReportParameters
         'BtnFromVehicleList
         '
         Me.BtnFromVehicleList.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromVehicleList.BackgroundImage = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnFromVehicleList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BtnFromVehicleList.Location = New System.Drawing.Point(363, 211)
         Me.BtnFromVehicleList.Name = "BtnFromVehicleList"
@@ -2138,6 +2152,7 @@ Public Class ReportParameters
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button2.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.Button2.Location = New System.Drawing.Point(624, 208)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(24, 20)
@@ -2191,6 +2206,7 @@ Public Class ReportParameters
         'Button6
         '
         Me.Button6.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button6.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.Button6.Location = New System.Drawing.Point(344, 208)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(24, 20)
@@ -2455,6 +2471,7 @@ Public Class ReportParameters
         'BtnToGLCodeListVLT
         '
         Me.BtnToGLCodeListVLT.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnToGLCodeListVLT.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnToGLCodeListVLT.Location = New System.Drawing.Point(648, 188)
         Me.BtnToGLCodeListVLT.Name = "BtnToGLCodeListVLT"
         Me.BtnToGLCodeListVLT.Size = New System.Drawing.Size(24, 20)
@@ -2636,6 +2653,7 @@ Public Class ReportParameters
         'BtnFromGLCodeListVLT
         '
         Me.BtnFromGLCodeListVLT.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromGLCodeListVLT.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnFromGLCodeListVLT.Location = New System.Drawing.Point(364, 192)
         Me.BtnFromGLCodeListVLT.Name = "BtnFromGLCodeListVLT"
         Me.BtnFromGLCodeListVLT.Size = New System.Drawing.Size(24, 20)
@@ -2739,6 +2757,7 @@ Public Class ReportParameters
         'Button4
         '
         Me.Button4.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button4.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.Button4.Location = New System.Drawing.Point(636, 222)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(24, 20)
@@ -2749,6 +2768,7 @@ Public Class ReportParameters
         'Button5
         '
         Me.Button5.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button5.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.Button5.Location = New System.Drawing.Point(364, 220)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(24, 20)
@@ -2781,6 +2801,7 @@ Public Class ReportParameters
         'Button7
         '
         Me.Button7.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button7.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.Button7.Location = New System.Drawing.Point(636, 190)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(24, 20)
@@ -2962,6 +2983,7 @@ Public Class ReportParameters
         'BtnFromBranchCodeCFS
         '
         Me.BtnFromBranchCodeCFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromBranchCodeCFS.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnFromBranchCodeCFS.Location = New System.Drawing.Point(364, 194)
         Me.BtnFromBranchCodeCFS.Name = "BtnFromBranchCodeCFS"
         Me.BtnFromBranchCodeCFS.Size = New System.Drawing.Size(24, 20)
@@ -3012,6 +3034,7 @@ Public Class ReportParameters
         'BtnToGLCodeListFS
         '
         Me.BtnToGLCodeListFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnToGLCodeListFS.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnToGLCodeListFS.Location = New System.Drawing.Point(636, 219)
         Me.BtnToGLCodeListFS.Name = "BtnToGLCodeListFS"
         Me.BtnToGLCodeListFS.Size = New System.Drawing.Size(24, 20)
@@ -3023,6 +3046,7 @@ Public Class ReportParameters
         'BtnFrGLCodeListFS
         '
         Me.BtnFrGLCodeListFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFrGLCodeListFS.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnFrGLCodeListFS.Location = New System.Drawing.Point(364, 220)
         Me.BtnFrGLCodeListFS.Name = "BtnFrGLCodeListFS"
         Me.BtnFrGLCodeListFS.Size = New System.Drawing.Size(24, 20)
@@ -3300,6 +3324,7 @@ Public Class ReportParameters
         'BtnToVehicleListVFS
         '
         Me.BtnToVehicleListVFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnToVehicleListVFS.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnToVehicleListVFS.Location = New System.Drawing.Point(636, 219)
         Me.BtnToVehicleListVFS.Name = "BtnToVehicleListVFS"
         Me.BtnToVehicleListVFS.Size = New System.Drawing.Size(24, 20)
@@ -3310,6 +3335,7 @@ Public Class ReportParameters
         'BtnFromVehicleListVFS
         '
         Me.BtnFromVehicleListVFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromVehicleListVFS.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnFromVehicleListVFS.Location = New System.Drawing.Point(364, 220)
         Me.BtnFromVehicleListVFS.Name = "BtnFromVehicleListVFS"
         Me.BtnFromVehicleListVFS.Size = New System.Drawing.Size(24, 20)
@@ -3371,6 +3397,7 @@ Public Class ReportParameters
         'BtnToCustomerListVFS
         '
         Me.BtnToCustomerListVFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnToCustomerListVFS.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnToCustomerListVFS.Location = New System.Drawing.Point(636, 245)
         Me.BtnToCustomerListVFS.Name = "BtnToCustomerListVFS"
         Me.BtnToCustomerListVFS.Size = New System.Drawing.Size(24, 20)
@@ -3448,6 +3475,7 @@ Public Class ReportParameters
         'BtnFromCustomerListVFS
         '
         Me.BtnFromCustomerListVFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromCustomerListVFS.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnFromCustomerListVFS.Location = New System.Drawing.Point(364, 245)
         Me.BtnFromCustomerListVFS.Name = "BtnFromCustomerListVFS"
         Me.BtnFromCustomerListVFS.Size = New System.Drawing.Size(24, 20)
@@ -3536,6 +3564,7 @@ Public Class ReportParameters
         'BtnFromBranchListVFS
         '
         Me.BtnFromBranchListVFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromBranchListVFS.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnFromBranchListVFS.Location = New System.Drawing.Point(364, 194)
         Me.BtnFromBranchListVFS.Name = "BtnFromBranchListVFS"
         Me.BtnFromBranchListVFS.Size = New System.Drawing.Size(24, 20)
@@ -3725,6 +3754,7 @@ Public Class ReportParameters
         'BtnLstToOwnerVLR
         '
         Me.BtnLstToOwnerVLR.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnLstToOwnerVLR.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnLstToOwnerVLR.Location = New System.Drawing.Point(636, 293)
         Me.BtnLstToOwnerVLR.Name = "BtnLstToOwnerVLR"
         Me.BtnLstToOwnerVLR.Size = New System.Drawing.Size(24, 20)
@@ -3757,6 +3787,7 @@ Public Class ReportParameters
         'BtnLstFrOwnerVLR
         '
         Me.BtnLstFrOwnerVLR.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnLstFrOwnerVLR.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnLstFrOwnerVLR.Location = New System.Drawing.Point(364, 291)
         Me.BtnLstFrOwnerVLR.Name = "BtnLstFrOwnerVLR"
         Me.BtnLstFrOwnerVLR.Size = New System.Drawing.Size(24, 20)
@@ -3875,6 +3906,7 @@ Public Class ReportParameters
         'BtnLstToVehicleVLR
         '
         Me.BtnLstToVehicleVLR.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnLstToVehicleVLR.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnLstToVehicleVLR.Location = New System.Drawing.Point(636, 270)
         Me.BtnLstToVehicleVLR.Name = "BtnLstToVehicleVLR"
         Me.BtnLstToVehicleVLR.Size = New System.Drawing.Size(24, 20)
@@ -3931,6 +3963,7 @@ Public Class ReportParameters
         'BtnLstFrVehicleVLR
         '
         Me.BtnLstFrVehicleVLR.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnLstFrVehicleVLR.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnLstFrVehicleVLR.Location = New System.Drawing.Point(364, 268)
         Me.BtnLstFrVehicleVLR.Name = "BtnLstFrVehicleVLR"
         Me.BtnLstFrVehicleVLR.Size = New System.Drawing.Size(24, 20)
@@ -3998,7 +4031,7 @@ Public Class ReportParameters
         'BtnLstBranchVLR
         '
         Me.BtnLstBranchVLR.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-
+        Me.BtnLstBranchVLR.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
         Me.BtnLstBranchVLR.Location = New System.Drawing.Point(364, 217)
         Me.BtnLstBranchVLR.Name = "BtnLstBranchVLR"
         Me.BtnLstBranchVLR.Size = New System.Drawing.Size(24, 20)

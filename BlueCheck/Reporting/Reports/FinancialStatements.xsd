@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Table1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BranchCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Branch" type="xs:string" minOccurs="0" />
+              <xs:element name="DivisionCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Division" type="xs:string" minOccurs="0" />
+              <xs:element name="OpeningCredit" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OpeningDebit" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CurrentDebit" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CurrentCredit" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CurrentBudgetAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CummulativeBudgetAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GLCode" type="xs:string" minOccurs="0" />
+              <xs:element name="GLDescription" type="xs:string" minOccurs="0" />
+              <xs:element name="ControlCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Control" type="xs:string" minOccurs="0" />
+              <xs:element name="GeneralCode" type="xs:string" minOccurs="0" />
+              <xs:element name="General" type="xs:string" minOccurs="0" />
+              <xs:element name="SubsidiaryCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Subsidiary" type="xs:string" minOccurs="0" />
+              <xs:element name="SubSubCode" type="xs:string" minOccurs="0" />
+              <xs:element name="SubSub" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFGLCode" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFGLDescription" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFControlCode" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFControl" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFGeneralCode" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFGeneral" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFSubsidiaryCode" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFSubsidiary" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFSubSubCode" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFSubSub" type="xs:string" minOccurs="0" />
+              <xs:element name="RptType" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFExpenseAccount" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFAssetsAccount" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFLiabilityAccount" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFIncomeAccount" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

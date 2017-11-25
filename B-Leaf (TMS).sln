@@ -1,5 +1,7 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ATDataComponents", "DataComponent\ATDataComponents.vbproj", "{7A624CA7-1578-4607-AD81-E5ABA7E236BC}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ATToolControls", "ToolControls\ATToolControls.vbproj", "{DB8434F2-6F7A-48FF-B894-B4CD44090C2D}"
@@ -18,41 +20,7 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "B-Leaf", "BlueCheck\B-Leaf.
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ATErrorProvider", "ATErrorProvider\ATErrorProvider\ATErrorProvider.vbproj", "{4E30D223-0E4A-4ED0-B034-9FF6992D605B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FCEB25A6-3E9F-40CF-9766-1E3719B30D49}"
-	ProjectSection(SolutionItems) = preProject
-		B-Leaf (TMS).vsmdi = B-Leaf (TMS).vsmdi
-		Local.testsettings = Local.testsettings
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-	EndProjectSection
-EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 7
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://shamim-pc:8080/tfs/at_applications
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = DataComponent\\ATDataComponents.vbproj
-		SccProjectName1 = DataComponent
-		SccLocalPath1 = DataComponent
-		SccProjectUniqueName2 = ToolControls\\ATToolControls.vbproj
-		SccProjectName2 = ToolControls
-		SccLocalPath2 = ToolControls
-		SccProjectUniqueName3 = ATUrduTextBox\\ATUrduTextBox\\ATUrduTextBox.vbproj
-		SccProjectName3 = ATUrduTextBox/ATUrduTextBox
-		SccLocalPath3 = ATUrduTextBox\\ATUrduTextBox
-		SccProjectUniqueName4 = BusinessComponents\\ATBusinessComponents.vbproj
-		SccProjectName4 = BusinessComponents
-		SccLocalPath4 = BusinessComponents
-		SccProjectUniqueName5 = BlueCheck\\B-Leaf.vbproj
-		SccProjectName5 = BlueCheck
-		SccLocalPath5 = BlueCheck
-		SccProjectUniqueName6 = ATErrorProvider\\ATErrorProvider\\ATErrorProvider.vbproj
-		SccProjectName6 = ATErrorProvider/ATErrorProvider
-		SccLocalPath6 = ATErrorProvider\\ATErrorProvider
-	EndGlobalSection
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = B-Leaf (TMS).vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
@@ -133,5 +101,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06B070D8-2423-480A-B78A-D59A7EABFA45}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Table">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SysFSFSubsidiaryCode" type="xs:string" minOccurs="0" />
+              <xs:element name="SysFSFGeneralCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ControlCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ControlDescription" type="xs:string" minOccurs="0" />
+              <xs:element name="GeneralCode" type="xs:string" minOccurs="0" />
+              <xs:element name="GeneralDescription" type="xs:string" minOccurs="0" />
+              <xs:element name="SubsidiaryCode" type="xs:string" minOccurs="0" />
+              <xs:element name="SubsidiaryDescription" type="xs:string" minOccurs="0" />
+              <xs:element name="SubSubCode" type="xs:string" minOccurs="0" />
+              <xs:element name="SubSubDescription" type="xs:string" minOccurs="0" />
+              <xs:element name="DefinitionDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ReportTitle" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFGLCode" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFGLDescription" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFControlCode" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFContro" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFGeneralCode" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFGeneral" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFSubSidiaryCode" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFSubsidiary" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFSubsubCode" type="xs:string" minOccurs="0" />
+              <xs:element name="FSFSubsub" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Table">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NatureCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Nature" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchCode" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchName" type="xs:string" minOccurs="0" />
+              <xs:element name="VehicleCode" type="xs:string" minOccurs="0" />
+              <xs:element name="VehicleDescription" type="xs:string" minOccurs="0" />
+              <xs:element name="TransactionTypeCode" type="xs:string" minOccurs="0" />
+              <xs:element name="TransactionType" type="xs:string" minOccurs="0" />
+              <xs:element name="TransactionNature" type="xs:string" minOccurs="0" />
+              <xs:element name="TransactionNo" type="xs:string" minOccurs="0" />
+              <xs:element name="TransactionDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Description" type="xs:string" minOccurs="0" />
+              <xs:element name="Mode" type="xs:string" minOccurs="0" />
+              <xs:element name="UrduTitle" type="xs:string" minOccurs="0" />
+              <xs:element name="ChequeNo" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GLCode" type="xs:string" minOccurs="0" />
+              <xs:element name="GLRptTitle" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

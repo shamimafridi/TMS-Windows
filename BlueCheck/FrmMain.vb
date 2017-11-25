@@ -161,129 +161,129 @@ Public Class frmMain
     Friend WithEvents MnuJeneralVoucherReportDoc As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MnuVoucherReportList As System.Windows.Forms.ToolStripMenuItem
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
+        Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Dim DockAreaPane1 As Infragistics.Win.UltraWinDock.DockAreaPane = New Infragistics.Win.UltraWinDock.DockAreaPane(Infragistics.Win.UltraWinDock.DockedLocation.DockedRight, New System.Guid("24c5bda7-a9a9-48e7-b36b-66f6b783600a"))
         Dim DockableControlPane1 As Infragistics.Win.UltraWinDock.DockableControlPane = New Infragistics.Win.UltraWinDock.DockableControlPane(New System.Guid("9046be86-00ea-4850-8adc-68b4a3722229"), New System.Guid("00000000-0000-0000-0000-000000000000"), -1, New System.Guid("24c5bda7-a9a9-48e7-b36b-66f6b783600a"), -1)
-        Me.TransportManagementSystem = New Infragistics.Win.UltraWinExplorerBar.UltraExplorerBar()
+        Me.TransportManagementSystem = New Infragistics.Win.UltraWinExplorerBar.UltraExplorerBar
         Me.imgList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.mnuMain = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuCustomerFile = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSupplier = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuVihicleOwnerFile = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuVihiclesFile = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuCitiesFile = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuRegionsFile = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuProductsFile = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuProductRates = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuProductValue = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuBranches = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuDivision = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuBanks = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.MnuCOAControls = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuCOAGenerals = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuCOASubsidiaries = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuCOASubSubsidiaries = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuFSFControl = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuFSFGeneral = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuFSFSubsidiaries = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuFSFSubSubsidiaries = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuOpeningBalaces = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuTransactions = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuInvoice = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuReceivingRet = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuBillGeneration = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
-        Me.MnuVehAdjustRec = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuVehAdjPay = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuVehicleRec = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuVehiclePayment = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.MnuJournalVouchers = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuBankReceiptVoucher = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuCashReceiptVoucher = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuBankPaymentVoucher = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuCashPaymentVoucher = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem9 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuCOAReportList = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuVehicleListReport = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.MnuVehicleBills = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuTransactionList = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuVFreghtStatements = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuFreightAnalysis = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuVehicleLedger = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuProdRecDocument = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSaleInvDocument = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem11 = New System.Windows.Forms.ToolStripSeparator()
-        Me.MnuJeneralVoucherReportDoc = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuVoucherReportList = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CashFlowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem8 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuItemLedger = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuRptTrialBalance = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FinancialStatementsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuBackup = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuRestore = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuAuditing = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuPosting = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuUnPosting = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuVoucherGeneration = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuViewLog = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuOptions = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuView = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuLargeIcon = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSmall = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuList = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuDetail = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuTheme = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuGreen = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuBlue = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuBlack = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSilver = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuWindows = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuWindowsArrange = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuIcon = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuHorizontal = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuVertical = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuCascade = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuProjectViewer = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSearch = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuOutPut = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuGrid = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuUserProfile = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuLogOff = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem13 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem14 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem17 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuMainExit = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuExit = New System.Windows.Forms.ToolStripMenuItem()
-        Me.stbMain = New System.Windows.Forms.StatusBar()
-        Me.stpText = New System.Windows.Forms.StatusBarPanel()
-        Me.stpDate = New System.Windows.Forms.StatusBarPanel()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
+        Me.mnuMain = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuCustomerFile = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuSupplier = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuVihicleOwnerFile = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuVihiclesFile = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuCitiesFile = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuRegionsFile = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuProductsFile = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuProductRates = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuProductValue = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
+        Me.mnuBranches = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuDivision = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuBanks = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator
+        Me.MnuCOAControls = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuCOAGenerals = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuCOASubsidiaries = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuCOASubSubsidiaries = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator
+        Me.mnuFSFControl = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuFSFGeneral = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuFSFSubsidiaries = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuFSFSubSubsidiaries = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator
+        Me.mnuOpeningBalaces = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuTransactions = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuInvoice = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuReceivingRet = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuBillGeneration = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator
+        Me.MnuVehAdjustRec = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuVehAdjPay = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuVehicleRec = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuVehiclePayment = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
+        Me.MnuJournalVouchers = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuBankReceiptVoucher = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuCashReceiptVoucher = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuBankPaymentVoucher = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuCashPaymentVoucher = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem9 = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuCOAReportList = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuVehicleListReport = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator
+        Me.MnuVehicleBills = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuTransactionList = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuVFreghtStatements = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuFreightAnalysis = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuVehicleLedger = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator
+        Me.mnuProdRecDocument = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuSaleInvDocument = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem11 = New System.Windows.Forms.ToolStripSeparator
+        Me.MnuJeneralVoucherReportDoc = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuVoucherReportList = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem8 = New System.Windows.Forms.ToolStripSeparator
+        Me.mnuItemLedger = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuRptTrialBalance = New System.Windows.Forms.ToolStripMenuItem
+        Me.CashFlowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.FinancialStatementsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuBackup = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuRestore = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuAuditing = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuPosting = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuUnPosting = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuVoucherGeneration = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuViewLog = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuOptions = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuView = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuLargeIcon = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuSmall = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuList = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuDetail = New System.Windows.Forms.ToolStripMenuItem
+        Me.MnuTheme = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuGreen = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuBlue = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuBlack = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuSilver = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuWindows = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuWindowsArrange = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuIcon = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuHorizontal = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuVertical = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuCascade = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuProjectViewer = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuSearch = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuOutPut = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuGrid = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuUserProfile = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuLogOff = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem13 = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem14 = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem17 = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuMainExit = New System.Windows.Forms.ToolStripMenuItem
+        Me.mnuExit = New System.Windows.Forms.ToolStripMenuItem
+        Me.stbMain = New System.Windows.Forms.StatusBar
+        Me.stpText = New System.Windows.Forms.StatusBarPanel
+        Me.stpDate = New System.Windows.Forms.StatusBarPanel
         Me.IcnSystm = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripSeparator
         Me.UltraTabbedMdiManager1 = New Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager(Me.components)
-        Me.DataDirector1 = New AzamTechnologies.DataDirector()
-        Me.DataManager1 = New AzamTechnologies.DataManager()
+        Me.DataDirector1 = New AzamTechnologies.DataDirector
+        Me.DataManager1 = New AzamTechnologies.DataManager
         Me.UltraDockManager1 = New Infragistics.Win.UltraWinDock.UltraDockManager(Me.components)
-        Me._frmMainUnpinnedTabAreaLeft = New Infragistics.Win.UltraWinDock.UnpinnedTabArea()
-        Me._frmMainUnpinnedTabAreaRight = New Infragistics.Win.UltraWinDock.UnpinnedTabArea()
-        Me._frmMainUnpinnedTabAreaTop = New Infragistics.Win.UltraWinDock.UnpinnedTabArea()
-        Me._frmMainUnpinnedTabAreaBottom = New Infragistics.Win.UltraWinDock.UnpinnedTabArea()
-        Me._frmMainAutoHideControl = New Infragistics.Win.UltraWinDock.AutoHideControl()
-        Me.DockableWindow1 = New Infragistics.Win.UltraWinDock.DockableWindow()
-        Me.WindowDockingArea1 = New Infragistics.Win.UltraWinDock.WindowDockingArea()
+        Me._frmMainUnpinnedTabAreaLeft = New Infragistics.Win.UltraWinDock.UnpinnedTabArea
+        Me._frmMainUnpinnedTabAreaRight = New Infragistics.Win.UltraWinDock.UnpinnedTabArea
+        Me._frmMainUnpinnedTabAreaTop = New Infragistics.Win.UltraWinDock.UnpinnedTabArea
+        Me._frmMainUnpinnedTabAreaBottom = New Infragistics.Win.UltraWinDock.UnpinnedTabArea
+        Me._frmMainAutoHideControl = New Infragistics.Win.UltraWinDock.AutoHideControl
+        Me.DockableWindow1 = New Infragistics.Win.UltraWinDock.DockableWindow
+        Me.WindowDockingArea1 = New Infragistics.Win.UltraWinDock.WindowDockingArea
         CType(Me.TransportManagementSystem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.stpText, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -348,7 +348,7 @@ Public Class frmMain
         '
         Me.mnuMain.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuCustomerFile, Me.mnuSupplier, Me.mnuVihicleOwnerFile, Me.mnuVihiclesFile, Me.mnuCitiesFile, Me.mnuRegionsFile, Me.ToolStripMenuItem6, Me.mnuProductsFile, Me.mnuProductRates, Me.MnuProductValue, Me.ToolStripMenuItem7, Me.ToolStripSeparator1, Me.mnuBranches, Me.mnuDivision, Me.mnuBanks, Me.ToolStripSeparator5, Me.MnuCOAControls, Me.MnuCOAGenerals, Me.MnuCOASubsidiaries, Me.MnuCOASubSubsidiaries, Me.ToolStripSeparator2, Me.mnuFSFControl, Me.MnuFSFGeneral, Me.MnuFSFSubsidiaries, Me.MnuFSFSubSubsidiaries, Me.ToolStripSeparator4, Me.mnuOpeningBalaces})
         Me.mnuMain.Name = "mnuMain"
-        Me.mnuMain.Size = New System.Drawing.Size(49, 20)
+        Me.mnuMain.Size = New System.Drawing.Size(47, 20)
         Me.mnuMain.Text = "&Setup"
         '
         'mnuCustomerFile
@@ -356,7 +356,6 @@ Public Class frmMain
         Me.mnuCustomerFile.Name = "mnuCustomerFile"
         Me.mnuCustomerFile.Size = New System.Drawing.Size(187, 22)
         Me.mnuCustomerFile.Text = "Customers "
-        Me.mnuCustomerFile.Visible = False
         '
         'mnuSupplier
         '
@@ -370,63 +369,54 @@ Public Class frmMain
         Me.mnuVihicleOwnerFile.Name = "mnuVihicleOwnerFile"
         Me.mnuVihicleOwnerFile.Size = New System.Drawing.Size(187, 22)
         Me.mnuVihicleOwnerFile.Text = "Vihicle Owners"
-        Me.mnuVihicleOwnerFile.Visible = False
         '
         'mnuVihiclesFile
         '
         Me.mnuVihiclesFile.Name = "mnuVihiclesFile"
         Me.mnuVihiclesFile.Size = New System.Drawing.Size(187, 22)
         Me.mnuVihiclesFile.Text = "Vehicles"
-        Me.mnuVihiclesFile.Visible = False
         '
         'mnuCitiesFile
         '
         Me.mnuCitiesFile.Name = "mnuCitiesFile"
         Me.mnuCitiesFile.Size = New System.Drawing.Size(187, 22)
         Me.mnuCitiesFile.Text = "Cities"
-        Me.mnuCitiesFile.Visible = False
         '
         'mnuRegionsFile
         '
         Me.mnuRegionsFile.Name = "mnuRegionsFile"
         Me.mnuRegionsFile.Size = New System.Drawing.Size(187, 22)
         Me.mnuRegionsFile.Text = "Station Points"
-        Me.mnuRegionsFile.Visible = False
         '
         'ToolStripMenuItem6
         '
         Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
         Me.ToolStripMenuItem6.Size = New System.Drawing.Size(187, 22)
         Me.ToolStripMenuItem6.Text = "Destination Points"
-        Me.ToolStripMenuItem6.Visible = False
         '
         'mnuProductsFile
         '
         Me.mnuProductsFile.Name = "mnuProductsFile"
         Me.mnuProductsFile.Size = New System.Drawing.Size(187, 22)
         Me.mnuProductsFile.Text = "Products"
-        Me.mnuProductsFile.Visible = False
         '
         'mnuProductRates
         '
         Me.mnuProductRates.Name = "mnuProductRates"
         Me.mnuProductRates.Size = New System.Drawing.Size(187, 22)
         Me.mnuProductRates.Text = "Product Rates"
-        Me.mnuProductRates.Visible = False
         '
         'MnuProductValue
         '
         Me.MnuProductValue.Name = "MnuProductValue"
         Me.MnuProductValue.Size = New System.Drawing.Size(187, 22)
         Me.MnuProductValue.Text = "Product Values"
-        Me.MnuProductValue.Visible = False
         '
         'ToolStripMenuItem7
         '
         Me.ToolStripMenuItem7.Name = "ToolStripMenuItem7"
         Me.ToolStripMenuItem7.Size = New System.Drawing.Size(187, 22)
         Me.ToolStripMenuItem7.Text = "Transaction Types"
-        Me.ToolStripMenuItem7.Visible = False
         '
         'ToolStripSeparator1
         '
@@ -536,102 +526,94 @@ Public Class frmMain
         '
         Me.mnuTransactions.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuInvoice, Me.mnuReceivingRet, Me.MnuBillGeneration, Me.ToolStripSeparator8, Me.MnuVehAdjustRec, Me.MnuVehAdjPay, Me.MnuVehicleRec, Me.MnuVehiclePayment, Me.ToolStripMenuItem1, Me.MnuJournalVouchers, Me.MnuBankReceiptVoucher, Me.MnuCashReceiptVoucher, Me.MnuBankPaymentVoucher, Me.MnuCashPaymentVoucher})
         Me.mnuTransactions.Name = "mnuTransactions"
-        Me.mnuTransactions.Size = New System.Drawing.Size(86, 20)
+        Me.mnuTransactions.Size = New System.Drawing.Size(80, 20)
         Me.mnuTransactions.Text = "&Transactions"
         '
         'mnuInvoice
         '
         Me.mnuInvoice.Name = "mnuInvoice"
-        Me.mnuInvoice.Size = New System.Drawing.Size(232, 22)
+        Me.mnuInvoice.Size = New System.Drawing.Size(226, 22)
         Me.mnuInvoice.Text = "Invoice"
-        Me.mnuInvoice.Visible = False
         '
         'mnuReceivingRet
         '
         Me.mnuReceivingRet.Name = "mnuReceivingRet"
-        Me.mnuReceivingRet.Size = New System.Drawing.Size(232, 22)
+        Me.mnuReceivingRet.Size = New System.Drawing.Size(226, 22)
         Me.mnuReceivingRet.Text = "Receipt"
-        Me.mnuReceivingRet.Visible = False
         '
         'MnuBillGeneration
         '
         Me.MnuBillGeneration.Name = "MnuBillGeneration"
-        Me.MnuBillGeneration.Size = New System.Drawing.Size(232, 22)
+        Me.MnuBillGeneration.Size = New System.Drawing.Size(226, 22)
         Me.MnuBillGeneration.Text = "Bill Generation"
-        Me.MnuBillGeneration.Visible = False
         '
         'ToolStripSeparator8
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
-        Me.ToolStripSeparator8.Size = New System.Drawing.Size(229, 6)
-        Me.ToolStripSeparator8.Visible = False
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(223, 6)
         '
         'MnuVehAdjustRec
         '
         Me.MnuVehAdjustRec.Name = "MnuVehAdjustRec"
-        Me.MnuVehAdjustRec.Size = New System.Drawing.Size(232, 22)
+        Me.MnuVehAdjustRec.Size = New System.Drawing.Size(226, 22)
         Me.MnuVehAdjustRec.Text = "Vehicle Adjustment Receipts"
-        Me.MnuVehAdjustRec.Visible = False
         '
         'MnuVehAdjPay
         '
         Me.MnuVehAdjPay.Name = "MnuVehAdjPay"
-        Me.MnuVehAdjPay.Size = New System.Drawing.Size(232, 22)
+        Me.MnuVehAdjPay.Size = New System.Drawing.Size(226, 22)
         Me.MnuVehAdjPay.Text = "Vehicle Adjustment Payments"
-        Me.MnuVehAdjPay.Visible = False
         '
         'MnuVehicleRec
         '
         Me.MnuVehicleRec.Name = "MnuVehicleRec"
-        Me.MnuVehicleRec.Size = New System.Drawing.Size(232, 22)
+        Me.MnuVehicleRec.Size = New System.Drawing.Size(226, 22)
         Me.MnuVehicleRec.Text = "Vehicle Receipts"
-        Me.MnuVehicleRec.Visible = False
         '
         'MnuVehiclePayment
         '
         Me.MnuVehiclePayment.Name = "MnuVehiclePayment"
-        Me.MnuVehiclePayment.Size = New System.Drawing.Size(232, 22)
+        Me.MnuVehiclePayment.Size = New System.Drawing.Size(226, 22)
         Me.MnuVehiclePayment.Text = "Vehicle Payments"
-        Me.MnuVehiclePayment.Visible = False
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(229, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(223, 6)
         Me.ToolStripMenuItem1.Visible = Global.BusinessLeaf.My.MySettings.Default.IsWithGL
         '
         'MnuJournalVouchers
         '
         Me.MnuJournalVouchers.Name = "MnuJournalVouchers"
-        Me.MnuJournalVouchers.Size = New System.Drawing.Size(232, 22)
+        Me.MnuJournalVouchers.Size = New System.Drawing.Size(226, 22)
         Me.MnuJournalVouchers.Text = "Journal Voucher"
         Me.MnuJournalVouchers.Visible = Global.BusinessLeaf.My.MySettings.Default.IsWithGL
         '
         'MnuBankReceiptVoucher
         '
         Me.MnuBankReceiptVoucher.Name = "MnuBankReceiptVoucher"
-        Me.MnuBankReceiptVoucher.Size = New System.Drawing.Size(232, 22)
+        Me.MnuBankReceiptVoucher.Size = New System.Drawing.Size(226, 22)
         Me.MnuBankReceiptVoucher.Text = "Bank Receipt Voucher"
         Me.MnuBankReceiptVoucher.Visible = Global.BusinessLeaf.My.MySettings.Default.IsWithGL
         '
         'MnuCashReceiptVoucher
         '
         Me.MnuCashReceiptVoucher.Name = "MnuCashReceiptVoucher"
-        Me.MnuCashReceiptVoucher.Size = New System.Drawing.Size(232, 22)
+        Me.MnuCashReceiptVoucher.Size = New System.Drawing.Size(226, 22)
         Me.MnuCashReceiptVoucher.Text = "Cash Receipt Voucher"
         Me.MnuCashReceiptVoucher.Visible = Global.BusinessLeaf.My.MySettings.Default.IsWithGL
         '
         'MnuBankPaymentVoucher
         '
         Me.MnuBankPaymentVoucher.Name = "MnuBankPaymentVoucher"
-        Me.MnuBankPaymentVoucher.Size = New System.Drawing.Size(232, 22)
+        Me.MnuBankPaymentVoucher.Size = New System.Drawing.Size(226, 22)
         Me.MnuBankPaymentVoucher.Text = "Bank Payment Voucher"
         Me.MnuBankPaymentVoucher.Visible = Global.BusinessLeaf.My.MySettings.Default.IsWithGL
         '
         'MnuCashPaymentVoucher
         '
         Me.MnuCashPaymentVoucher.Name = "MnuCashPaymentVoucher"
-        Me.MnuCashPaymentVoucher.Size = New System.Drawing.Size(232, 22)
+        Me.MnuCashPaymentVoucher.Size = New System.Drawing.Size(226, 22)
         Me.MnuCashPaymentVoucher.Text = "Cash Payment Voucher"
         Me.MnuCashPaymentVoucher.Visible = Global.BusinessLeaf.My.MySettings.Default.IsWithGL
         '
@@ -639,133 +621,126 @@ Public Class frmMain
         '
         Me.ToolStripMenuItem9.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MnuCOAReportList, Me.mnuVehicleListReport, Me.ToolStripMenuItem4, Me.MnuVehicleBills, Me.MnuTransactionList, Me.mnuVFreghtStatements, Me.MnuFreightAnalysis, Me.MnuVehicleLedger, Me.ToolStripSeparator7, Me.mnuProdRecDocument, Me.mnuSaleInvDocument, Me.ToolStripMenuItem11, Me.MnuJeneralVoucherReportDoc, Me.MnuVoucherReportList, Me.CashFlowToolStripMenuItem, Me.ToolStripMenuItem8, Me.mnuItemLedger, Me.mnuRptTrialBalance, Me.FinancialStatementsToolStripMenuItem})
         Me.ToolStripMenuItem9.Name = "ToolStripMenuItem9"
-        Me.ToolStripMenuItem9.Size = New System.Drawing.Size(59, 20)
+        Me.ToolStripMenuItem9.Size = New System.Drawing.Size(57, 20)
         Me.ToolStripMenuItem9.Text = "&Reports"
         '
         'MnuCOAReportList
         '
         Me.MnuCOAReportList.Name = "MnuCOAReportList"
-        Me.MnuCOAReportList.Size = New System.Drawing.Size(214, 22)
+        Me.MnuCOAReportList.Size = New System.Drawing.Size(213, 22)
         Me.MnuCOAReportList.Text = "Chart of Account List"
         Me.MnuCOAReportList.Visible = Global.BusinessLeaf.My.MySettings.Default.IsWithGL
         '
         'mnuVehicleListReport
         '
         Me.mnuVehicleListReport.Name = "mnuVehicleListReport"
-        Me.mnuVehicleListReport.Size = New System.Drawing.Size(214, 22)
+        Me.mnuVehicleListReport.Size = New System.Drawing.Size(213, 22)
         Me.mnuVehicleListReport.Text = "Vehicle List"
-        Me.mnuVehicleListReport.Visible = False
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(211, 6)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(210, 6)
         '
         'MnuVehicleBills
         '
         Me.MnuVehicleBills.Name = "MnuVehicleBills"
-        Me.MnuVehicleBills.Size = New System.Drawing.Size(214, 22)
+        Me.MnuVehicleBills.Size = New System.Drawing.Size(213, 22)
         Me.MnuVehicleBills.Text = "Vehicle Bills"
-        Me.MnuVehicleBills.Visible = False
         '
         'MnuTransactionList
         '
         Me.MnuTransactionList.Name = "MnuTransactionList"
-        Me.MnuTransactionList.Size = New System.Drawing.Size(214, 22)
+        Me.MnuTransactionList.Size = New System.Drawing.Size(213, 22)
         Me.MnuTransactionList.Text = "Vehicle Transaction List"
-        Me.MnuTransactionList.Visible = False
         '
         'mnuVFreghtStatements
         '
         Me.mnuVFreghtStatements.Name = "mnuVFreghtStatements"
-        Me.mnuVFreghtStatements.Size = New System.Drawing.Size(214, 22)
+        Me.mnuVFreghtStatements.Size = New System.Drawing.Size(213, 22)
         Me.mnuVFreghtStatements.Text = "Vehicle Freight Statements"
-        Me.mnuVFreghtStatements.Visible = False
         '
         'MnuFreightAnalysis
         '
         Me.MnuFreightAnalysis.Name = "MnuFreightAnalysis"
-        Me.MnuFreightAnalysis.Size = New System.Drawing.Size(214, 22)
+        Me.MnuFreightAnalysis.Size = New System.Drawing.Size(213, 22)
         Me.MnuFreightAnalysis.Text = "Vehicle Bill Analysis"
-        Me.MnuFreightAnalysis.Visible = False
         '
         'MnuVehicleLedger
         '
         Me.MnuVehicleLedger.Name = "MnuVehicleLedger"
-        Me.MnuVehicleLedger.Size = New System.Drawing.Size(214, 22)
+        Me.MnuVehicleLedger.Size = New System.Drawing.Size(213, 22)
         Me.MnuVehicleLedger.Text = "Vehicle Ledger"
-        Me.MnuVehicleLedger.Visible = False
         '
         'ToolStripSeparator7
         '
         Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(211, 6)
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(210, 6)
         '
         'mnuProdRecDocument
         '
         Me.mnuProdRecDocument.Name = "mnuProdRecDocument"
-        Me.mnuProdRecDocument.Size = New System.Drawing.Size(214, 22)
+        Me.mnuProdRecDocument.Size = New System.Drawing.Size(213, 22)
         Me.mnuProdRecDocument.Text = "Receipt Documents"
         Me.mnuProdRecDocument.Visible = False
         '
         'mnuSaleInvDocument
         '
         Me.mnuSaleInvDocument.Name = "mnuSaleInvDocument"
-        Me.mnuSaleInvDocument.Size = New System.Drawing.Size(214, 22)
+        Me.mnuSaleInvDocument.Size = New System.Drawing.Size(213, 22)
         Me.mnuSaleInvDocument.Text = "Invoice Documents"
-        Me.mnuSaleInvDocument.Visible = False
         '
         'ToolStripMenuItem11
         '
         Me.ToolStripMenuItem11.Name = "ToolStripMenuItem11"
-        Me.ToolStripMenuItem11.Size = New System.Drawing.Size(211, 6)
+        Me.ToolStripMenuItem11.Size = New System.Drawing.Size(210, 6)
         Me.ToolStripMenuItem11.Visible = Global.BusinessLeaf.My.MySettings.Default.IsWithGL
         '
         'MnuJeneralVoucherReportDoc
         '
         Me.MnuJeneralVoucherReportDoc.Name = "MnuJeneralVoucherReportDoc"
-        Me.MnuJeneralVoucherReportDoc.Size = New System.Drawing.Size(214, 22)
+        Me.MnuJeneralVoucherReportDoc.Size = New System.Drawing.Size(213, 22)
         Me.MnuJeneralVoucherReportDoc.Text = "Voucher Documents"
         Me.MnuJeneralVoucherReportDoc.Visible = Global.BusinessLeaf.My.MySettings.Default.IsWithGL
         '
         'MnuVoucherReportList
         '
         Me.MnuVoucherReportList.Name = "MnuVoucherReportList"
-        Me.MnuVoucherReportList.Size = New System.Drawing.Size(214, 22)
+        Me.MnuVoucherReportList.Size = New System.Drawing.Size(213, 22)
         Me.MnuVoucherReportList.Text = "Voucher List"
         Me.MnuVoucherReportList.Visible = Global.BusinessLeaf.My.MySettings.Default.IsWithGL
-        '
-        'CashFlowToolStripMenuItem
-        '
-        Me.CashFlowToolStripMenuItem.Name = "CashFlowToolStripMenuItem"
-        Me.CashFlowToolStripMenuItem.Size = New System.Drawing.Size(214, 22)
-        Me.CashFlowToolStripMenuItem.Text = "Cash Flow Statements"
-        Me.CashFlowToolStripMenuItem.Visible = Global.BusinessLeaf.My.MySettings.Default.IsWithGL
         '
         'ToolStripMenuItem8
         '
         Me.ToolStripMenuItem8.Name = "ToolStripMenuItem8"
-        Me.ToolStripMenuItem8.Size = New System.Drawing.Size(211, 6)
+        Me.ToolStripMenuItem8.Size = New System.Drawing.Size(210, 6)
         Me.ToolStripMenuItem8.Visible = Global.BusinessLeaf.My.MySettings.Default.IsWithGL
         '
         'mnuItemLedger
         '
         Me.mnuItemLedger.Name = "mnuItemLedger"
-        Me.mnuItemLedger.Size = New System.Drawing.Size(214, 22)
+        Me.mnuItemLedger.Size = New System.Drawing.Size(213, 22)
         Me.mnuItemLedger.Text = "General Ledger"
         Me.mnuItemLedger.Visible = Global.BusinessLeaf.My.MySettings.Default.IsWithGL
         '
         'mnuRptTrialBalance
         '
         Me.mnuRptTrialBalance.Name = "mnuRptTrialBalance"
-        Me.mnuRptTrialBalance.Size = New System.Drawing.Size(214, 22)
+        Me.mnuRptTrialBalance.Size = New System.Drawing.Size(213, 22)
         Me.mnuRptTrialBalance.Text = "Trial Balance"
         Me.mnuRptTrialBalance.Visible = Global.BusinessLeaf.My.MySettings.Default.IsWithGL
+        '
+        'CashFlowToolStripMenuItem
+        '
+        Me.CashFlowToolStripMenuItem.Name = "CashFlowToolStripMenuItem"
+        Me.CashFlowToolStripMenuItem.Size = New System.Drawing.Size(213, 22)
+        Me.CashFlowToolStripMenuItem.Text = "Cash Flow Statements"
+        Me.CashFlowToolStripMenuItem.Visible = Global.BusinessLeaf.My.MySettings.Default.IsWithGL
         '
         'FinancialStatementsToolStripMenuItem
         '
         Me.FinancialStatementsToolStripMenuItem.Name = "FinancialStatementsToolStripMenuItem"
-        Me.FinancialStatementsToolStripMenuItem.Size = New System.Drawing.Size(214, 22)
+        Me.FinancialStatementsToolStripMenuItem.Size = New System.Drawing.Size(213, 22)
         Me.FinancialStatementsToolStripMenuItem.Text = "Financial Statements"
         Me.FinancialStatementsToolStripMenuItem.Visible = Global.BusinessLeaf.My.MySettings.Default.IsWithGL
         '
@@ -773,132 +748,132 @@ Public Class frmMain
         '
         Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuBackup, Me.mnuRestore, Me.mnuAuditing, Me.mnuPosting, Me.mnuUnPosting, Me.MnuVoucherGeneration, Me.MnuViewLog, Me.mnuOptions})
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(128, 20)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(115, 20)
         Me.ToolStripMenuItem2.Text = "&Administrative Tools"
         '
         'mnuBackup
         '
         Me.mnuBackup.Name = "mnuBackup"
-        Me.mnuBackup.Size = New System.Drawing.Size(179, 22)
+        Me.mnuBackup.Size = New System.Drawing.Size(180, 22)
         Me.mnuBackup.Text = "Backup"
         '
         'mnuRestore
         '
         Me.mnuRestore.Name = "mnuRestore"
-        Me.mnuRestore.Size = New System.Drawing.Size(179, 22)
+        Me.mnuRestore.Size = New System.Drawing.Size(180, 22)
         Me.mnuRestore.Text = "Restore"
         '
         'mnuAuditing
         '
         Me.mnuAuditing.Name = "mnuAuditing"
-        Me.mnuAuditing.Size = New System.Drawing.Size(179, 22)
+        Me.mnuAuditing.Size = New System.Drawing.Size(180, 22)
         Me.mnuAuditing.Text = "Auditing"
         '
         'mnuPosting
         '
         Me.mnuPosting.Name = "mnuPosting"
-        Me.mnuPosting.Size = New System.Drawing.Size(179, 22)
+        Me.mnuPosting.Size = New System.Drawing.Size(180, 22)
         Me.mnuPosting.Text = "Posting"
         '
         'mnuUnPosting
         '
         Me.mnuUnPosting.Name = "mnuUnPosting"
-        Me.mnuUnPosting.Size = New System.Drawing.Size(179, 22)
+        Me.mnuUnPosting.Size = New System.Drawing.Size(180, 22)
         Me.mnuUnPosting.Text = "Un Posting"
         '
         'MnuVoucherGeneration
         '
         Me.MnuVoucherGeneration.Name = "MnuVoucherGeneration"
-        Me.MnuVoucherGeneration.Size = New System.Drawing.Size(179, 22)
+        Me.MnuVoucherGeneration.Size = New System.Drawing.Size(180, 22)
         Me.MnuVoucherGeneration.Text = "Voucher Generation"
         '
         'MnuViewLog
         '
         Me.MnuViewLog.Name = "MnuViewLog"
-        Me.MnuViewLog.Size = New System.Drawing.Size(179, 22)
+        Me.MnuViewLog.Size = New System.Drawing.Size(180, 22)
         Me.MnuViewLog.Text = "User Activiities Log"
         '
         'mnuOptions
         '
         Me.mnuOptions.Name = "mnuOptions"
-        Me.mnuOptions.Size = New System.Drawing.Size(179, 22)
+        Me.mnuOptions.Size = New System.Drawing.Size(180, 22)
         Me.mnuOptions.Text = "Options"
         '
         'mnuView
         '
         Me.mnuView.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuLargeIcon, Me.mnuSmall, Me.mnuList, Me.mnuDetail})
         Me.mnuView.Name = "mnuView"
-        Me.mnuView.Size = New System.Drawing.Size(44, 20)
+        Me.mnuView.Size = New System.Drawing.Size(41, 20)
         Me.mnuView.Text = "View"
         Me.mnuView.Visible = False
         '
         'mnuLargeIcon
         '
         Me.mnuLargeIcon.Name = "mnuLargeIcon"
-        Me.mnuLargeIcon.Size = New System.Drawing.Size(129, 22)
+        Me.mnuLargeIcon.Size = New System.Drawing.Size(136, 22)
         Me.mnuLargeIcon.Text = "Large Icon"
         '
         'mnuSmall
         '
         Me.mnuSmall.Name = "mnuSmall"
-        Me.mnuSmall.Size = New System.Drawing.Size(129, 22)
+        Me.mnuSmall.Size = New System.Drawing.Size(136, 22)
         Me.mnuSmall.Text = "Small Icon"
         '
         'mnuList
         '
         Me.mnuList.Name = "mnuList"
-        Me.mnuList.Size = New System.Drawing.Size(129, 22)
+        Me.mnuList.Size = New System.Drawing.Size(136, 22)
         Me.mnuList.Text = "List"
         '
         'mnuDetail
         '
         Me.mnuDetail.Name = "mnuDetail"
-        Me.mnuDetail.Size = New System.Drawing.Size(129, 22)
+        Me.mnuDetail.Size = New System.Drawing.Size(136, 22)
         Me.mnuDetail.Text = "Detail"
         '
         'MnuTheme
         '
         Me.MnuTheme.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuGreen, Me.mnuBlue, Me.mnuBlack, Me.mnuSilver})
         Me.MnuTheme.Name = "MnuTheme"
-        Me.MnuTheme.Size = New System.Drawing.Size(56, 20)
+        Me.MnuTheme.Size = New System.Drawing.Size(51, 20)
         Me.MnuTheme.Text = "Theme"
         '
         'mnuGreen
         '
         Me.mnuGreen.Name = "mnuGreen"
-        Me.mnuGreen.Size = New System.Drawing.Size(105, 22)
+        Me.mnuGreen.Size = New System.Drawing.Size(114, 22)
         Me.mnuGreen.Text = "Green"
         '
         'mnuBlue
         '
         Me.mnuBlue.Name = "mnuBlue"
-        Me.mnuBlue.Size = New System.Drawing.Size(105, 22)
+        Me.mnuBlue.Size = New System.Drawing.Size(114, 22)
         Me.mnuBlue.Text = "Blue"
         '
         'mnuBlack
         '
         Me.mnuBlack.Name = "mnuBlack"
-        Me.mnuBlack.Size = New System.Drawing.Size(105, 22)
+        Me.mnuBlack.Size = New System.Drawing.Size(114, 22)
         Me.mnuBlack.Text = "Black"
         '
         'mnuSilver
         '
         Me.mnuSilver.Name = "mnuSilver"
-        Me.mnuSilver.Size = New System.Drawing.Size(105, 22)
+        Me.mnuSilver.Size = New System.Drawing.Size(114, 22)
         Me.mnuSilver.Text = "Silver"
         '
         'mnuWindows
         '
         Me.mnuWindows.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuWindowsArrange, Me.mnuProjectViewer, Me.mnuSearch, Me.mnuOutPut, Me.mnuGrid})
         Me.mnuWindows.Name = "mnuWindows"
-        Me.mnuWindows.Size = New System.Drawing.Size(68, 20)
+        Me.mnuWindows.Size = New System.Drawing.Size(62, 20)
         Me.mnuWindows.Text = "&Windows"
         '
         'mnuWindowsArrange
         '
         Me.mnuWindowsArrange.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuIcon, Me.mnuHorizontal, Me.mnuVertical, Me.mnuCascade})
         Me.mnuWindowsArrange.Name = "mnuWindowsArrange"
-        Me.mnuWindowsArrange.Size = New System.Drawing.Size(140, 22)
+        Me.mnuWindowsArrange.Size = New System.Drawing.Size(144, 22)
         Me.mnuWindowsArrange.Text = "Arrange"
         '
         'mnuIcon
@@ -906,25 +881,25 @@ Public Class frmMain
         Me.mnuIcon.Checked = True
         Me.mnuIcon.CheckState = System.Windows.Forms.CheckState.Checked
         Me.mnuIcon.Name = "mnuIcon"
-        Me.mnuIcon.Size = New System.Drawing.Size(129, 22)
+        Me.mnuIcon.Size = New System.Drawing.Size(133, 22)
         Me.mnuIcon.Text = "Icon"
         '
         'mnuHorizontal
         '
         Me.mnuHorizontal.Name = "mnuHorizontal"
-        Me.mnuHorizontal.Size = New System.Drawing.Size(129, 22)
+        Me.mnuHorizontal.Size = New System.Drawing.Size(133, 22)
         Me.mnuHorizontal.Text = "Horizontal"
         '
         'mnuVertical
         '
         Me.mnuVertical.Name = "mnuVertical"
-        Me.mnuVertical.Size = New System.Drawing.Size(129, 22)
+        Me.mnuVertical.Size = New System.Drawing.Size(133, 22)
         Me.mnuVertical.Text = "Vertical"
         '
         'mnuCascade
         '
         Me.mnuCascade.Name = "mnuCascade"
-        Me.mnuCascade.Size = New System.Drawing.Size(129, 22)
+        Me.mnuCascade.Size = New System.Drawing.Size(133, 22)
         Me.mnuCascade.Text = "Cascade"
         '
         'mnuProjectViewer
@@ -932,7 +907,7 @@ Public Class frmMain
         Me.mnuProjectViewer.Checked = True
         Me.mnuProjectViewer.CheckState = System.Windows.Forms.CheckState.Checked
         Me.mnuProjectViewer.Name = "mnuProjectViewer"
-        Me.mnuProjectViewer.Size = New System.Drawing.Size(140, 22)
+        Me.mnuProjectViewer.Size = New System.Drawing.Size(144, 22)
         Me.mnuProjectViewer.Text = "Files Viewer"
         '
         'mnuSearch
@@ -940,7 +915,7 @@ Public Class frmMain
         Me.mnuSearch.Checked = True
         Me.mnuSearch.CheckState = System.Windows.Forms.CheckState.Checked
         Me.mnuSearch.Name = "mnuSearch"
-        Me.mnuSearch.Size = New System.Drawing.Size(140, 22)
+        Me.mnuSearch.Size = New System.Drawing.Size(144, 22)
         Me.mnuSearch.Text = "Search Slide"
         '
         'mnuOutPut
@@ -948,7 +923,7 @@ Public Class frmMain
         Me.mnuOutPut.Checked = True
         Me.mnuOutPut.CheckState = System.Windows.Forms.CheckState.Checked
         Me.mnuOutPut.Name = "mnuOutPut"
-        Me.mnuOutPut.Size = New System.Drawing.Size(140, 22)
+        Me.mnuOutPut.Size = New System.Drawing.Size(144, 22)
         Me.mnuOutPut.Text = "Output Slide"
         '
         'mnuGrid
@@ -956,33 +931,33 @@ Public Class frmMain
         Me.mnuGrid.Checked = True
         Me.mnuGrid.CheckState = System.Windows.Forms.CheckState.Checked
         Me.mnuGrid.Name = "mnuGrid"
-        Me.mnuGrid.Size = New System.Drawing.Size(140, 22)
+        Me.mnuGrid.Size = New System.Drawing.Size(144, 22)
         Me.mnuGrid.Text = "Search Grid"
         '
         'ToolStripMenuItem10
         '
         Me.ToolStripMenuItem10.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuUserProfile, Me.mnuLogOff})
         Me.ToolStripMenuItem10.Name = "ToolStripMenuItem10"
-        Me.ToolStripMenuItem10.Size = New System.Drawing.Size(61, 20)
+        Me.ToolStripMenuItem10.Size = New System.Drawing.Size(58, 20)
         Me.ToolStripMenuItem10.Text = "Se&curity"
         '
         'mnuUserProfile
         '
         Me.mnuUserProfile.Name = "mnuUserProfile"
-        Me.mnuUserProfile.Size = New System.Drawing.Size(134, 22)
+        Me.mnuUserProfile.Size = New System.Drawing.Size(140, 22)
         Me.mnuUserProfile.Text = "User Profile"
         '
         'mnuLogOff
         '
         Me.mnuLogOff.Name = "mnuLogOff"
-        Me.mnuLogOff.Size = New System.Drawing.Size(134, 22)
+        Me.mnuLogOff.Size = New System.Drawing.Size(140, 22)
         Me.mnuLogOff.Text = "Log Off"
         '
         'ToolStripMenuItem13
         '
         Me.ToolStripMenuItem13.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem14, Me.ToolStripMenuItem17})
         Me.ToolStripMenuItem13.Name = "ToolStripMenuItem13"
-        Me.ToolStripMenuItem13.Size = New System.Drawing.Size(44, 20)
+        Me.ToolStripMenuItem13.Size = New System.Drawing.Size(40, 20)
         Me.ToolStripMenuItem13.Text = "Help"
         '
         'ToolStripMenuItem14
@@ -1007,7 +982,7 @@ Public Class frmMain
         'mnuExit
         '
         Me.mnuExit.Name = "mnuExit"
-        Me.mnuExit.Size = New System.Drawing.Size(92, 22)
+        Me.mnuExit.Size = New System.Drawing.Size(103, 22)
         Me.mnuExit.Text = "Exit"
         '
         'stbMain
@@ -2463,12 +2438,11 @@ Public Class FormFunctions
     End Function
 
     Private Shared Sub FillAssemblies(ByVal a As [Assembly], ByVal al As ArrayList)
-
         If Not al.Contains(a) Then
             al.Add(a)
             Dim an As AssemblyName
             For Each an In a.GetReferencedAssemblies()
-                If an.Name.StartsWith("BusinessLeaf") Then FillAssemblies([Assembly].Load(an), al)
+                If Not an.Name.StartsWith("System") Then FillAssemblies([Assembly].Load(an), al)
             Next
         End If
     End Sub

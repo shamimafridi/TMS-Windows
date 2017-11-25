@@ -2,17 +2,14 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
   <Profiles />
   <Settings>
-    <Setting Name="ConnectionString" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Data Source=.;Initial Catalog=TMS;Integrated Security=True</Value>
-    </Setting>
     <Setting Name="Description" Type="System.String" Scope="Application">
       <Value Profile="(Default)">100</Value>
     </Setting>
     <Setting Name="CompanyName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">XYZ Company</Value>
+      <Value Profile="(Default)">Zarwali Group of Companies</Value>
     </Setting>
     <Setting Name="ServerName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">shamim-pc</Value>
+      <Value Profile="(Default)">DotnetServer</Value>
     </Setting>
     <Setting Name="DateFormat" Type="System.String" Scope="Application">
       <Value Profile="(Default)">dd-MMM-yyyy</Value>
@@ -180,10 +177,10 @@
       <Value Profile="(Default)">0201</Value>
     </Setting>
     <Setting Name="ModuleShortName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">GL</Value>
+      <Value Profile="(Default)">TMS</Value>
     </Setting>
     <Setting Name="ModuleLongName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">General Ledger</Value>
+      <Value Profile="(Default)">Transport Management System</Value>
     </Setting>
     <Setting Name="TripAdvanceCode" Type="System.String" Scope="Application">
       <Value Profile="(Default)">01</Value>
@@ -202,6 +199,9 @@
     </Setting>
     <Setting Name="DatabaseName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">TMS</Value>
+    </Setting>
+    <Setting Name="ConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=.;Initial Catalog=TMS_ALI;Integrated Security=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

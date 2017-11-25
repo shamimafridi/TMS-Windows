@@ -1,0 +1,46 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Table">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BillNo" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchCode" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceNo" type="xs:string" minOccurs="0" />
+              <xs:element name="BranchDescription" type="xs:string" minOccurs="0" />
+              <xs:element name="Branch" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Vehicle" type="xs:string" minOccurs="0" />
+              <xs:element name="Quantity" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Rate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Product" type="xs:string" minOccurs="0" />
+              <xs:element name="Shortage" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CustomerCode" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerName" type="xs:string" minOccurs="0" />
+              <xs:element name="UrduTitle" type="xs:string" minOccurs="0" />
+              <xs:element name="Address" type="xs:string" minOccurs="0" />
+              <xs:element name="NationalTaxNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="SalesTaxNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="Telephone" type="xs:string" minOccurs="0" />
+              <xs:element name="Fax" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductName" type="xs:string" minOccurs="0" />
+              <xs:element name="VehicleCode" type="xs:string" minOccurs="0" />
+              <xs:element name="VehicleDescription" type="xs:string" minOccurs="0" />
+              <xs:element name="DestinationPointCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Destination" type="xs:string" minOccurs="0" />
+              <xs:element name="StationPointCode" type="xs:string" minOccurs="0" />
+              <xs:element name="StationPointName" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerReference" type="xs:string" minOccurs="0" />
+              <xs:element name="InvBranchCode" type="xs:string" minOccurs="0" />
+              <xs:element name="BillDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

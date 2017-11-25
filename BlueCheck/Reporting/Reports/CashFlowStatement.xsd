@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Table1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BranchCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Branch" type="xs:string" minOccurs="0" />
+              <xs:element name="DivisionCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Division" type="xs:string" minOccurs="0" />
+              <xs:element name="GLCode" type="xs:string" minOccurs="0" />
+              <xs:element name="GLDescription" type="xs:string" minOccurs="0" />
+              <xs:element name="DocumentNo" type="xs:string" minOccurs="0" />
+              <xs:element name="DocumentNature" type="xs:string" minOccurs="0" />
+              <xs:element name="TransactionDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Reference" type="xs:string" minOccurs="0" />
+              <xs:element name="Narration" type="xs:string" minOccurs="0" />
+              <xs:element name="ControlCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Control" type="xs:string" minOccurs="0" />
+              <xs:element name="GeneralCode" type="xs:string" minOccurs="0" />
+              <xs:element name="General" type="xs:string" minOccurs="0" />
+              <xs:element name="SubsidiaryCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Subsidiary" type="xs:string" minOccurs="0" />
+              <xs:element name="SubSubCode" type="xs:string" minOccurs="0" />
+              <xs:element name="SubSub" type="xs:string" minOccurs="0" />
+              <xs:element name="Debit" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Credit" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OldRef" type="xs:string" minOccurs="0" />
+              <xs:element name="RecordNo" type="xs:long" minOccurs="0" />
+              <xs:element name="DetailRecordNo" type="xs:long" minOccurs="0" />
+              <xs:element name="DocumentStatus" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

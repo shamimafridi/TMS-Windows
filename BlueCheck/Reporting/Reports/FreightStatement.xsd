@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Table">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BranchCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Branch" type="xs:string" minOccurs="0" />
+              <xs:element name="TransactionNo" type="xs:string" minOccurs="0" />
+              <xs:element name="TransactionDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TokenNo" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerCode" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerName" type="xs:string" minOccurs="0" />
+              <xs:element name="DestinationPointCode" type="xs:string" minOccurs="0" />
+              <xs:element name="DestinationPointName" type="xs:string" minOccurs="0" />
+              <xs:element name="StationPointCode" type="xs:string" minOccurs="0" />
+              <xs:element name="StationPointName" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductName" type="xs:string" minOccurs="0" />
+              <xs:element name="Quantity" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Rate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Commission" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ShortageQuantity" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QuantityValue" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Shortage" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IsBilled" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="VehicleCode" type="xs:string" minOccurs="0" />
+              <xs:element name="VehicleDescription" type="xs:string" minOccurs="0" />
+              <xs:element name="BillNo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

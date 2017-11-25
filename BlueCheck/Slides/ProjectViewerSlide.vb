@@ -22,15 +22,15 @@ Namespace Slides
         End Sub
         Private Function CreateTopLevelNode() As UltraExplorerBarGroup
 
-            'Dim grp2 As New UltraExplorerBarGroup
-            'grp2.Text = "Setup Files (TMS)"
-            'grp2.Items.AddRange(CreateChildeNodes("SU", "IN"))
-            'MainControl.Groups.Add(grp2)
+            Dim grp2 As New UltraExplorerBarGroup
+            grp2.Text = "Setup Files (TMS)"
+            grp2.Items.AddRange(CreateChildeNodes("SU", "IN"))
+            MainControl.Groups.Add(grp2)
 
-            'Dim grp1 As New UltraExplorerBarGroup
-            'grp1.Text = "Transaction Fiels (TMS)"
-            'grp1.Items.AddRange(CreateChildeNodes("TR", "IN"))
-            'MainControl.Groups.Add(grp1)
+            Dim grp1 As New UltraExplorerBarGroup
+            grp1.Text = "Transaction Fiels (TMS)"
+            grp1.Items.AddRange(CreateChildeNodes("TR", "IN"))
+            MainControl.Groups.Add(grp1)
 
 
             Dim grp3 As New UltraExplorerBarGroup
