@@ -1,3 +1,5 @@
+Imports System.Windows.Forms.VisualStyles
+
 Namespace Inventory
     Public Class Vehicles
         Inherits System.Windows.Forms.Form
@@ -56,52 +58,54 @@ Namespace Inventory
         Friend WithEvents LinkLabel6 As System.Windows.Forms.LinkLabel
         Friend WithEvents TextBox1 As Infragistics.Win.UltraWinEditors.UltraTextEditor
         Friend WithEvents Label2 As System.Windows.Forms.Label
+        Friend WithEvents ChkIsThirdparty As CheckBox
         Friend WithEvents Desc As Infragistics.Win.UltraWinEditors.UltraTextEditor
         <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-            Me.components = New System.ComponentModel.Container
-            Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
+            Me.components = New System.ComponentModel.Container()
+            Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
             Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Vehicles))
-            Dim Appearance14 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance15 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance13 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Me.TxtVehicleCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.Desc = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.Label1 = New System.Windows.Forms.Label
-            Me.Label4 = New System.Windows.Forms.Label
-            Me.dtpDate = New System.Windows.Forms.DateTimePicker
-            Me.Label11 = New System.Windows.Forms.Label
+            Dim Appearance14 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance15 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance13 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Me.TxtVehicleCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Desc = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label1 = New System.Windows.Forms.Label()
+            Me.Label4 = New System.Windows.Forms.Label()
+            Me.dtpDate = New System.Windows.Forms.DateTimePicker()
+            Me.Label11 = New System.Windows.Forms.Label()
             Me.ErrProvider = New AzamTechnologies.ATErrorProvider(Me.components)
-            Me.TxtLoanGLDesc = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.TxtLoanGLCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.LinkLabel1 = New System.Windows.Forms.LinkLabel
-            Me.TxtInstallementGLDesc = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.TxtinstallmentGLCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.LinkLabel2 = New System.Windows.Forms.LinkLabel
-            Me.TxtFreightGLDesc = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.TxtFreightGLCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.LinkLabel3 = New System.Windows.Forms.LinkLabel
-            Me.TxtOwner = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.TxtOwnerCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.LinkLabel5 = New System.Windows.Forms.LinkLabel
-            Me.TxtCommissionGLDesc = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.TxtCommissionGLCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.LinkLabel4 = New System.Windows.Forms.LinkLabel
-            Me.TxtCustomer = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.TxtCustomerCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.LinkLabel6 = New System.Windows.Forms.LinkLabel
-            Me.TextBox1 = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.Label2 = New System.Windows.Forms.Label
+            Me.TxtLoanGLDesc = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtLoanGLCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+            Me.TxtInstallementGLDesc = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtinstallmentGLCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+            Me.TxtFreightGLDesc = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtFreightGLCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
+            Me.TxtOwner = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtOwnerCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
+            Me.TxtCommissionGLDesc = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtCommissionGLCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
+            Me.TxtCustomer = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtCustomerCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.LinkLabel6 = New System.Windows.Forms.LinkLabel()
+            Me.TextBox1 = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label2 = New System.Windows.Forms.Label()
+            Me.ChkIsThirdparty = New System.Windows.Forms.CheckBox()
             CType(Me.TxtVehicleCode, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.Desc, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.ErrProvider, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -123,7 +127,7 @@ Namespace Inventory
             'TxtVehicleCode
             '
             Me.TxtVehicleCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
             Appearance1.BackColor = System.Drawing.SystemColors.Window
             Me.TxtVehicleCode.Appearance = Appearance1
             Me.TxtVehicleCode.BackColor = System.Drawing.SystemColors.Window
@@ -138,8 +142,8 @@ Namespace Inventory
             'Desc
             '
             Me.Desc.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Appearance2.BackColor = System.Drawing.SystemColors.Window
             Me.Desc.Appearance = Appearance2
             Me.Desc.BackColor = System.Drawing.SystemColors.Window
@@ -174,7 +178,7 @@ Namespace Inventory
             '
             Me.dtpDate.AccessibleDescription = "Last"
             Me.dtpDate.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
             Me.dtpDate.CalendarTitleBackColor = System.Drawing.SystemColors.Control
             Me.dtpDate.CalendarTitleForeColor = System.Drawing.SystemColors.WindowText
             Me.dtpDate.CustomFormat = Global.BusinessLeaf.My.MySettings.Default.DateFormat
@@ -207,8 +211,8 @@ Namespace Inventory
             'TxtLoanGLDesc
             '
             Me.TxtLoanGLDesc.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Appearance14.BackColor = System.Drawing.SystemColors.Window
             Me.TxtLoanGLDesc.Appearance = Appearance14
             Me.TxtLoanGLDesc.BackColor = System.Drawing.SystemColors.Window
@@ -223,7 +227,7 @@ Namespace Inventory
             'TxtLoanGLCode
             '
             Me.TxtLoanGLCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
             Appearance15.BackColor = System.Drawing.SystemColors.Window
             Me.TxtLoanGLCode.Appearance = Appearance15
             Me.TxtLoanGLCode.BackColor = System.Drawing.SystemColors.Window
@@ -249,8 +253,8 @@ Namespace Inventory
             'TxtInstallementGLDesc
             '
             Me.TxtInstallementGLDesc.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Appearance12.BackColor = System.Drawing.SystemColors.Window
             Me.TxtInstallementGLDesc.Appearance = Appearance12
             Me.TxtInstallementGLDesc.BackColor = System.Drawing.SystemColors.Window
@@ -265,7 +269,7 @@ Namespace Inventory
             'TxtinstallmentGLCode
             '
             Me.TxtinstallmentGLCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
             Appearance13.BackColor = System.Drawing.SystemColors.Window
             Me.TxtinstallmentGLCode.Appearance = Appearance13
             Me.TxtinstallmentGLCode.BackColor = System.Drawing.SystemColors.Window
@@ -291,8 +295,8 @@ Namespace Inventory
             'TxtFreightGLDesc
             '
             Me.TxtFreightGLDesc.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Appearance10.BackColor = System.Drawing.SystemColors.Window
             Me.TxtFreightGLDesc.Appearance = Appearance10
             Me.TxtFreightGLDesc.BackColor = System.Drawing.SystemColors.Window
@@ -307,7 +311,7 @@ Namespace Inventory
             'TxtFreightGLCode
             '
             Me.TxtFreightGLCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
             Appearance11.BackColor = System.Drawing.SystemColors.Window
             Me.TxtFreightGLCode.Appearance = Appearance11
             Me.TxtFreightGLCode.BackColor = System.Drawing.SystemColors.Window
@@ -333,8 +337,8 @@ Namespace Inventory
             'TxtOwner
             '
             Me.TxtOwner.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Appearance8.BackColor = System.Drawing.SystemColors.Window
             Me.TxtOwner.Appearance = Appearance8
             Me.TxtOwner.BackColor = System.Drawing.SystemColors.Window
@@ -349,7 +353,7 @@ Namespace Inventory
             'TxtOwnerCode
             '
             Me.TxtOwnerCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
             Appearance9.BackColor = System.Drawing.SystemColors.Window
             Me.TxtOwnerCode.Appearance = Appearance9
             Me.TxtOwnerCode.BackColor = System.Drawing.SystemColors.Window
@@ -375,8 +379,8 @@ Namespace Inventory
             'TxtCommissionGLDesc
             '
             Me.TxtCommissionGLDesc.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Appearance6.BackColor = System.Drawing.SystemColors.Window
             Me.TxtCommissionGLDesc.Appearance = Appearance6
             Me.TxtCommissionGLDesc.BackColor = System.Drawing.SystemColors.Window
@@ -391,7 +395,7 @@ Namespace Inventory
             'TxtCommissionGLCode
             '
             Me.TxtCommissionGLCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
             Appearance7.BackColor = System.Drawing.SystemColors.Window
             Me.TxtCommissionGLCode.Appearance = Appearance7
             Me.TxtCommissionGLCode.BackColor = System.Drawing.SystemColors.Window
@@ -417,8 +421,8 @@ Namespace Inventory
             'TxtCustomer
             '
             Me.TxtCustomer.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Appearance4.BackColor = System.Drawing.SystemColors.Window
             Me.TxtCustomer.Appearance = Appearance4
             Me.TxtCustomer.BackColor = System.Drawing.SystemColors.Window
@@ -433,7 +437,7 @@ Namespace Inventory
             'TxtCustomerCode
             '
             Me.TxtCustomerCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
             Appearance5.BackColor = System.Drawing.SystemColors.Window
             Me.TxtCustomerCode.Appearance = Appearance5
             Me.TxtCustomerCode.BackColor = System.Drawing.SystemColors.Window
@@ -460,8 +464,8 @@ Namespace Inventory
             '
             Me.TextBox1.AccessibleDescription = "Description"
             Me.TextBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Appearance3.BackColor = System.Drawing.SystemColors.Window
             Me.TextBox1.Appearance = Appearance3
             Me.TextBox1.BackColor = System.Drawing.SystemColors.Window
@@ -482,12 +486,24 @@ Namespace Inventory
             Me.Label2.TabIndex = 134
             Me.Label2.Text = "Capacity"
             '
+            'ChkIsThirdparty
+            '
+            Me.ChkIsThirdparty.AutoSize = True
+            Me.ChkIsThirdparty.Location = New System.Drawing.Point(202, 328)
+            Me.ChkIsThirdparty.Name = "ChkIsThirdparty"
+            Me.ChkIsThirdparty.Size = New System.Drawing.Size(77, 17)
+            Me.ChkIsThirdparty.TabIndex = 135
+            Me.ChkIsThirdparty.Tag = "dd.IsThirdParty"
+            Me.ChkIsThirdparty.Text = "Third Party"
+            Me.ChkIsThirdparty.UseVisualStyleBackColor = True
+            '
             'Vehicles
             '
             Me.AccessibleName = ""
             Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
             Me.BackColor = System.Drawing.SystemColors.Control
             Me.ClientSize = New System.Drawing.Size(804, 494)
+            Me.Controls.Add(Me.ChkIsThirdparty)
             Me.Controls.Add(Me.TextBox1)
             Me.Controls.Add(Me.Label2)
             Me.Controls.Add(Me.TxtCustomer)
