@@ -206,10 +206,10 @@ Public Class DataManager
 
             rowsAffected = Me.comDataModify.DeleteDataSet(deletProcedurePrefix & mDirector.TableName, dsData)
             If rowsAffected <= 0 Then
-                finalActionMessage = startupMessage & " table: " & mDirector.TableName & ", Process: " & DataMode.Delete.ToString & _
+                finalActionMessage = startupMessage & " table: " & mDirector.TableName & ", Process: " & DataMode.Delete.ToString &
                                     middleMessage & vbCrLf & "Delete row(s): Deleting record failed,  No Record Found for Deletion "
             Else
-                finalActionMessage = startupMessage & " table: " & mDirector.TableName & ", Process: " & DataMode.Delete.ToString & _
+                finalActionMessage = startupMessage & " table: " & mDirector.TableName & ", Process: " & DataMode.Delete.ToString &
                         middleMessage & vbCrLf & "Delete row(s): " & rowsAffected & " succeeded, 0 failed, 0 skipped"
                 DeleteReferenceProcess(table.TableName)
             End If
@@ -632,7 +632,7 @@ Public Class DataManager
         Try
             If Me.mActiveForm.Tag = DataMode.Insert Or Me.mActiveForm.Tag = DataMode.Inserting Then
                 rowsAffected = comDataModify.UpdateData(updateProcedurePrefix & mDirector.TableName, dsData, AzamTechnologies.Database.DataModify.UpdateMode.Insert)
-                finalActionMessage = startupMessage & " table: " & mDirector.TableName & ", Process: " & DataMode.Insert.ToString & _
+                finalActionMessage = startupMessage & " table: " & mDirector.TableName & ", Process: " & DataMode.Insert.ToString &
                             middleMessage & vbCrLf & "Save All: " & rowsAffected & " succeeded, 0 failed, 0 skipped"
 
                 RaiseEvent MessageGenerated(finalActionMessage)
@@ -642,7 +642,7 @@ Public Class DataManager
                 'End If
             ElseIf Me.mActiveForm.Tag = DataMode.Edit Then
                 rowsAffected = comDataModify.UpdateData(updateProcedurePrefix & mDirector.TableName, dsData, AzamTechnologies.Database.DataModify.UpdateMode.Update)
-                finalActionMessage = startupMessage & " table: " & mDirector.TableName & ", Process: " & DataMode.Insert.ToString & _
+                finalActionMessage = startupMessage & " table: " & mDirector.TableName & ", Process: " & DataMode.Insert.ToString &
                             middleMessage & vbCrLf & "Save All: " & rowsAffected & " succeeded, 0 failed, 0 skipped"
                 RaiseEvent MessageGenerated(finalActionMessage)
             End If
@@ -678,7 +678,7 @@ Public Class DataManager
         Try
             If Me.mActiveForm.Tag = DataMode.Insert Or Me.mActiveForm.Tag = DataMode.Inserting Then
                 rowsAffected = comDataModify.UpdateDetailData(updateProcedurePrefix & mDirector.TableName, updateProcedurePrefix & mDirector.TableName & "Details", deletProcedurePrefix & mDirector.TableName & "Details", dsData, dsDetailData, AzamTechnologies.Database.DataModify.UpdateMode.Insert)
-                finalActionMessage = startupMessage & " table: " & mDirector.TableName & ", Process: " & DataMode.Insert.ToString & _
+                finalActionMessage = startupMessage & " table: " & mDirector.TableName & ", Process: " & DataMode.Insert.ToString &
                             middleMessage & vbCrLf & "Save All: " & rowsAffected & " succeeded, 0 failed, 0 skipped"
                 RaiseEvent MessageGenerated(finalActionMessage)
                 'If rowsAffected <> 0 Then ''if not any error occure
@@ -687,7 +687,7 @@ Public Class DataManager
                 'End If
             ElseIf Me.mActiveForm.Tag = DataMode.Edit Then
                 rowsAffected = comDataModify.UpdateDetailData(updateProcedurePrefix & mDirector.TableName, updateProcedurePrefix & mDirector.TableName & "Details", deletProcedurePrefix & mDirector.TableName & "Details", dsData, dsDetailData, AzamTechnologies.Database.DataModify.UpdateMode.Update)
-                finalActionMessage = startupMessage & " table: " & mDirector.TableName & ", Process: " & DataMode.Insert.ToString & _
+                finalActionMessage = startupMessage & " table: " & mDirector.TableName & ", Process: " & DataMode.Insert.ToString &
                             middleMessage & vbCrLf & "Save All: " & rowsAffected & " succeeded, 0 failed, 0 skipped"
                 RaiseEvent MessageGenerated(finalActionMessage)
                 'Me.LockedControls()
@@ -705,7 +705,7 @@ Public Class DataManager
         Catch ex As SqlClient.SqlException
             ' DataComponents.LogGenerator.CreateLog(ex.Message, Me.ActiveForm.Name & "SavingDetail", 0, EventLogEntryType.Error)
             MessageBox.Show(ex.Message, "Saving Data", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-            RaiseEvent MessageGenerated(startupMessage & " table: " & mDirector.TableName & ", Process: " & DataMode.Insert.ToString & _
+            RaiseEvent MessageGenerated(startupMessage & " table: " & mDirector.TableName & ", Process: " & DataMode.Insert.ToString &
                     middleMessage & vbCrLf & ex.Message)
             Throw ex
         Catch ex As Exception
@@ -718,6 +718,7 @@ Public Class DataManager
         comDataModify = Nothing
     End Function
 #End Region
+
     Public WriteOnly Property Director() As DataDirector
         Set(ByVal Value As DataDirector)
             mDirector = Value

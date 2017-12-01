@@ -283,13 +283,10 @@ Public Class ReportParameters
     Friend WithEvents TxtFDate As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label31 As System.Windows.Forms.Label
     Friend WithEvents GrpVehicleLedger As System.Windows.Forms.Panel
-    Friend WithEvents OptSummaryVLR As System.Windows.Forms.RadioButton
-    Friend WithEvents OptDetailVLR As System.Windows.Forms.RadioButton
     Friend WithEvents CmbTypeVLR As System.Windows.Forms.ComboBox
     Friend WithEvents Label32 As System.Windows.Forms.Label
     Friend WithEvents TxtBranchCodeVLR As Infragistics.Win.UltraWinEditors.UltraTextEditor
     Friend WithEvents Label42 As System.Windows.Forms.Label
-    Friend WithEvents CmbGroupByVLR As System.Windows.Forms.ComboBox
     Friend WithEvents LinkLabel9 As System.Windows.Forms.LinkLabel
     Friend WithEvents BtnLstToVehicleVLR As System.Windows.Forms.Button
     Friend WithEvents TxtToVehicleVLR As Infragistics.Win.UltraWinEditors.UltraTextEditor
@@ -301,7 +298,6 @@ Public Class ReportParameters
     Friend WithEvents Label86 As System.Windows.Forms.Label
     Friend WithEvents TxtFrDateVLR As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label87 As System.Windows.Forms.Label
-    Friend WithEvents Label88 As System.Windows.Forms.Label
     Friend WithEvents BtnLstBranchVLR As System.Windows.Forms.Button
     Friend WithEvents BtnLstToOwnerVLR As System.Windows.Forms.Button
     Friend WithEvents TxtToOwnerVLR As Infragistics.Win.UltraWinEditors.UltraTextEditor
@@ -317,309 +313,305 @@ Public Class ReportParameters
     Friend WithEvents ChkTripWithBill As Infragistics.Win.UltraWinEditors.UltraCheckEditor
     Friend WithEvents GrpVouchersList As System.Windows.Forms.Panel
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance16 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance13 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance14 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Me.GrpButtons = New System.Windows.Forms.Panel
-        Me.BtnShowToGrid = New System.Windows.Forms.Button
-        Me.BtnCancel = New System.Windows.Forms.Button
-        Me.BtnPrint = New System.Windows.Forms.Button
-        Me.BtnPreview = New System.Windows.Forms.Button
-        Me.GrpTransactionDocuments = New System.Windows.Forms.Panel
-        Me.lblBackToOther = New System.Windows.Forms.LinkLabel
-        Me.BtnToPartyList = New System.Windows.Forms.Button
-        Me.TxtToPartyCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.txtToTransactionNumber = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label4 = New System.Windows.Forms.Label
-        Me.Label5 = New System.Windows.Forms.Label
-        Me.dtpToDate = New System.Windows.Forms.DateTimePicker
-        Me.Label6 = New System.Windows.Forms.Label
-        Me.BtnFromPartyList = New System.Windows.Forms.Button
-        Me.TxtFromPartyCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.txtFromTransactionNumber = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.dtpFromDate = New System.Windows.Forms.DateTimePicker
-        Me.Label9 = New System.Windows.Forms.Label
-        Me.GrpOtherReports = New System.Windows.Forms.Panel
-        Me.chkItemList = New System.Windows.Forms.LinkLabel
-        Me.chkItemTrialBalance = New System.Windows.Forms.LinkLabel
-        Me.chkGeneralLedgers = New System.Windows.Forms.LinkLabel
-        Me.chkTransactionListing = New System.Windows.Forms.LinkLabel
-        Me.chkSaleRet = New System.Windows.Forms.LinkLabel
-        Me.chkSale = New System.Windows.Forms.LinkLabel
-        Me.chkProductRecRet = New System.Windows.Forms.LinkLabel
-        Me.chkProductRec = New System.Windows.Forms.LinkLabel
-        Me.GrpTransactionList = New System.Windows.Forms.Panel
-        Me.chkPageBreakTRL = New System.Windows.Forms.CheckBox
-        Me.cmbToItemListTRL = New System.Windows.Forms.Button
-        Me.BtnChkDocumentNatureListTRL = New System.Windows.Forms.Button
-        Me.TxtDocumentNatureTRL = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label15 = New System.Windows.Forms.Label
-        Me.txtToItemCodeTRL = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label13 = New System.Windows.Forms.Label
-        Me.txtFromItemCodeTRL = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label14 = New System.Windows.Forms.Label
-        Me.LblOtherReportsTRL = New System.Windows.Forms.LinkLabel
-        Me.cmbToPartyCodeListTRL = New System.Windows.Forms.Button
-        Me.txtToPartyCodeTRL = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.txtToTransactionNoTRL = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.Label7 = New System.Windows.Forms.Label
-        Me.dtpToTransactionDateTRL = New System.Windows.Forms.DateTimePicker
-        Me.Label8 = New System.Windows.Forms.Label
-        Me.cmbFromPartyCodeListTRL = New System.Windows.Forms.Button
-        Me.txtFromPartyCodeTRL = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.txtFromTransactionNoTRL = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label10 = New System.Windows.Forms.Label
-        Me.Label11 = New System.Windows.Forms.Label
-        Me.dtpFromTransactionDateTRL = New System.Windows.Forms.DateTimePicker
-        Me.Label12 = New System.Windows.Forms.Label
-        Me.cmbFromItemListTRL = New System.Windows.Forms.Button
-        Me.LstTransactionNatureTRL = New System.Windows.Forms.ListView
-        Me.ColumnHeader1 = New System.Windows.Forms.ColumnHeader
-        Me.cmbGroupBy = New System.Windows.Forms.ComboBox
-        Me.Label16 = New System.Windows.Forms.Label
-        Me.GrpGeneralLedger = New System.Windows.Forms.Panel
-        Me.CmbNarrationType = New System.Windows.Forms.ComboBox
-        Me.Label37 = New System.Windows.Forms.Label
-        Me.OptSummary = New System.Windows.Forms.RadioButton
-        Me.OptDetail = New System.Windows.Forms.RadioButton
-        Me.Button1 = New System.Windows.Forms.Button
-        Me.Button3 = New System.Windows.Forms.Button
-        Me.CmbLedgerTypeIL = New System.Windows.Forms.ComboBox
-        Me.Label57 = New System.Windows.Forms.Label
-        Me.chkIsHierarchicalView = New System.Windows.Forms.CheckBox
-        Me.ChkPageBreakIL = New System.Windows.Forms.CheckBox
-        Me.BtnToBranchListIL = New System.Windows.Forms.Button
-        Me.BtnDocumentNatureListIL = New System.Windows.Forms.Button
-        Me.txtDocumentNatureIL = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label17 = New System.Windows.Forms.Label
-        Me.txtToBranchCodeIL = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label18 = New System.Windows.Forms.Label
-        Me.txtFromBranchCodeIL = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label19 = New System.Windows.Forms.Label
-        Me.cmbGroupIL = New System.Windows.Forms.ComboBox
-        Me.lblOtherReportsIL = New System.Windows.Forms.LinkLabel
-        Me.BtnToGLCodeListIL = New System.Windows.Forms.Button
-        Me.txtToGLCodeIL = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.txtToDivisionIL = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label20 = New System.Windows.Forms.Label
-        Me.Label21 = New System.Windows.Forms.Label
-        Me.txtToTrDateIL = New System.Windows.Forms.DateTimePicker
-        Me.Label22 = New System.Windows.Forms.Label
-        Me.BtnFromGLCodeListIL = New System.Windows.Forms.Button
-        Me.txtFromGLCodeIL = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.txtFromDivisionCodeIL = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label23 = New System.Windows.Forms.Label
-        Me.Label24 = New System.Windows.Forms.Label
-        Me.txtFromTrDateIL = New System.Windows.Forms.DateTimePicker
-        Me.Label25 = New System.Windows.Forms.Label
-        Me.Label26 = New System.Windows.Forms.Label
-        Me.BtnFromBranchListIL = New System.Windows.Forms.Button
-        Me.lstTransactionNatureIL = New System.Windows.Forms.ListView
-        Me.ColumnHeader2 = New System.Windows.Forms.ColumnHeader
-        Me.PnlProgressBare = New System.Windows.Forms.Panel
-        Me.imgProgressBar = New System.Windows.Forms.PictureBox
-        Me.GrpVehicleBill = New System.Windows.Forms.Panel
-        Me.ChkTripWithBill = New Infragistics.Win.UltraWinEditors.UltraCheckEditor
-        Me.CmbGroupedByVB = New System.Windows.Forms.ComboBox
-        Me.LblGroupByVB = New System.Windows.Forms.Label
-        Me.BtnToOwnerList = New System.Windows.Forms.Button
-        Me.TxtToOwnerCodeVB = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.BtnFromOwnerList = New System.Windows.Forms.Button
-        Me.TxtFromOwnerCodeVB = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label51 = New System.Windows.Forms.Label
-        Me.BtnToVehicleList = New System.Windows.Forms.Button
-        Me.TxtToVehicleCodeVB = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label35 = New System.Windows.Forms.Label
-        Me.TxtFromVehicleCodeVB = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label36 = New System.Windows.Forms.Label
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel
-        Me.TxtToTransactionDateVB = New System.Windows.Forms.DateTimePicker
-        Me.LblToDateVB = New System.Windows.Forms.Label
-        Me.TxtFromTransactionDateVB = New System.Windows.Forms.DateTimePicker
-        Me.lblFromDateVB = New System.Windows.Forms.Label
-        Me.BtnFromVehicleList = New System.Windows.Forms.Button
-        Me.GrpCOAReportList = New System.Windows.Forms.Panel
-        Me.ChkPageBreakCOAL = New System.Windows.Forms.CheckBox
-        Me.CmbLevelsCOAL = New System.Windows.Forms.ComboBox
-        Me.Label43 = New System.Windows.Forms.Label
-        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel
-        Me.Button2 = New System.Windows.Forms.Button
-        Me.TxtToGlCodeCOAL = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label34 = New System.Windows.Forms.Label
-        Me.TxtToDefinitionDateCOAL = New System.Windows.Forms.DateTimePicker
-        Me.Label44 = New System.Windows.Forms.Label
-        Me.Button6 = New System.Windows.Forms.Button
-        Me.TxtFromGlCodeCOAL = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label45 = New System.Windows.Forms.Label
-        Me.TxtFromDefinitionDateCOAL = New System.Windows.Forms.DateTimePicker
-        Me.Label47 = New System.Windows.Forms.Label
-        Me.GrpVoucherDocuments = New System.Windows.Forms.Panel
-        Me.BtnVoucherTypeListVDO = New System.Windows.Forms.Button
-        Me.TxtVoucherTypesVDO = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label46 = New System.Windows.Forms.Label
-        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel
-        Me.TxtToVoucherNoVDO = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label50 = New System.Windows.Forms.Label
-        Me.DtpToDefinitionDateVDO = New System.Windows.Forms.DateTimePicker
-        Me.Label53 = New System.Windows.Forms.Label
-        Me.TxtFromVoucherNoVDO = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label54 = New System.Windows.Forms.Label
-        Me.DtpFromDefinitionDateVDO = New System.Windows.Forms.DateTimePicker
-        Me.Label56 = New System.Windows.Forms.Label
-        Me.LvwVoucherTypesVDO = New System.Windows.Forms.ListView
-        Me.ColumnHeader3 = New System.Windows.Forms.ColumnHeader
-        Me.GrpVouchersList = New System.Windows.Forms.Panel
-        Me.ChkPageBreakVLT = New System.Windows.Forms.CheckBox
-        Me.BtnToGLCodeListVLT = New System.Windows.Forms.Button
-        Me.BtnVoucherTypesListVLT = New System.Windows.Forms.Button
-        Me.TxtVoucherTypesVLT = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label48 = New System.Windows.Forms.Label
-        Me.TxtToGLCodeVLT = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label49 = New System.Windows.Forms.Label
-        Me.TxtFromGLCodeVLT = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label52 = New System.Windows.Forms.Label
-        Me.LinkLabel4 = New System.Windows.Forms.LinkLabel
-        Me.TxtToVoucherNoListVLT = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label55 = New System.Windows.Forms.Label
-        Me.DtpToVoucherDateVLT = New System.Windows.Forms.DateTimePicker
-        Me.Label58 = New System.Windows.Forms.Label
-        Me.TxtFromVoucherNoListVLT = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label59 = New System.Windows.Forms.Label
-        Me.DtpFromVoucherDateVLT = New System.Windows.Forms.DateTimePicker
-        Me.Label61 = New System.Windows.Forms.Label
-        Me.BtnFromGLCodeListVLT = New System.Windows.Forms.Button
-        Me.CmbGroupedByVLT = New System.Windows.Forms.ComboBox
-        Me.Label62 = New System.Windows.Forms.Label
-        Me.LvwVoucherTypesVLT = New System.Windows.Forms.ListView
-        Me.ColumnHeader4 = New System.Windows.Forms.ColumnHeader
-        Me.GrpCashFlowStatements = New System.Windows.Forms.Panel
-        Me.OptSummaryCFS = New System.Windows.Forms.RadioButton
-        Me.OptDetailCFS = New System.Windows.Forms.RadioButton
-        Me.Button4 = New System.Windows.Forms.Button
-        Me.Button5 = New System.Windows.Forms.Button
-        Me.ChkShowOpenningCFS = New System.Windows.Forms.CheckBox
-        Me.ChkPageBreakCFS = New System.Windows.Forms.CheckBox
-        Me.Button7 = New System.Windows.Forms.Button
-        Me.BtnCashAccountsCFS = New System.Windows.Forms.Button
-        Me.TxtCashAccountsCFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label41 = New System.Windows.Forms.Label
-        Me.TxtToBranchCodeCFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label60 = New System.Windows.Forms.Label
-        Me.TxtFromBranchCodeCFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label63 = New System.Windows.Forms.Label
-        Me.LinkLabel5 = New System.Windows.Forms.LinkLabel
-        Me.TxtToDivisionCFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label64 = New System.Windows.Forms.Label
-        Me.TxtToDateCFS = New System.Windows.Forms.DateTimePicker
-        Me.Label66 = New System.Windows.Forms.Label
-        Me.TxtFromDivisionCFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label67 = New System.Windows.Forms.Label
-        Me.TxtFromDateCFS = New System.Windows.Forms.DateTimePicker
-        Me.Label69 = New System.Windows.Forms.Label
-        Me.BtnFromBranchCodeCFS = New System.Windows.Forms.Button
-        Me.LstCashAccountsCFS = New System.Windows.Forms.ListView
-        Me.ColumnHeader5 = New System.Windows.Forms.ColumnHeader
-        Me.GrpFinancialStatements = New System.Windows.Forms.Panel
-        Me.BtnToGLCodeListFS = New System.Windows.Forms.Button
-        Me.BtnFrGLCodeListFS = New System.Windows.Forms.Button
-        Me.ChkNotesToFS = New System.Windows.Forms.CheckBox
-        Me.LinkLabel6 = New System.Windows.Forms.LinkLabel
-        Me.TxtToGLCodeFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label68 = New System.Windows.Forms.Label
-        Me.TxtToDateFS = New System.Windows.Forms.DateTimePicker
-        Me.Label70 = New System.Windows.Forms.Label
-        Me.TxtFromGLCodeFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label71 = New System.Windows.Forms.Label
-        Me.TxtFromDateFS = New System.Windows.Forms.DateTimePicker
-        Me.Label72 = New System.Windows.Forms.Label
-        Me.GrpVehicleFreightStatements = New System.Windows.Forms.Panel
-        Me.CmbGroupbyVFS = New System.Windows.Forms.ComboBox
-        Me.Label73 = New System.Windows.Forms.Label
-        Me.TxtToTransactionNoVFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label40 = New System.Windows.Forms.Label
-        Me.TxtFromTransactionNoVFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label65 = New System.Windows.Forms.Label
-        Me.CmbReportTypeVFS = New System.Windows.Forms.ComboBox
-        Me.Label38 = New System.Windows.Forms.Label
-        Me.OptSummaryVFS = New System.Windows.Forms.RadioButton
-        Me.OptDetailVFS = New System.Windows.Forms.RadioButton
-        Me.BtnToVehicleListVFS = New System.Windows.Forms.Button
-        Me.BtnFromVehicleListVFS = New System.Windows.Forms.Button
-        Me.ChkPageBreakVFS = New System.Windows.Forms.CheckBox
-        Me.TxtFromBranchVFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label74 = New System.Windows.Forms.Label
-        Me.CmbOnBasisVFS = New System.Windows.Forms.ComboBox
-        Me.LinkLabel7 = New System.Windows.Forms.LinkLabel
-        Me.BtnToCustomerListVFS = New System.Windows.Forms.Button
-        Me.TxtToCustomerVFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.TxtToVehicleVFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label75 = New System.Windows.Forms.Label
-        Me.Label76 = New System.Windows.Forms.Label
-        Me.DtpToDateVFS = New System.Windows.Forms.DateTimePicker
-        Me.Label77 = New System.Windows.Forms.Label
-        Me.BtnFromCustomerListVFS = New System.Windows.Forms.Button
-        Me.TxtFromCustomerVFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.TxtFromVehicleVFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label78 = New System.Windows.Forms.Label
-        Me.Label79 = New System.Windows.Forms.Label
-        Me.DtpFromDateVFS = New System.Windows.Forms.DateTimePicker
-        Me.Label80 = New System.Windows.Forms.Label
-        Me.Label81 = New System.Windows.Forms.Label
-        Me.BtnFromBranchListVFS = New System.Windows.Forms.Button
-        Me.GrpSetupList = New System.Windows.Forms.Panel
-        Me.CmbGroupBySU = New System.Windows.Forms.ComboBox
-        Me.LblGroupBySet = New System.Windows.Forms.Label
-        Me.TxtToCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label28 = New System.Windows.Forms.Label
-        Me.TxtFCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label29 = New System.Windows.Forms.Label
-        Me.LinkLabel8 = New System.Windows.Forms.LinkLabel
-        Me.TxtTDate = New System.Windows.Forms.DateTimePicker
-        Me.Label30 = New System.Windows.Forms.Label
-        Me.TxtFDate = New System.Windows.Forms.DateTimePicker
-        Me.Label31 = New System.Windows.Forms.Label
-        Me.GrpVehicleLedger = New System.Windows.Forms.Panel
-        Me.BtnLstToOwnerVLR = New System.Windows.Forms.Button
-        Me.TxtToOwnerVLR = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label27 = New System.Windows.Forms.Label
-        Me.BtnLstFrOwnerVLR = New System.Windows.Forms.Button
-        Me.TxtFrOwnerVLR = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label33 = New System.Windows.Forms.Label
-        Me.OptSummaryVLR = New System.Windows.Forms.RadioButton
-        Me.OptDetailVLR = New System.Windows.Forms.RadioButton
-        Me.CmbTypeVLR = New System.Windows.Forms.ComboBox
-        Me.Label32 = New System.Windows.Forms.Label
-        Me.TxtBranchCodeVLR = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label42 = New System.Windows.Forms.Label
-        Me.CmbGroupByVLR = New System.Windows.Forms.ComboBox
-        Me.LinkLabel9 = New System.Windows.Forms.LinkLabel
-        Me.BtnLstToVehicleVLR = New System.Windows.Forms.Button
-        Me.TxtToVehicleVLR = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label83 = New System.Windows.Forms.Label
-        Me.TxtToDateVLR = New System.Windows.Forms.DateTimePicker
-        Me.Label84 = New System.Windows.Forms.Label
-        Me.BtnLstFrVehicleVLR = New System.Windows.Forms.Button
-        Me.TxtFrVehicleVLR = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label86 = New System.Windows.Forms.Label
-        Me.TxtFrDateVLR = New System.Windows.Forms.DateTimePicker
-        Me.Label87 = New System.Windows.Forms.Label
-        Me.Label88 = New System.Windows.Forms.Label
-        Me.BtnLstBranchVLR = New System.Windows.Forms.Button
+        Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance16 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance13 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance14 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Me.GrpButtons = New System.Windows.Forms.Panel()
+        Me.BtnShowToGrid = New System.Windows.Forms.Button()
+        Me.BtnCancel = New System.Windows.Forms.Button()
+        Me.BtnPrint = New System.Windows.Forms.Button()
+        Me.BtnPreview = New System.Windows.Forms.Button()
+        Me.GrpTransactionDocuments = New System.Windows.Forms.Panel()
+        Me.lblBackToOther = New System.Windows.Forms.LinkLabel()
+        Me.BtnToPartyList = New System.Windows.Forms.Button()
+        Me.TxtToPartyCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.txtToTransactionNumber = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.dtpToDate = New System.Windows.Forms.DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.BtnFromPartyList = New System.Windows.Forms.Button()
+        Me.TxtFromPartyCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.txtFromTransactionNumber = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.dtpFromDate = New System.Windows.Forms.DateTimePicker()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.GrpOtherReports = New System.Windows.Forms.Panel()
+        Me.chkItemList = New System.Windows.Forms.LinkLabel()
+        Me.chkItemTrialBalance = New System.Windows.Forms.LinkLabel()
+        Me.chkGeneralLedgers = New System.Windows.Forms.LinkLabel()
+        Me.chkTransactionListing = New System.Windows.Forms.LinkLabel()
+        Me.chkSaleRet = New System.Windows.Forms.LinkLabel()
+        Me.chkSale = New System.Windows.Forms.LinkLabel()
+        Me.chkProductRecRet = New System.Windows.Forms.LinkLabel()
+        Me.chkProductRec = New System.Windows.Forms.LinkLabel()
+        Me.GrpTransactionList = New System.Windows.Forms.Panel()
+        Me.chkPageBreakTRL = New System.Windows.Forms.CheckBox()
+        Me.cmbToItemListTRL = New System.Windows.Forms.Button()
+        Me.BtnChkDocumentNatureListTRL = New System.Windows.Forms.Button()
+        Me.TxtDocumentNatureTRL = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.txtToItemCodeTRL = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txtFromItemCodeTRL = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.LblOtherReportsTRL = New System.Windows.Forms.LinkLabel()
+        Me.cmbToPartyCodeListTRL = New System.Windows.Forms.Button()
+        Me.txtToPartyCodeTRL = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.txtToTransactionNoTRL = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.dtpToTransactionDateTRL = New System.Windows.Forms.DateTimePicker()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.cmbFromPartyCodeListTRL = New System.Windows.Forms.Button()
+        Me.txtFromPartyCodeTRL = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.txtFromTransactionNoTRL = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.dtpFromTransactionDateTRL = New System.Windows.Forms.DateTimePicker()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.cmbFromItemListTRL = New System.Windows.Forms.Button()
+        Me.LstTransactionNatureTRL = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.cmbGroupBy = New System.Windows.Forms.ComboBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.GrpGeneralLedger = New System.Windows.Forms.Panel()
+        Me.CmbNarrationType = New System.Windows.Forms.ComboBox()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.OptSummary = New System.Windows.Forms.RadioButton()
+        Me.OptDetail = New System.Windows.Forms.RadioButton()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.CmbLedgerTypeIL = New System.Windows.Forms.ComboBox()
+        Me.Label57 = New System.Windows.Forms.Label()
+        Me.chkIsHierarchicalView = New System.Windows.Forms.CheckBox()
+        Me.ChkPageBreakIL = New System.Windows.Forms.CheckBox()
+        Me.BtnToBranchListIL = New System.Windows.Forms.Button()
+        Me.BtnDocumentNatureListIL = New System.Windows.Forms.Button()
+        Me.txtDocumentNatureIL = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.txtToBranchCodeIL = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.txtFromBranchCodeIL = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.cmbGroupIL = New System.Windows.Forms.ComboBox()
+        Me.lblOtherReportsIL = New System.Windows.Forms.LinkLabel()
+        Me.BtnToGLCodeListIL = New System.Windows.Forms.Button()
+        Me.txtToGLCodeIL = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.txtToDivisionIL = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.txtToTrDateIL = New System.Windows.Forms.DateTimePicker()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.BtnFromGLCodeListIL = New System.Windows.Forms.Button()
+        Me.txtFromGLCodeIL = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.txtFromDivisionCodeIL = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.txtFromTrDateIL = New System.Windows.Forms.DateTimePicker()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.BtnFromBranchListIL = New System.Windows.Forms.Button()
+        Me.lstTransactionNatureIL = New System.Windows.Forms.ListView()
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.PnlProgressBare = New System.Windows.Forms.Panel()
+        Me.imgProgressBar = New System.Windows.Forms.PictureBox()
+        Me.GrpVehicleBill = New System.Windows.Forms.Panel()
+        Me.ChkTripWithBill = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
+        Me.CmbGroupedByVB = New System.Windows.Forms.ComboBox()
+        Me.LblGroupByVB = New System.Windows.Forms.Label()
+        Me.BtnToOwnerList = New System.Windows.Forms.Button()
+        Me.TxtToOwnerCodeVB = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.BtnFromOwnerList = New System.Windows.Forms.Button()
+        Me.TxtFromOwnerCodeVB = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label51 = New System.Windows.Forms.Label()
+        Me.BtnToVehicleList = New System.Windows.Forms.Button()
+        Me.TxtToVehicleCodeVB = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.TxtFromVehicleCodeVB = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.TxtToTransactionDateVB = New System.Windows.Forms.DateTimePicker()
+        Me.LblToDateVB = New System.Windows.Forms.Label()
+        Me.TxtFromTransactionDateVB = New System.Windows.Forms.DateTimePicker()
+        Me.lblFromDateVB = New System.Windows.Forms.Label()
+        Me.BtnFromVehicleList = New System.Windows.Forms.Button()
+        Me.GrpCOAReportList = New System.Windows.Forms.Panel()
+        Me.ChkPageBreakCOAL = New System.Windows.Forms.CheckBox()
+        Me.CmbLevelsCOAL = New System.Windows.Forms.ComboBox()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.TxtToGlCodeCOAL = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.TxtToDefinitionDateCOAL = New System.Windows.Forms.DateTimePicker()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.TxtFromGlCodeCOAL = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.TxtFromDefinitionDateCOAL = New System.Windows.Forms.DateTimePicker()
+        Me.Label47 = New System.Windows.Forms.Label()
+        Me.GrpVoucherDocuments = New System.Windows.Forms.Panel()
+        Me.BtnVoucherTypeListVDO = New System.Windows.Forms.Button()
+        Me.TxtVoucherTypesVDO = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
+        Me.TxtToVoucherNoVDO = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label50 = New System.Windows.Forms.Label()
+        Me.DtpToDefinitionDateVDO = New System.Windows.Forms.DateTimePicker()
+        Me.Label53 = New System.Windows.Forms.Label()
+        Me.TxtFromVoucherNoVDO = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label54 = New System.Windows.Forms.Label()
+        Me.DtpFromDefinitionDateVDO = New System.Windows.Forms.DateTimePicker()
+        Me.Label56 = New System.Windows.Forms.Label()
+        Me.LvwVoucherTypesVDO = New System.Windows.Forms.ListView()
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.GrpVouchersList = New System.Windows.Forms.Panel()
+        Me.ChkPageBreakVLT = New System.Windows.Forms.CheckBox()
+        Me.BtnToGLCodeListVLT = New System.Windows.Forms.Button()
+        Me.BtnVoucherTypesListVLT = New System.Windows.Forms.Button()
+        Me.TxtVoucherTypesVLT = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.TxtToGLCodeVLT = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.TxtFromGLCodeVLT = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label52 = New System.Windows.Forms.Label()
+        Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
+        Me.TxtToVoucherNoListVLT = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label55 = New System.Windows.Forms.Label()
+        Me.DtpToVoucherDateVLT = New System.Windows.Forms.DateTimePicker()
+        Me.Label58 = New System.Windows.Forms.Label()
+        Me.TxtFromVoucherNoListVLT = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label59 = New System.Windows.Forms.Label()
+        Me.DtpFromVoucherDateVLT = New System.Windows.Forms.DateTimePicker()
+        Me.Label61 = New System.Windows.Forms.Label()
+        Me.BtnFromGLCodeListVLT = New System.Windows.Forms.Button()
+        Me.CmbGroupedByVLT = New System.Windows.Forms.ComboBox()
+        Me.Label62 = New System.Windows.Forms.Label()
+        Me.LvwVoucherTypesVLT = New System.Windows.Forms.ListView()
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.GrpCashFlowStatements = New System.Windows.Forms.Panel()
+        Me.OptSummaryCFS = New System.Windows.Forms.RadioButton()
+        Me.OptDetailCFS = New System.Windows.Forms.RadioButton()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.ChkShowOpenningCFS = New System.Windows.Forms.CheckBox()
+        Me.ChkPageBreakCFS = New System.Windows.Forms.CheckBox()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.BtnCashAccountsCFS = New System.Windows.Forms.Button()
+        Me.TxtCashAccountsCFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.TxtToBranchCodeCFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label60 = New System.Windows.Forms.Label()
+        Me.TxtFromBranchCodeCFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label63 = New System.Windows.Forms.Label()
+        Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
+        Me.TxtToDivisionCFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label64 = New System.Windows.Forms.Label()
+        Me.TxtToDateCFS = New System.Windows.Forms.DateTimePicker()
+        Me.Label66 = New System.Windows.Forms.Label()
+        Me.TxtFromDivisionCFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label67 = New System.Windows.Forms.Label()
+        Me.TxtFromDateCFS = New System.Windows.Forms.DateTimePicker()
+        Me.Label69 = New System.Windows.Forms.Label()
+        Me.BtnFromBranchCodeCFS = New System.Windows.Forms.Button()
+        Me.LstCashAccountsCFS = New System.Windows.Forms.ListView()
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.GrpFinancialStatements = New System.Windows.Forms.Panel()
+        Me.BtnToGLCodeListFS = New System.Windows.Forms.Button()
+        Me.BtnFrGLCodeListFS = New System.Windows.Forms.Button()
+        Me.ChkNotesToFS = New System.Windows.Forms.CheckBox()
+        Me.LinkLabel6 = New System.Windows.Forms.LinkLabel()
+        Me.TxtToGLCodeFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label68 = New System.Windows.Forms.Label()
+        Me.TxtToDateFS = New System.Windows.Forms.DateTimePicker()
+        Me.Label70 = New System.Windows.Forms.Label()
+        Me.TxtFromGLCodeFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label71 = New System.Windows.Forms.Label()
+        Me.TxtFromDateFS = New System.Windows.Forms.DateTimePicker()
+        Me.Label72 = New System.Windows.Forms.Label()
+        Me.GrpVehicleFreightStatements = New System.Windows.Forms.Panel()
+        Me.CmbGroupbyVFS = New System.Windows.Forms.ComboBox()
+        Me.Label73 = New System.Windows.Forms.Label()
+        Me.TxtToTransactionNoVFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.TxtFromTransactionNoVFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label65 = New System.Windows.Forms.Label()
+        Me.CmbReportTypeVFS = New System.Windows.Forms.ComboBox()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.OptSummaryVFS = New System.Windows.Forms.RadioButton()
+        Me.OptDetailVFS = New System.Windows.Forms.RadioButton()
+        Me.BtnToVehicleListVFS = New System.Windows.Forms.Button()
+        Me.BtnFromVehicleListVFS = New System.Windows.Forms.Button()
+        Me.ChkPageBreakVFS = New System.Windows.Forms.CheckBox()
+        Me.TxtFromBranchVFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label74 = New System.Windows.Forms.Label()
+        Me.CmbOnBasisVFS = New System.Windows.Forms.ComboBox()
+        Me.LinkLabel7 = New System.Windows.Forms.LinkLabel()
+        Me.BtnToCustomerListVFS = New System.Windows.Forms.Button()
+        Me.TxtToCustomerVFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.TxtToVehicleVFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label75 = New System.Windows.Forms.Label()
+        Me.Label76 = New System.Windows.Forms.Label()
+        Me.DtpToDateVFS = New System.Windows.Forms.DateTimePicker()
+        Me.Label77 = New System.Windows.Forms.Label()
+        Me.BtnFromCustomerListVFS = New System.Windows.Forms.Button()
+        Me.TxtFromCustomerVFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.TxtFromVehicleVFS = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label78 = New System.Windows.Forms.Label()
+        Me.Label79 = New System.Windows.Forms.Label()
+        Me.DtpFromDateVFS = New System.Windows.Forms.DateTimePicker()
+        Me.Label80 = New System.Windows.Forms.Label()
+        Me.Label81 = New System.Windows.Forms.Label()
+        Me.BtnFromBranchListVFS = New System.Windows.Forms.Button()
+        Me.GrpSetupList = New System.Windows.Forms.Panel()
+        Me.CmbGroupBySU = New System.Windows.Forms.ComboBox()
+        Me.LblGroupBySet = New System.Windows.Forms.Label()
+        Me.TxtToCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.TxtFCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.LinkLabel8 = New System.Windows.Forms.LinkLabel()
+        Me.TxtTDate = New System.Windows.Forms.DateTimePicker()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.TxtFDate = New System.Windows.Forms.DateTimePicker()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.GrpVehicleLedger = New System.Windows.Forms.Panel()
+        Me.BtnLstToOwnerVLR = New System.Windows.Forms.Button()
+        Me.TxtToOwnerVLR = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.BtnLstFrOwnerVLR = New System.Windows.Forms.Button()
+        Me.TxtFrOwnerVLR = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.CmbTypeVLR = New System.Windows.Forms.ComboBox()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.TxtBranchCodeVLR = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
+        Me.BtnLstToVehicleVLR = New System.Windows.Forms.Button()
+        Me.TxtToVehicleVLR = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label83 = New System.Windows.Forms.Label()
+        Me.TxtToDateVLR = New System.Windows.Forms.DateTimePicker()
+        Me.Label84 = New System.Windows.Forms.Label()
+        Me.BtnLstFrVehicleVLR = New System.Windows.Forms.Button()
+        Me.TxtFrVehicleVLR = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label86 = New System.Windows.Forms.Label()
+        Me.TxtFrDateVLR = New System.Windows.Forms.DateTimePicker()
+        Me.Label87 = New System.Windows.Forms.Label()
+        Me.BtnLstBranchVLR = New System.Windows.Forms.Button()
         Me.GrpButtons.SuspendLayout()
         Me.GrpTransactionDocuments.SuspendLayout()
         CType(Me.TxtToPartyCode, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -646,6 +638,7 @@ Public Class ReportParameters
         Me.PnlProgressBare.SuspendLayout()
         CType(Me.imgProgressBar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GrpVehicleBill.SuspendLayout()
+        CType(Me.ChkTripWithBill, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtToOwnerCodeVB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtFromOwnerCodeVB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtToVehicleCodeVB, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -3723,13 +3716,10 @@ Public Class ReportParameters
         Me.GrpVehicleLedger.Controls.Add(Me.BtnLstFrOwnerVLR)
         Me.GrpVehicleLedger.Controls.Add(Me.TxtFrOwnerVLR)
         Me.GrpVehicleLedger.Controls.Add(Me.Label33)
-        Me.GrpVehicleLedger.Controls.Add(Me.OptSummaryVLR)
-        Me.GrpVehicleLedger.Controls.Add(Me.OptDetailVLR)
         Me.GrpVehicleLedger.Controls.Add(Me.CmbTypeVLR)
         Me.GrpVehicleLedger.Controls.Add(Me.Label32)
         Me.GrpVehicleLedger.Controls.Add(Me.TxtBranchCodeVLR)
         Me.GrpVehicleLedger.Controls.Add(Me.Label42)
-        Me.GrpVehicleLedger.Controls.Add(Me.CmbGroupByVLR)
         Me.GrpVehicleLedger.Controls.Add(Me.LinkLabel9)
         Me.GrpVehicleLedger.Controls.Add(Me.BtnLstToVehicleVLR)
         Me.GrpVehicleLedger.Controls.Add(Me.TxtToVehicleVLR)
@@ -3741,12 +3731,11 @@ Public Class ReportParameters
         Me.GrpVehicleLedger.Controls.Add(Me.Label86)
         Me.GrpVehicleLedger.Controls.Add(Me.TxtFrDateVLR)
         Me.GrpVehicleLedger.Controls.Add(Me.Label87)
-        Me.GrpVehicleLedger.Controls.Add(Me.Label88)
         Me.GrpVehicleLedger.Controls.Add(Me.BtnLstBranchVLR)
         Me.GrpVehicleLedger.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpVehicleLedger.Location = New System.Drawing.Point(0, 0)
         Me.GrpVehicleLedger.Name = "GrpVehicleLedger"
-        Me.GrpVehicleLedger.Size = New System.Drawing.Size(804, 583)
+        Me.GrpVehicleLedger.Size = New System.Drawing.Size(804, 521)
         Me.GrpVehicleLedger.TabIndex = 31
         Me.GrpVehicleLedger.Text = "General Ledger"
         Me.GrpVehicleLedger.Visible = False
@@ -3817,36 +3806,10 @@ Public Class ReportParameters
         Me.Label33.TabIndex = 132
         Me.Label33.Text = "Owner"
         '
-        'OptSummaryVLR
-        '
-        Me.OptSummaryVLR.AutoSize = True
-        Me.OptSummaryVLR.BackColor = System.Drawing.Color.Transparent
-        Me.OptSummaryVLR.Location = New System.Drawing.Point(320, 327)
-        Me.OptSummaryVLR.Name = "OptSummaryVLR"
-        Me.OptSummaryVLR.Size = New System.Drawing.Size(68, 17)
-        Me.OptSummaryVLR.TabIndex = 129
-        Me.OptSummaryVLR.Text = "Summary"
-        Me.OptSummaryVLR.UseVisualStyleBackColor = False
-        Me.OptSummaryVLR.Visible = False
-        '
-        'OptDetailVLR
-        '
-        Me.OptDetailVLR.AutoSize = True
-        Me.OptDetailVLR.BackColor = System.Drawing.Color.Transparent
-        Me.OptDetailVLR.Checked = True
-        Me.OptDetailVLR.Location = New System.Drawing.Point(251, 327)
-        Me.OptDetailVLR.Name = "OptDetailVLR"
-        Me.OptDetailVLR.Size = New System.Drawing.Size(52, 17)
-        Me.OptDetailVLR.TabIndex = 128
-        Me.OptDetailVLR.TabStop = True
-        Me.OptDetailVLR.Text = "Detail"
-        Me.OptDetailVLR.UseVisualStyleBackColor = False
-        Me.OptDetailVLR.Visible = False
-        '
         'CmbTypeVLR
         '
         Me.CmbTypeVLR.Items.AddRange(New Object() {"Branch Wise", "Consolidate", "Division Wise", "GL Code Wise"})
-        Me.CmbTypeVLR.Location = New System.Drawing.Point(248, 171)
+        Me.CmbTypeVLR.Location = New System.Drawing.Point(248, 190)
         Me.CmbTypeVLR.Name = "CmbTypeVLR"
         Me.CmbTypeVLR.Size = New System.Drawing.Size(139, 21)
         Me.CmbTypeVLR.TabIndex = 124
@@ -3856,7 +3819,7 @@ Public Class ReportParameters
         '
         Me.Label32.BackColor = System.Drawing.Color.Transparent
         Me.Label32.ForeColor = System.Drawing.Color.Navy
-        Me.Label32.Location = New System.Drawing.Point(140, 174)
+        Me.Label32.Location = New System.Drawing.Point(140, 193)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(88, 20)
         Me.Label32.TabIndex = 125
@@ -3882,15 +3845,6 @@ Public Class ReportParameters
         Me.Label42.Size = New System.Drawing.Size(110, 20)
         Me.Label42.TabIndex = 111
         Me.Label42.Text = "Branch Code"
-        '
-        'CmbGroupByVLR
-        '
-        Me.CmbGroupByVLR.Items.AddRange(New Object() {"None", "Customer ", "Owner"})
-        Me.CmbGroupByVLR.Location = New System.Drawing.Point(248, 195)
-        Me.CmbGroupByVLR.Name = "CmbGroupByVLR"
-        Me.CmbGroupByVLR.Size = New System.Drawing.Size(139, 21)
-        Me.CmbGroupByVLR.TabIndex = 0
-        Me.CmbGroupByVLR.Text = "Customer "
         '
         'LinkLabel9
         '
@@ -4018,21 +3972,11 @@ Public Class ReportParameters
         Me.Label87.TabIndex = 96
         Me.Label87.Text = "Transaction Date"
         '
-        'Label88
-        '
-        Me.Label88.BackColor = System.Drawing.Color.Transparent
-        Me.Label88.ForeColor = System.Drawing.Color.Navy
-        Me.Label88.Location = New System.Drawing.Point(140, 199)
-        Me.Label88.Name = "Label88"
-        Me.Label88.Size = New System.Drawing.Size(88, 20)
-        Me.Label88.TabIndex = 118
-        Me.Label88.Text = "GroupBy"
-        '
         'BtnLstBranchVLR
         '
         Me.BtnLstBranchVLR.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BtnLstBranchVLR.Image = Global.BusinessLeaf.My.Resources.Resources.autorun
-        Me.BtnLstBranchVLR.Location = New System.Drawing.Point(364, 217)
+        Me.BtnLstBranchVLR.Location = New System.Drawing.Point(362, 219)
         Me.BtnLstBranchVLR.Name = "BtnLstBranchVLR"
         Me.BtnLstBranchVLR.Size = New System.Drawing.Size(24, 20)
         Me.BtnLstBranchVLR.TabIndex = 120
@@ -4045,6 +3989,7 @@ Public Class ReportParameters
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.CancelButton = Me.BtnCancel
         Me.ClientSize = New System.Drawing.Size(804, 583)
+        Me.Controls.Add(Me.GrpVehicleLedger)
         Me.Controls.Add(Me.PnlProgressBare)
         Me.Controls.Add(Me.GrpButtons)
         Me.Controls.Add(Me.GrpVehicleBill)
@@ -4057,7 +4002,6 @@ Public Class ReportParameters
         Me.Controls.Add(Me.GrpCashFlowStatements)
         Me.Controls.Add(Me.GrpVehicleFreightStatements)
         Me.Controls.Add(Me.GrpTransactionList)
-        Me.Controls.Add(Me.GrpVehicleLedger)
         Me.Controls.Add(Me.GrpGeneralLedger)
         Me.Controls.Add(Me.GrpOtherReports)
         Me.KeyPreview = True
@@ -4097,6 +4041,7 @@ Public Class ReportParameters
         CType(Me.imgProgressBar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GrpVehicleBill.ResumeLayout(False)
         Me.GrpVehicleBill.PerformLayout()
+        CType(Me.ChkTripWithBill, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtToOwnerCodeVB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtFromOwnerCodeVB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtToVehicleCodeVB, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4348,7 +4293,7 @@ Public Class ReportParameters
             ''
         ElseIf ReportFile = ReportProcess.ReportFiles.VehicleLedger Then
             Dim reportDoc As CrystalDecisions.CrystalReports.Engine.ReportDocument = Nothing
-            If VehicleLedgerProcess(ReportFiles.VehicleLedger, TxtFrDateVLR.Value, TxtToDateVLR.Value, TxtFrVehicleVLR.Text, TxtToVehicleVLR.Text, TxtFrOwnerVLR.Text, TxtToOwnerVLR.Text, reportDoc, Nothing, CmbGroupByVLR.SelectedIndex, CmbTypeVLR.SelectedIndex, OptDetailVLR.Checked) = True Then
+            If VehicleLedgerProcess(ReportFiles.VehicleLedger, TxtFrDateVLR.Value, TxtToDateVLR.Value, TxtFrVehicleVLR.Text, TxtToVehicleVLR.Text, TxtFrOwnerVLR.Text, TxtToOwnerVLR.Text, reportDoc, Nothing, 0, CmbTypeVLR.SelectedIndex) = True Then
                 Dim rpViewer As New ReportViewer
                 rpViewer.SetSource = reportDoc
                 rpViewer.MdiParent = Me.MdiParent

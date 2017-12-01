@@ -3,7 +3,23 @@ Imports System.Data.SqlClient
 Imports System.EnterpriseServices
 Namespace Database
     ' <ComClass(DataAccess.ClassId, DataAccess.InterfaceId, DataAccess.EventsId)> _
+    Public Enum DataBases
+        Security
+        GeneralLedger
+        Inventory
+        Sale
+        MMS
+        [Default]
+        Current
+
+    End Enum
     Public Class DataAccess
+        Private _dataBase As DataBases
+        Dim sqlCon As SqlConnection
+        Public Sub New(Optional ByVal dataBase As DataBases = DataBases.Current)
+            Me.DataBases = dataBase
+        End Sub
+
         '        Inherits EnterpriseServices.ServicedComponent
         '#Region "COM GUIDs"
         '        ' These  GUIDs provide the COM identity for this class 
@@ -35,8 +51,8 @@ Namespace Database
             'procedure; if false, run SQL statement).
             '****************************************************************
             data = New DataSet
-            Dim con As New Database.DataConnection
-            Dim sqlCon As New SqlConnection
+            Dim con As New Database.DataConnection(Me.DataBases)
+            sqlCon = New SqlConnection
             Dim Adapter As SqlDataAdapter
             sqlCon.ConnectionString = con.ConnectionString
             Dim sqlCmd As SqlCommand
@@ -75,8 +91,8 @@ Namespace Database
             'procedure; if false, run SQL statement).
             '****************************************************************
             data = New DataSet
-            Dim con As New Database.DataConnection
-            Dim sqlCon As New SqlConnection
+            Dim con As New Database.DataConnection(Me.DataBases)
+            sqlCon = New SqlConnection
             Dim Adapter As SqlDataAdapter
             sqlCon.ConnectionString = con.ConnectionString
             Dim sqlCmd As SqlCommand
@@ -103,6 +119,11 @@ Namespace Database
                 Else
                     Throw New DataAccessingException(ex.Message)
                 End If
+            Finally
+                sqlCmd.Connection.Close()
+                sqlCmd = Nothing
+                sqlCon = Nothing
+
             End Try
 
         End Sub
@@ -112,16 +133,14 @@ Namespace Database
             " Description: " & Err.Description & " Source: " & Err.Source)
         End Sub
         Public Function ExecuteTableQuery(ByVal ExecuteQuery As String) As DataTable
-            Dim dtConnection As New DataConnection ''Initilizing connectionstring
+            Dim dtConnection As New DataConnection(Me.DataBases) ''Initializing connection string
             Dim GetCmd As SqlCommand
             Dim adapter As SqlDataAdapter
-            Dim sqlCon As SqlConnection
-
-
 
             sqlCon = New SqlConnection(dtConnection.ConnectionString) 'Creating instance of SQL Connection throw DataConnection
             GetCmd = New SqlCommand(ExecuteQuery, sqlCon)
             GetCmd.CommandType = CommandType.Text
+
 
 
             Dim ColumnMessage As String = String.Empty
@@ -145,6 +164,7 @@ Namespace Database
                 'ContextUtil.SetAbort()
                 Throw ex
             Finally
+                sqlCon.Close()
                 sqlCon = Nothing
                 adapter = Nothing
                 GetCmd = Nothing
@@ -152,10 +172,10 @@ Namespace Database
             End Try
         End Function
         Public Function ExecuteStringQuery(ByVal ExecuteQuery As String) As SqlDataReader
-            Dim dtConnection As New DataConnection ''Initilizing connectionstring
+            Dim dtConnection As New Database.DataConnection(Me.DataBases) ''Initilizing connectionstring
             Dim GetCmd As SqlCommand
             Dim adapter As SqlDataAdapter
-            Dim sqlCon As SqlConnection
+
 
 
 
@@ -163,14 +183,15 @@ Namespace Database
             GetCmd = New SqlCommand(ExecuteQuery, sqlCon)
             GetCmd.CommandType = CommandType.Text
 
+
             Dim ColumnMessage As String = String.Empty
 
             Try
                 sqlCon.Open()
 
                 Return GetCmd.ExecuteReader
-                sqlCon.Close()
-                sqlCon = Nothing
+                'sqlCon.Close()
+                'sqlCon = Nothing
 
                 'Return No of row effected
             Catch ex As SqlException
@@ -182,13 +203,116 @@ Namespace Database
                 'ContextUtil.SetAbort()
                 Throw ex
             Finally
-                sqlCon = Nothing
-                adapter = Nothing
+                'sqlCon.Close()
+                'sqlCon = Nothing
+                'adapter = Nothing
                 GetCmd = Nothing
                 dtConnection = Nothing
             End Try
         End Function
+        'Overloads Function GetTable(ByVal fields As String, ByVal tablename As String, Optional ByVal critaria As String = "", Optional ByVal crivalue As String = "") As DataTable
+        '    sqlCon = New SqlConnection
+        '    Dim sqlCmd As SqlCommand
+        '    Try
+        '        Dim table As New DataTable
+        '        Dim ConStr As String
+        '        Dim DataComConnection As New AzamTechnologies.Database.DataConnection
+        '        ConStr = DataComConnection.ConnectionString
+        '        sqlCon = New SqlConnection(ConStr)
+        '        sqlCmd = New SqlCommand
+        '        sqlCmd.Connection = sqlCon
+        '        sqlCmd.Connection.Open()
+        '        Dim adpSearch As New SqlDataAdapter(sqlCmd)
+        '        If critaria = "" Then
+        '            sqlCmd.CommandText = "SELECT " & fields & " FROM " & tablename
+        '        Else
+        '            sqlCmd.CommandText = "SELECT " & fields & " FROM " & tablename & " WHERE " & critaria & " = " & crivalue
+        '        End If
+        '        table.TableName = tablename
+        '        adpSearch.Fill(table)
 
+        '        DataComConnection = Nothing
+        '        sqlCmd = Nothing
+        '        sqlCon = Nothing
+        '        Return table
+        '    Catch ex As SqlException
+        '        If ex.Number = 17 Then
+        '            Throw New ConnectionException("Connection can't be Established with Server..." & vbCrLf & vbCrLf & "There can be any one of the following problem causes :" & vbCrLf & "-  The Server is busy and not responding." & vbCrLf & "-  There is a problem in accessing network resources." & vbCrLf & "-  The Database / Business Components are not available." & vbCrLf & vbCrLf & "Please contact the System Administrator...")
+        '        Else
+        '            UnhandledExceptionHandler()
+        '            Return Nothing
+        '        End If
+        '    End Try
+        'End Function
+        'Overloads Function GetRecord(ByVal fields As String, ByVal tablename As String, Optional ByVal critaria As String = "", Optional ByVal crivalue As String = "") As SqlDataReader
+        '    Dim dReader As SqlClient.SqlDataReader
+        '    Dim sqlConCompany As New SqlConnection
+        '    Dim sqlCmdComp As SqlCommand
+        '    Dim DataComConnection As New Database.DataConnection(Me.DataBases)
+
+        '    Try
+        '        sqlCmdComp = New SqlCommand
+        '        sqlCmdComp.Connection = New SqlConnection(DataComConnection.ConnectionString)
+        '        sqlCmdComp.Connection.Open()
+        '        If critaria = "" Then
+        '            sqlCmdComp.CommandText = "SELECT " & fields & " FROM " & tablename
+        '        Else
+        '            sqlCmdComp.CommandText = "SELECT " & fields & " FROM " & tablename & " WHERE " & critaria & " = " & crivalue
+        '        End If
+        '        '            Dim dd As String = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE'"
+
+        '        dReader = sqlCmdComp.ExecuteReader
+        '        Return dReader
+        '    Catch ex As SqlException
+        '        Throw ex
+        '    Catch ex As DataAccessingException
+        '        Throw New DataAccessingException(ex.Message)
+        '    Finally
+        '        'sqlCon = Nothing
+        '    End Try
+
+        'End Function
+        Overloads Function GetRecord(ByVal storedProcedure As String, ByVal ParamArray Parameters() As Object) As SqlDataReader
+            Dim dReader As SqlClient.SqlDataReader
+            Dim con As New Database.DataConnection(Me.DataBases)
+            sqlCon = New SqlConnection
+            sqlCon.ConnectionString = con.ConnectionString
+            Dim sqlCmd As SqlCommand
+
+            Try
+                sqlCmd = New SqlCommand(storedProcedure)
+                sqlCmd.CommandType = CommandType.StoredProcedure
+                sqlCmd.Connection = sqlCon
+                sqlCmd.Connection.Open()
+                Dim Cnt As Integer
+                For Cnt = 1 To UBound(Parameters) + 1
+                    'If Parameters(Cnt).GetType.ToString = "System.Integer" Then
+                    'sqlCmd.Parameters.Addwithvalue(CType("@" & Parameters(Cnt - 1), String), Parameters(Cnt), SqlDbType.BigInt)
+                    sqlCmd.Parameters.AddWithValue(CType("@" & Parameters(Cnt - 1), String), Parameters(Cnt))
+                    Cnt += 1
+                Next
+
+                dReader = sqlCmd.ExecuteReader
+                Return dReader
+                Dim table As New DataTable
+                table.Load(table)
+
+            Catch ex As SqlException
+                If ex.Number = 17 Then
+                    Throw New ConnectionException("Connection can't be Established with Server..." & vbCrLf & vbCrLf & "There can be any one of the following problem causes :" & vbCrLf & "-  The Server is busy and not responding." & vbCrLf & "-  There is a problem in accessing network resources." & vbCrLf & "-  The Database / Business Components are not available." & vbCrLf & vbCrLf & "Please contact the System Administrator...")
+                Else
+                    UnhandledExceptionHandler()
+                    Return Nothing
+                End If
+
+            Finally
+                sqlCon = Nothing
+
+            End Try
+
+
+
+        End Function
         Function GetTable(ByVal fields As String, ByVal tablename As String, Optional ByVal critaria As String = "", Optional ByVal crivalue As String = "") As DataTable
             Dim sqlCon As SqlConnection
             Dim sqlCmd As SqlCommand
@@ -222,63 +346,6 @@ Namespace Database
                     Return Nothing
                 End If
             End Try
-        End Function
-        Overloads Function GetRecord(ByVal connection As SqlConnection, ByVal fields As String, ByVal tablename As String, Optional ByVal critaria As String = "", Optional ByVal crivalue As String = "") As SqlDataReader
-            Dim dReader As SqlClient.SqlDataReader
-            Dim sqlConCompany As New SqlConnection
-            Dim sqlCmdComp As SqlCommand
-
-            Try
-                sqlCmdComp = New SqlCommand
-                sqlCmdComp.Connection = connection
-                sqlCmdComp.Connection.Open()
-                If critaria = "" Then
-                    sqlCmdComp.CommandText = "SELECT " & fields & " FROM " & tablename
-                Else
-                    sqlCmdComp.CommandText = "SELECT " & fields & " FROM " & tablename & " WHERE " & critaria & " = " & crivalue
-                End If
-                '            Dim dd As String = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE'"
-
-                dReader = sqlCmdComp.ExecuteReader
-                Return dReader
-            Catch ex As SqlException
-                Throw ex
-            Catch ex As DataAccessingException
-                Throw New DataAccessingException(ex.Message)
-            End Try
-
-        End Function
-        Overloads Function GetRecord(ByVal storedProcedure As String, ByVal ParamArray Parameters() As Object) As SqlDataReader
-            Dim dReader As SqlClient.SqlDataReader
-            Dim con As New Database.DataConnection
-            Dim sqlCon As New SqlConnection
-            sqlCon.ConnectionString = con.ConnectionString
-            Dim sqlCmd As SqlCommand
-
-            Try
-                sqlCmd = New SqlCommand(storedProcedure)
-                sqlCmd.CommandType = CommandType.StoredProcedure
-                sqlCmd.Connection = sqlCon
-                sqlCmd.Connection.Open()
-                Dim Cnt As Integer
-                For Cnt = 1 To UBound(Parameters) + 1
-                    'If Parameters(Cnt).GetType.ToString = "System.Integer" Then
-                    'sqlCmd.Parameters.Addwithvalue(CType("@" & Parameters(Cnt - 1), String), Parameters(Cnt), SqlDbType.BigInt)
-                    sqlCmd.Parameters.AddWithValue(CType("@" & Parameters(Cnt - 1), String), Parameters(Cnt))
-                    Cnt += 1
-                Next
-
-                dReader = sqlCmd.ExecuteReader
-                Return dReader
-            Catch ex As SqlException
-                If ex.Number = 17 Then
-                    Throw New ConnectionException("Connection can't be Established with Server..." & vbCrLf & vbCrLf & "There can be any one of the following problem causes :" & vbCrLf & "-  The Server is busy and not responding." & vbCrLf & "-  There is a problem in accessing network resources." & vbCrLf & "-  The Database / Business Components are not available." & vbCrLf & vbCrLf & "Please contact the System Administrator...")
-                Else
-                    UnhandledExceptionHandler()
-                    Return Nothing
-                End If
-            End Try
-
         End Function
         Sub HandleDataSetErrors(ByVal dsChanged As DataSet)
             Try
@@ -319,7 +386,7 @@ Namespace Database
             End Try
         End Function
         Public Sub SendProcedureParameters(ByVal StoreProcedureName As String, ByVal UpdateDataSet As DataSet, ByVal SaveMode As Integer, ByVal CurrentRow As Integer)
-            Dim Connection As New DataConnection
+            Dim Connection As New DataConnection(Me.DataBases)
             'Dim CommandUpdate As New SqlCommand("INSERT INTO Unit(UnitCode,Unit) VALUES(@UnitCode,@Unit)", Connection.GetConnection)
             Dim CommandUpdate As New SqlCommand("InsertUpdateUnit", Connection.GetConnection)
             CommandUpdate.CommandType = CommandType.StoredProcedure
@@ -353,6 +420,27 @@ Namespace Database
                 UnhandledExceptionHandler()
             End Try
         End Sub
+
+
+        Protected Overrides Sub Finalize()
+            If Not IsNothing(sqlCon) Then
+                If sqlCon.State = ConnectionState.Open Then
+                    sqlCon = Nothing
+                End If
+                sqlCon = Nothing
+            End If
+
+            MyBase.Finalize()
+
+        End Sub
+        Public Property DataBases() As DataBases
+            Get
+                Return _dataBase
+            End Get
+            Set(ByVal value As DataBases)
+                _dataBase = value
+            End Set
+        End Property
     End Class
     Public Class DataAccessingException
         ''''''''''''''''''

@@ -502,7 +502,7 @@ Module ReportProcess
             Return False
         End Try
     End Function
-    Public Function ProfitListProcess(ByVal File As ReportFiles, ByVal FromCode As String, ByVal ToCode As String, _
+    Public Function ProfitListProcess(ByVal File As ReportFiles, ByVal FromCode As String, ByVal ToCode As String,
       ByVal FromDate As Date, ByVal ToDate As Date, ByVal FromPartyCode As String, ByVal ToPartyCode As String, ByVal FromItemCode As String, ByVal ToItemCode As String, ByRef reportDoc As ReportDocument, Optional ByVal nGroupedBy As Integer = 0, Optional ByVal PageBreak As Boolean = False) As Boolean
 
         Dim strReporTitle As String
@@ -522,7 +522,7 @@ Module ReportProcess
             Dim Acc As AzamTechnologies.Database.DataAccess
             Acc = New AzamTechnologies.Database.DataAccess
             Dim Ds As DataSet = Nothing
-            Acc.PopulateDataSet(Ds, "SelectProfitListReports", "OPTION", "", _
+            Acc.PopulateDataSet(Ds, "SelectProfitListReports", "OPTION", "",
             "FromCode", FromCode, "ToCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "FromPartyCode", FromPartyCode, "ToPartyCode", ToPartyCode)
 
             If Ds.Tables(0).Rows.Count = 0 Then
@@ -551,6 +551,56 @@ Module ReportProcess
             SetParameter(paramFields, "User", OperatorID)
             Return True
         Catch ex As SqlClient.SqlException
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
+    Public Function VehicleLedgerProcess(ByVal ReportType As ReportFiles, ByVal FromDate As Date, ByVal ToDate As Date, ByVal FromCode As String, ByVal ToCode As String, ByVal FromOwnerCode As String, ByVal ToOwnerCode As String, ByRef reportDoc As ReportDocument, Optional ByVal Progress As Object = Nothing, Optional ByVal nGroupBy As Integer = 0, Optional ByVal nReportType As Integer = 0, Optional ByVal IsDetail As Boolean = True) As Boolean
+        Dim strReporTitle As String
+
+
+        If FromCode = "" Then FromCode = StartParameter
+        If ToCode = "" Then ToCode = EndParameter
+        If ToDate = Nothing Then ToDate = Now.Date
+
+        Try
+
+            strReporTitle = "Vehicle Ledger"
+            Dim Acc As AzamTechnologies.Database.DataAccess
+            Acc = New AzamTechnologies.Database.DataAccess
+            Dim Ds As DataSet = Nothing
+            Acc.PopulateDataSet(Ds, "SelectVehicleLedgerReport",
+            "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "FromDate", FromDate, "ToDate", ToDate)
+
+            If Ds.Tables(0).Rows.Count = 0 Then
+                MessageBox.Show("No record found within the specified conditions..." & vbCrLf & vbCrLf & "Please specify valid parameters and " & vbCrLf & "Make sure that the records exists !", "Report Process", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Return False
+                Exit Function
+            End If
+            Ds.WriteXmlSchema(Application.StartupPath & "\Reports\VehicleLedger.xsd")
+
+            Dim strReportPath As String = Application.StartupPath & "\Reports\VehicleLedger.rpt"
+            If Not IO.File.Exists(strReportPath) Then
+                Throw (New Exception("Unable to locate report file:" & vbCrLf & strReportPath))
+            End If
+
+            reportDoc = New ReportDocument
+            reportDoc.Load(strReportPath)
+            reportDoc.SetDataSource(Ds.Tables(0))
+            ''
+            ''Setting Parameters
+            Dim paramFields As ParameterFieldDefinitions
+            paramFields = reportDoc.DataDefinition.ParameterFields
+            SetParameter(paramFields, "ReportTitle", strReporTitle)
+            SetParameter(paramFields, "CompanyName", My.Settings.CompanyName)
+            '  SetParameter(paramFields, "GroupedBy", nGroupedBy)
+            SetParameter(paramFields, "UserInfo", OperatorID)
+            Return True
+        Catch ex As SqlClient.SqlException
+            MsgBox(ex.Message)
+            Return False
+        Catch ex As Exception
             MsgBox(ex.Message)
             Return False
         End Try
@@ -1519,151 +1569,151 @@ Module ReportProcess
 
     End Function
 
-    Public Function VehicleLedgerProcess(ByVal ReportType As ReportFiles, ByVal FromDate As Date, ByVal ToDate As Date, ByVal FromVehicleCode As String, ByVal ToVehicleCode As String, ByVal FromOwnerCode As String, ByVal ToOwnerCode As String, ByRef reportDoc As ReportDocument, Optional ByVal Progress As Object = Nothing, Optional ByVal nGroupBy As Integer = 0, Optional ByVal nReportType As Integer = 0, Optional ByVal IsDetail As Boolean = True) As Boolean
+    '    Public Function VehicleLedgerProcess(ByVal ReportType As ReportFiles, ByVal FromDate As Date, ByVal ToDate As Date, ByVal FromVehicleCode As String, ByVal ToVehicleCode As String, ByVal FromOwnerCode As String, ByVal ToOwnerCode As String, ByRef reportDoc As ReportDocument, Optional ByVal Progress As Object = Nothing, Optional ByVal nGroupBy As Integer = 0, Optional ByVal nReportType As Integer = 0, Optional ByVal IsDetail As Boolean = True) As Boolean
 
-        If Trim(FromVehicleCode) = String.Empty Then FromVehicleCode = StartParameter
-        If Trim(ToVehicleCode) = String.Empty Then ToVehicleCode = EndParameter
-        If Trim(FromOwnerCode) = String.Empty Then FromOwnerCode = StartParameter
-        If Trim(ToOwnerCode) = String.Empty Then ToOwnerCode = EndParameter
+    '        If Trim(FromVehicleCode) = String.Empty Then FromVehicleCode = StartParameter
+    '        If Trim(ToVehicleCode) = String.Empty Then ToVehicleCode = EndParameter
+    '        If Trim(FromOwnerCode) = String.Empty Then FromOwnerCode = StartParameter
+    '        If Trim(ToOwnerCode) = String.Empty Then ToOwnerCode = EndParameter
 
-        Dim nTypeValue As Integer = 0
+    '        Dim nTypeValue As Integer = 0
 
-        Dim nRstGetOpBal As SqlDataReader = Nothing
-        Try
+    '        Dim nRstGetOpBal As SqlDataReader = Nothing
+    '        Try
 
-            Dim strReporTitle As String = "Vehicle Ledger"
-            Dim Acc As AzamTechnologies.Database.DataAccess
-            Acc = New AzamTechnologies.Database.DataAccess
-            Dim Ds As DataSet = Nothing
-            createVehicleBillsDs(Ds)
-            GetOpeningBalanceForVehicleBills(Trim(FromVehicleCode), Trim(ToVehicleCode), Trim(FromOwnerCode), Trim(ToOwnerCode), "", "", Now.Date, DateAdd("D", -1, FromDate), "", nRstGetOpBal, False, False, False)
+    '            Dim strReporTitle As String = "Vehicle Ledger"
+    '            Dim Acc As AzamTechnologies.Database.DataAccess
+    '            Acc = New AzamTechnologies.Database.DataAccess
+    '            Dim Ds As DataSet = Nothing
+    '            createVehicleBillsDs(Ds)
+    '            GetOpeningBalanceForVehicleBills(Trim(FromVehicleCode), Trim(ToVehicleCode), Trim(FromOwnerCode), Trim(ToOwnerCode), "", "", Now.Date, DateAdd("D", -1, FromDate), "", nRstGetOpBal, False, False, False)
 
-            ''
-            ''Getting OpeningBalance
-            ''
+    '            ''
+    '            ''Getting OpeningBalance
+    '            ''
 
-            While nRstGetOpBal.Read
-                Dim Row As DataRow
-                Row = Ds.Tables(0).NewRow
+    '            While nRstGetOpBal.Read
+    '                Dim Row As DataRow
+    '                Row = Ds.Tables(0).NewRow
 
-                Row.Item("VehicleCode") = Trim(nRstGetOpBal!VehicleCode)
-                Row.Item("OwnerName") = Trim(nRstGetOpBal!OwnerName)
-                Row.Item("CustomerCode") = IIf(IsDBNull(nRstGetOpBal!CustomerCode), "", (nRstGetOpBal!CustomerCode))
-                Row.Item("CustomerName") = IIf(IsDBNull(nRstGetOpBal!CustomerName), "", (nRstGetOpBal!CustomerName))
-                Row.Item("CustomerUrduName") = IIf(IsDBNull(nRstGetOpBal!UrduCustomerName), "", (nRstGetOpBal!UrduCustomerName))
-                Row.Item("OwnerNameUrdu") = Trim(nRstGetOpBal!UrduOwnerName)
-                Row.Item("GLCode") = Trim(nRstGetOpBal!GLCode)
-                Row.Item("GLDescription") = Trim(nRstGetOpBal!GLDescription)
-                Row.Item("TransactionDate") = DateAdd("D", -1, FromDate)
-                Row.Item("Mode") = "Opening"
-                Row.Item("Debit") = IIf(nRstGetOpBal!OpeningBalance > 0, nRstGetOpBal!OpeningBalance, 0) 'IIf((nRstGetOpBal!DebitBalance + nRstGetAccumulateTransBal!DebitBalance) - (nRstGetOpBal!CreditBalance + nRstGetAccumulateTransBal!CreditBalance) >= 0, (nRstGetOpBal!DebitBalance + nRstGetAccumulateTransBal!DebitBalance) - (nRstGetOpBal!CreditBalance + nRstGetAccumulateTransBal!CreditBalance), 0)
-                Row.Item("Credit") = IIf(nRstGetOpBal!OpeningBalance < 0, Math.Abs(nRstGetOpBal!OpeningBalance), 0) 'IIf((nRstGetOpBal!DebitBalance + nRstGetAccumulateTransBal!DebitBalance) - (nRstGetOpBal!CreditBalance + nRstGetAccumulateTransBal!CreditBalance) < 0, (nRstGetOpBal!DebitBalance + nRstGetAccumulateTransBal!DebitBalance) - (nRstGetOpBal!CreditBalance + nRstGetAccumulateTransBal!CreditBalance), 0)
-                Row.Item("RecordNo") = 0
+    '                Row.Item("VehicleCode") = Trim(nRstGetOpBal!VehicleCode)
+    '                Row.Item("OwnerName") = Trim(nRstGetOpBal!OwnerName)
+    '                Row.Item("CustomerCode") = IIf(IsDBNull(nRstGetOpBal!CustomerCode), "", (nRstGetOpBal!CustomerCode))
+    '                Row.Item("CustomerName") = IIf(IsDBNull(nRstGetOpBal!CustomerName), "", (nRstGetOpBal!CustomerName))
+    '                Row.Item("CustomerUrduName") = IIf(IsDBNull(nRstGetOpBal!UrduCustomerName), "", (nRstGetOpBal!UrduCustomerName))
+    '                Row.Item("OwnerNameUrdu") = Trim(nRstGetOpBal!UrduOwnerName)
+    '                Row.Item("GLCode") = Trim(nRstGetOpBal!GLCode)
+    '                Row.Item("GLDescription") = Trim(nRstGetOpBal!GLDescription)
+    '                Row.Item("TransactionDate") = DateAdd("D", -1, FromDate)
+    '                Row.Item("Mode") = "Opening"
+    '                Row.Item("Debit") = IIf(nRstGetOpBal!OpeningBalance > 0, nRstGetOpBal!OpeningBalance, 0) 'IIf((nRstGetOpBal!DebitBalance + nRstGetAccumulateTransBal!DebitBalance) - (nRstGetOpBal!CreditBalance + nRstGetAccumulateTransBal!CreditBalance) >= 0, (nRstGetOpBal!DebitBalance + nRstGetAccumulateTransBal!DebitBalance) - (nRstGetOpBal!CreditBalance + nRstGetAccumulateTransBal!CreditBalance), 0)
+    '                Row.Item("Credit") = IIf(nRstGetOpBal!OpeningBalance < 0, Math.Abs(nRstGetOpBal!OpeningBalance), 0) 'IIf((nRstGetOpBal!DebitBalance + nRstGetAccumulateTransBal!DebitBalance) - (nRstGetOpBal!CreditBalance + nRstGetAccumulateTransBal!CreditBalance) < 0, (nRstGetOpBal!DebitBalance + nRstGetAccumulateTransBal!DebitBalance) - (nRstGetOpBal!CreditBalance + nRstGetAccumulateTransBal!CreditBalance), 0)
+    '                Row.Item("RecordNo") = 0
 
-                Ds.Tables(0).Rows.Add(Row)
+    '                Ds.Tables(0).Rows.Add(Row)
 
-            End While
-            Ds.AcceptChanges()
-
-
-            Dim DataReader As SqlDataReader
+    '            End While
+    '            Ds.AcceptChanges()
 
 
-            Call Acc.GetRecord("SelectVehicleLedgerReports", "FromDate", FromDate, "ToDate", ToDate, "FromVehicleCode", Trim(FromVehicleCode), "ToVehicleCode", Trim(ToVehicleCode), "FromOwnerCode", Trim(FromOwnerCode), "ToOwnerCode", Trim(ToOwnerCode), "FromGLCode", "", "ToGLCode", "", "VoucherNatureCode", "", "Posted", False And 1, "PostedED", False And 1, "nType", 1)
-            DataReader = Acc.GetRecord("SelectVehicleLedgerReports", "FromDate", FromDate, "ToDate", ToDate, "FromVehicleCode", Trim(FromVehicleCode), "ToVehicleCode", Trim(ToVehicleCode), "FromOwnerCode", Trim(FromOwnerCode), "ToOwnerCode", Trim(ToOwnerCode), "FromGLCode", "", "ToGLCode", "", "VoucherNatureCode", "", "Posted", False And 1, "PostedED", False And 1, "nType", 4)
-
-            If DataReader.HasRows Then
-                'If Not (Progress Is Nothing) Then Progress.Limit = DataReader.RecordCount + 10
-NextRecord:     While DataReader.Read
-                    'If Trim(DataReader!VehicleCode) = "C-1031" And Trim(DataReader!TransactionNature) = "SV" Then
-                    '    MsgBox("DD")
-                    'End If
-                    If Trim(DataReader!TransactionNature) = "SV" And _
-                    My.Settings.ShortageGLCode <> Left(Trim(DataReader!GLCode), My.Settings.GeneralCodeFK_Length) And My.Settings.CommissionGLCode <> Left(Trim(DataReader!GLCode), My.Settings.GeneralCodeFK_Length) Then
-                        GoTo NextRecord
-                    End If
-
-                    ''FOR KEEP DEBIT CREDIT BALANCE EQUAL UNCOMMENT THE FOLLOWING
-                    'If My.Settings.Debtors = Left(Trim(DataReader!GLCode), My.Settings.FSFSubsidiaryCodeFK_Length + My.Settings.GeneralCodeFK_Length) Then
-                    '    GoTo NextRecord
-                    'End If
-
-                    Dim Row As DataRow
-                    Row = Ds.Tables(0).NewRow
-
-                    Row.Item("Mode") = Trim(DataReader!Mode)
-                    Row.Item("TransactionNo") = Trim(DataReader!TransactionNo)
-                    Row.Item("TransactionNature") = Trim(DataReader!TransactionNature)
-                    Row.Item("TransactionDate") = Trim(DataReader!TransactionDate)
-                    Row.Item("TokenNo") = Trim(DataReader!CustomerReference)
-                    Row.Item("VehicleCode") = Trim(DataReader!VehicleCode)
-                    Row.Item("StationPointUrdu") = Trim(DataReader!StationPointUrdu)
-                    Row.Item("DestinationPointUrdu") = Trim(DataReader!DestinationPointUrdu)
-                    Row.Item("ProductUrdu") = Trim(DataReader!ProductUrdu) 'DateAdd("D", -1, FromDate)
-                    Row.Item("Quantity") = DataReader!Quantity
-                    Row.Item("Rate") = DataReader!Rate
-                    Row.Item("Amount") = DataReader!Quantity * DataReader!Rate
-                    Row.Item("Commission") = DataReader!Commission
-                    Row.Item("ShortageQuantity") = DataReader!ShortageQuantity
-                    Row.Item("Shortage") = DataReader!Shortage
-                    Row.Item("OwnerNameUrdu") = IIf(IsDBNull(DataReader!UrduOwnerName), "", DataReader!UrduOwnerName)
-                    Row.Item("OwnerName") = IIf(IsDBNull(DataReader!OwnerName), "", DataReader!OwnerName)
-                    Row.Item("OwnerCode") = IIf(IsDBNull(DataReader!OwnerCode), "", DataReader!OwnerCode)
-                    Row.Item("GLCode") = Trim(DataReader!GLCode)
-                    Row.Item("GLDescription") = Trim(DataReader!GLDescription)
-                    Row.Item("Debit") = (DataReader!Debit)
-                    Row.Item("Credit") = (DataReader!Credit)
-                    Row.Item("RecordNo") = (DataReader!RecordNo)
-                    Row.Item("CustomerCode") = IIf(IsDBNull(DataReader!CustomerCode), "", DataReader!CustomerCode)
-                    Row.Item("CustomerName") = IIf(IsDBNull(DataReader!CustomerName), "", DataReader!CustomerName)
-                    Row.Item("CustomerUrduName") = IIf(IsDBNull(DataReader!UrduCustomerName), "", DataReader!UrduCustomerName)
-
-                    Ds.Tables(0).Rows.Add(Row)
-
-                End While
-            End If
-            Ds.AcceptChanges()
-            ''
-            ''
-            Ds.WriteXmlSchema(Application.StartupPath & "\Reports\VehicleLedger.xsd")
-            Dim strReportPath As String
-            If IsDetail = True Then
-                strReportPath = Application.StartupPath & "\Reports\VehicleLedger.rpt"
-                strReporTitle = "Vehicle Ledger"
-            Else
-                strReportPath = Application.StartupPath & "\Reports\VehicleLedgerSummary.rpt"
-                strReporTitle = "Vehicle Ledger Summary"
-            End If
-            If Not IO.File.Exists(strReportPath) Then
-                Throw (New Exception("Unable to locate report file:" & vbCrLf & strReportPath))
-            End If
+    '            Dim DataReader As SqlDataReader
 
 
-            reportDoc = New ReportDocument
-            reportDoc.Load(strReportPath)
-            reportDoc.SetDataSource(Ds.Tables(0))
+    '            Call Acc.GetRecord("SelectVehicleLedgerReports", "FromDate", FromDate, "ToDate", ToDate, "FromVehicleCode", Trim(FromVehicleCode), "ToVehicleCode", Trim(ToVehicleCode), "FromOwnerCode", Trim(FromOwnerCode), "ToOwnerCode", Trim(ToOwnerCode), "FromGLCode", "", "ToGLCode", "", "VoucherNatureCode", "", "Posted", False And 1, "PostedED", False And 1, "nType", 1)
+    '            DataReader = Acc.GetRecord("SelectVehicleLedgerReports", "FromDate", FromDate, "ToDate", ToDate, "FromVehicleCode", Trim(FromVehicleCode), "ToVehicleCode", Trim(ToVehicleCode), "FromOwnerCode", Trim(FromOwnerCode), "ToOwnerCode", Trim(ToOwnerCode), "FromGLCode", "", "ToGLCode", "", "VoucherNatureCode", "", "Posted", False And 1, "PostedED", False And 1, "nType", 4)
 
-            ''
-            ''Setting Parameters
-            Dim paramFields As ParameterFieldDefinitions
-            paramFields = reportDoc.DataDefinition.ParameterFields
-            SetParameter(paramFields, "ReportTitle", strReporTitle)
-            SetParameter(paramFields, "SystemName", "")
-            SetParameter(paramFields, "GroupBy", nGroupBy)
-            SetParameter(paramFields, "CompanyName", My.Settings.CompanyName)
-            SetParameter(paramFields, "User", OperatorID)
+    '            If DataReader.HasRows Then
+    '                'If Not (Progress Is Nothing) Then Progress.Limit = DataReader.RecordCount + 10
+    'NextRecord:     While DataReader.Read
+    '                    'If Trim(DataReader!VehicleCode) = "C-1031" And Trim(DataReader!TransactionNature) = "SV" Then
+    '                    '    MsgBox("DD")
+    '                    'End If
+    '                    If Trim(DataReader!TransactionNature) = "SV" And _
+    '                    My.Settings.ShortageGLCode <> Left(Trim(DataReader!GLCode), My.Settings.GeneralCodeFK_Length) And My.Settings.CommissionGLCode <> Left(Trim(DataReader!GLCode), My.Settings.GeneralCodeFK_Length) Then
+    '                        GoTo NextRecord
+    '                    End If
+
+    '                    ''FOR KEEP DEBIT CREDIT BALANCE EQUAL UNCOMMENT THE FOLLOWING
+    '                    'If My.Settings.Debtors = Left(Trim(DataReader!GLCode), My.Settings.FSFSubsidiaryCodeFK_Length + My.Settings.GeneralCodeFK_Length) Then
+    '                    '    GoTo NextRecord
+    '                    'End If
+
+    '                    Dim Row As DataRow
+    '                    Row = Ds.Tables(0).NewRow
+
+    '                    Row.Item("Mode") = Trim(DataReader!Mode)
+    '                    Row.Item("TransactionNo") = Trim(DataReader!TransactionNo)
+    '                    Row.Item("TransactionNature") = Trim(DataReader!TransactionNature)
+    '                    Row.Item("TransactionDate") = Trim(DataReader!TransactionDate)
+    '                    Row.Item("TokenNo") = Trim(DataReader!CustomerReference)
+    '                    Row.Item("VehicleCode") = Trim(DataReader!VehicleCode)
+    '                    Row.Item("StationPointUrdu") = Trim(DataReader!StationPointUrdu)
+    '                    Row.Item("DestinationPointUrdu") = Trim(DataReader!DestinationPointUrdu)
+    '                    Row.Item("ProductUrdu") = Trim(DataReader!ProductUrdu) 'DateAdd("D", -1, FromDate)
+    '                    Row.Item("Quantity") = DataReader!Quantity
+    '                    Row.Item("Rate") = DataReader!Rate
+    '                    Row.Item("Amount") = DataReader!Quantity * DataReader!Rate
+    '                    Row.Item("Commission") = DataReader!Commission
+    '                    Row.Item("ShortageQuantity") = DataReader!ShortageQuantity
+    '                    Row.Item("Shortage") = DataReader!Shortage
+    '                    Row.Item("OwnerNameUrdu") = IIf(IsDBNull(DataReader!UrduOwnerName), "", DataReader!UrduOwnerName)
+    '                    Row.Item("OwnerName") = IIf(IsDBNull(DataReader!OwnerName), "", DataReader!OwnerName)
+    '                    Row.Item("OwnerCode") = IIf(IsDBNull(DataReader!OwnerCode), "", DataReader!OwnerCode)
+    '                    Row.Item("GLCode") = Trim(DataReader!GLCode)
+    '                    Row.Item("GLDescription") = Trim(DataReader!GLDescription)
+    '                    Row.Item("Debit") = (DataReader!Debit)
+    '                    Row.Item("Credit") = (DataReader!Credit)
+    '                    Row.Item("RecordNo") = (DataReader!RecordNo)
+    '                    Row.Item("CustomerCode") = IIf(IsDBNull(DataReader!CustomerCode), "", DataReader!CustomerCode)
+    '                    Row.Item("CustomerName") = IIf(IsDBNull(DataReader!CustomerName), "", DataReader!CustomerName)
+    '                    Row.Item("CustomerUrduName") = IIf(IsDBNull(DataReader!UrduCustomerName), "", DataReader!UrduCustomerName)
+
+    '                    Ds.Tables(0).Rows.Add(Row)
+
+    '                End While
+    '            End If
+    '            Ds.AcceptChanges()
+    '            ''
+    '            ''
+    '            Ds.WriteXmlSchema(Application.StartupPath & "\Reports\VehicleLedger.xsd")
+    '            Dim strReportPath As String
+    '            If IsDetail = True Then
+    '                strReportPath = Application.StartupPath & "\Reports\VehicleLedger.rpt"
+    '                strReporTitle = "Vehicle Ledger"
+    '            Else
+    '                strReportPath = Application.StartupPath & "\Reports\VehicleLedgerSummary.rpt"
+    '                strReporTitle = "Vehicle Ledger Summary"
+    '            End If
+    '            If Not IO.File.Exists(strReportPath) Then
+    '                Throw (New Exception("Unable to locate report file:" & vbCrLf & strReportPath))
+    '            End If
 
 
-            Return True
-        Catch ex As SqlClient.SqlException
-            MsgBox(ex.Message)
-            Return False
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            Return False
-        End Try
+    '            reportDoc = New ReportDocument
+    '            reportDoc.Load(strReportPath)
+    '            reportDoc.SetDataSource(Ds.Tables(0))
 
-    End Function
+    '            ''
+    '            ''Setting Parameters
+    '            Dim paramFields As ParameterFieldDefinitions
+    '            paramFields = reportDoc.DataDefinition.ParameterFields
+    '            SetParameter(paramFields, "ReportTitle", strReporTitle)
+    '            SetParameter(paramFields, "SystemName", "")
+    '            SetParameter(paramFields, "GroupBy", nGroupBy)
+    '            SetParameter(paramFields, "CompanyName", My.Settings.CompanyName)
+    '            SetParameter(paramFields, "User", OperatorID)
+
+
+    '            Return True
+    '        Catch ex As SqlClient.SqlException
+    '            MsgBox(ex.Message)
+    '            Return False
+    '        Catch ex As Exception
+    '            MsgBox(ex.Message)
+    '            Return False
+    '        End Try
+
+    '    End Function
     Sub createVehicleBillsDs(ByRef dataset As DataSet)
         dataset = New DataSet
         Dim Table As New DataTable

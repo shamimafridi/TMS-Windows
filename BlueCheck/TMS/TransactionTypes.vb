@@ -26,6 +26,52 @@
                 MessageBox.Show(ex.Message)
             End Try
         End Sub
+        Private Sub TxtGLCode_EditorButtonClick(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinEditors.EditorButtonEventArgs) Handles TxtGLCode.EditorButtonClick
+            Try
+                Dim iRow As Integer
+                Dim frmser As FrmSearch
+                frmser = New FrmSearch
+                frmser.FillData("COACombine")
+                frmser.ShowDialog()
+                iRow = frmser.UGSearch.ActiveRow.Index
+                Me.TxtGLCode.Text = frmser.UGSearch.Rows(iRow).Cells("GLCode").Value
+                Me.TxtGLDesc.Text = frmser.UGSearch.Rows(iRow).Cells("GLDescription").Value
+                Me.TxtGLCode.Focus()
+            Catch ex As IndexOutOfRangeException
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End Sub
+
+        Private Sub TxtGLCode_Validated(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtGLCode.Validated
+            ErrProvider.SetError(TxtGLCode, String.Empty)
+        End Sub
+
+        Private Sub TxtGLCode_Validating(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles TxtGLCode.Validating
+            Try
+                If TxtGLCode.Text <> String.Empty Then
+                    Dim Acc As New AzamTechnologies.Database.DataAccess
+                    Dim Reader As SqlClient.SqlDataReader
+
+                    Reader = Acc.GetRecord("SelectCOACombine", "GLCode ", Trim(TxtGLCode.Text))
+                    If Reader.HasRows = False Then
+                        TxtGLCode.Text = String.Empty
+                        TxtGLDesc.Text = String.Empty
+                        ErrProvider.SetError(TxtGLCode, "Invalid GL Code")
+                        ErrProvider.SetIconAlignment(TxtGLCode, ErrorIconAlignment.TopLeft)
+                        e.Cancel = True
+                    Else
+                        ErrProvider.SetError(TxtGLCode, String.Empty)
+                        Reader.Read()
+                        TxtGLDesc.Text = Reader.Item("GLDescription")
+                        e.Cancel = False
+                    End If
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End Sub
+
 
         Private Sub txtNatureCode_Validating(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles TxtNatureCode.Validating
             Try

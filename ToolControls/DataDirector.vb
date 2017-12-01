@@ -1,5 +1,6 @@
 Imports System.Windows.Forms
 Imports Infragistics.Win.UltraWinEditors
+Imports System.Drawing
 Public Class DataDirector
     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     'The purpose of this control is to give service of Navigation of data ,filling of Data on the
@@ -10,6 +11,7 @@ Public Class DataDirector
     Private Shared mTableNature As String = ""
     Friend Shared detailTableName As String = "DetailTable"
     Friend WithEvents mData As DataSet
+    Public User As String = String.Empty
     Friend WithEvents mDetailData As DataSet
     Private Const selectProcedurePrefix As String = "Select"
     Private Const selectDetailProcedurePostfix As String = "Details"
@@ -163,12 +165,23 @@ Public Class DataDirector
 #End Region
     Friend Sub FillDataSet(ByRef data As DataSet)
         Dim objAcc As New AzamTechnologies.Database.DataAccess
-        If TableNature = "" Then
-            objAcc.PopulateDataSet(data, selectProcedurePrefix & TableName, "Option", "ALL")
+
+        If String.IsNullOrEmpty(TableNature) Then
+            If String.IsNullOrEmpty(Me.User) Then
+                objAcc.PopulateDataSet(data, selectProcedurePrefix & TableName, "Option", "ALL")
+            Else
+                objAcc.PopulateDataSet(data, selectProcedurePrefix & TableName, "Option", "ALL", "User", Me.User)
+
+            End If
             data.Tables(0).TableName = TableName
         Else
-            objAcc.PopulateDataSet(data, selectProcedurePrefix & TableName, "Option", "ALL", "TransactionNature", TableNature)
-            data.Tables(0).TableName = TableName
+            If String.IsNullOrEmpty(Me.User) Then
+                objAcc.PopulateDataSet(data, selectProcedurePrefix & TableName, "Option", "ALL", "TransactionNature", TableNature)
+            Else
+                objAcc.PopulateDataSet(data, selectProcedurePrefix & TableName, "Option", "ALL", "TransactionNature", TableNature, "User", Me.User)
+
+                data.Tables(0).TableName = TableName
+            End If
         End If
         objAcc = Nothing
     End Sub
@@ -240,10 +253,16 @@ Public Class DataDirector
                                 ''Checking Null =IIF
                             ElseIf ctrType = "System.Windows.Forms.DateTimePicker" Then
                                 CType(ctr, DateTimePicker).Value = IIf(IsDBNull(.Rows(RowPosition).Item(Mid(ctr.Tag, 4))), WorkingDate.Date, .Rows(RowPosition).Item(Mid(ctr.Tag, 4)))
+                            ElseIf ctrType = "Infragistics.Win.UltraWinEditors.UltraDateTimeEditor" Then
+                                CType(ctr, Infragistics.Win.UltraWinEditors.UltraDateTimeEditor).Value = IIf(IsDBNull(.Rows(RowPosition).Item(Mid(ctr.Tag, 4))), WorkingDate.Date, .Rows(RowPosition).Item(Mid(ctr.Tag, 4)))
+                            ElseIf ctrType = "Infragistics.Win.UltraWinEditors.UltraTimeSpanEditor" Then
+                                CType(ctr, Infragistics.Win.UltraWinEditors.UltraTimeSpanEditor).Value = IIf(IsDBNull(.Rows(RowPosition).Item(Mid(ctr.Tag, 4))), Now.ToLongTimeString, .Rows(RowPosition).Item(Mid(ctr.Tag, 4)))
                             ElseIf ctrType = "System.Windows.Forms.CheckBox" Then
                                 CType(ctr, CheckBox).Checked = IIf(IsDBNull(.Rows(RowPosition).Item(Mid(ctr.Tag, 4))), False, .Rows(RowPosition).Item(Mid(ctr.Tag, 4)))
                             ElseIf ctrType = "Infragistics.Win.UltraWinEditors.UltraCheckEditor" Then
-                                CType(ctr, Infragistics.Win.UltraWinEditors.UltraCheckEditor).Checked = IIf(IsDBNull(.Rows(RowPosition).Item(Mid(ctr.Tag, 4))), False, .Rows(RowPosition).Item(Mid(ctr.Tag, 4)))
+
+                                CType(ctr, Infragistics.Win.UltraWinEditors.UltraCheckEditor).Checked = IIf(IsDBNull(.Rows(RowPosition).Item(Mid(ctr.Tag, 4))), False, CBool(.Rows(RowPosition).Item(Mid(ctr.Tag, 4))))
+                                'Debug.WriteLine(CBool(.Rows(RowPosition).Item(Mid(ctr.Tag, 4))).ToString & ":" & IIf(IsDBNull(.Rows(RowPosition).Item(Mid(ctr.Tag, 4))), False, CBool(.Rows(RowPosition).Item(Mid(ctr.Tag, 4)))).ToString, ctr.Text)
                             ElseIf ctrType = "System.Windows.Forms.NumericUpDown" Then
                                 CType(ctr, NumericUpDown).Value = IIf(IsDBNull(.Rows(RowPosition).Item(Mid(ctr.Tag, 4))), 0D, .Rows(RowPosition).Item(Mid(ctr.Tag, 4)))
                             ElseIf ctrType = "Infragistics.Win.UltraWinEditors.UltraNumericEditor" Then
@@ -299,6 +318,13 @@ Public Class DataDirector
                         ''Checking Null =IIF
                     ElseIf ctrType = "System.Windows.Forms.DateTimePicker" Then
                         CType(chCtr, DateTimePicker).Value = IIf(IsDBNull(dataTable.Rows(RowPosition).Item(Mid(chCtr.Tag, 4))), WorkingDate.Date, dataTable.Rows(RowPosition).Item(Mid(chCtr.Tag, 4)))
+                    ElseIf ctrType = "Infragistics.Win.UltraWinEditors.UltraDateTimeEditor" Then
+                        CType(chCtr, Infragistics.Win.UltraWinEditors.UltraDateTimeEditor).Value = IIf(IsDBNull(dataTable.Rows(RowPosition).Item(Mid(chCtr.Tag, 4))), WorkingDate.Date, dataTable.Rows(RowPosition).Item(Mid(chCtr.Tag, 4)))
+
+                    ElseIf ctrType = "Infragistics.Win.UltraWinEditors.UltraTimeSpanEditor" Then
+                        CType(chCtr, Infragistics.Win.UltraWinEditors.UltraTimeSpanEditor).Value = IIf(IsDBNull(dataTable.Rows(RowPosition).Item(Mid(chCtr.Tag, 4))), Now.ToLongTimeString, dataTable.Rows(RowPosition).Item(Mid(chCtr.Tag, 4)))
+                    ElseIf ctrType = "Infragistics.Win.UltraWinEditors.UltraTimeSpanEditor" Then
+                        CType(chCtr, Infragistics.Win.UltraWinEditors.UltraTimeSpanEditor).Value = IIf(IsDBNull(dataTable.Rows(RowPosition).Item(Mid(chCtr.Tag, 4))), Now.ToLongTimeString, dataTable.Rows(RowPosition).Item(Mid(chCtr.Tag, 4)))
                     ElseIf ctrType = "System.Windows.Forms.NumericUpDown" Then
                         CType(chCtr, NumericUpDown).Value = IIf(IsDBNull(dataTable.Rows(RowPosition).Item(Mid(chCtr.Tag, 4))), 0D, dataTable.Rows(RowPosition).Item(Mid(chCtr.Tag, 4)))
                     ElseIf ctrType = "Infragistics.Win.UltraWinEditors.UltraNumericEditor" Then
@@ -356,7 +382,12 @@ Public Class DataDirector
             For iSheet = 0 To DetailControl.Sheets.Count - 1
 
                 mDetailData = New DataSet
-                objAcc.PopulateDataSet(mDetailData, selectProcedurePrefix & DetailControl.Sheets(iSheet).Tag, masterTable)
+                If DetailControl.Sheets.Count = 1 Then
+                    objAcc.PopulateDataSet(mDetailData, selectProcedurePrefix & TableName & selectDetailProcedurePostfix, masterTable)
+                Else
+                    objAcc.PopulateDataSet(mDetailData, selectProcedurePrefix & DetailControl.Sheets(iSheet).Tag, masterTable)
+                End If
+
                 mDetailData.DataSetName = detailTableName
 
                 For row = 0 To mDetailData.Tables(0).Rows.Count - 1
@@ -379,8 +410,10 @@ Public Class DataDirector
                                     DetailControl.Sheets(iSheet).SetValue(row, col, CDate(mDetailData.Tables(0).Rows(row).Item(strColName)))
                                 ElseIf TypeOf (mDetailData.Tables(0).Rows(row).Item(strColName)) Is Boolean Then
                                     DetailControl.Sheets(iSheet).SetValue(row, col, CBool(mDetailData.Tables(0).Rows(row).Item(strColName)))
+                                ElseIf TypeOf (mDetailData.Tables(0).Rows(row).Item(strColName)) Is TimeSpan Then
+                                    DetailControl.Sheets(iSheet).SetValue(row, col, (mDetailData.Tables(0).Rows(row).Item(strColName)))
                                 Else
-                                    DetailControl.Sheets(iSheet).SetText(row, col, Trim(mDetailData.Tables(0).Rows(row).Item(strColName)))
+                                    DetailControl.Sheets(iSheet).SetText(row, col, (mDetailData.Tables(0).Rows(row).Item(strColName)))
                                 End If
                             End If
                         End If
@@ -527,7 +560,7 @@ Public Class DataDirector
                                 Case "Infragistics.Win.UltraWinEditors.UltraNumericEditor"
                                     Col = New DataColumn(Mid(ctr.Tag, 4), System.Type.GetType("System.Decimal"))
                                     rowTable.Columns.Add(Col)
-                                    row.Item(Mid(ctr.Tag, 4)) = CDbl(ctr.Text)
+                                    row.Item(Mid(ctr.Tag, 4)) = CType(ctr, Infragistics.Win.UltraWinEditors.UltraNumericEditor).Value
                                     If Mid(ctr.Tag, 1, 2) = "PK" Or Mid(ctr.Tag, 1, 2) = "CK" Then
                                         'If primary key or composite key then
                                         ReDim Preserve primaryKeyCol(cntCol)
@@ -799,28 +832,15 @@ Public Class DataDirector
                             InitalizeActiveTabControls(ctr)
                         Else
                             Dim ctrType As String = ctr.GetType.ToString
+
                             If ctrType = "FarPoint.Win.Spread.FpSpread" Or Not IsNothing(ctr.Tag) Then
                                 ControlFormatter.InitializedFormat(ctr)
                                 If ctr.AccessibleDescription = "Last" Then LastControl = ctr
-                                If Mid(ctr.Tag, 1, 2).ToUpper = "PK" Then
-                                    ReDim Preserve PrimaryKeyControl(PkCount)
-                                    PrimaryKeyControl(PkCount) = ctr
-                                    RemoveHandler PrimaryKeyControl(PkCount).Validating, AddressOf PrimaryKeyValidation
-                                    AddHandler PrimaryKeyControl(PkCount).Validating, AddressOf PrimaryKeyValidation
-                                    PkCount = PkCount + 1
-                                    AutoIncrementsSetting(ctr)
-                                ElseIf Mid(ctr.Tag, 1, 2).ToUpper = "CK" Then
-                                    ReDim Preserve PrimaryKeyControl(PkCount)
-                                    PrimaryKeyControl(PkCount) = ctr
-                                    RemoveHandler PrimaryKeyControl(PkCount).Validating, AddressOf PrimaryKeyValidation
-                                    AddHandler PrimaryKeyControl(PkCount).Validating, AddressOf PrimaryKeyValidation
-                                    PkCount = PkCount + 1
-                                End If
-
                                 If ctrType = "Infragistics.Win.UltraWinEditors.UltraComboEditor" Or ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" Or ctrType = "System.Windows.Forms.ComboBox" _
                                     Or ctrType = "System.Windows.Forms.ListBox" Or ctrType = "ATUrduTextBox.UrduTextBox" Or ctrType = "Infragistics.Win.UltraWinGrid.UltraCombo" Then
                                     If ctr.AccessibleDescription = "" Then
-                                        If ctr.Name.ToUpper <> "NATURE" Then
+                                        If ctr.Name.ToUpper = "NATURE" Or ctr.Name.ToUpper = "MODIFIED_BY" Or ctr.Name.ToUpper = "CREATED_BY" Or ctr.Name.ToUpper = "MODIFIED_DATE" Or ctr.Name.ToUpper = "CREATED_DATE" Then
+                                        Else
                                             ctr.Text = ""
                                         End If
                                     ElseIf ctr.AccessibleDescription.ToUpper = "LAST" Then
@@ -840,10 +860,29 @@ Public Class DataDirector
                                     CType(CType(ctr, DataGrid).DataSource, DataSet).Tables(0).Rows.Clear()
                                 ElseIf ctrType = "System.Windows.Forms.DateTimePicker" Then
                                     CType(ctr, DateTimePicker).Value = WorkingDate.Date
+                                ElseIf ctrType = "Infragistics.Win.UltraWinEditors.UltraDateTimeEditor" Then
+                                    CType(ctr, Infragistics.Win.UltraWinEditors.UltraDateTimeEditor).Value = WorkingDate.Date
+                                ElseIf ctrType = "Infragistics.Win.UltraWinEditors.UltraTimeSpanEditor" Then
+                                    CType(ctr, Infragistics.Win.UltraWinEditors.UltraTimeSpanEditor).Value = New TimeSpan(Now.TimeOfDay.Hours, Now.TimeOfDay.Minutes, 0)
                                 ElseIf ctrType = "FarPoint.Win.Spread.FpSpread" Then
                                     DetailControl = ctr
                                     DetailControl.TabStripInsertTab = False
                                     EmptyDetailControl()
+                                    DetailControl.ActiveSheetIndex = 0
+                                End If
+                                If Mid(ctr.Tag, 1, 2).ToUpper = "PK" Then
+                                    ReDim Preserve PrimaryKeyControl(PkCount)
+                                    PrimaryKeyControl(PkCount) = ctr
+                                    RemoveHandler PrimaryKeyControl(PkCount).Validating, AddressOf PrimaryKeyValidation
+                                    AddHandler PrimaryKeyControl(PkCount).Validating, AddressOf PrimaryKeyValidation
+                                    PkCount = PkCount + 1
+                                    AutoIncrementsSetting(ctr)
+                                ElseIf Mid(ctr.Tag, 1, 2).ToUpper = "CK" Then
+                                    ReDim Preserve PrimaryKeyControl(PkCount)
+                                    PrimaryKeyControl(PkCount) = ctr
+                                    RemoveHandler PrimaryKeyControl(PkCount).Validating, AddressOf PrimaryKeyValidation
+                                    AddHandler PrimaryKeyControl(PkCount).Validating, AddressOf PrimaryKeyValidation
+                                    PkCount = PkCount + 1
                                 End If
                             Else 'Tag is  null
                                 If ctrType = "System.Windows.Forms.LinkLabel" Then
@@ -894,25 +933,13 @@ Public Class DataDirector
                 If Not IsNothing(chCtr.Tag) Then
                     ControlFormatter.InitializedFormat(chCtr)
                     If chCtr.AccessibleDescription = "Last" Then LastControl = chCtr
-                    If Mid(chCtr.Tag, 1, 2).ToUpper = "PK" Then
-                        ReDim Preserve PrimaryKeyControl(PkCount)
-                        PrimaryKeyControl(PkCount) = chCtr
-                        RemoveHandler PrimaryKeyControl(PkCount).Validating, AddressOf PrimaryKeyValidation
-                        AddHandler PrimaryKeyControl(PkCount).Validating, AddressOf PrimaryKeyValidation
-                        PkCount = PkCount + 1
-                        AutoIncrementsSetting(chCtr)
-                    ElseIf Mid(chCtr.Tag, 1, 2).ToUpper = "CK" Then
-                        ReDim Preserve PrimaryKeyControl(PkCount)
-                        PrimaryKeyControl(PkCount) = chCtr
-                        RemoveHandler PrimaryKeyControl(PkCount).Validating, AddressOf PrimaryKeyValidation
-                        AddHandler PrimaryKeyControl(PkCount).Validating, AddressOf PrimaryKeyValidation
-                        PkCount = PkCount + 1
-                    End If
+                    
                     With tabControl
                         If ctrType = "Infragistics.Win.UltraWinEditors.UltraComboEditor" Or ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" Or ctrType = "System.Windows.Forms.ComboBox" Or _
                             ctrType = "System.Windows.Forms.ListBox" Or ctrType = "ATUrduTextBox.UrduTextBox" Or ctrType = "Infragistics.Win.UltraWinGrid.UltraCombo" Then
                             If .AccessibleDescription = "" Then
-                                If .Name.ToUpper <> "NATURE" Then
+                                If .Name.ToUpper = "NATURE" Or .Name.ToUpper = "MODIFIED_BY" Or .Name.ToUpper = "CREATED_BY" Or .Name.ToUpper = "MODIFIED_DATE" Or .Name.ToUpper = "CREATED_DATE" Then
+                                Else
                                     .Text = ""
                                 End If
                             ElseIf .AccessibleDescription.ToUpper = "LAST" Then
@@ -932,9 +959,28 @@ Public Class DataDirector
                             CType(CType(chCtr, DataGrid).DataSource, DataSet).Tables(0).Rows.Clear()
                         ElseIf ctrType = "System.Windows.Forms.DateTimePicker" Then
                             CType(chCtr, DateTimePicker).Value = WorkingDate.Date
+                        ElseIf ctrType = "Infragistics.Win.UltraWinEditors.UltraDateTimeEditor" Then
+                            CType(chCtr, Infragistics.Win.UltraWinEditors.UltraDateTimeEditor).Value = WorkingDate.Date
+                        ElseIf ctrType = "Infragistics.Win.UltraWinEditors.UltraTimeSpanEditor" Then
+                            CType(chCtr, Infragistics.Win.UltraWinEditors.UltraTimeSpanEditor).Value = New TimeSpan(Now.TimeOfDay.Hours, Now.TimeOfDay.Minutes, 0)
                         ElseIf ctrType = "FarPoint.Win.Spread.FpSpread" Then
                             DetailControl = chCtr
                             EmptyDetailControl()
+                            DetailControl.ActiveSheetIndex = 0
+                        End If
+                        If Mid(chCtr.Tag, 1, 2).ToUpper = "PK" Then
+                            ReDim Preserve PrimaryKeyControl(PkCount)
+                            PrimaryKeyControl(PkCount) = chCtr
+                            RemoveHandler PrimaryKeyControl(PkCount).Validating, AddressOf PrimaryKeyValidation
+                            AddHandler PrimaryKeyControl(PkCount).Validating, AddressOf PrimaryKeyValidation
+                            PkCount = PkCount + 1
+                            AutoIncrementsSetting(chCtr)
+                        ElseIf Mid(chCtr.Tag, 1, 2).ToUpper = "CK" Then
+                            ReDim Preserve PrimaryKeyControl(PkCount)
+                            PrimaryKeyControl(PkCount) = chCtr
+                            RemoveHandler PrimaryKeyControl(PkCount).Validating, AddressOf PrimaryKeyValidation
+                            AddHandler PrimaryKeyControl(PkCount).Validating, AddressOf PrimaryKeyValidation
+                            PkCount = PkCount + 1
                         End If
                     End With
                 Else
@@ -956,28 +1002,43 @@ Public Class DataDirector
                         Dim read As DataSet = Nothing
                         If PrimaryKeyControl.Length = 1 Then
                             If PrimaryKeyControl(0).Text.Length = 0 Then Exit Sub
-                            Acc.PopulateDataSet(read, "Select" & TableName, "OPTION", OPTIONVALIDATION, Mid(PrimaryKeyControl(0).Tag, 4), PrimaryKeyControl(0).Text)
+                            If String.IsNullOrEmpty(User) Then
+                                Acc.PopulateDataSet(read, String.Format("Select{0}", TableName), "OPTION", OPTIONVALIDATION, Mid(PrimaryKeyControl(0).Tag, 4), PrimaryKeyControl(0).Text)
+                            Else
+                                Acc.PopulateDataSet(read, String.Format("Select{0}", TableName), "OPTION", OPTIONVALIDATION, Mid(PrimaryKeyControl(0).Tag, 4), PrimaryKeyControl(0).Text, "User", User)
+                            End If
+
 
                         ElseIf PrimaryKeyControl.Length = 2 Then
                             If PrimaryKeyControl(0).Text.Length = 0 Or PrimaryKeyControl(1).Text.Length = 0 Then Exit Sub
-                            Acc.PopulateDataSet(read, "Select" & TableName, "OPTION", OPTIONVALIDATION, Mid(PrimaryKeyControl(0).Tag, 4), PrimaryKeyControl(0).Text, Mid(PrimaryKeyControl(1).Tag, 4), PrimaryKeyControl(1).Text)
+                            If String.IsNullOrEmpty(User) Then
+                                Acc.PopulateDataSet(read, String.Format("Select{0}", TableName), "OPTION", OPTIONVALIDATION, Mid(PrimaryKeyControl(0).Tag, 4), PrimaryKeyControl(0).Text, Mid(PrimaryKeyControl(1).Tag, 4), PrimaryKeyControl(1).Text)
+                            Else
+                                Acc.PopulateDataSet(read, String.Format("Select{0}", TableName), "OPTION", OPTIONVALIDATION, Mid(PrimaryKeyControl(0).Tag, 4), PrimaryKeyControl(0).Text, Mid(PrimaryKeyControl(1).Tag, 4), PrimaryKeyControl(1).Text, "User", User)
+                            End If
 
                         ElseIf PrimaryKeyControl.Length = 3 Then
+
                             If PrimaryKeyControl(0).Text.Length = 0 Or PrimaryKeyControl(1).Text.Length = 0 Or PrimaryKeyControl(2).Text.Length = 0 Then Exit Sub
-                            Acc.PopulateDataSet(read, "Select" & TableName, "OPTION", OPTIONVALIDATION, Mid(PrimaryKeyControl(0).Tag, 4), PrimaryKeyControl(0).Text, Mid(PrimaryKeyControl(1).Tag, 4), PrimaryKeyControl(1).Text, Mid(PrimaryKeyControl(2).Tag, 4), PrimaryKeyControl(2).Text)
-
-                        End If
-                        '''''''''''''''''''''
-
-                        If read.Tables(0).Rows.Count > 0 Then
-                            Me.SetData(read, 0)
-                        Else
-                            If Me.ActiveForm.Tag = DataManager.DataMode.Edit Then
-                                mActiveForm.Tag = DataManager.DataMode.Insert
-                                Me.InitalizeActiveFormComponents()
+                            If String.IsNullOrEmpty(User) Then
+                                Acc.PopulateDataSet(read, String.Format("Select{0}", TableName), "OPTION", OPTIONVALIDATION, Mid(PrimaryKeyControl(0).Tag, 4), PrimaryKeyControl(0).Text, Mid(PrimaryKeyControl(1).Tag, 4), PrimaryKeyControl(1).Text, Mid(PrimaryKeyControl(2).Tag, 4), PrimaryKeyControl(2).Text)
+                            Else
+                                Acc.PopulateDataSet(read, String.Format("Select{0}", TableName), "OPTION", OPTIONVALIDATION, Mid(PrimaryKeyControl(0).Tag, 4), PrimaryKeyControl(0).Text, Mid(PrimaryKeyControl(1).Tag, 4), PrimaryKeyControl(1).Text, Mid(PrimaryKeyControl(2).Tag, 4), PrimaryKeyControl(2).Text,"User",User)
                             End If
+
                         End If
+                            '''''''''''''''''''''
+
+                            If read.Tables(0).Rows.Count > 0 Then
+                            Me.SetData(read, 0)
+                            Else
+                                If Me.ActiveForm.Tag = DataManager.DataMode.Edit Then
+                                    mActiveForm.Tag = DataManager.DataMode.Insert
+                                    Me.InitalizeActiveFormComponents()
+                                End If
+                            End If
                     End If
+
                 Else
 
                     Dim view As New DataView
@@ -987,6 +1048,8 @@ Public Class DataDirector
                         If PrimaryKeyControl.Length = 1 Then
                             view.Sort = Mid(PrimaryKeyControl(0).Tag, 4)
                             int = view.Find(PrimaryKeyControl(0).Text)
+                            mData.Tables.Clear()
+                            mData.Tables.Add(view.ToTable)
                             If int <> -1 Then
                                 Me.SetData(Me.mData, int)
                             End If
@@ -996,23 +1059,30 @@ Public Class DataDirector
                             arr(0) = PrimaryKeyControl(0).Text
                             arr(1) = PrimaryKeyControl(1).Text
                             view.Sort = Mid(PrimaryKeyControl(0).Tag, 4) & "," & Mid(PrimaryKeyControl(1).Tag, 4)
+                            mData.Tables.Clear()
                             int = view.Find(arr)
+                            mData.Tables.Add(view.ToTable)
+
                             If int <> -1 Then
                                 Me.SetData(Me.mData, int)
                             End If
+
                         ElseIf PrimaryKeyControl.Length = 3 Then
                             Dim arr(2) As String
                             arr(0) = PrimaryKeyControl(0).Text
                             arr(1) = PrimaryKeyControl(1).Text
                             arr(2) = PrimaryKeyControl(2).Text
                             view.Sort = Mid(PrimaryKeyControl(0).Tag, 4) & "," & Mid(PrimaryKeyControl(1).Tag, 4) & "," & Mid(PrimaryKeyControl(2).Tag, 4)
+                            mData.Tables.Clear()
                             int = view.Find(arr)
+                            mData.Tables.Add(view.ToTable)
+
                             If int <> -1 Then
                                 Me.SetData(Me.mData, int)
                             End If
                         End If
                     End If
-                End If
+                    End If
             End If
         Catch ex As NullReferenceException
 
@@ -1025,13 +1095,11 @@ Public Class DataDirector
         Dim iCol As Int16
         Dim iRow As Int16
         Dim iSheet As Int16
+        'DetailControl.ActiveSheetIndex = 0
         For iSheet = 0 To DetailControl.Sheets.Count - 1
             For iRow = 0 To DetailControl.Sheets(iSheet).RowCount - 1
                 For iCol = 0 To DetailControl.Sheets(iSheet).ColumnCount - 1
-                    'DetailControl.Sheets(0).Col = iCol
-                    'DetailControl.Sheets(0).Row = iRow
-
-                    DetailControl.Sheets(iSheet).SetText(iRow, iCol, "")
+                    DetailControl.Sheets(iSheet).SetText(iRow, iCol, String.Empty)
                 Next
             Next
         Next

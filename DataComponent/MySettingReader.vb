@@ -10,9 +10,11 @@ Public Class MySettingReader
             Dim Reader As New Xml.XmlTextReader(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile)
             If FieldLevel = MySettingReader.FieldLevel.ApplicationLevel Then
                 Reader.ReadToFollowing("applicationSettings")
-            Else
+            ElseIf FieldLevel = MySettingReader.FieldLevel.UserLevel Then
                 Reader.ReadToFollowing("userSettings")
+            
             End If
+
 
             Reader.ReadToFollowing("BusinessLeaf.My.MySettings")
             Reader.ReadToFollowing("setting")

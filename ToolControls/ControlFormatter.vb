@@ -3,16 +3,13 @@
 Module ControlFormatter
     Sub InitializedFormat(ByRef Control As Windows.Forms.Control)
 
+        Dim ctrlBorderStyle As Infragistics.Win.UIElementBorderStyle = Infragistics.Win.UIElementBorderStyle.WindowsVista
         If TypeOf Control Is Infragistics.Win.UltraWinEditors.UltraTextEditor Or Control.GetType.ToString = "ATUrduTextBox.UrduTextBox" Then
             Dim UltrCtrl As Infragistics.Win.UltraWinEditors.UltraTextEditor
             UltrCtrl = Control
             UltrCtrl.UseAppStyling = True
-            UltrCtrl.BorderStyle = Infragistics.Win.UIElementBorderStyle.WindowsVista
-            UltrCtrl.UseAppStyling = False
-            'WORK FINE LITTLE WORK REQUIRED
-            'UltrCtrl.UseAppStyling = True
-            ' UltrCtrl.Appearance.StyleLibraryName = AppDomain.CurrentDomain.BaseDirectory & "\Styles\StyleGreen.isl"
-
+            UltrCtrl.BorderStyle = ctrlBorderStyle
+            
             If Mid(UltrCtrl.Tag, 1, 2) = "FK" Or Mid(UltrCtrl.Tag, 1, 2) = "PK" Then
                 Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
                 Dim EditorButton1 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton
@@ -21,13 +18,17 @@ Module ControlFormatter
                 Appearance1.Image = Global.AzamTechnologies.My.Resources.search
                 UltrCtrl.ButtonsRight.Clear()
                 UltrCtrl.ButtonsRight.Add(EditorButton1)
-                UltrCtrl.BorderStyle = Infragistics.Win.UIElementBorderStyle.WindowsVista
+                UltrCtrl.BorderStyle = ctrlBorderStyle
             End If
+        ElseIf TypeOf Control Is Infragistics.Win.UltraWinEditors.UltraCheckEditor Then
+            Dim UltrCtrl As Infragistics.Win.UltraWinEditors.UltraCheckEditor
+            UltrCtrl = Control
+            UltrCtrl.UseAppStyling = False
         ElseIf TypeOf Control Is Infragistics.Win.UltraWinEditors.UltraComboEditor Then
             Dim UltrCtrl As Infragistics.Win.UltraWinEditors.UltraComboEditor
             UltrCtrl = Control
             UltrCtrl.UseAppStyling = True
-            UltrCtrl.BorderStyle = Infragistics.Win.UIElementBorderStyle.WindowsVista
+            UltrCtrl.BorderStyle = ctrlBorderStyle
             UltrCtrl.UseAppStyling = True
             '
 
@@ -44,7 +45,7 @@ Module ControlFormatter
         ElseIf TypeOf Control Is Infragistics.Win.UltraWinGrid.UltraCombo Then
             Dim UltrCtrl As Infragistics.Win.UltraWinGrid.UltraCombo
             UltrCtrl = Control
-            UltrCtrl.BorderStyle = Infragistics.Win.UIElementBorderStyle.WindowsVista
+            UltrCtrl.BorderStyle = ctrlBorderStyle
             UltrCtrl.UseAppStyling = True
             '
 
@@ -56,11 +57,14 @@ Module ControlFormatter
                 Appearance1.Image = Global.AzamTechnologies.My.Resources.search
                 UltrCtrl.ButtonsRight.Clear()
                 UltrCtrl.ButtonsRight.Add(EditorButton1)
-                UltrCtrl.BorderStyle = Infragistics.Win.UIElementBorderStyle.WindowsVista
+                UltrCtrl.BorderStyle = ctrlBorderStyle
             End If
         ElseIf TypeOf Control Is Infragistics.Win.UltraWinEditors.UltraNumericEditor Then
             Dim UltrCtrl As Infragistics.Win.UltraWinEditors.UltraNumericEditor
+
             UltrCtrl = Control
+            'UltrCtrl.Appearance.BackColor2 = Drawing.Color.White
+            UltrCtrl.BorderStyle = ctrlBorderStyle
             UltrCtrl.UseAppStyling = True
             ' UltrCtrl.Appearance.StyleLibraryName = AppDomain.CurrentDomain.BaseDirectory & "\Styles\StyleBlack.isl"
             UltrCtrl.PromptChar = ""

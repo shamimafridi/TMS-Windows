@@ -24,12 +24,19 @@ Namespace Database
             Insert
             Update
         End Enum
-        Public Event MessageGenerated(ByVal Message As String)
+        Public Event MessageGenerated(ByVal msg As String)
+        Private _dataBase As DataBases
         Private WithEvents masterTable As DataTable
         Private WithEvents detailTable As DataTable
+        Public Sub New(Optional ByVal dataBase As DataBases = AzamTechnologies.Database.DataBases.Current)
+            Me.DataBases = dataBase
+
+        End Sub
+
+
 #Region " Update A Single record or rows"
         <AutoComplete(True)> _
-        Public Function UpdateData(ByVal storeProcedureName As String, ByRef updatedData As DataSet, ByVal saveMode As UpdateMode) As Integer
+        Public Overloads Function UpdateData(ByVal storeProcedureName As String, ByRef updatedData As DataSet, ByVal saveMode As UpdateMode) As Integer
             ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             'The purpose of this procedure to update or insert a DataSet in a table throw stored procedure
             ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -63,27 +70,60 @@ Namespace Database
                 RaiseEvent MessageGenerated(exf.Message)
             End Try
         End Function
+        Overloads Sub UpdateData(ByVal storedProcedure As String, ByVal ParamArray Parameters() As Object)
+            Dim dReader As SqlClient.SqlDataReader
+            Dim con As New Database.DataConnection(Me.DataBases)
+            Dim sqlCon As New SqlConnection
+            sqlCon.ConnectionString = con.ConnectionString
+            Dim sqlCmd As SqlCommand
+
+            Try
+                sqlCmd = New SqlCommand(storedProcedure)
+                sqlCmd.CommandType = CommandType.StoredProcedure
+                sqlCmd.Connection = sqlCon
+                sqlCmd.Connection.Open()
+                Dim Cnt As Integer
+                For Cnt = 1 To UBound(Parameters) + 1
+                    'If Parameters(Cnt).GetType.ToString = "System.Integer" Then
+                    'sqlCmd.Parameters.Addwithvalue(CType("@" & Parameters(Cnt - 1), String), Parameters(Cnt), SqlDbType.BigInt)
+                    sqlCmd.Parameters.AddWithValue(CType("@" & Parameters(Cnt - 1), String), Parameters(Cnt))
+                    Cnt += 1
+                Next
+
+                dReader = sqlCmd.ExecuteReader
+                sqlCon.Close()
+                sqlCmd = Nothing
+            Catch ex As SqlException
+                If ex.Number = 17 Then
+                    Throw New ConnectionException("Connection can't be Established with Server..." & vbCrLf & vbCrLf & "There can be any one of the following problem causes :" & vbCrLf & "-  The Server is busy and not responding." & vbCrLf & "-  There is a problem in accessing network resources." & vbCrLf & "-  The Database / Business Components are not available." & vbCrLf & vbCrLf & "Please contact the System Administrator...")
+                Else
+                    UnhandledExceptionHandler()
+
+                End If
+            End Try
+
+        End Sub
         <AutoComplete(True)> _
-      Public Function UpdateExecuteQuery(ByVal ExecuteQuery As String) As Integer
-            Dim dtConnection As New DataConnection ''Initilizing connectionstring
+        Public Function UpdateExecuteQuery(ByVal ExecuteQuery As String) As Integer
+            Dim dtConnection As New Database.DataConnection(Me.DataBases) ''Initilizing connectionstring
             Dim updateCmd As SqlCommand
             Dim adapter As SqlDataAdapter
             Dim sqlCon As SqlConnection
-
-
 
             sqlCon = New SqlConnection(dtConnection.ConnectionString) 'Creating instance of SQL Connection throw DataConnection
             updateCmd = New SqlCommand(ExecuteQuery, sqlCon)
             updateCmd.CommandType = CommandType.Text
 
-            Dim ColumnMessage As String = String.Empty
+
+            'Dim ColumnMessage As String = String.Empty
 
             Try
                 sqlCon.Open()
-
-                Return updateCmd.ExecuteNonQuery()
+                Dim int As Integer = updateCmd.ExecuteNonQuery()
                 sqlCon.Close()
                 sqlCon = Nothing
+                Return int
+
 
                 'Return No of row effected
             Catch ex As SqlException
@@ -116,8 +156,8 @@ Namespace Database
             End Try
         End Function
         <AutoComplete(True)> _
-        Private Function UpdateDataSet(ByVal storeProcedure As String, ByRef updatedData As DataSet, ByVal saveMode As UpdateMode) As SqlDataReader
-            Dim dtConnection As New DataConnection ''Initilizing connectionstring
+        Private Function UpdateDataSet(ByVal storeProcedure As String, ByRef updatedData As DataSet, ByVal saveMode As UpdateMode) As DataTable
+            Dim dtConnection As New DataConnection(Me.DataBases) ''Initilizing connectionstring
             Dim updateCmd As SqlCommand
             Dim adapter As SqlDataAdapter
             Dim UpdateParameters As SqlParameter
@@ -156,27 +196,30 @@ Namespace Database
                 End With
 
                 sqlCon.Open()
-                Dim reader As SqlDataReader
-                reader = updateCmd.ExecuteReader ''TO GET THE AUTO GENERATED NO'S AFTER UPDATION
+                Dim table As New DataTable
+                Dim reader As SqlDataReader ''TO GET THE AUTO GENERATED NO'S AFTER UPDATION
+                reader = updateCmd.ExecuteReader
+                table.Load(reader)
                 Dim intCnt As Integer
-                If Not IsNothing(reader) Then
-                    If reader.HasRows Then
-                        reader.Read()
+                If Not IsNothing(table) Then
+                    If table.Rows.Count > 0 Then
                         For intCnt = 0 To updatedData.Tables(0).Rows.Count - 1
-                            updatedData.Tables(0).Rows(intCnt).Item(reader.GetName(0)) = reader.GetString(0)
+                            updatedData.Tables(0).Rows(intCnt).Item(table.Columns(0).ToString) = table.Rows(0).Item(0)
                         Next
                         updatedData.AcceptChanges()
+                        sqlCon.Close()
                     End If
                 End If
-
+                sqlCon.Close()
                 'LogGenerator.CreateLog(ColumnMessage, masterTable.TableName & saveMode.ToString, 0, EventLogEntryType.Information)
                 ' ContextUtil.SetComplete()
-                Return reader
+                Return table
                 'Return No of row effected
             Catch ex As SqlException
                 If ex.Number = 547 Then
                     'MessageBox.Show("Parent File doesn't containe this record that you specified in this File", "Foregin Key Conflict")
                     'ContextUtil.SetAbort()
+
                     Throw New UpdatingException("Parent File doesn't containe this record that you specified in this File")
                 ElseIf ex.Number = 2627 Then
                     MessageBox.Show("You Enter a Code Or Description which is already defined" & vbCrLf & "Please enter other code")
@@ -196,6 +239,7 @@ Namespace Database
                 'ContextUtil.SetAbort()
                 Throw ex
             Finally
+                sqlCon.Close()
                 sqlCon = Nothing
                 adapter = Nothing
                 updateCmd = Nothing
@@ -215,7 +259,7 @@ Namespace Database
 
 
             Try
-                dtConnection = New DataConnection ''Initilizing connectionstring
+                dtConnection = New DataConnection(Me.DataBases) ''Initilizing connectionstring
                 sqlCon = New SqlConnection(dtConnection.ConnectionString)
                 masterTable = dsDeleted.Tables(0)
                 deleteCmd = New SqlCommand(deleteStoreProcedureName, sqlCon)
@@ -275,16 +319,16 @@ Namespace Database
                         HandleDataSetErrors(dsChangedDataSet)
                     Else
                         'Update the changes in the database.
-                        Dim reader As SqlDataReader
-                        reader = UpdateDataSet(storeProcedureName1, dsChangedDataSet, saveMode)
+                        Dim table As DataTable
+                        table = UpdateDataSet(storeProcedureName1, dsChangedDataSet, saveMode)
                         DeleteDataSet(deleteStoreProcedureName, updatedData1)
                         updatedData1 = dsChangedDataSet
                         Dim intCnt As Integer
 
-                        If Not IsNothing(reader) Then
-                            If reader.HasRows Then
+                        If Not IsNothing(table) Then
+                            If table.Rows.Count > 0 Then
                                 For intCnt = 0 To updatedData2.Tables(0).Rows.Count - 1
-                                    updatedData2.Tables(0).Rows(intCnt).Item(reader.GetName(0)) = reader.GetString(0)
+                                    updatedData2.Tables(0).Rows(intCnt).Item(table.Columns(0).ColumnName) = table.Rows(0).Item(0)
                                 Next
                                 updatedData2.AcceptChanges()
                             End If
@@ -312,10 +356,12 @@ Namespace Database
             Catch ex As Exception
                 'ContextUtil.SetAbort()
                 Throw New UpdatingException("Error While Updating Please Contact Administrator" & vbCrLf & ex.Message)
+            Finally
+
             End Try
         End Function
         Private Function UpdateDetailDataSet(ByVal storeProcedure1 As String, ByVal storeProcedure2 As String, ByVal deleteStoreProcedure As String, ByRef updatedData As DataSet, ByVal saveMode As UpdateMode) As Integer
-            Dim dtConnection As New DataConnection ''Initilizing connectionstring
+            Dim dtConnection As New DataConnection(Me.DataBases) ''Initilizing connectionstring
             Dim updateCmd As SqlCommand
             'Dim adapter As SqlDataAdapter
             Dim UpdateParameters As SqlParameter
@@ -361,7 +407,7 @@ Namespace Database
             End Try
         End Function
 #End Region
-       
+
 #Region "Handles Errors"
         Sub HandleDataSetErrors(ByVal dsChanged As DataSet)
             Try
@@ -409,11 +455,20 @@ Namespace Database
         End Sub
 #End Region
         Protected Overrides Sub Finalize()
-            MyBase.Finalize()
+
             'sqlCon = Nothing
             masterTable = Nothing
             detailTable = Nothing
+            MyBase.Finalize()
         End Sub
+        Public Property DataBases() As DataBases
+            Get
+                Return _dataBase
+            End Get
+            Set(ByVal value As DataBases)
+                _dataBase = value
+            End Set
+        End Property
 
     End Class
     Public Class UpdatingException

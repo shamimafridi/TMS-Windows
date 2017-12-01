@@ -4,6 +4,7 @@ Namespace Database
 
     '<ComClass(DataConnection.ClassId, DataConnection.InterfaceId, DataConnection.EventsId)> _
     Public Class DataConnection
+        Private _notEncrypted As String
         '        Inherits ServicedComponent
         '#Region "COM GUIDs"
         '        ' These  GUIDs provide the COM identity for this class 
@@ -19,17 +20,41 @@ Namespace Database
         ' registered in the COM registry and cannot be created 
         ' via CreateObject.
         Private mConString As String
-        Public Sub New()
-            '  MyBase.New()
-            Dim EncryptStrPWD As String = String.Empty
+        Public Sub New(ByVal dataBases As DataBases)
+            Select Case dataBases
+                Case Database.DataBases.Current
+                    ConnectionString = MySettingReader.Read("ConnectionString", MySettingReader.FieldLevel.ApplicationLevel)
+                Case Database.DataBases.Security
+                    ConnectionString = MySettingReader.Read("ConnectionString_Security", MySettingReader.FieldLevel.ApplicationLevel)
+                Case Database.DataBases.GeneralLedger
+                    ConnectionString = MySettingReader.Read("ConnectionString_GeneralLedger", MySettingReader.FieldLevel.ApplicationLevel)
+                Case Database.DataBases.MMS
+                    ConnectionString = MySettingReader.Read("ConnectionString_MMS", MySettingReader.FieldLevel.ApplicationLevel)
+                Case Database.DataBases.Sale
+                    ConnectionString = MySettingReader.Read("ConnectionString_Sale", MySettingReader.FieldLevel.ApplicationLevel)
+                Case Database.DataBases.Inventory
+                    ConnectionString = MySettingReader.Read("ConnectionString_Inventory", MySettingReader.FieldLevel.ApplicationLevel)
 
-            'EncryptStrPWD = MySettingReader.Read("ConnectionString", MySettingReader.FieldLevel.ApplicationLevel) ''Get Encrypted Conncetion String from App.config file
-            ' Dim data() As Byte = Convert.FromBase64String(EncryptStrPWD)  ''Decrypt It
-            ' mConString = System.Text.ASCIIEncoding.ASCII.GetString(data)
-
-            'mConString = mConString & "Data Source=" & MySettingReader.Read("ServerName", MySettingReader.FieldLevel.ApplicationLevel)
-            mConString = MySettingReader.Read("ConnectionString", MySettingReader.FieldLevel.ApplicationLevel)
+            End Select
         End Sub
+        Public Sub New()
+            ConnectionString = MySettingReader.Read("ConnectionString", MySettingReader.FieldLevel.ApplicationLevel)
+
+        End Sub
+        'Public Sub New()
+        '    '  MyBase.New()
+        '    Dim EncryptStrPWD As String = String.Empty
+        '    _notEncrypted = MySettingReader.Read("ConnectionString", MySettingReader.FieldLevel.ApplicationLevel)
+
+        '    'EncryptStrPWD = MySettingReader.Read("ConnectionString", MySettingReader.FieldLevel.ApplicationLevel) ''Get Encrypted Conncetion String from App.config file
+        '    'Dim data() As Byte = Convert.FromBase64String(EncryptStrPWD)  ''Decrypt It
+        '    'mConString = System.Text.ASCIIEncoding.ASCII.GetString(data)
+
+        '    'mConString = mConString & "Data Source=" & MySettingReader.Read("ServerName", MySettingReader.FieldLevel.ApplicationLevel)
+        '    mConString = _notEncrypted
+
+
+        'End Sub
         ''''''''''''''''How to Encrypt the Connection string''''
         'Dim data() As Byte = System.Text.ASCIIEncoding.ASCII.GetBytes("workstation id=DotNetServer;data source=DotNetServer;initial catalog=BIS;User ID=Abc;Password=AAAAA")
         'Dim str As String = Convert.ToBase64String(Data)
@@ -42,10 +67,13 @@ Namespace Database
             sqlCon.Open()
             Return sqlCon
         End Function
-        Public ReadOnly Property ConnectionString() As String
+        Public Property ConnectionString() As String
             Get
                 Return mConString
             End Get
+            Set(ByVal value As String)
+                mConString = value
+            End Set
         End Property
         'Public Sub OpenConnection()
         '    Connection.Open()

@@ -187,7 +187,7 @@
       <Name>ATUrduTextBox</Name>
     </ProjectReference>
     <ProjectReference Include="..\BusinessComponents\ATBusinessComponents.vbproj">
-      <Project>{AB65D285-8F6C-4464-82C4-A95CDBCD71A9}</Project>
+      <Project>{ab65d285-8f6c-4464-82c4-a95cdbcd71a9}</Project>
       <Name>ATBusinessComponents</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataComponent\ATDataComponents.vbproj">
@@ -571,12 +571,12 @@
   <ItemGroup>
     <PublishFile Include="stdole">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>

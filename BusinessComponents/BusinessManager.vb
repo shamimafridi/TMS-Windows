@@ -519,24 +519,39 @@ ad:
                     SVD.Narration = ""
                     Amount = Amount + .Rows(iRow).Item("Amount")
                     SVD.CreateRow()
+
+
+                    '   Generate debit row
+                    '   
+                    'Generate Row For GLCode Debit Done
+                    SVD.Branch = Me.m_FromGeneratedData.Tables(0).Rows(0).Item("BranchName")
+                    SVD.GLCode = GetVehicleTransactionTypeGLCode(.Rows(iRow).Item("TypeCode"), .Rows(iRow).Item("TransactionNature"))
+                    SVD.DivisionCode = MySettingReader.Read("DefaultDivisionCode", MySettingReader.FieldLevel.ApplicationLevel)
+                    SVD.Reference = "" '"TMS/REC/" & SVD.BranchCode & " - " & .Rows(irow).Item("TransactionNo")
+                    SVD.Credit = CDbl(.Rows(iRow).Item("Amount"))
+                    SVD.Debit = 0D
+                    SVD.Narration = ""
+                    SVD.CreateRow()
+
+
                 End If
 
             Next
 
-            If Amount > 0 And Amount <> 0 Then
-                SVD.Branch = Me.m_FromGeneratedData.Tables(0).Rows(0).Item("BranchName")
-                SVD.GLCode = GetVehicleFreightGLCode(Me.m_FromGeneratedData.Tables(0).Rows(0).Item("VehicleCode"))
-                SVD.DivisionCode = MySettingReader.Read("DefaultDivisionCode", MySettingReader.FieldLevel.ApplicationLevel)
-                SVD.Reference = "" ' "TMS/REC/" & SVD.BranchCode & " - " & .Rows(irow).Item("TransactionNo")
-                SVD.Debit = 0D
-                SVD.Credit = Math.Abs(Amount)
-                SVD.Narration = ""
-                SVD.CreateRow()
-                IsVoucherCancelled = False
-            Else
-                IsVoucherCancelled = True
-            End If
+            'If Amount > 0 And Amount <> 0 Then
+            '    SVD.Branch = Me.m_FromGeneratedData.Tables(0).Rows(0).Item("BranchName")
+            '    SVD.GLCode = GetVehicleFreightGLCode(Me.m_FromGeneratedData.Tables(0).Rows(0).Item("VehicleCode"))
+            '    SVD.DivisionCode = MySettingReader.Read("DefaultDivisionCode", MySettingReader.FieldLevel.ApplicationLevel)
+            '    SVD.Reference = "" ' "TMS/REC/" & SVD.BranchCode & " - " & .Rows(irow).Item("TransactionNo")
+            '    SVD.Debit = 0D
+            '    SVD.Credit = Math.Abs(Amount)
+            '    SVD.Narration = ""
+            '    SVD.CreateRow()
+            '    IsVoucherCancelled = False
+            'Else
+            '    IsVoucherCancelled = True
             'End If
+            ''End If
             Dim MasterDataSet As New DataSet(Me.m_FromGeneratedData.DataSetName)
             MasterDataSet.Tables.Add(SVD.VoucherDetailTable)
             Return MasterDataSet
@@ -572,26 +587,42 @@ ad:
                     SVD.Narration = ""
                     Amount = Amount + .Rows(iRow).Item("Amount")
                     SVD.CreateRow()
+
+                    '   Generate debit row
+                    '   
+                    'Generate Row For GLCode Debit Done
+                    SVD.Branch = Me.m_FromGeneratedData.Tables(0).Rows(0).Item("BranchName")
+                    SVD.GLCode = GetVehicleTransactionTypeGLCode(.Rows(iRow).Item("TypeCode"), .Rows(iRow).Item("TransactionNature"))
+                    SVD.DivisionCode = MySettingReader.Read("DefaultDivisionCode", MySettingReader.FieldLevel.ApplicationLevel)
+                    SVD.Reference = "" '"TMS/REC/" & SVD.BranchCode & " - " & .Rows(irow).Item("TransactionNo")
+                    SVD.Debit = CDbl(.Rows(iRow).Item("Amount"))
+                    SVD.Credit = 0D
+                    SVD.Narration = ""
+                    SVD.CreateRow()
                 End If
+
+
+
+
             Next
 
-            If Amount <> 0 Then
-                SVD.Branch = Me.m_FromGeneratedData.Tables(0).Rows(0).Item("BranchName")
-                SVD.GLCode = GetVehicleFreightGLCode(Me.m_FromGeneratedData.Tables(0).Rows(0).Item("VehicleCode"))
-                SVD.DivisionCode = MySettingReader.Read("DefaultDivisionCode", MySettingReader.FieldLevel.ApplicationLevel)
-                SVD.Reference = "" ' "TMS/REC/" & SVD.BranchCode & " - " & .Rows(irow).Item("TransactionNo")
-                SVD.Debit = Amount
-                SVD.Credit = 0D
-                If IsTripAdvanceExist = True Then
-                    SVD.Narration = "Trip Advance"
-                Else
-                    SVD.Narration = ""
-                End If
-                SVD.CreateRow()
-                IsVoucherCancelled = False
-            Else
-                IsVoucherCancelled = True
-            End If
+            'If Amount <> 0 Then
+            '    SVD.Branch = Me.m_FromGeneratedData.Tables(0).Rows(0).Item("BranchName")
+            '    SVD.GLCode = GetVehicleTransactionTypeGLCode(.Rows(iRow).Item("TypeCode"))
+            '    SVD.DivisionCode = MySettingReader.Read("DefaultDivisionCode", MySettingReader.FieldLevel.ApplicationLevel)
+            '    SVD.Reference = "" ' "TMS/REC/" & SVD.BranchCode & " - " & .Rows(irow).Item("TransactionNo")
+            '    SVD.Debit = Amount
+            '    SVD.Credit = 0D
+            '    If IsTripAdvanceExist = True Then
+            '        SVD.Narration = "Trip Advance"
+            '    Else
+            '        SVD.Narration = ""
+            '    End If
+            '    SVD.CreateRow()
+            '    IsVoucherCancelled = False
+            'Else
+            '    IsVoucherCancelled = True
+            'End If
             'End If
             Dim MasterDataSet As New DataSet(Me.m_FromGeneratedData.DataSetName)
             MasterDataSet.Tables.Add(SVD.VoucherDetailTable)
@@ -705,6 +736,18 @@ ad:
         Reader = DataAccess.GetRecord("SelectVehicles", "VehicleCode", VehicleCode)
         If Reader.Read Then
             Return IIf(IsDBNull(Reader.Item("FreightGLCode")), String.Empty, Reader.Item("FreightGLCode"))
+        End If
+
+        Reader = Nothing
+        DataAccess = Nothing
+        Return String.Empty
+    End Function
+    Function GetVehicleTransactionTypeGLCode(ByVal TransactionTypeCode As String, ByVal TransactionNatureCode As String) As String
+        Dim DataAccess As New AzamTechnologies.Database.DataAccess
+        Dim Reader As SqlDataReader
+        Reader = DataAccess.GetRecord("[SelectTransactionTypes]", "TransactionTypeCode", TransactionTypeCode, "NatureCode", TransactionNatureCode)
+        If Reader.Read Then
+            Return IIf(IsDBNull(Reader.Item("GLCode")), String.Empty, Reader.Item("GLCode"))
         End If
 
         Reader = Nothing

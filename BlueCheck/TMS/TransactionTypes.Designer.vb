@@ -23,41 +23,48 @@
         'Do not modify it using the code editor.
         <System.Diagnostics.DebuggerStepThrough()> _
         Private Sub InitializeComponent()
-            Me.components = New System.ComponentModel.Container
-            Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
+            Me.components = New System.ComponentModel.Container()
+            Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
             Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TransactionTypes))
-            Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Me.Desc = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.Label1 = New System.Windows.Forms.Label
-            Me.Label2 = New System.Windows.Forms.Label
-            Me.Label3 = New System.Windows.Forms.Label
-            Me.txtNature = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.Label4 = New System.Windows.Forms.Label
-            Me.ATUrduTitle = New ATUrduTextBox.UrduTextBox
+            Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Me.Desc = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label1 = New System.Windows.Forms.Label()
+            Me.Label2 = New System.Windows.Forms.Label()
+            Me.Label3 = New System.Windows.Forms.Label()
+            Me.txtNature = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label4 = New System.Windows.Forms.Label()
+            Me.ATUrduTitle = New ATUrduTextBox.UrduTextBox()
             Me.ErrProvider = New AzamTechnologies.ATErrorProvider(Me.components)
-            Me.TxtNatureCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.TxtTransactionTypeCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.DtDate = New System.Windows.Forms.DateTimePicker
-            Me.Label5 = New System.Windows.Forms.Label
+            Me.TxtNatureCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtTransactionTypeCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.DtDate = New System.Windows.Forms.DateTimePicker()
+            Me.Label5 = New System.Windows.Forms.Label()
+            Me.TxtGLDesc = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtGLCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
             CType(Me.Desc, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.txtNature, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.ATUrduTitle, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.ErrProvider, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.TxtNatureCode, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.TxtTransactionTypeCode, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtGLDesc, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtGLCode, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             '
             'Desc
             '
             Me.Desc.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Appearance5.BackColor = System.Drawing.SystemColors.Window
             Me.Desc.Appearance = Appearance5
             Me.Desc.BackColor = System.Drawing.SystemColors.Window
-            Me.Desc.Location = New System.Drawing.Point(236, 215)
+            Me.Desc.Location = New System.Drawing.Point(236, 217)
             Me.Desc.Name = "Desc"
             Me.Desc.Size = New System.Drawing.Size(665, 21)
             Me.Desc.TabIndex = 2
@@ -78,7 +85,7 @@
             '
             Me.Label2.BackColor = System.Drawing.Color.Transparent
             Me.Label2.ForeColor = System.Drawing.Color.Navy
-            Me.Label2.Location = New System.Drawing.Point(106, 275)
+            Me.Label2.Location = New System.Drawing.Point(106, 294)
             Me.Label2.Name = "Label2"
             Me.Label2.Size = New System.Drawing.Size(110, 20)
             Me.Label2.TabIndex = 114
@@ -97,8 +104,8 @@
             'txtNature
             '
             Me.txtNature.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Appearance1.BackColor = System.Drawing.SystemColors.Window
             Me.txtNature.Appearance = Appearance1
             Me.txtNature.BackColor = System.Drawing.SystemColors.Window
@@ -114,19 +121,19 @@
             Me.Label4.BackColor = System.Drawing.Color.Transparent
             Me.Label4.Font = Global.BusinessLeaf.My.MySettings.Default.UrduFontType
             Me.Label4.ForeColor = System.Drawing.Color.Navy
-            Me.Label4.Location = New System.Drawing.Point(106, 231)
+            Me.Label4.Location = New System.Drawing.Point(106, 241)
             Me.Label4.Name = "Label4"
-            Me.Label4.Size = New System.Drawing.Size(110, 30)
+            Me.Label4.Size = New System.Drawing.Size(110, 26)
             Me.Label4.TabIndex = 118
-            Me.Label4.Text = "شہر"
+            Me.Label4.Text = "تفصیل"
             '
             'ATUrduTitle
             '
             Me.ATUrduTitle.Font = Global.BusinessLeaf.My.MySettings.Default.UrduFontType
-            Me.ATUrduTitle.Location = New System.Drawing.Point(236, 238)
+            Me.ATUrduTitle.Location = New System.Drawing.Point(236, 241)
             Me.ATUrduTitle.Name = "ATUrduTitle"
             Me.ATUrduTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-            Me.ATUrduTitle.Size = New System.Drawing.Size(214, 35)
+            Me.ATUrduTitle.Size = New System.Drawing.Size(214, 26)
             Me.ATUrduTitle.TabIndex = 3
             Me.ATUrduTitle.Tag = "dd.UrduTitle"
             '
@@ -140,7 +147,7 @@
             'TxtNatureCode
             '
             Me.TxtNatureCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
             Appearance2.BackColor = System.Drawing.SystemColors.Window
             Me.TxtNatureCode.Appearance = Appearance2
             Me.TxtNatureCode.BackColor = System.Drawing.SystemColors.Window
@@ -155,11 +162,11 @@
             '
             Me.TxtTransactionTypeCode.AccessibleDescription = "AUTO"
             Me.TxtTransactionTypeCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
             Appearance6.BackColor = System.Drawing.SystemColors.Window
             Me.TxtTransactionTypeCode.Appearance = Appearance6
             Me.TxtTransactionTypeCode.BackColor = System.Drawing.SystemColors.Window
-            Me.TxtTransactionTypeCode.Location = New System.Drawing.Point(236, 192)
+            Me.TxtTransactionTypeCode.Location = New System.Drawing.Point(236, 193)
             Me.TxtTransactionTypeCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.TransactionTypeCode_Length
             Me.TxtTransactionTypeCode.Name = "TxtTransactionTypeCode"
             Me.TxtTransactionTypeCode.Size = New System.Drawing.Size(130, 21)
@@ -169,34 +176,79 @@
             'DtDate
             '
             Me.DtDate.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
             Me.DtDate.CalendarTitleBackColor = System.Drawing.SystemColors.Control
             Me.DtDate.CalendarTitleForeColor = System.Drawing.SystemColors.WindowText
             Me.DtDate.CustomFormat = Global.BusinessLeaf.My.MySettings.Default.DateFormat
             Me.DtDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-            Me.DtDate.Location = New System.Drawing.Point(236, 275)
+            Me.DtDate.Location = New System.Drawing.Point(236, 294)
             Me.DtDate.MaxDate = New Date(2060, 12, 31, 0, 0, 0, 0)
             Me.DtDate.MinDate = New Date(1980, 1, 1, 0, 0, 0, 0)
             Me.DtDate.Name = "DtDate"
             Me.DtDate.Size = New System.Drawing.Size(130, 20)
-            Me.DtDate.TabIndex = 4
+            Me.DtDate.TabIndex = 5
             Me.DtDate.Tag = "dd.DefinitionDate"
             '
             'Label5
             '
             Me.Label5.BackColor = System.Drawing.Color.Transparent
             Me.Label5.ForeColor = System.Drawing.Color.Navy
-            Me.Label5.Location = New System.Drawing.Point(106, 214)
+            Me.Label5.Location = New System.Drawing.Point(106, 217)
             Me.Label5.Name = "Label5"
             Me.Label5.Size = New System.Drawing.Size(110, 20)
             Me.Label5.TabIndex = 119
             Me.Label5.Text = "Transaction Type"
+            '
+            'TxtGLDesc
+            '
+            Me.TxtGLDesc.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Appearance10.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtGLDesc.Appearance = Appearance10
+            Me.TxtGLDesc.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtGLDesc.Location = New System.Drawing.Point(360, 270)
+            Me.TxtGLDesc.Name = "TxtGLDesc"
+            Me.TxtGLDesc.ReadOnly = True
+            Me.TxtGLDesc.Size = New System.Drawing.Size(386, 21)
+            Me.TxtGLDesc.TabIndex = 121
+            Me.TxtGLDesc.TabStop = False
+            Me.TxtGLDesc.Tag = "dd.GLDescription"
+            '
+            'TxtGLCode
+            '
+            Me.TxtGLCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Appearance11.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtGLCode.Appearance = Appearance11
+            Me.TxtGLCode.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtGLCode.Location = New System.Drawing.Point(236, 270)
+            Me.TxtGLCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
+            Me.TxtGLCode.Name = "TxtGLCode"
+            Me.TxtGLCode.Size = New System.Drawing.Size(124, 21)
+            Me.TxtGLCode.TabIndex = 4
+            Me.TxtGLCode.Tag = "FK.GLCode"
+            '
+            'LinkLabel3
+            '
+            Me.LinkLabel3.BackColor = System.Drawing.Color.Transparent
+            Me.LinkLabel3.ForeColor = System.Drawing.Color.Navy
+            Me.LinkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+            Me.LinkLabel3.Location = New System.Drawing.Point(106, 270)
+            Me.LinkLabel3.Name = "LinkLabel3"
+            Me.LinkLabel3.Size = New System.Drawing.Size(110, 20)
+            Me.LinkLabel3.TabIndex = 122
+            Me.LinkLabel3.TabStop = True
+            Me.LinkLabel3.Text = "GL Code"
             '
             'TransactionTypes
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
             Me.ClientSize = New System.Drawing.Size(1028, 635)
+            Me.Controls.Add(Me.TxtGLDesc)
+            Me.Controls.Add(Me.TxtGLCode)
+            Me.Controls.Add(Me.LinkLabel3)
             Me.Controls.Add(Me.Label5)
             Me.Controls.Add(Me.Label4)
             Me.Controls.Add(Me.ATUrduTitle)
@@ -217,6 +269,8 @@
             CType(Me.ErrProvider, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.TxtNatureCode, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.TxtTransactionTypeCode, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtGLDesc, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtGLCode, System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
             Me.PerformLayout()
 
@@ -233,5 +287,8 @@
         Friend WithEvents ATUrduTitle As ATUrduTextBox.UrduTextBox
         Friend WithEvents ErrProvider As AzamTechnologies.ATErrorProvider
         Friend WithEvents Label5 As System.Windows.Forms.Label
+        Friend WithEvents TxtGLDesc As Infragistics.Win.UltraWinEditors.UltraTextEditor
+        Friend WithEvents TxtGLCode As Infragistics.Win.UltraWinEditors.UltraTextEditor
+        Friend WithEvents LinkLabel3 As LinkLabel
     End Class
 End Namespace

@@ -39,16 +39,18 @@ Public Class FrmLogin
     Friend WithEvents ErrProvider As AzamTechnologies.ATErrorProvider
     Friend WithEvents PgbLogin As System.Windows.Forms.ProgressBar
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmLogin))
-        Me.TxtUser = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.TxtPassword = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.PgbLogin = New System.Windows.Forms.ProgressBar
+        Me.TxtUser = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.TxtPassword = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.PgbLogin = New System.Windows.Forms.ProgressBar()
         Me.ErrProvider = New AzamTechnologies.ATErrorProvider(Me.components)
-        Me.BtnOk = New System.Windows.Forms.Button
-        Me.BtnCancel = New System.Windows.Forms.Button
+        Me.BtnOk = New System.Windows.Forms.Button()
+        Me.BtnCancel = New System.Windows.Forms.Button()
+        CType(Me.TxtUser, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtPassword, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrProvider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -57,7 +59,7 @@ Public Class FrmLogin
         Me.TxtUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtUser.Location = New System.Drawing.Point(259, 198)
         Me.TxtUser.Name = "TxtUser"
-        Me.TxtUser.Size = New System.Drawing.Size(229, 22)
+        Me.TxtUser.Size = New System.Drawing.Size(229, 24)
         Me.TxtUser.TabIndex = 0
         '
         'TxtPassword
@@ -66,7 +68,7 @@ Public Class FrmLogin
         Me.TxtPassword.Location = New System.Drawing.Point(259, 225)
         Me.TxtPassword.Name = "TxtPassword"
         Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.TxtPassword.Size = New System.Drawing.Size(229, 22)
+        Me.TxtPassword.Size = New System.Drawing.Size(229, 24)
         Me.TxtPassword.TabIndex = 1
         '
         'Label1
@@ -91,7 +93,7 @@ Public Class FrmLogin
         '
         'PgbLogin
         '
-        Me.PgbLogin.Location = New System.Drawing.Point(259, 333)
+        Me.PgbLogin.Location = New System.Drawing.Point(259, 294)
         Me.PgbLogin.Name = "PgbLogin"
         Me.PgbLogin.Size = New System.Drawing.Size(229, 15)
         Me.PgbLogin.TabIndex = 6
@@ -107,9 +109,9 @@ Public Class FrmLogin
         'BtnOk
         '
         Me.BtnOk.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.BtnOk.Location = New System.Drawing.Point(259, 303)
+        Me.BtnOk.Location = New System.Drawing.Point(259, 264)
         Me.BtnOk.Name = "BtnOk"
-        Me.BtnOk.Size = New System.Drawing.Size(77, 24)
+        Me.BtnOk.Size = New System.Drawing.Size(107, 24)
         Me.BtnOk.TabIndex = 2
         Me.BtnOk.Text = "&Login"
         '
@@ -117,11 +119,11 @@ Public Class FrmLogin
         '
         Me.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.BtnCancel.Location = New System.Drawing.Point(347, 303)
+        Me.BtnCancel.Location = New System.Drawing.Point(381, 264)
         Me.BtnCancel.Name = "BtnCancel"
-        Me.BtnCancel.Size = New System.Drawing.Size(141, 24)
+        Me.BtnCancel.Size = New System.Drawing.Size(107, 24)
         Me.BtnCancel.TabIndex = 5
-        Me.BtnCancel.Text = "&Shut Down Application"
+        Me.BtnCancel.Text = "&Cancel"
         '
         'FrmLogin
         '
@@ -145,6 +147,8 @@ Public Class FrmLogin
         Me.Name = "FrmLogin"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        CType(Me.TxtUser, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtPassword, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrProvider, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
