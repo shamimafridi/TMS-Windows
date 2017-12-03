@@ -237,12 +237,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_39CC7B2DBD0C7400B51CF1C93EBDBCD0"
-        "OwnerKey" = "8:_C35E08069C28C908D12C6A9AF64AAEE3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_3A176CBD8B9B37884A2D784598D6AC1B"
         "OwnerKey" = "8:_F2059FA8760048EFA8CBFC43758EC5F9"
         "MsmSig" = "8:_UNDEFINED"
@@ -297,6 +291,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_4730647C3E3253E642EC87B082F0241F"
+        "OwnerKey" = "8:_C35E08069C28C908D12C6A9AF64AAEE3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4791100A6E3546ABA7756F174AF8F8A6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -317,6 +317,12 @@
         {
         "MsmKey" = "8:_481BE3C4CC727CD9EAEFECBA18D5E3BC"
         "OwnerKey" = "8:_F2059FA8760048EFA8CBFC43758EC5F9"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4CE65B77AA484CBA93795BB4ECB674FC"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1419,6 +1425,24 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Visual.C++.14.0.x64"
+                    {
+                    "Name" = "8:Visual C++ \"14\" Runtime Libraries (x64)"
+                    "ProductCode" = "8:Microsoft.Visual.C++.14.0.x64"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Visual.C++.14.0.x86"
+                    {
+                    "Name" = "8:Visual C++ \"14\" Runtime Libraries (x86)"
+                    "ProductCode" = "8:Microsoft.Visual.C++.14.0.x86"
+                    }
+                }
             }
         }
     }
@@ -2055,7 +2079,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ATToolControls, Version=1.0.6538.40924, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:ATToolControls, Version=1.0.6545.17542, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_3002829D458EAC5155DBED9E25998124"
@@ -2140,26 +2164,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_39CC7B2DBD0C7400B51CF1C93EBDBCD0"
-            {
-            "SourcePath" = "8:ATBusinessComponents.tlb"
-            "TargetName" = "8:ATBusinessComponents.tlb"
-            "Tag" = "8:"
-            "Folder" = "8:_B3C573E9B8214EA5BE7CCAEB4B45B0E2"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:2"
-            "Exclude" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3A176CBD8B9B37884A2D784598D6AC1B"
@@ -2442,6 +2446,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4CE65B77AA484CBA93795BB4ECB674FC"
+            {
+            "SourcePath" = "8:..\\BlueCheck\\bin\\Fonts\\Jameel Noori Nastaleeq 2.ttf"
+            "TargetName" = "8:Jameel Noori Nastaleeq 2.ttf"
+            "Tag" = "8:"
+            "Folder" = "8:_4BEC4461D62149D49EE0D8D9F00DD0DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_51302109F9E44F7BA9EF70D84C16FAE6"
@@ -4040,7 +4064,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ATErrorProvider, Version=1.0.6538.40922, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:ATErrorProvider, Version=1.0.6544.19915, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_CC26C7F594D76691AF8A62E43C9ED6FD"
@@ -4976,9 +5000,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:TMS.Setup"
+        "ProductName" = "8:TMS"
         "ProductCode" = "8:{8F3DACB4-410E-4541-9D61-B76A0E1BB36D}"
-        "PackageCode" = "8:{2C5166F6-79A0-4551-949D-1346ED0306C4}"
+        "PackageCode" = "8:{A575041F-778F-4964-AAE1-91A5ECC7CFF8}"
         "UpgradeCode" = "8:{6AD6CA1F-648C-4D6E-97EE-2F28FFAC5F70}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -4986,14 +5010,14 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:Azam Technlogies"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:TMS.Setup"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:Azam Technlogies"
         "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:"
+        "ARPCOMMENTS" = "8:Transport Management System"
         "ARPURLINFOABOUT" = "8:"
         "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
