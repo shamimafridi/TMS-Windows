@@ -8,6 +8,7 @@
             <xs:sequence>
               <xs:element name="BranchCode" type="xs:string" minOccurs="0" />
               <xs:element name="TransactionNo" type="xs:string" minOccurs="0" />
+              <xs:element name="RECORDNO" type="xs:long" minOccurs="0" />
               <xs:element name="TransactionNature" type="xs:string" minOccurs="0" />
               <xs:element name="TransactionDate" type="xs:dateTime" minOccurs="0" />
               <xs:element name="VehicleCode" type="xs:string" minOccurs="0" />
@@ -15,9 +16,7 @@
               <xs:element name="AmountPaid" type="xs:decimal" minOccurs="0" />
               <xs:element name="TransactionType" type="xs:string" minOccurs="0" />
               <xs:element name="Description" type="xs:string" minOccurs="0" />
-              <xs:element name="AmtRec" type="xs:decimal" minOccurs="0" />
-              <xs:element name="AmtIss" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Balance" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Opening" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
