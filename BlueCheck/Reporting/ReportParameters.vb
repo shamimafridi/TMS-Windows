@@ -311,6 +311,8 @@ Public Class ReportParameters
     Friend WithEvents LblGroupByVB As System.Windows.Forms.Label
     Friend WithEvents BtnShowToGrid As System.Windows.Forms.Button
     Friend WithEvents ChkTripWithBill As Infragistics.Win.UltraWinEditors.UltraCheckEditor
+    Friend WithEvents RbtSummaryVLR As RadioButton
+    Friend WithEvents RbtDetailVLR As RadioButton
     Friend WithEvents GrpVouchersList As System.Windows.Forms.Panel
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -612,6 +614,8 @@ Public Class ReportParameters
         Me.TxtFrDateVLR = New System.Windows.Forms.DateTimePicker()
         Me.Label87 = New System.Windows.Forms.Label()
         Me.BtnLstBranchVLR = New System.Windows.Forms.Button()
+        Me.RbtDetailVLR = New System.Windows.Forms.RadioButton()
+        Me.RbtSummaryVLR = New System.Windows.Forms.RadioButton()
         Me.GrpButtons.SuspendLayout()
         Me.GrpTransactionDocuments.SuspendLayout()
         CType(Me.TxtToPartyCode, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -3710,6 +3714,8 @@ Public Class ReportParameters
         '
         'GrpVehicleLedger
         '
+        Me.GrpVehicleLedger.Controls.Add(Me.RbtSummaryVLR)
+        Me.GrpVehicleLedger.Controls.Add(Me.RbtDetailVLR)
         Me.GrpVehicleLedger.Controls.Add(Me.BtnLstToOwnerVLR)
         Me.GrpVehicleLedger.Controls.Add(Me.TxtToOwnerVLR)
         Me.GrpVehicleLedger.Controls.Add(Me.Label27)
@@ -3982,6 +3988,28 @@ Public Class ReportParameters
         Me.BtnLstBranchVLR.TabIndex = 120
         Me.BtnLstBranchVLR.TabStop = False
         Me.BtnLstBranchVLR.UseVisualStyleBackColor = False
+        '
+        'RbtDetailVLR
+        '
+        Me.RbtDetailVLR.AutoSize = True
+        Me.RbtDetailVLR.Checked = True
+        Me.RbtDetailVLR.Location = New System.Drawing.Point(331, 349)
+        Me.RbtDetailVLR.Name = "RbtDetailVLR"
+        Me.RbtDetailVLR.Size = New System.Drawing.Size(52, 17)
+        Me.RbtDetailVLR.TabIndex = 136
+        Me.RbtDetailVLR.TabStop = True
+        Me.RbtDetailVLR.Text = "Detail"
+        Me.RbtDetailVLR.UseVisualStyleBackColor = True
+        '
+        'RbtSummaryVLR
+        '
+        Me.RbtSummaryVLR.AutoSize = True
+        Me.RbtSummaryVLR.Location = New System.Drawing.Point(468, 349)
+        Me.RbtSummaryVLR.Name = "RbtSummaryVLR"
+        Me.RbtSummaryVLR.Size = New System.Drawing.Size(68, 17)
+        Me.RbtSummaryVLR.TabIndex = 137
+        Me.RbtSummaryVLR.Text = "Summary"
+        Me.RbtSummaryVLR.UseVisualStyleBackColor = True
         '
         'ReportParameters
         '
@@ -4293,7 +4321,7 @@ Public Class ReportParameters
             ''
         ElseIf ReportFile = ReportProcess.ReportFiles.VehicleLedger Then
             Dim reportDoc As CrystalDecisions.CrystalReports.Engine.ReportDocument = Nothing
-            If VehicleLedgerProcess(ReportFiles.VehicleLedger, TxtFrDateVLR.Value, TxtToDateVLR.Value, TxtFrVehicleVLR.Text, TxtToVehicleVLR.Text, TxtFrOwnerVLR.Text, TxtToOwnerVLR.Text, reportDoc, Nothing, 0, CmbTypeVLR.SelectedIndex) = True Then
+            If VehicleLedgerProcess(ReportFiles.VehicleLedger, RbtSummaryVLR.Checked, TxtFrDateVLR.Value, TxtToDateVLR.Value, TxtFrVehicleVLR.Text, TxtToVehicleVLR.Text, TxtFrOwnerVLR.Text, TxtToOwnerVLR.Text, reportDoc, Nothing, 0, CmbTypeVLR.SelectedIndex) = True Then
                 Dim rpViewer As New ReportViewer
                 rpViewer.SetSource = reportDoc
                 rpViewer.MdiParent = Me.MdiParent

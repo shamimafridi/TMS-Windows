@@ -556,7 +556,7 @@ Module ReportProcess
         End Try
     End Function
 
-    Public Function VehicleLedgerProcess(ByVal ReportType As ReportFiles, ByVal FromDate As Date, ByVal ToDate As Date, ByVal FromCode As String, ByVal ToCode As String, ByVal FromOwnerCode As String, ByVal ToOwnerCode As String, ByRef reportDoc As ReportDocument, Optional ByVal Progress As Object = Nothing, Optional ByVal nGroupBy As Integer = 0, Optional ByVal nReportType As Integer = 0, Optional ByVal IsDetail As Boolean = True) As Boolean
+    Public Function VehicleLedgerProcess(ByVal ReportType As ReportFiles, ByVal IsSummaryReport As Boolean, ByVal FromDate As Date, ByVal ToDate As Date, ByVal FromCode As String, ByVal ToCode As String, ByVal FromOwnerCode As String, ByVal ToOwnerCode As String, ByRef reportDoc As ReportDocument, Optional ByVal Progress As Object = Nothing, Optional ByVal nGroupBy As Integer = 0, Optional ByVal nReportType As Integer = 0, Optional ByVal IsDetail As Boolean = True) As Boolean
         Dim strReporTitle As String
 
 
@@ -579,8 +579,13 @@ Module ReportProcess
                 Exit Function
             End If
             Ds.WriteXmlSchema(Application.StartupPath & "\Reports\VehicleLedger.xsd")
-
             Dim strReportPath As String = Application.StartupPath & "\Reports\VehicleLedger.rpt"
+
+            If IsSummaryReport Then
+                strReportPath = Application.StartupPath & "\Reports\VehicleLedgerSummary.rpt"
+
+                strReporTitle = "Vehicle Ledger Summary"
+            End If
             If Not IO.File.Exists(strReportPath) Then
                 Throw (New Exception("Unable to locate report file:" & vbCrLf & strReportPath))
             End If

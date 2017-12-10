@@ -1,4 +1,6 @@
 Option Explicit On
+Option Infer On
+
 Imports System.Data.SqlClient
 'Imports System.EnterpriseServices
 ' <Transaction(TransactionOption.RequiresNew), ObjectPooling(True, 5, 10), ComClass(DataModify.ClassId, DataModify.InterfaceId, DataModify.EventsId)> _
@@ -386,7 +388,7 @@ ad:
     End Function
     Private Function GenerateDetailSaleVouchers() As DataSet
         Dim GLCode As String = ""
-
+        Dim masterData = Me.m_FromGeneratedData.Tables(0)
         With Me.m_FromGeneratedData.Tables(0)
             Dim SVD As DetailVoucher = Nothing
             SVD = New DetailVoucher(.Rows(0).Item("BranchCode").ToString, Me.DocumentNo, "SV")
@@ -409,7 +411,7 @@ ad:
                 If (.Rows(0).Item("Rate") * .Rows(0).Item("Quantity")) <> 0 Then
                     SVD.Branch = .Rows(0).Item("BranchName")
                     SVD.GLCode = GetVehicleFreightGLCode(.Rows(0).Item("VehicleCode"))
-                    SVD.DivisionCode = MySettingReader.Read("DefaultDivisionCode", MySettingReader.FieldLevel.ApplicationLevel)
+                    SVD.DivisionCode = GetVehicleDivisionCode(masterData.Rows(0).Item("VehicleCode")) ' MySettingReader.Read("DefaultDivisionCode", MySettingReader.FieldLevel.ApplicationLevel)
                     SVD.Reference = "TMS/INV/" & SVD.BranchCode & " - " & .Rows(0).Item("TransactionNo")
 
                     If CDbl(.Rows(0).Item("Quantity")) * CDbl(.Rows(0).Item("Rate")) - (CDbl((.Rows(0).Item("Commission")) + CDbl(.Rows(0).Item("Shortage")))) > 0 Then
@@ -426,7 +428,7 @@ ad:
                 If .Rows(0).Item("Shortage") <> 0 Then
                     SVD.Branch = .Rows(0).Item("BranchName")
                     SVD.GLCode = GetCustomerShortageGLCode(.Rows(0).Item("CustomerCode"))
-                    SVD.DivisionCode = MySettingReader.Read("DefaultDivisionCode", MySettingReader.FieldLevel.ApplicationLevel)
+                    SVD.DivisionCode = GetVehicleDivisionCode(masterData.Rows(0).Item("VehicleCode")) ' MySettingReader.Read("DefaultDivisionCode", MySettingReader.FieldLevel.ApplicationLevel)
                     SVD.Reference = "TMS/INV/" & SVD.BranchCode & " - " & .Rows(0).Item("TransactionNo")
                     SVD.Debit = 0
                     SVD.Credit = .Rows(0).Item("Shortage")
@@ -496,10 +498,10 @@ ad:
         Dim GLCode As String = ""
         Dim Amount As Double = 0
         Dim IsTripAdvanceExist As Boolean = False
+        Dim masterData = Me.m_FromGeneratedData.Tables(0)
         ''VEHICLE CODE BE DEBIT WHEN PAYMENT TO VEHICLE BY CASH OR BANK
         'AND VEHICLE CODE WILL CREDIT WHEN CASH RECEIPT BY CHEQE OR CASH
         With Me.m_FromGeneratedDetailData.Tables(0)
-
             Dim SVD As DetailVoucher = Nothing
             Dim iRow As Int16
             SVD = New DetailVoucher(.Rows(0).Item("BranchCode").ToString, Me.DocumentNo, ToGenNature)
@@ -526,7 +528,7 @@ ad:
                     'Generate Row For GLCode Debit Done
                     SVD.Branch = Me.m_FromGeneratedData.Tables(0).Rows(0).Item("BranchName")
                     SVD.GLCode = GetVehicleTransactionTypeGLCode(.Rows(iRow).Item("TypeCode"), .Rows(iRow).Item("TransactionNature"))
-                    SVD.DivisionCode = MySettingReader.Read("DefaultDivisionCode", MySettingReader.FieldLevel.ApplicationLevel)
+                    SVD.DivisionCode = GetVehicleDivisionCode(masterData.Rows(0).Item("VehicleCode")) 'MySettingReader.Read("DefaultDivisionCode", MySettingReader.FieldLevel.ApplicationLevel)
                     SVD.Reference = "" '"TMS/REC/" & SVD.BranchCode & " - " & .Rows(irow).Item("TransactionNo")
                     SVD.Credit = CDbl(.Rows(iRow).Item("Amount"))
                     SVD.Debit = 0D
@@ -562,6 +564,7 @@ ad:
         Dim GLCode As String = ""
         Dim Amount As Double = 0
         Dim IsTripAdvanceExist As Boolean = False
+        Dim masterData = Me.m_FromGeneratedData.Tables(0)
         ''VEHICLE CODE BE DEBIT WHEN PAYMENT TO VEHICLE BY CASH OR BANK
         'AND VEHICLE CODE WILL CREDIT WHEN CASH RECEIPT BY CHEQE OR CASH
         With Me.m_FromGeneratedDetailData.Tables(0)
@@ -593,7 +596,7 @@ ad:
                     'Generate Row For GLCode Debit Done
                     SVD.Branch = Me.m_FromGeneratedData.Tables(0).Rows(0).Item("BranchName")
                     SVD.GLCode = GetVehicleTransactionTypeGLCode(.Rows(iRow).Item("TypeCode"), .Rows(iRow).Item("TransactionNature"))
-                    SVD.DivisionCode = MySettingReader.Read("DefaultDivisionCode", MySettingReader.FieldLevel.ApplicationLevel)
+                    SVD.DivisionCode = GetVehicleDivisionCode(masterData.Rows(0).Item("VehicleCode")) ' MySettingReader.Read("DefaultDivisionCode", MySettingReader.FieldLevel.ApplicationLevel)
                     SVD.Reference = "" '"TMS/REC/" & SVD.BranchCode & " - " & .Rows(irow).Item("TransactionNo")
                     SVD.Debit = CDbl(.Rows(iRow).Item("Amount"))
                     SVD.Credit = 0D
@@ -748,6 +751,18 @@ ad:
         Reader = DataAccess.GetRecord("[SelectTransactionTypes]", "TransactionTypeCode", TransactionTypeCode, "NatureCode", TransactionNatureCode)
         If Reader.Read Then
             Return IIf(IsDBNull(Reader.Item("GLCode")), String.Empty, Reader.Item("GLCode"))
+        End If
+
+        Reader = Nothing
+        DataAccess = Nothing
+        Return String.Empty
+    End Function
+    Function GetVehicleDivisionCode(ByVal VehcileCode As String) As String
+        Dim DataAccess As New AzamTechnologies.Database.DataAccess
+        Dim Reader As SqlDataReader
+        Reader = DataAccess.GetRecord("[SelectDivisions]", "DivisionCode", VehcileCode)
+        If Reader.Read Then
+            Return IIf(IsDBNull(Reader.Item("DivisionCode")), String.Empty, Reader.Item("DivisionCode"))
         End If
 
         Reader = Nothing
