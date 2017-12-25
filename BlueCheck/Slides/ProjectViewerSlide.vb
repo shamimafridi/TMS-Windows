@@ -123,7 +123,8 @@ Namespace Slides
                 'Dim XmlDocument As New System.Xml.XmlDocument
                 'XmlDocument.Load(FileInfo.FullName)
 
-                Dim DataComConnection As New AzamTechnologies.Database.DataConnection
+                Dim DataComConnection As New AzamTechnologies.Database.DataConnection(AzamTechnologies.Database.DataBases.Current)
+
                 mConnectionString = DataComConnection.ConnectionString
 
 
