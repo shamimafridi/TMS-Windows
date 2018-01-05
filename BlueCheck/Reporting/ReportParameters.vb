@@ -4348,6 +4348,22 @@ Public Class ReportParameters
                 imgProgressBar.Visible = False
             End If
             ''
+            ''Vehicle Revenue
+            ''
+        ElseIf ReportFile = ReportProcess.ReportFiles.VehicleRevenue Then
+            Dim reportDoc As CrystalDecisions.CrystalReports.Engine.ReportDocument = Nothing
+            If VehicleRevenueProcess(ReportFiles.VehicleRevenue, ChkShowOpeneing.Checked, RbtSummaryVLR.Checked, TxtFrDateVLR.Value, TxtToDateVLR.Value, TxtFrVehicleVLR.Text, TxtToVehicleVLR.Text, TxtFrOwnerVLR.Text, TxtToOwnerVLR.Text, reportDoc, Nothing, 0, CmbTypeVLR.SelectedIndex) = True Then
+                Dim rpViewer As New ReportViewer
+                rpViewer.SetSource = reportDoc
+                rpViewer.MdiParent = Me.MdiParent
+                rpViewer.Text = "Vehicle Revenue [Report]"
+                rpViewer.Show()
+                rpViewer.BringToFront()
+                Cursor = Cursors.Default
+                imgProgressBar.Visible = False
+            End If
+
+            ''
             ''Vehicle List
             ''
         ElseIf ReportFile = ReportProcess.ReportFiles.VehicleList Then
@@ -4480,6 +4496,12 @@ Public Class ReportParameters
                 GrpOtherReports.Visible = False
                 GrpVehicleLedger.Visible = True
                 Me.Text = "Vehicle Ledger"
+                AddHandler GrpVehicleLedger.Paint, AddressOf mdlFunctions.PaintTheForms
+                GrpButtons.Visible = True
+            Case ReportProcess.ReportFiles.VehicleRevenue
+                GrpOtherReports.Visible = False
+                GrpVehicleLedger.Visible = True
+                Me.Text = "Vehicle Revenue"
                 AddHandler GrpVehicleLedger.Paint, AddressOf mdlFunctions.PaintTheForms
                 GrpButtons.Visible = True
             Case ReportProcess.ReportFiles.VehicleBillAnalysis

@@ -110,6 +110,7 @@ Module ReportProcess
         FreightStatementSummary = 20
         VehicleBillAnalysis = 21
         VehicleLedger = 22
+        VehicleRevenue = 23
     End Enum
     Public Const StartParameter As String = ""
     Public Const EndParameter As String = "zzzzzzzzzzzzzzzzzzz"
@@ -570,7 +571,7 @@ Module ReportProcess
             Dim Acc As AzamTechnologies.Database.DataAccess
             Acc = New AzamTechnologies.Database.DataAccess
             Dim Ds As DataSet = Nothing
-            Acc.PopulateDataSet(Ds, "SelectVehicleLedgerReport",
+            Acc.PopulateDataSet(Ds, "[SelectVehicleLedgerReport]",
             "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "ShowOpening", IsShowOpeinging)
 
             If Ds.Tables(0).Rows.Count = 0 Then
@@ -578,7 +579,7 @@ Module ReportProcess
                 Return False
                 Exit Function
             End If
-            Ds.WriteXmlSchema(Application.StartupPath & "\Reports\VehicleLedger.xsd")
+            Ds.WriteXmlSchema(Application.StartupPath & "\Reports\VehicleLedgerReport.xsd")
             Dim strReportPath As String = Application.StartupPath & "\Reports\VehicleLedger.rpt"
 
             If IsSummaryReport Then
@@ -610,7 +611,62 @@ Module ReportProcess
             Return False
         End Try
     End Function
-    Public Function VehicleListProcess(ByVal FromCode As String, ByVal ToCode As String, _
+    Public Function VehicleRevenueProcess(ByVal ReportType As ReportFiles, ByVal IsShowOpeinging As Boolean, ByVal IsSummaryReport As Boolean, ByVal FromDate As Date, ByVal ToDate As Date, ByVal FromCode As String, ByVal ToCode As String, ByVal FromOwnerCode As String, ByVal ToOwnerCode As String, ByRef reportDoc As ReportDocument, Optional ByVal Progress As Object = Nothing, Optional ByVal nGroupBy As Integer = 0, Optional ByVal nReportType As Integer = 0, Optional ByVal IsDetail As Boolean = True) As Boolean
+        Dim strReporTitle As String
+
+
+        If FromCode = "" Then FromCode = StartParameter
+        If ToCode = "" Then ToCode = EndParameter
+        If ToDate = Nothing Then ToDate = Now.Date
+
+        Try
+
+            strReporTitle = "Vehicle Ledger"
+            Dim Acc As AzamTechnologies.Database.DataAccess
+            Acc = New AzamTechnologies.Database.DataAccess
+            Dim Ds As DataSet = Nothing
+            Acc.PopulateDataSet(Ds, "[SelectVehicleRevenueReport]",
+            "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "ShowOpening", IsShowOpeinging)
+
+            If Ds.Tables(0).Rows.Count = 0 Then
+                MessageBox.Show("No record found within the specified conditions..." & vbCrLf & vbCrLf & "Please specify valid parameters and " & vbCrLf & "Make sure that the records exists !", "Report Process", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Return False
+                Exit Function
+            End If
+            Ds.WriteXmlSchema(Application.StartupPath & "\Reports\VehicleMonthlyDetailReport.xsd")
+            Dim strReportPath As String = Application.StartupPath & "\Reports\VehicleRevenue.rpt"
+
+            If IsSummaryReport Then
+                strReportPath = Application.StartupPath & "\Reports\VehicleRevenueSummary.rpt"
+
+                strReporTitle = "Vehicle Ledger Summary"
+            End If
+            If Not IO.File.Exists(strReportPath) Then
+                Throw (New Exception("Unable to locate report file:" & vbCrLf & strReportPath))
+            End If
+
+            reportDoc = New ReportDocument
+            reportDoc.Load(strReportPath)
+            reportDoc.SetDataSource(Ds.Tables(0))
+            ''
+            ''Setting Parameters
+            Dim paramFields As ParameterFieldDefinitions
+            paramFields = reportDoc.DataDefinition.ParameterFields
+            SetParameter(paramFields, "ReportTitle", strReporTitle)
+            SetParameter(paramFields, "CompanyName", My.Settings.CompanyName)
+            '  SetParameter(paramFields, "GroupedBy", nGroupedBy)
+            SetParameter(paramFields, "UserInfo", OperatorID)
+            Return True
+        Catch ex As SqlClient.SqlException
+            MsgBox(ex.Message)
+            Return False
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
+    Public Function VehicleListProcess(ByVal FromCode As String, ByVal ToCode As String,
   ByVal FromDate As Date, ByVal ToDate As Date, ByVal nGroupedBy As Integer, ByRef reportDoc As ReportDocument, ByVal PageBreak As Boolean) As Boolean
 
         Dim strReporTitle As String
@@ -626,7 +682,7 @@ Module ReportProcess
             Dim Acc As AzamTechnologies.Database.DataAccess
             Acc = New AzamTechnologies.Database.DataAccess
             Dim Ds As DataSet = Nothing
-            Acc.PopulateDataSet(Ds, "SelectListReports", "OPTION", "VehicleList", _
+            Acc.PopulateDataSet(Ds, "SelectListReports", "OPTION", "VehicleList",
             "FromCode", FromCode, "ToCode", ToCode, "FromDate", FromDate, "ToDate", ToDate)
 
             If Ds.Tables(0).Rows.Count = 0 Then

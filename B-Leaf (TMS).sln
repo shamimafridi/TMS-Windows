@@ -20,7 +20,7 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "B-Leaf", "BlueCheck\B-Leaf.
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ATErrorProvider", "ATErrorProvider\ATErrorProvider\ATErrorProvider.vbproj", "{4E30D223-0E4A-4ED0-B034-9FF6992D605B}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TMS.Setup", "TMS.Setup\TMS.Setup.vdproj", "{2CAF1156-9B1B-4F2F-B098-150C18065D4A}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TMS.Setup", "TMS.Setup\TMS.Setup.vdproj", "{811D4CBF-39B1-4A53-9021-3609CDB6B35F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -100,12 +100,17 @@ Global
 		{4E30D223-0E4A-4ED0-B034-9FF6992D605B}.Release|x64.ActiveCfg = Release|x86
 		{4E30D223-0E4A-4ED0-B034-9FF6992D605B}.Release|x86.ActiveCfg = Release|x86
 		{4E30D223-0E4A-4ED0-B034-9FF6992D605B}.Release|x86.Build.0 = Release|x86
-		{2CAF1156-9B1B-4F2F-B098-150C18065D4A}.Debug|Any CPU.ActiveCfg = Debug
-		{2CAF1156-9B1B-4F2F-B098-150C18065D4A}.Debug|x64.ActiveCfg = Debug
-		{2CAF1156-9B1B-4F2F-B098-150C18065D4A}.Debug|x86.ActiveCfg = Debug
-		{2CAF1156-9B1B-4F2F-B098-150C18065D4A}.Release|Any CPU.ActiveCfg = Release
-		{2CAF1156-9B1B-4F2F-B098-150C18065D4A}.Release|x64.ActiveCfg = Release
-		{2CAF1156-9B1B-4F2F-B098-150C18065D4A}.Release|x86.ActiveCfg = Release
+		{811D4CBF-39B1-4A53-9021-3609CDB6B35F}.Debug|Any CPU.ActiveCfg = Debug
+		{811D4CBF-39B1-4A53-9021-3609CDB6B35F}.Debug|x64.ActiveCfg = Debug
+		{811D4CBF-39B1-4A53-9021-3609CDB6B35F}.Debug|x64.Build.0 = Debug
+		{811D4CBF-39B1-4A53-9021-3609CDB6B35F}.Debug|x86.ActiveCfg = Debug
+		{811D4CBF-39B1-4A53-9021-3609CDB6B35F}.Debug|x86.Build.0 = Debug
+		{811D4CBF-39B1-4A53-9021-3609CDB6B35F}.Release|Any CPU.ActiveCfg = Release
+		{811D4CBF-39B1-4A53-9021-3609CDB6B35F}.Release|Any CPU.Build.0 = Release
+		{811D4CBF-39B1-4A53-9021-3609CDB6B35F}.Release|x64.ActiveCfg = Release
+		{811D4CBF-39B1-4A53-9021-3609CDB6B35F}.Release|x64.Build.0 = Release
+		{811D4CBF-39B1-4A53-9021-3609CDB6B35F}.Release|x86.ActiveCfg = Release
+		{811D4CBF-39B1-4A53-9021-3609CDB6B35F}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

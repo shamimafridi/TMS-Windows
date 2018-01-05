@@ -157,37 +157,37 @@ Namespace GeneralLedger
 
             Dim MatchingRow As Long
 
-            For iRow = 0 To FpVehicleAdjustmentGrid.Sheets(0).RowCount - 1
-                TypeCode = Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(iRow, GridCols.TypeCode))
-                'PONumber = Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(GridCols.PONo, iRow))
-                StartRow = iRow
-                If Trim(TypeCode) <> "" And Val(FpVehicleAdjustmentGrid.Sheets(0).GetText(iRow, GridCols.Amount)) <> 0 Then
-                    TypeCode = FpVehicleAdjustmentGrid.Search(0, TypeCode, False, True, False, False, StartRow + 1, GridCols.TypeCode, MatchingRow, 0)
-                    If Val(MatchingRow) > 0 And MatchingRow <> StartRow Then
-                        ErrProvider.SetError(FpVehicleAdjustmentGrid, "Type Code # " & Trim(TypeCode) & "  has been specified more than once in detail..." & vbCrLf & vbCrLf & "You cannot specify any record more than one times in a single transaction !")
-                        FpVehicleAdjustmentGrid.Sheets(0).SelectionUnit = FarPoint.Win.Spread.Model.SelectionUnit.Row
-                        FpVehicleAdjustmentGrid.Sheets(0).AddSelection(MatchingRow, GridCols.TypeCode, 1, GridCols.GLDescription)
+            'For iRow = 0 To FpVehicleAdjustmentGrid.Sheets(0).RowCount - 1
+            '    TypeCode = Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(iRow, GridCols.TypeCode))
+            '    'PONumber = Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(GridCols.PONo, iRow))
+            '    StartRow = iRow
+            '    If Trim(TypeCode) <> "" And Val(FpVehicleAdjustmentGrid.Sheets(0).GetText(iRow, GridCols.Amount)) <> 0 Then
+            '        TypeCode = FpVehicleAdjustmentGrid.Search(0, TypeCode, False, True, False, False, StartRow + 1, GridCols.TypeCode, MatchingRow, 0)
+            '        If Val(MatchingRow) > 0 And MatchingRow <> StartRow Then
+            '            ErrProvider.SetError(FpVehicleAdjustmentGrid, "Type Code # " & Trim(TypeCode) & "  has been specified more than once in detail..." & vbCrLf & vbCrLf & "You cannot specify any record more than one times in a single transaction !")
+            '            FpVehicleAdjustmentGrid.Sheets(0).SelectionUnit = FarPoint.Win.Spread.Model.SelectionUnit.Row
+            '            FpVehicleAdjustmentGrid.Sheets(0).AddSelection(MatchingRow, GridCols.TypeCode, 1, GridCols.GLDescription)
 
-                        CheckGridData = False
-                        Exit Function
-                    End If
+            '            CheckGridData = False
+            '            Exit Function
+            '        End If
 
-                    If Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(iRow, GridCols.GLCode)) = String.Empty Or Val(FpVehicleAdjustmentGrid.Sheets(0).GetText(iRow, GridCols.Amount)) = 0 Then
-                        ErrProvider.SetError(FpVehicleAdjustmentGrid, "GLCode  And Amount Can't Be Empty ")
-                        FpVehicleAdjustmentGrid.Sheets(0).SelectionUnit = FarPoint.Win.Spread.Model.SelectionUnit.Row
-                        FpVehicleAdjustmentGrid.Sheets(0).AddSelection(iRow, GridCols.TypeCode, 1, GridCols.GLDescription)
-                        CheckGridData = False
-                        Exit Function
-                    End If
-                    nRowCount = nRowCount + 1
-                End If
-            Next
-            If CheckTotalBalance() = True Then
-                nRowCount = nRowCount + 1
-                Return True
-            Else
-                Return False
-            End If
+            '        If Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(iRow, GridCols.GLCode)) = String.Empty Or Val(FpVehicleAdjustmentGrid.Sheets(0).GetText(iRow, GridCols.Amount)) = 0 Then
+            '            ErrProvider.SetError(FpVehicleAdjustmentGrid, "GLCode  And Amount Can't Be Empty ")
+            '            FpVehicleAdjustmentGrid.Sheets(0).SelectionUnit = FarPoint.Win.Spread.Model.SelectionUnit.Row
+            '            FpVehicleAdjustmentGrid.Sheets(0).AddSelection(iRow, GridCols.TypeCode, 1, GridCols.GLDescription)
+            '            CheckGridData = False
+            '            Exit Function
+            '        End If
+            '        nRowCount = nRowCount + 1
+            '    End If
+            'Next
+            'If CheckTotalBalance() = True Then
+            nRowCount = nRowCount + 1
+            Return True
+            'Else
+            '    Return False
+            'End If
             CheckGridData = True
             ' Code End
         End Function
