@@ -74,82 +74,82 @@ Namespace GeneralLedger
         Friend WithEvents Label22 As System.Windows.Forms.Label
         Friend WithEvents TxtQuantity As Infragistics.Win.UltraWinEditors.UltraNumericEditor
         <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-            Me.components = New System.ComponentModel.Container
+            Me.components = New System.ComponentModel.Container()
             Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Invoices))
-            Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance13 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim ValueListItem12 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem
-            Dim ValueListItem1 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem
-            Dim ValueListItem2 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem
-            Dim ValueListItem3 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem
-            Dim ValueListItem4 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem
-            Dim ValueListItem5 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem
-            Dim ValueListItem6 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem
-            Dim ValueListItem7 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem
-            Dim ValueListItem8 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem
-            Dim ValueListItem9 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem
-            Dim ValueListItem10 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem
-            Dim ValueListItem11 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem
-            Me.txtDescription = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.Label2 = New System.Windows.Forms.Label
-            Me.Label1 = New System.Windows.Forms.Label
-            Me.Label9 = New System.Windows.Forms.Label
+            Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance13 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim ValueListItem12 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+            Dim ValueListItem1 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+            Dim ValueListItem2 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+            Dim ValueListItem3 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+            Dim ValueListItem4 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+            Dim ValueListItem5 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+            Dim ValueListItem6 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+            Dim ValueListItem7 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+            Dim ValueListItem8 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+            Dim ValueListItem9 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+            Dim ValueListItem10 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+            Dim ValueListItem11 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+            Me.txtDescription = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label2 = New System.Windows.Forms.Label()
+            Me.Label1 = New System.Windows.Forms.Label()
+            Me.Label9 = New System.Windows.Forms.Label()
             Me.ErrProvider = New AzamTechnologies.ATErrorProvider(Me.components)
-            Me.Label3 = New System.Windows.Forms.Label
-            Me.txtBranch = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.TxtCustomer = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.Label4 = New System.Windows.Forms.Label
-            Me.TxtStationPoint = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.Label5 = New System.Windows.Forms.Label
-            Me.TxtDestinationPoint = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.Label6 = New System.Windows.Forms.Label
-            Me.TxtProduct = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.Label7 = New System.Windows.Forms.Label
-            Me.TxtVehicle = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.Label8 = New System.Windows.Forms.Label
-            Me.txtAmount = New Infragistics.Win.UltraWinEditors.UltraNumericEditor
-            Me.Label10 = New System.Windows.Forms.Label
-            Me.TxtRate = New Infragistics.Win.UltraWinEditors.UltraNumericEditor
-            Me.Label11 = New System.Windows.Forms.Label
-            Me.TxtShortage = New Infragistics.Win.UltraWinEditors.UltraNumericEditor
-            Me.Label12 = New System.Windows.Forms.Label
-            Me.Label13 = New System.Windows.Forms.Label
-            Me.TxtQuantity = New Infragistics.Win.UltraWinEditors.UltraNumericEditor
-            Me.Label14 = New System.Windows.Forms.Label
-            Me.TxtCommission = New Infragistics.Win.UltraWinEditors.UltraNumericEditor
-            Me.TxtVehicleCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.TxtDestinationPointCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.TxtStationPointCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.Desc = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.txtBranchCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.txtTransactionNumber = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.TxtDate = New System.Windows.Forms.DateTimePicker
-            Me.TxtTokenNo = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.Label15 = New System.Windows.Forms.Label
-            Me.TxtProductCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.TxtShortageQuantity = New Infragistics.Win.UltraWinEditors.UltraNumericEditor
-            Me.Label16 = New System.Windows.Forms.Label
-            Me.Label17 = New System.Windows.Forms.Label
-            Me.TxtQuantityValue = New Infragistics.Win.UltraWinEditors.UltraNumericEditor
-            Me.Label18 = New System.Windows.Forms.Label
-            Me.Label19 = New System.Windows.Forms.Label
-            Me.Label20 = New System.Windows.Forms.Label
-            Me.TxtAdvanceReferenceNo = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.TxtTripAdvance = New Infragistics.Win.UltraWinEditors.UltraNumericEditor
-            Me.TxtCommissionRate = New Infragistics.Win.UltraWinEditors.UltraComboEditor
-            Me.Label21 = New System.Windows.Forms.Label
-            Me.Label22 = New System.Windows.Forms.Label
+            Me.Label3 = New System.Windows.Forms.Label()
+            Me.txtBranch = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtCustomer = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label4 = New System.Windows.Forms.Label()
+            Me.TxtStationPoint = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label5 = New System.Windows.Forms.Label()
+            Me.TxtDestinationPoint = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label6 = New System.Windows.Forms.Label()
+            Me.TxtProduct = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label7 = New System.Windows.Forms.Label()
+            Me.TxtVehicle = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label8 = New System.Windows.Forms.Label()
+            Me.txtAmount = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+            Me.Label10 = New System.Windows.Forms.Label()
+            Me.TxtRate = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+            Me.Label11 = New System.Windows.Forms.Label()
+            Me.TxtShortage = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+            Me.Label12 = New System.Windows.Forms.Label()
+            Me.Label13 = New System.Windows.Forms.Label()
+            Me.TxtQuantity = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+            Me.Label14 = New System.Windows.Forms.Label()
+            Me.TxtCommission = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+            Me.TxtVehicleCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtDestinationPointCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtStationPointCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Desc = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.txtBranchCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.txtTransactionNumber = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtDate = New System.Windows.Forms.DateTimePicker()
+            Me.TxtTokenNo = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label15 = New System.Windows.Forms.Label()
+            Me.TxtProductCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtShortageQuantity = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+            Me.Label16 = New System.Windows.Forms.Label()
+            Me.Label17 = New System.Windows.Forms.Label()
+            Me.TxtQuantityValue = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+            Me.Label18 = New System.Windows.Forms.Label()
+            Me.Label19 = New System.Windows.Forms.Label()
+            Me.Label20 = New System.Windows.Forms.Label()
+            Me.TxtAdvanceReferenceNo = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtTripAdvance = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+            Me.TxtCommissionRate = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
+            Me.Label21 = New System.Windows.Forms.Label()
+            Me.Label22 = New System.Windows.Forms.Label()
             CType(Me.txtDescription, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.ErrProvider, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.txtBranch, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -238,10 +238,10 @@ Namespace GeneralLedger
             'txtBranch
             '
             Me.txtBranch.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Appearance11.BackColor = System.Drawing.SystemColors.Window
-            Me.txtBranch.Appearance = Appearance11
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Appearance12.BackColor = System.Drawing.SystemColors.Window
+            Me.txtBranch.Appearance = Appearance12
             Me.txtBranch.BackColor = System.Drawing.SystemColors.Window
             Me.txtBranch.Location = New System.Drawing.Point(290, 79)
             Me.txtBranch.Name = "txtBranch"
@@ -253,10 +253,10 @@ Namespace GeneralLedger
             'TxtCustomer
             '
             Me.TxtCustomer.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Appearance9.BackColor = System.Drawing.SystemColors.Window
-            Me.TxtCustomer.Appearance = Appearance9
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Appearance10.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtCustomer.Appearance = Appearance10
             Me.TxtCustomer.BackColor = System.Drawing.SystemColors.Window
             Me.TxtCustomer.Location = New System.Drawing.Point(290, 127)
             Me.TxtCustomer.Name = "TxtCustomer"
@@ -278,10 +278,10 @@ Namespace GeneralLedger
             'TxtStationPoint
             '
             Me.TxtStationPoint.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Appearance7.BackColor = System.Drawing.SystemColors.Window
-            Me.TxtStationPoint.Appearance = Appearance7
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Appearance8.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtStationPoint.Appearance = Appearance8
             Me.TxtStationPoint.BackColor = System.Drawing.SystemColors.Window
             Me.TxtStationPoint.Enabled = False
             Me.TxtStationPoint.Location = New System.Drawing.Point(290, 199)
@@ -304,10 +304,10 @@ Namespace GeneralLedger
             'TxtDestinationPoint
             '
             Me.TxtDestinationPoint.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Appearance5.BackColor = System.Drawing.SystemColors.Window
-            Me.TxtDestinationPoint.Appearance = Appearance5
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Appearance6.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtDestinationPoint.Appearance = Appearance6
             Me.TxtDestinationPoint.BackColor = System.Drawing.SystemColors.Window
             Me.TxtDestinationPoint.Enabled = False
             Me.TxtDestinationPoint.Location = New System.Drawing.Point(290, 223)
@@ -330,10 +330,10 @@ Namespace GeneralLedger
             'TxtProduct
             '
             Me.TxtProduct.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Appearance3.BackColor = System.Drawing.SystemColors.Window
-            Me.TxtProduct.Appearance = Appearance3
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Appearance4.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtProduct.Appearance = Appearance4
             Me.TxtProduct.BackColor = System.Drawing.SystemColors.Window
             Me.TxtProduct.Location = New System.Drawing.Point(290, 175)
             Me.TxtProduct.Name = "TxtProduct"
@@ -355,10 +355,10 @@ Namespace GeneralLedger
             'TxtVehicle
             '
             Me.TxtVehicle.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Appearance1.BackColor = System.Drawing.SystemColors.Window
-            Me.TxtVehicle.Appearance = Appearance1
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Appearance2.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtVehicle.Appearance = Appearance2
             Me.TxtVehicle.BackColor = System.Drawing.SystemColors.Window
             Me.TxtVehicle.Location = New System.Drawing.Point(290, 151)
             Me.TxtVehicle.Name = "TxtVehicle"
@@ -429,6 +429,7 @@ Namespace GeneralLedger
             Me.TxtShortage.Size = New System.Drawing.Size(120, 21)
             Me.TxtShortage.TabIndex = 15
             Me.TxtShortage.Tag = "dt.Shortage"
+            Me.TxtShortage.Visible = False
             '
             'Label12
             '
@@ -436,9 +437,11 @@ Namespace GeneralLedger
             Me.Label12.ForeColor = System.Drawing.Color.Navy
             Me.Label12.Location = New System.Drawing.Point(601, 461)
             Me.Label12.Name = "Label12"
+            Me.Visible = False
             Me.Label12.Size = New System.Drawing.Size(110, 20)
             Me.Label12.TabIndex = 125
             Me.Label12.Text = "Shortage"
+            Me.Label12.Visible = False
             '
             'Label13
             '
@@ -485,9 +488,9 @@ Namespace GeneralLedger
             'TxtVehicleCode
             '
             Me.TxtVehicleCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-            Appearance13.BackColor = System.Drawing.SystemColors.Window
-            Me.TxtVehicleCode.Appearance = Appearance13
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Appearance3.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtVehicleCode.Appearance = Appearance3
             Me.TxtVehicleCode.BackColor = System.Drawing.SystemColors.Window
             Me.TxtVehicleCode.Location = New System.Drawing.Point(152, 151)
             Me.TxtVehicleCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.VehicleCode_Length
@@ -499,9 +502,9 @@ Namespace GeneralLedger
             'TxtDestinationPointCode
             '
             Me.TxtDestinationPointCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-            Appearance6.BackColor = System.Drawing.SystemColors.Window
-            Me.TxtDestinationPointCode.Appearance = Appearance6
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Appearance7.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtDestinationPointCode.Appearance = Appearance7
             Me.TxtDestinationPointCode.BackColor = System.Drawing.SystemColors.Window
             Me.TxtDestinationPointCode.Location = New System.Drawing.Point(152, 223)
             Me.TxtDestinationPointCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.RegionCode_Length
@@ -513,9 +516,9 @@ Namespace GeneralLedger
             'TxtStationPointCode
             '
             Me.TxtStationPointCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-            Appearance8.BackColor = System.Drawing.SystemColors.Window
-            Me.TxtStationPointCode.Appearance = Appearance8
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Appearance9.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtStationPointCode.Appearance = Appearance9
             Me.TxtStationPointCode.BackColor = System.Drawing.SystemColors.Window
             Me.TxtStationPointCode.Location = New System.Drawing.Point(152, 199)
             Me.TxtStationPointCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.RegionCode_Length
@@ -527,9 +530,9 @@ Namespace GeneralLedger
             'Desc
             '
             Me.Desc.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-            Appearance10.BackColor = System.Drawing.SystemColors.Window
-            Me.Desc.Appearance = Appearance10
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Appearance11.BackColor = System.Drawing.SystemColors.Window
+            Me.Desc.Appearance = Appearance11
             Me.Desc.BackColor = System.Drawing.SystemColors.Window
             Me.Desc.Location = New System.Drawing.Point(152, 127)
             Me.Desc.MaxLength = 5
@@ -541,9 +544,9 @@ Namespace GeneralLedger
             'txtBranchCode
             '
             Me.txtBranchCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-            Appearance12.BackColor = System.Drawing.SystemColors.Window
-            Me.txtBranchCode.Appearance = Appearance12
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Appearance13.BackColor = System.Drawing.SystemColors.Window
+            Me.txtBranchCode.Appearance = Appearance13
             Me.txtBranchCode.BackColor = System.Drawing.SystemColors.Window
             Me.txtBranchCode.Location = New System.Drawing.Point(152, 79)
             Me.txtBranchCode.MaxLength = 2
@@ -598,9 +601,9 @@ Namespace GeneralLedger
             'TxtProductCode
             '
             Me.TxtProductCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-            Appearance4.BackColor = System.Drawing.SystemColors.Window
-            Me.TxtProductCode.Appearance = Appearance4
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Appearance5.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtProductCode.Appearance = Appearance5
             Me.TxtProductCode.BackColor = System.Drawing.SystemColors.Window
             Me.TxtProductCode.Location = New System.Drawing.Point(152, 175)
             Me.TxtProductCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.ProductCode_Length
@@ -618,6 +621,7 @@ Namespace GeneralLedger
             Me.TxtShortageQuantity.Size = New System.Drawing.Size(120, 21)
             Me.TxtShortageQuantity.TabIndex = 13
             Me.TxtShortageQuantity.Tag = "dt.ShortageQuantity"
+            Me.TxtShortageQuantity.Visible = False
             '
             'Label16
             '
@@ -628,6 +632,7 @@ Namespace GeneralLedger
             Me.Label16.Size = New System.Drawing.Size(110, 20)
             Me.Label16.TabIndex = 131
             Me.Label16.Text = "Shortage Quantity"
+            Me.Label16.Visible = False
             '
             'Label17
             '
@@ -640,6 +645,7 @@ Namespace GeneralLedger
             Me.Label17.Size = New System.Drawing.Size(258, 171)
             Me.Label17.TabIndex = 132
             Me.Label17.Text = "Shortage"
+            Me.Label17.Visible = False
             '
             'TxtQuantityValue
             '
@@ -650,6 +656,7 @@ Namespace GeneralLedger
             Me.TxtQuantityValue.Size = New System.Drawing.Size(120, 21)
             Me.TxtQuantityValue.TabIndex = 14
             Me.TxtQuantityValue.Tag = "dt.QuantityValue"
+            Me.TxtQuantityValue.Visible = False
             '
             'Label18
             '
@@ -660,6 +667,7 @@ Namespace GeneralLedger
             Me.Label18.Size = New System.Drawing.Size(110, 20)
             Me.Label18.TabIndex = 134
             Me.Label18.Text = "Quantity Value"
+            Me.Label18.Visible = False
             '
             'Label19
             '
@@ -681,14 +689,14 @@ Namespace GeneralLedger
             Me.Label20.Name = "Label20"
             Me.Label20.Size = New System.Drawing.Size(110, 20)
             Me.Label20.TabIndex = 137
-            Me.Label20.Text = "Trip Advance Reference"
+            Me.Label20.Text = "Expences Reference"
             '
             'TxtAdvanceReferenceNo
             '
             Me.TxtAdvanceReferenceNo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-            Appearance2.BackColor = System.Drawing.SystemColors.Window
-            Me.TxtAdvanceReferenceNo.Appearance = Appearance2
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Appearance1.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtAdvanceReferenceNo.Appearance = Appearance1
             Me.TxtAdvanceReferenceNo.BackColor = System.Drawing.SystemColors.Window
             Me.TxtAdvanceReferenceNo.Location = New System.Drawing.Point(152, 332)
             Me.TxtAdvanceReferenceNo.MaxLength = Global.BusinessLeaf.My.MySettings.Default.VehicleCode_Length
@@ -707,6 +715,7 @@ Namespace GeneralLedger
             Me.TxtTripAdvance.Size = New System.Drawing.Size(120, 21)
             Me.TxtTripAdvance.TabIndex = 138
             Me.TxtTripAdvance.Tag = "dt.TripAdvance"
+            Me.TxtTripAdvance.Visible = False
             '
             'TxtCommissionRate
             '
@@ -816,8 +825,8 @@ Namespace GeneralLedger
             Me.Controls.Add(Me.Label1)
             Me.Controls.Add(Me.Label9)
             Me.Controls.Add(Me.TxtDate)
-            Me.Controls.Add(Me.Label17)
             Me.Controls.Add(Me.Label19)
+            Me.Controls.Add(Me.Label17)
             Me.KeyPreview = True
             Me.Name = "Invoices"
             Me.Text = "Invoice File "
@@ -1357,9 +1366,12 @@ Namespace GeneralLedger
                 frmser = New FrmSearch
                 frmser.FillData("VehicleAdjustments", "VehicleCode", TxtVehicleCode.Text, "BranchCode", txtBranchCode.Text, "TransactionDate", Me.TxtDate.Value, "TransactionTypeCode", My.Settings.TripAdvanceCode, "OPTION", "FILTER_ADVANCE", "InvoiceNo", Trim(Me.txtTransactionNumber.Text))
                 frmser.ShowDialog()
-                iRow = frmser.UGSearch.ActiveRow.Index
-                Me.TxtTripAdvance.Text = frmser.UGSearch.Rows(iRow).Cells("Amount").Value
-                Me.TxtAdvanceReferenceNo.Text = frmser.UGSearch.Rows(iRow).Cells("VehicleAdjustmentNo").Value
+                If Not IsNothing(frmser.UGSearch.ActiveRow) Then
+                    iRow = frmser.UGSearch.ActiveRow.Index
+                    Me.TxtTripAdvance.Text = frmser.UGSearch.Rows(iRow).Cells("Amount").Value
+                    Me.TxtAdvanceReferenceNo.Text = frmser.UGSearch.Rows(iRow).Cells("VehicleAdjustmentNo").Value
+
+                End If
             Catch ex As IndexOutOfRangeException
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
@@ -1382,10 +1394,10 @@ Namespace GeneralLedger
 
         Private Sub TxtAdvanceReferenceNo_Validating(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles TxtAdvanceReferenceNo.Validating
             Try
-                If TxtAdvanceReferenceNo.Text <> String.Empty Then
+                If TxtAdvanceReferenceNo.Text.Trim <> String.Empty Then
                     Dim Acc As New AzamTechnologies.Database.DataAccess
                     Dim Reader As SqlClient.SqlDataReader
-                    Reader = Acc.GetRecord("SelectVehicleAdjustments", "VehicleCode", TxtVehicleCode.Text, "BranchCode", txtBranchCode.Text, "TransactionDate", Me.TxtDate.Value, "TransactionTypeCode", My.Settings.TripAdvanceCode, "TransactionNo", Me.TxtAdvanceReferenceNo.Text, "OPTION", "FILTER_ADVANCE_WithNo", "InvoiceNo", Trim(Me.txtTransactionNumber.Text))
+                    Reader = Acc.GetRecord("SelectVehicleAdjustments", "VehicleCode", Trim(TxtVehicleCode.Text), "BranchCode", txtBranchCode.Text, "TransactionDate", Me.TxtDate.Value, "TransactionTypeCode", My.Settings.TripAdvanceCode, "TransactionNo", Me.TxtAdvanceReferenceNo.Text, "OPTION", "FILTER_ADVANCE_WithNo", "InvoiceNo", Trim(Me.txtTransactionNumber.Text))
                     If Reader.HasRows = False Then
                         TxtTripAdvance.Value = 0D
                         ErrProvider.SetError(TxtAdvanceReferenceNo, "Invalid Trip Advance No")
