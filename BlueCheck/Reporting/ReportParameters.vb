@@ -4362,6 +4362,21 @@ Public Class ReportParameters
                 Cursor = Cursors.Default
                 imgProgressBar.Visible = False
             End If
+            ''
+            ''Vehicle Revenue Pivot
+            ''
+        ElseIf ReportFile = ReportProcess.ReportFiles.VehicleRevenuePivot Then
+            Dim reportDoc As CrystalDecisions.CrystalReports.Engine.ReportDocument = Nothing
+            If VehicleRevenuePivotProcess(ReportFiles.VehicleRevenue, ChkShowOpeneing.Checked, RbtSummaryVLR.Checked, TxtFrDateVLR.Value, TxtToDateVLR.Value, TxtFrVehicleVLR.Text, TxtToVehicleVLR.Text, TxtFrOwnerVLR.Text, TxtToOwnerVLR.Text, reportDoc, Nothing, 0, CmbTypeVLR.SelectedIndex) = True Then
+                Dim rpViewer As New ReportViewer
+                rpViewer.SetSource = reportDoc
+                rpViewer.MdiParent = Me.MdiParent
+                rpViewer.Text = "Vehicle Revenue Pivot [Report]"
+                rpViewer.Show()
+                rpViewer.BringToFront()
+                Cursor = Cursors.Default
+                imgProgressBar.Visible = False
+            End If
 
             ''
             ''Vehicle List
@@ -4504,6 +4519,13 @@ Public Class ReportParameters
                 Me.Text = "Vehicle Revenue"
                 AddHandler GrpVehicleLedger.Paint, AddressOf mdlFunctions.PaintTheForms
                 GrpButtons.Visible = True
+            Case ReportProcess.ReportFiles.VehicleRevenuePivot
+                GrpOtherReports.Visible = False
+                GrpVehicleLedger.Visible = True
+                Me.Text = "Vehicle Revenue Pivot"
+                AddHandler GrpVehicleLedger.Paint, AddressOf mdlFunctions.PaintTheForms
+                GrpButtons.Visible = True
+
             Case ReportProcess.ReportFiles.VehicleBillAnalysis
                 ChkTripWithBill.Visible = False
                 ChkTripWithBill.Checked = False
