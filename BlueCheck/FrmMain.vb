@@ -165,8 +165,8 @@ Public Class frmMain
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Dim DockAreaPane2 As Infragistics.Win.UltraWinDock.DockAreaPane = New Infragistics.Win.UltraWinDock.DockAreaPane(Infragistics.Win.UltraWinDock.DockedLocation.DockedRight, New System.Guid("24c5bda7-a9a9-48e7-b36b-66f6b783600a"))
-        Dim DockableControlPane2 As Infragistics.Win.UltraWinDock.DockableControlPane = New Infragistics.Win.UltraWinDock.DockableControlPane(New System.Guid("9046be86-00ea-4850-8adc-68b4a3722229"), New System.Guid("00000000-0000-0000-0000-000000000000"), -1, New System.Guid("24c5bda7-a9a9-48e7-b36b-66f6b783600a"), -1)
+        Dim DockAreaPane1 As Infragistics.Win.UltraWinDock.DockAreaPane = New Infragistics.Win.UltraWinDock.DockAreaPane(Infragistics.Win.UltraWinDock.DockedLocation.DockedRight, New System.Guid("24c5bda7-a9a9-48e7-b36b-66f6b783600a"))
+        Dim DockableControlPane1 As Infragistics.Win.UltraWinDock.DockableControlPane = New Infragistics.Win.UltraWinDock.DockableControlPane(New System.Guid("9046be86-00ea-4850-8adc-68b4a3722229"), New System.Guid("00000000-0000-0000-0000-000000000000"), -1, New System.Guid("24c5bda7-a9a9-48e7-b36b-66f6b783600a"), -1)
         Me.TransportManagementSystem = New Infragistics.Win.UltraWinExplorerBar.UltraExplorerBar()
         Me.imgList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -221,6 +221,8 @@ Public Class frmMain
         Me.MnuTransactionList = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuVFreghtStatements = New System.Windows.Forms.ToolStripMenuItem()
         Me.MnuFreightAnalysis = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem12 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MnuVehicleLedger = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.mnuProdRecDocument = New System.Windows.Forms.ToolStripMenuItem()
@@ -286,8 +288,6 @@ Public Class frmMain
         Me._frmMainAutoHideControl = New Infragistics.Win.UltraWinDock.AutoHideControl()
         Me.DockableWindow1 = New Infragistics.Win.UltraWinDock.DockableWindow()
         Me.WindowDockingArea1 = New Infragistics.Win.UltraWinDock.WindowDockingArea()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem12 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.TransportManagementSystem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.stpText, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -670,6 +670,18 @@ Public Class frmMain
         Me.MnuFreightAnalysis.Size = New System.Drawing.Size(213, 22)
         Me.MnuFreightAnalysis.Text = "Vehicle Bill Analysis"
         '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(213, 22)
+        Me.ToolStripMenuItem3.Text = "Vehcile Revenue"
+        '
+        'ToolStripMenuItem12
+        '
+        Me.ToolStripMenuItem12.Name = "ToolStripMenuItem12"
+        Me.ToolStripMenuItem12.Size = New System.Drawing.Size(213, 22)
+        Me.ToolStripMenuItem12.Text = "Vehicle Revenue Pivot"
+        '
         'MnuVehicleLedger
         '
         Me.MnuVehicleLedger.Name = "MnuVehicleLedger"
@@ -1051,15 +1063,15 @@ Public Class frmMain
         '
         'UltraDockManager1
         '
-        DockableControlPane2.Control = Me.TransportManagementSystem
-        DockableControlPane2.FlyoutSize = New System.Drawing.Size(204, -1)
-        DockableControlPane2.OriginalControlBounds = New System.Drawing.Rectangle(558, 77, 246, 230)
-        DockableControlPane2.Pinned = False
-        DockableControlPane2.Size = New System.Drawing.Size(100, 100)
-        DockableControlPane2.Text = "TMS Files"
-        DockAreaPane2.Panes.AddRange(New Infragistics.Win.UltraWinDock.DockablePaneBase() {DockableControlPane2})
-        DockAreaPane2.Size = New System.Drawing.Size(224, 481)
-        Me.UltraDockManager1.DockAreas.AddRange(New Infragistics.Win.UltraWinDock.DockAreaPane() {DockAreaPane2})
+        DockableControlPane1.Control = Me.TransportManagementSystem
+        DockableControlPane1.FlyoutSize = New System.Drawing.Size(204, -1)
+        DockableControlPane1.OriginalControlBounds = New System.Drawing.Rectangle(558, 77, 246, 230)
+        DockableControlPane1.Pinned = False
+        DockableControlPane1.Size = New System.Drawing.Size(100, 100)
+        DockableControlPane1.Text = "TMS Files"
+        DockAreaPane1.Panes.AddRange(New Infragistics.Win.UltraWinDock.DockablePaneBase() {DockableControlPane1})
+        DockAreaPane1.Size = New System.Drawing.Size(224, 481)
+        Me.UltraDockManager1.DockAreas.AddRange(New Infragistics.Win.UltraWinDock.DockAreaPane() {DockAreaPane1})
         Me.UltraDockManager1.HostControl = Me
         Me.UltraDockManager1.SplitterBarWidth = 4
         Me.UltraDockManager1.WindowStyle = Infragistics.Win.UltraWinDock.WindowStyle.VisualStudio2008
@@ -1132,18 +1144,6 @@ Public Class frmMain
         Me.WindowDockingArea1.Owner = Me.UltraDockManager1
         Me.WindowDockingArea1.Size = New System.Drawing.Size(228, 481)
         Me.WindowDockingArea1.TabIndex = 40
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(213, 22)
-        Me.ToolStripMenuItem3.Text = "Vehcile Revenue"
-        '
-        'ToolStripMenuItem12
-        '
-        Me.ToolStripMenuItem12.Name = "ToolStripMenuItem12"
-        Me.ToolStripMenuItem12.Size = New System.Drawing.Size(213, 22)
-        Me.ToolStripMenuItem12.Text = "Vehicle Revenue Pivot"
         '
         'frmMain
         '
@@ -2428,16 +2428,20 @@ Public Class frmMain
     End Sub
 
     Private Sub mnuVehicleRevenue_Click(sender As Object, e As EventArgs)
-        Dim rptForm As New ReportParameters
-        rptForm.MdiParent = Me
-        rptForm.ReportFile = ReportProcess.ReportFiles.VehicleRevenue
-        rptForm.Show()
+
     End Sub
 
     Private Sub ToolStripMenuItem12_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem12.Click
         Dim rptForm As New ReportParameters
         rptForm.MdiParent = Me
         rptForm.ReportFile = ReportProcess.ReportFiles.VehicleRevenuePivot
+        rptForm.Show()
+    End Sub
+
+    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
+        Dim rptForm As New ReportParameters
+        rptForm.MdiParent = Me
+        rptForm.ReportFile = ReportProcess.ReportFiles.VehicleRevenue
         rptForm.Show()
     End Sub
 End Class
