@@ -61,12 +61,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         '''</summary>
-        Friend ReadOnly Property autorun() As System.Drawing.Bitmap
+        Friend ReadOnly Property autorun() As System.Drawing.Icon
             Get
                 Dim obj As Object = ResourceManager.GetObject("autorun", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
+                Return CType(obj,System.Drawing.Icon)
             End Get
         End Property
     End Module
