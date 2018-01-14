@@ -622,12 +622,17 @@ Module ReportProcess
 
         Try
 
-            strReporTitle = "Vehicle Ledger"
+            strReporTitle = "Vehicle Revenue Summary"
             Dim Acc As AzamTechnologies.Database.DataAccess
             Acc = New AzamTechnologies.Database.DataAccess
             Dim Ds As DataSet = Nothing
-            Acc.PopulateDataSet(Ds, "[SelectVehicleRevenueReport]",
-            "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "ShowOpening", IsShowOpeinging)
+            if(IsSummaryReport) 
+                Acc.PopulateDataSet(Ds, "[SelectVehicleRevenueSummaryReport]",
+                    "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "ShowOpening", IsShowOpeinging)
+            Else 
+                Acc.PopulateDataSet(Ds, "[SelectVehicleRevenueReport]",
+                    "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "ShowOpening", IsShowOpeinging)
+            End If
 
             If Ds.Tables(0).Rows.Count = 0 Then
                 MessageBox.Show("No record found within the specified conditions..." & vbCrLf & vbCrLf & "Please specify valid parameters and " & vbCrLf & "Make sure that the records exists !", "Report Process", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
