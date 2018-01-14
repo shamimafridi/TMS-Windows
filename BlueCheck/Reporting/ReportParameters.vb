@@ -315,6 +315,11 @@ Public Class ReportParameters
     Friend WithEvents RbtSummaryVLR As RadioButton
     Friend WithEvents RbtDetailVLR As RadioButton
     Friend WithEvents ChkShowOpeneing As CheckBox
+    Friend WithEvents BtnVehicleLstVR As Button
+    Friend WithEvents TxtVehicleLstVR As Infragistics.Win.UltraWinEditors.UltraTextEditor
+    Friend WithEvents Label39 As Label
+    Friend WithEvents LstVehicleVR As ListView
+    Friend WithEvents ColumnHeader6 As ColumnHeader
     Friend WithEvents GrpVouchersList As System.Windows.Forms.Panel
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -324,7 +329,6 @@ Public Class ReportParameters
         Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance16 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -332,6 +336,7 @@ Public Class ReportParameters
         Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance13 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance14 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance15 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Me.GrpButtons = New System.Windows.Forms.Panel()
         Me.BtnShowToGrid = New System.Windows.Forms.Button()
         Me.BtnCancel = New System.Windows.Forms.Button()
@@ -594,7 +599,7 @@ Public Class ReportParameters
         Me.TxtFDate = New System.Windows.Forms.DateTimePicker()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.GrpVehicleLedger = New System.Windows.Forms.Panel()
-        Me.GrpVehicleRevenue = New System.Windows.Forms.Panel()
+        Me.ChkShowOpeneing = New System.Windows.Forms.CheckBox()
         Me.RbtSummaryVLR = New System.Windows.Forms.RadioButton()
         Me.RbtDetailVLR = New System.Windows.Forms.RadioButton()
         Me.BtnLstToOwnerVLR = New System.Windows.Forms.Button()
@@ -619,7 +624,12 @@ Public Class ReportParameters
         Me.TxtFrDateVLR = New System.Windows.Forms.DateTimePicker()
         Me.Label87 = New System.Windows.Forms.Label()
         Me.BtnLstBranchVLR = New System.Windows.Forms.Button()
-        Me.ChkShowOpeneing = New System.Windows.Forms.CheckBox()
+        Me.GrpVehicleRevenue = New System.Windows.Forms.Panel()
+        Me.BtnVehicleLstVR = New System.Windows.Forms.Button()
+        Me.TxtVehicleLstVR = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.LstVehicleVR = New System.Windows.Forms.ListView()
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.GrpButtons.SuspendLayout()
         Me.GrpTransactionDocuments.SuspendLayout()
         CType(Me.TxtToPartyCode, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -684,13 +694,13 @@ Public Class ReportParameters
         Me.GrpSetupList.SuspendLayout()
         CType(Me.TxtToCode, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtFCode, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GrpVehicleLedger.SuspendLayout()
-        Me.GrpVehicleRevenue.SuspendLayout()
         CType(Me.TxtToOwnerVLR, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtFrOwnerVLR, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtBranchCodeVLR, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtToVehicleVLR, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtFrVehicleVLR, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GrpVehicleRevenue.SuspendLayout()
+        CType(Me.TxtVehicleLstVR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GrpButtons
@@ -1078,7 +1088,6 @@ Public Class ReportParameters
         'cmbToItemListTRL
         '
         Me.cmbToItemListTRL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.cmbToItemListTRL.Image =Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.cmbToItemListTRL.Location = New System.Drawing.Point(648, 164)
         Me.cmbToItemListTRL.Name = "cmbToItemListTRL"
         Me.cmbToItemListTRL.Size = New System.Drawing.Size(24, 20)
@@ -1170,7 +1179,6 @@ Public Class ReportParameters
         'cmbToPartyCodeListTRL
         '
         Me.cmbToPartyCodeListTRL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.cmbToPartyCodeListTRL.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.cmbToPartyCodeListTRL.Location = New System.Drawing.Point(648, 240)
         Me.cmbToPartyCodeListTRL.Name = "cmbToPartyCodeListTRL"
         Me.cmbToPartyCodeListTRL.Size = New System.Drawing.Size(24, 20)
@@ -1248,7 +1256,6 @@ Public Class ReportParameters
         'cmbFromPartyCodeListTRL
         '
         Me.cmbFromPartyCodeListTRL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.cmbFromPartyCodeListTRL.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.cmbFromPartyCodeListTRL.Location = New System.Drawing.Point(364, 240)
         Me.cmbFromPartyCodeListTRL.Name = "cmbFromPartyCodeListTRL"
         Me.cmbFromPartyCodeListTRL.Size = New System.Drawing.Size(24, 20)
@@ -1327,7 +1334,6 @@ Public Class ReportParameters
         'cmbFromItemListTRL
         '
         Me.cmbFromItemListTRL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.cmbFromItemListTRL.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.cmbFromItemListTRL.Location = New System.Drawing.Point(364, 168)
         Me.cmbFromItemListTRL.Name = "cmbFromItemListTRL"
         Me.cmbFromItemListTRL.Size = New System.Drawing.Size(24, 20)
@@ -1466,7 +1472,6 @@ Public Class ReportParameters
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.Button1.Location = New System.Drawing.Point(636, 222)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(24, 20)
@@ -1477,7 +1482,6 @@ Public Class ReportParameters
         'Button3
         '
         Me.Button3.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button3.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.Button3.Location = New System.Drawing.Point(364, 220)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(24, 20)
@@ -1527,7 +1531,6 @@ Public Class ReportParameters
         'BtnToBranchListIL
         '
         Me.BtnToBranchListIL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnToBranchListIL.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnToBranchListIL.Location = New System.Drawing.Point(636, 190)
         Me.BtnToBranchListIL.Name = "BtnToBranchListIL"
         Me.BtnToBranchListIL.Size = New System.Drawing.Size(24, 20)
@@ -1627,7 +1630,6 @@ Public Class ReportParameters
         'BtnToGLCodeListIL
         '
         Me.BtnToGLCodeListIL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnToGLCodeListIL.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnToGLCodeListIL.Location = New System.Drawing.Point(636, 270)
         Me.BtnToGLCodeListIL.Name = "BtnToGLCodeListIL"
         Me.BtnToGLCodeListIL.Size = New System.Drawing.Size(24, 20)
@@ -1705,7 +1707,6 @@ Public Class ReportParameters
         'BtnFromGLCodeListIL
         '
         Me.BtnFromGLCodeListIL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnFromGLCodeListIL.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnFromGLCodeListIL.Location = New System.Drawing.Point(364, 268)
         Me.BtnFromGLCodeListIL.Name = "BtnFromGLCodeListIL"
         Me.BtnFromGLCodeListIL.Size = New System.Drawing.Size(24, 20)
@@ -1794,7 +1795,6 @@ Public Class ReportParameters
         'BtnFromBranchListIL
         '
         Me.BtnFromBranchListIL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnFromBranchListIL.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnFromBranchListIL.Location = New System.Drawing.Point(364, 194)
         Me.BtnFromBranchListIL.Name = "BtnFromBranchListIL"
         Me.BtnFromBranchListIL.Size = New System.Drawing.Size(24, 20)
@@ -1907,7 +1907,6 @@ Public Class ReportParameters
         'BtnToOwnerList
         '
         Me.BtnToOwnerList.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnToOwnerList.BackgroundImage = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnToOwnerList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BtnToOwnerList.Location = New System.Drawing.Point(647, 185)
         Me.BtnToOwnerList.Name = "BtnToOwnerList"
@@ -1930,7 +1929,6 @@ Public Class ReportParameters
         'BtnFromOwnerList
         '
         Me.BtnFromOwnerList.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnFromOwnerList.BackgroundImage = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnFromOwnerList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BtnFromOwnerList.Location = New System.Drawing.Point(364, 185)
         Me.BtnFromOwnerList.Name = "BtnFromOwnerList"
@@ -1963,7 +1961,6 @@ Public Class ReportParameters
         'BtnToVehicleList
         '
         Me.BtnToVehicleList.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnToVehicleList.BackgroundImage = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnToVehicleList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BtnToVehicleList.Location = New System.Drawing.Point(647, 211)
         Me.BtnToVehicleList.Name = "BtnToVehicleList"
@@ -2078,7 +2075,6 @@ Public Class ReportParameters
         'BtnFromVehicleList
         '
         Me.BtnFromVehicleList.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnFromVehicleList.BackgroundImage = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnFromVehicleList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BtnFromVehicleList.Location = New System.Drawing.Point(363, 211)
         Me.BtnFromVehicleList.Name = "BtnFromVehicleList"
@@ -2154,7 +2150,6 @@ Public Class ReportParameters
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button2.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.Button2.Location = New System.Drawing.Point(624, 208)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(24, 20)
@@ -2208,7 +2203,6 @@ Public Class ReportParameters
         'Button6
         '
         Me.Button6.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button6.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.Button6.Location = New System.Drawing.Point(344, 208)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(24, 20)
@@ -2279,7 +2273,7 @@ Public Class ReportParameters
         Me.GrpVoucherDocuments.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpVoucherDocuments.Location = New System.Drawing.Point(0, 0)
         Me.GrpVoucherDocuments.Name = "GrpVoucherDocuments"
-        Me.GrpVoucherDocuments.Size = New System.Drawing.Size(804, 583)
+        Me.GrpVoucherDocuments.Size = New System.Drawing.Size(804, 521)
         Me.GrpVoucherDocuments.TabIndex = 25
         Me.GrpVoucherDocuments.Text = "Transaction List"
         Me.GrpVoucherDocuments.Visible = False
@@ -2473,7 +2467,6 @@ Public Class ReportParameters
         'BtnToGLCodeListVLT
         '
         Me.BtnToGLCodeListVLT.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnToGLCodeListVLT.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnToGLCodeListVLT.Location = New System.Drawing.Point(648, 188)
         Me.BtnToGLCodeListVLT.Name = "BtnToGLCodeListVLT"
         Me.BtnToGLCodeListVLT.Size = New System.Drawing.Size(24, 20)
@@ -2655,7 +2648,6 @@ Public Class ReportParameters
         'BtnFromGLCodeListVLT
         '
         Me.BtnFromGLCodeListVLT.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnFromGLCodeListVLT.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnFromGLCodeListVLT.Location = New System.Drawing.Point(364, 192)
         Me.BtnFromGLCodeListVLT.Name = "BtnFromGLCodeListVLT"
         Me.BtnFromGLCodeListVLT.Size = New System.Drawing.Size(24, 20)
@@ -2759,7 +2751,6 @@ Public Class ReportParameters
         'Button4
         '
         Me.Button4.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button4.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.Button4.Location = New System.Drawing.Point(636, 222)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(24, 20)
@@ -2770,7 +2761,6 @@ Public Class ReportParameters
         'Button5
         '
         Me.Button5.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button5.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.Button5.Location = New System.Drawing.Point(364, 220)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(24, 20)
@@ -2803,7 +2793,6 @@ Public Class ReportParameters
         'Button7
         '
         Me.Button7.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button7.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.Button7.Location = New System.Drawing.Point(636, 190)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(24, 20)
@@ -2985,7 +2974,6 @@ Public Class ReportParameters
         'BtnFromBranchCodeCFS
         '
         Me.BtnFromBranchCodeCFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnFromBranchCodeCFS.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnFromBranchCodeCFS.Location = New System.Drawing.Point(364, 194)
         Me.BtnFromBranchCodeCFS.Name = "BtnFromBranchCodeCFS"
         Me.BtnFromBranchCodeCFS.Size = New System.Drawing.Size(24, 20)
@@ -3036,7 +3024,6 @@ Public Class ReportParameters
         'BtnToGLCodeListFS
         '
         Me.BtnToGLCodeListFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnToGLCodeListFS.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnToGLCodeListFS.Location = New System.Drawing.Point(636, 219)
         Me.BtnToGLCodeListFS.Name = "BtnToGLCodeListFS"
         Me.BtnToGLCodeListFS.Size = New System.Drawing.Size(24, 20)
@@ -3048,7 +3035,6 @@ Public Class ReportParameters
         'BtnFrGLCodeListFS
         '
         Me.BtnFrGLCodeListFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnFrGLCodeListFS.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnFrGLCodeListFS.Location = New System.Drawing.Point(364, 220)
         Me.BtnFrGLCodeListFS.Name = "BtnFrGLCodeListFS"
         Me.BtnFrGLCodeListFS.Size = New System.Drawing.Size(24, 20)
@@ -3238,8 +3224,8 @@ Public Class ReportParameters
         '
         'TxtToTransactionNoVFS
         '
-        Appearance7.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtToTransactionNoVFS.Appearance = Appearance7
+        Appearance8.BackColor = System.Drawing.SystemColors.Window
+        Me.TxtToTransactionNoVFS.Appearance = Appearance8
         Me.TxtToTransactionNoVFS.BackColor = System.Drawing.SystemColors.Window
         Me.TxtToTransactionNoVFS.Location = New System.Drawing.Point(523, 268)
         Me.TxtToTransactionNoVFS.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
@@ -3260,8 +3246,8 @@ Public Class ReportParameters
         '
         'TxtFromTransactionNoVFS
         '
-        Appearance8.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtFromTransactionNoVFS.Appearance = Appearance8
+        Appearance9.BackColor = System.Drawing.SystemColors.Window
+        Me.TxtFromTransactionNoVFS.Appearance = Appearance9
         Me.TxtFromTransactionNoVFS.BackColor = System.Drawing.SystemColors.Window
         Me.TxtFromTransactionNoVFS.Location = New System.Drawing.Point(248, 268)
         Me.TxtFromTransactionNoVFS.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
@@ -3326,7 +3312,6 @@ Public Class ReportParameters
         'BtnToVehicleListVFS
         '
         Me.BtnToVehicleListVFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnToVehicleListVFS.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnToVehicleListVFS.Location = New System.Drawing.Point(636, 219)
         Me.BtnToVehicleListVFS.Name = "BtnToVehicleListVFS"
         Me.BtnToVehicleListVFS.Size = New System.Drawing.Size(24, 20)
@@ -3337,7 +3322,6 @@ Public Class ReportParameters
         'BtnFromVehicleListVFS
         '
         Me.BtnFromVehicleListVFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnFromVehicleListVFS.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnFromVehicleListVFS.Location = New System.Drawing.Point(364, 220)
         Me.BtnFromVehicleListVFS.Name = "BtnFromVehicleListVFS"
         Me.BtnFromVehicleListVFS.Size = New System.Drawing.Size(24, 20)
@@ -3399,7 +3383,6 @@ Public Class ReportParameters
         'BtnToCustomerListVFS
         '
         Me.BtnToCustomerListVFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnToCustomerListVFS.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnToCustomerListVFS.Location = New System.Drawing.Point(636, 245)
         Me.BtnToCustomerListVFS.Name = "BtnToCustomerListVFS"
         Me.BtnToCustomerListVFS.Size = New System.Drawing.Size(24, 20)
@@ -3409,8 +3392,8 @@ Public Class ReportParameters
         '
         'TxtToCustomerVFS
         '
-        Appearance9.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtToCustomerVFS.Appearance = Appearance9
+        Appearance10.BackColor = System.Drawing.SystemColors.Window
+        Me.TxtToCustomerVFS.Appearance = Appearance10
         Me.TxtToCustomerVFS.BackColor = System.Drawing.SystemColors.Window
         Me.TxtToCustomerVFS.Location = New System.Drawing.Point(523, 245)
         Me.TxtToCustomerVFS.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
@@ -3477,7 +3460,6 @@ Public Class ReportParameters
         'BtnFromCustomerListVFS
         '
         Me.BtnFromCustomerListVFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnFromCustomerListVFS.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnFromCustomerListVFS.Location = New System.Drawing.Point(364, 245)
         Me.BtnFromCustomerListVFS.Name = "BtnFromCustomerListVFS"
         Me.BtnFromCustomerListVFS.Size = New System.Drawing.Size(24, 20)
@@ -3487,8 +3469,8 @@ Public Class ReportParameters
         '
         'TxtFromCustomerVFS
         '
-        Appearance10.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtFromCustomerVFS.Appearance = Appearance10
+        Appearance11.BackColor = System.Drawing.SystemColors.Window
+        Me.TxtFromCustomerVFS.Appearance = Appearance11
         Me.TxtFromCustomerVFS.BackColor = System.Drawing.SystemColors.Window
         Me.TxtFromCustomerVFS.Location = New System.Drawing.Point(248, 245)
         Me.TxtFromCustomerVFS.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
@@ -3566,7 +3548,6 @@ Public Class ReportParameters
         'BtnFromBranchListVFS
         '
         Me.BtnFromBranchListVFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnFromBranchListVFS.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnFromBranchListVFS.Location = New System.Drawing.Point(364, 194)
         Me.BtnFromBranchListVFS.Name = "BtnFromBranchListVFS"
         Me.BtnFromBranchListVFS.Size = New System.Drawing.Size(24, 20)
@@ -3719,31 +3700,6 @@ Public Class ReportParameters
         '
         'GrpVehicleLedger
         '
-        Me.GrpVehicleLedger.Controls.Add(Me.ChkShowOpeneing)
-        Me.GrpVehicleLedger.Controls.Add(Me.RbtSummaryVLR)
-        Me.GrpVehicleLedger.Controls.Add(Me.RbtDetailVLR)
-        Me.GrpVehicleLedger.Controls.Add(Me.BtnLstToOwnerVLR)
-        Me.GrpVehicleLedger.Controls.Add(Me.TxtToOwnerVLR)
-        Me.GrpVehicleLedger.Controls.Add(Me.Label27)
-        Me.GrpVehicleLedger.Controls.Add(Me.BtnLstFrOwnerVLR)
-        Me.GrpVehicleLedger.Controls.Add(Me.TxtFrOwnerVLR)
-        Me.GrpVehicleLedger.Controls.Add(Me.Label33)
-        Me.GrpVehicleLedger.Controls.Add(Me.CmbTypeVLR)
-        Me.GrpVehicleLedger.Controls.Add(Me.Label32)
-        Me.GrpVehicleLedger.Controls.Add(Me.TxtBranchCodeVLR)
-        Me.GrpVehicleLedger.Controls.Add(Me.Label42)
-        Me.GrpVehicleLedger.Controls.Add(Me.LinkLabel9)
-        Me.GrpVehicleLedger.Controls.Add(Me.BtnLstToVehicleVLR)
-        Me.GrpVehicleLedger.Controls.Add(Me.TxtToVehicleVLR)
-        Me.GrpVehicleLedger.Controls.Add(Me.Label83)
-        Me.GrpVehicleLedger.Controls.Add(Me.TxtToDateVLR)
-        Me.GrpVehicleLedger.Controls.Add(Me.Label84)
-        Me.GrpVehicleLedger.Controls.Add(Me.BtnLstFrVehicleVLR)
-        Me.GrpVehicleLedger.Controls.Add(Me.TxtFrVehicleVLR)
-        Me.GrpVehicleLedger.Controls.Add(Me.Label86)
-        Me.GrpVehicleLedger.Controls.Add(Me.TxtFrDateVLR)
-        Me.GrpVehicleLedger.Controls.Add(Me.Label87)
-        Me.GrpVehicleLedger.Controls.Add(Me.BtnLstBranchVLR)
         Me.GrpVehicleLedger.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpVehicleLedger.Location = New System.Drawing.Point(0, 0)
         Me.GrpVehicleLedger.Name = "GrpVehicleLedger"
@@ -3751,45 +3707,17 @@ Public Class ReportParameters
         Me.GrpVehicleLedger.TabIndex = 31
         Me.GrpVehicleLedger.Text = "General Ledger"
         Me.GrpVehicleLedger.Visible = False
-
-
-
-
         '
-        'GrpVehicleRevenue
+        'ChkShowOpeneing
         '
-        Me.GrpVehicleRevenue.Controls.Add(Me.ChkShowOpeneing)
-        Me.GrpVehicleRevenue.Controls.Add(Me.RbtSummaryVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.RbtDetailVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstToOwnerVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.TxtToOwnerVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.Label27)
-        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstFrOwnerVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.TxtFrOwnerVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.Label33)
-        Me.GrpVehicleRevenue.Controls.Add(Me.CmbTypeVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.Label32)
-        Me.GrpVehicleRevenue.Controls.Add(Me.TxtBranchCodeVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.Label42)
-        Me.GrpVehicleRevenue.Controls.Add(Me.LinkLabel9)
-        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstToVehicleVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.TxtToVehicleVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.Label83)
-        Me.GrpVehicleRevenue.Controls.Add(Me.TxtToDateVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.Label84)
-        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstFrVehicleVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.TxtFrVehicleVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.Label86)
-        Me.GrpVehicleRevenue.Controls.Add(Me.TxtFrDateVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.Label87)
-        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstBranchVLR)
-        Me.GrpVehicleRevenue.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GrpVehicleRevenue.Location = New System.Drawing.Point(0, 0)
-        Me.GrpVehicleRevenue.Name = "GrpVehicleRevenue"
-        Me.GrpVehicleRevenue.Size = New System.Drawing.Size(804, 521)
-        Me.GrpVehicleRevenue.TabIndex = 31
-        Me.GrpVehicleRevenue.Text = "Vehicle Revenue"
-        Me.GrpVehicleRevenue.Visible = False
+        Me.ChkShowOpeneing.AutoSize = True
+        Me.ChkShowOpeneing.BackColor = System.Drawing.Color.Transparent
+        Me.ChkShowOpeneing.Location = New System.Drawing.Point(423, 190)
+        Me.ChkShowOpeneing.Name = "ChkShowOpeneing"
+        Me.ChkShowOpeneing.Size = New System.Drawing.Size(96, 17)
+        Me.ChkShowOpeneing.TabIndex = 138
+        Me.ChkShowOpeneing.Text = "Show Opening"
+        Me.ChkShowOpeneing.UseVisualStyleBackColor = False
         '
         'RbtSummaryVLR
         '
@@ -3818,7 +3746,6 @@ Public Class ReportParameters
         'BtnLstToOwnerVLR
         '
         Me.BtnLstToOwnerVLR.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnLstToOwnerVLR.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnLstToOwnerVLR.Location = New System.Drawing.Point(636, 293)
         Me.BtnLstToOwnerVLR.Name = "BtnLstToOwnerVLR"
         Me.BtnLstToOwnerVLR.Size = New System.Drawing.Size(24, 20)
@@ -3828,8 +3755,8 @@ Public Class ReportParameters
         '
         'TxtToOwnerVLR
         '
-        Appearance11.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtToOwnerVLR.Appearance = Appearance11
+        Appearance12.BackColor = System.Drawing.SystemColors.Window
+        Me.TxtToOwnerVLR.Appearance = Appearance12
         Me.TxtToOwnerVLR.BackColor = System.Drawing.SystemColors.Window
         Me.TxtToOwnerVLR.Location = New System.Drawing.Point(523, 291)
         Me.TxtToOwnerVLR.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
@@ -3851,7 +3778,6 @@ Public Class ReportParameters
         'BtnLstFrOwnerVLR
         '
         Me.BtnLstFrOwnerVLR.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnLstFrOwnerVLR.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnLstFrOwnerVLR.Location = New System.Drawing.Point(364, 291)
         Me.BtnLstFrOwnerVLR.Name = "BtnLstFrOwnerVLR"
         Me.BtnLstFrOwnerVLR.Size = New System.Drawing.Size(24, 20)
@@ -3861,8 +3787,8 @@ Public Class ReportParameters
         '
         'TxtFrOwnerVLR
         '
-        Appearance12.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtFrOwnerVLR.Appearance = Appearance12
+        Appearance13.BackColor = System.Drawing.SystemColors.Window
+        Me.TxtFrOwnerVLR.Appearance = Appearance13
         Me.TxtFrOwnerVLR.BackColor = System.Drawing.SystemColors.Window
         Me.TxtFrOwnerVLR.Location = New System.Drawing.Point(248, 291)
         Me.TxtFrOwnerVLR.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
@@ -3935,7 +3861,6 @@ Public Class ReportParameters
         'BtnLstToVehicleVLR
         '
         Me.BtnLstToVehicleVLR.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnLstToVehicleVLR.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnLstToVehicleVLR.Location = New System.Drawing.Point(636, 270)
         Me.BtnLstToVehicleVLR.Name = "BtnLstToVehicleVLR"
         Me.BtnLstToVehicleVLR.Size = New System.Drawing.Size(24, 20)
@@ -3945,8 +3870,8 @@ Public Class ReportParameters
         '
         'TxtToVehicleVLR
         '
-        Appearance13.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtToVehicleVLR.Appearance = Appearance13
+        Appearance14.BackColor = System.Drawing.SystemColors.Window
+        Me.TxtToVehicleVLR.Appearance = Appearance14
         Me.TxtToVehicleVLR.BackColor = System.Drawing.SystemColors.Window
         Me.TxtToVehicleVLR.Location = New System.Drawing.Point(523, 268)
         Me.TxtToVehicleVLR.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
@@ -3992,7 +3917,6 @@ Public Class ReportParameters
         'BtnLstFrVehicleVLR
         '
         Me.BtnLstFrVehicleVLR.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnLstFrVehicleVLR.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnLstFrVehicleVLR.Location = New System.Drawing.Point(364, 268)
         Me.BtnLstFrVehicleVLR.Name = "BtnLstFrVehicleVLR"
         Me.BtnLstFrVehicleVLR.Size = New System.Drawing.Size(24, 20)
@@ -4002,8 +3926,8 @@ Public Class ReportParameters
         '
         'TxtFrVehicleVLR
         '
-        Appearance14.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtFrVehicleVLR.Appearance = Appearance14
+        Appearance15.BackColor = System.Drawing.SystemColors.Window
+        Me.TxtFrVehicleVLR.Appearance = Appearance15
         Me.TxtFrVehicleVLR.BackColor = System.Drawing.SystemColors.Window
         Me.TxtFrVehicleVLR.Location = New System.Drawing.Point(248, 268)
         Me.TxtFrVehicleVLR.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
@@ -4050,7 +3974,6 @@ Public Class ReportParameters
         'BtnLstBranchVLR
         '
         Me.BtnLstBranchVLR.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnLstBranchVLR.Image = Global.BusinessLeaf.My.Resources.Resources.autorun.ToBitmap
         Me.BtnLstBranchVLR.Location = New System.Drawing.Point(362, 219)
         Me.BtnLstBranchVLR.Name = "BtnLstBranchVLR"
         Me.BtnLstBranchVLR.Size = New System.Drawing.Size(24, 20)
@@ -4058,16 +3981,88 @@ Public Class ReportParameters
         Me.BtnLstBranchVLR.TabStop = False
         Me.BtnLstBranchVLR.UseVisualStyleBackColor = False
         '
-        'ChkShowOpeneing
+        'GrpVehicleRevenue
         '
-        Me.ChkShowOpeneing.AutoSize = True
-        Me.ChkShowOpeneing.BackColor = System.Drawing.Color.Transparent
-        Me.ChkShowOpeneing.Location = New System.Drawing.Point(423, 190)
-        Me.ChkShowOpeneing.Name = "ChkShowOpeneing"
-        Me.ChkShowOpeneing.Size = New System.Drawing.Size(96, 17)
-        Me.ChkShowOpeneing.TabIndex = 138
-        Me.ChkShowOpeneing.Text = "Show Opening"
-        Me.ChkShowOpeneing.UseVisualStyleBackColor = False
+        Me.GrpVehicleRevenue.Controls.Add(Me.BtnVehicleLstVR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.TxtVehicleLstVR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label39)
+        Me.GrpVehicleRevenue.Controls.Add(Me.ChkShowOpeneing)
+        Me.GrpVehicleRevenue.Controls.Add(Me.RbtSummaryVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.RbtDetailVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstToOwnerVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.TxtToOwnerVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label27)
+        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstFrOwnerVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.TxtFrOwnerVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label33)
+        Me.GrpVehicleRevenue.Controls.Add(Me.CmbTypeVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label32)
+        Me.GrpVehicleRevenue.Controls.Add(Me.TxtBranchCodeVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label42)
+        Me.GrpVehicleRevenue.Controls.Add(Me.LinkLabel9)
+        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstToVehicleVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.TxtToVehicleVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label83)
+        Me.GrpVehicleRevenue.Controls.Add(Me.TxtToDateVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label84)
+        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstFrVehicleVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.TxtFrVehicleVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label86)
+        Me.GrpVehicleRevenue.Controls.Add(Me.TxtFrDateVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label87)
+        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstBranchVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.LstVehicleVR)
+        Me.GrpVehicleRevenue.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GrpVehicleRevenue.Location = New System.Drawing.Point(0, 0)
+        Me.GrpVehicleRevenue.Name = "GrpVehicleRevenue"
+        Me.GrpVehicleRevenue.Size = New System.Drawing.Size(804, 521)
+        Me.GrpVehicleRevenue.TabIndex = 31
+        Me.GrpVehicleRevenue.Text = "Vehicle Revenue"
+        Me.GrpVehicleRevenue.Visible = False
+        '
+        'BtnVehicleLstVR
+        '
+        Me.BtnVehicleLstVR.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnVehicleLstVR.Location = New System.Drawing.Point(606, 316)
+        Me.BtnVehicleLstVR.Name = "BtnVehicleLstVR"
+        Me.BtnVehicleLstVR.Size = New System.Drawing.Size(23, 18)
+        Me.BtnVehicleLstVR.TabIndex = 139
+        Me.BtnVehicleLstVR.Text = "--"
+        '
+        'TxtVehicleLstVR
+        '
+        Me.TxtVehicleLstVR.Location = New System.Drawing.Point(245, 315)
+        Me.TxtVehicleLstVR.Name = "TxtVehicleLstVR"
+        Me.TxtVehicleLstVR.Size = New System.Drawing.Size(385, 21)
+        Me.TxtVehicleLstVR.TabIndex = 142
+        Me.TxtVehicleLstVR.Text = " All Selected"
+        '
+        'Label39
+        '
+        Me.Label39.BackColor = System.Drawing.Color.Transparent
+        Me.Label39.ForeColor = System.Drawing.Color.Navy
+        Me.Label39.Location = New System.Drawing.Point(137, 317)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(110, 20)
+        Me.Label39.TabIndex = 140
+        Me.Label39.Text = "Vehicles"
+        '
+        'LstVehicleVR
+        '
+        Me.LstVehicleVR.CheckBoxes = True
+        Me.LstVehicleVR.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader6})
+        Me.LstVehicleVR.Location = New System.Drawing.Point(245, 176)
+        Me.LstVehicleVR.Name = "LstVehicleVR"
+        Me.LstVehicleVR.Size = New System.Drawing.Size(383, 140)
+        Me.LstVehicleVR.TabIndex = 141
+        Me.LstVehicleVR.UseCompatibleStateImageBehavior = False
+        Me.LstVehicleVR.View = System.Windows.Forms.View.Details
+        Me.LstVehicleVR.Visible = False
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "Vehicles"
+        Me.ColumnHeader6.Width = 192
         '
         'ReportParameters
         '
@@ -4075,8 +4070,9 @@ Public Class ReportParameters
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.CancelButton = Me.BtnCancel
         Me.ClientSize = New System.Drawing.Size(804, 583)
-        Me.Controls.Add(Me.GrpVehicleLedger)
         Me.Controls.Add(Me.GrpVehicleRevenue)
+        Me.Controls.Add(Me.GrpVoucherDocuments)
+        Me.Controls.Add(Me.GrpVehicleLedger)
         Me.Controls.Add(Me.PnlProgressBare)
         Me.Controls.Add(Me.GrpButtons)
         Me.Controls.Add(Me.GrpVehicleBill)
@@ -4084,7 +4080,6 @@ Public Class ReportParameters
         Me.Controls.Add(Me.GrpTransactionDocuments)
         Me.Controls.Add(Me.GrpCOAReportList)
         Me.Controls.Add(Me.GrpSetupList)
-        Me.Controls.Add(Me.GrpVoucherDocuments)
         Me.Controls.Add(Me.GrpFinancialStatements)
         Me.Controls.Add(Me.GrpCashFlowStatements)
         Me.Controls.Add(Me.GrpVehicleFreightStatements)
@@ -4173,16 +4168,14 @@ Public Class ReportParameters
         Me.GrpSetupList.PerformLayout()
         CType(Me.TxtToCode, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtFCode, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GrpVehicleLedger.ResumeLayout(False)
-        Me.GrpVehicleLedger.PerformLayout()
-
-        Me.GrpVehicleRevenue.ResumeLayout(False)
-        Me.GrpVehicleRevenue.PerformLayout()
         CType(Me.TxtToOwnerVLR, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtFrOwnerVLR, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtBranchCodeVLR, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtToVehicleVLR, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtFrVehicleVLR, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GrpVehicleRevenue.ResumeLayout(False)
+        Me.GrpVehicleRevenue.PerformLayout()
+        CType(Me.TxtVehicleLstVR, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -4413,7 +4406,7 @@ Public Class ReportParameters
             ''
         ElseIf ReportFile = ReportProcess.ReportFiles.VehicleRevenuePivot Then
             Dim reportDoc As CrystalDecisions.CrystalReports.Engine.ReportDocument = Nothing
-            If VehicleRevenuePivotProcess(ReportFiles.VehicleRevenue, ChkShowOpeneing.Checked, RbtSummaryVLR.Checked, TxtFrDateVLR.Value, TxtToDateVLR.Value, TxtFrVehicleVLR.Text, TxtToVehicleVLR.Text, TxtFrOwnerVLR.Text, TxtToOwnerVLR.Text, reportDoc, Nothing, 0, CmbTypeVLR.SelectedIndex) = True Then
+            If VehicleRevenuePivotProcess(ReportFiles.VehicleRevenue, GetDocumentTypeCode(LstVehicleVR), ChkShowOpeneing.Checked, RbtSummaryVLR.Checked, TxtFrDateVLR.Value, TxtToDateVLR.Value, TxtFrVehicleVLR.Text, TxtToVehicleVLR.Text, TxtFrOwnerVLR.Text, TxtToOwnerVLR.Text, reportDoc, Nothing, 0, CmbTypeVLR.SelectedIndex) = True Then
                 Dim rpViewer As New ReportViewer
                 rpViewer.SetSource = reportDoc
                 rpViewer.MdiParent = Me.MdiParent
@@ -4565,10 +4558,13 @@ Public Class ReportParameters
                 Me.Text = "Vehicle Revenue"
                 AddHandler GrpVehicleLedger.Paint, AddressOf mdlFunctions.PaintTheForms
                 GrpButtons.Visible = True
+
+                FillVehicleList(LstVehicleVR, "COMBO")
             Case ReportProcess.ReportFiles.VehicleRevenuePivot
                 GrpOtherReports.Visible = False
                 GrpVehicleRevenue.Visible = True
                 Me.Text = "Vehicle Revenue Pivot"
+                FillVehicleList(LstVehicleVR, "COMBO")
                 AddHandler GrpVehicleRevenue.Paint, AddressOf mdlFunctions.PaintTheForms
                 GrpButtons.Visible = True
 
@@ -4759,7 +4755,7 @@ Public Class ReportParameters
         Dim retunString As String = String.Empty
         Dim b As ListViewItem
         For Each b In lstView.CheckedItems
-            retunString = IIf(retunString = "", "'" & CType(b, ListViewItem).Tag & "'", retunString & "," & "'" & CType(b, ListViewItem).Tag & "'")
+            retunString = IIf(retunString = "", "'" & Trim(CType(b, ListViewItem).Tag) & "'", retunString & "," & "'" & Trim(CType(b, ListViewItem).Tag) & "'")
         Next
         GetDocumentTypeCode = Replace(retunString, "'", "")
         Return GetDocumentTypeCode
@@ -4773,6 +4769,7 @@ Public Class ReportParameters
         '<zee>
 
         Select Case Terms
+
             Case "TR", "PRR"
                 OPTIONS = ""
             Case "INVENTORY"
@@ -4806,6 +4803,38 @@ Public Class ReportParameters
         Acc = Nothing
         nRst = Nothing
     End Sub
+
+    Private Sub FillVehicleList(ByRef lstVew As ListView, Optional ByVal Terms As String = "")
+        Dim nRst As SqlClient.SqlDataReader
+        Dim Acc As AzamTechnologies.Database.DataAccess
+        Dim OPTIONS As String = String.Empty
+        Dim SYSTEM As String = String.Empty
+        'Get All Term For Making Condition
+        '<zee>
+        '</zee>
+        Dim lstSub As New ListViewItem.ListViewSubItem
+        Acc = New AzamTechnologies.Database.DataAccess
+        nRst = Acc.GetRecord("[SelectVehicles]", "OPTION", "COMBO")
+        If nRst.HasRows Then
+            While nRst.Read()
+                'nRst.Sort = "TransactionNature, TransactionType"
+                ' if 
+                Dim lstItem As New ListViewItem
+                lstItem.Text = nRst("VehicleCode")
+                lstItem.Tag = nRst("VehicleCode")
+                lstItem.Checked = True
+                lstVew.Items.Add(lstItem)
+                'Else
+                '    lstSub.Text = nRst("GLCode") & "-" & nRst("GLDescription")
+                '    lstSub.Tag = nRst("GLCode")
+                '    lstItem.SubItems.Add(lstSub)
+                'End If
+            End While
+        End If
+        Acc = Nothing
+        nRst = Nothing
+    End Sub
+
     Private Sub FillCOAList(ByVal lstVew As ListView, ByVal parameterOption As String)
         Dim nRst As SqlClient.SqlDataReader
         Dim Acc As AzamTechnologies.Database.DataAccess
@@ -4888,6 +4917,7 @@ Public Class ReportParameters
             FillDocTypeList(lstTransactionNatureIL)
         End If
     End Sub
+
     Private Sub lblOtherReportIL_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lblOtherReportsIL.LinkClicked
         GrpGeneralLedger.Visible = False
         GrpOtherReports.Visible = True
@@ -4966,6 +4996,16 @@ Public Class ReportParameters
             LvwVoucherTypesVLT.Focus()
         End If
     End Sub
+    Private Sub BtnVehicleLstVR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnVehicleLstVR.Click
+        Call DocumentTypeText(TxtVehicleLstVR, LstVehicleVR)
+        If LstVehicleVR.Visible = True Then
+            LstVehicleVR.Visible = False
+        ElseIf LstVehicleVR.Visible = False Then
+            LstVehicleVR.Visible = True
+            LstVehicleVR.BringToFront()
+            LstVehicleVR.Focus()
+        End If
+    End Sub
 
     Private Sub LvwVoucherTypesVLT_ColumnClick(ByVal sender As Object, ByVal e As System.Windows.Forms.ColumnClickEventArgs) Handles LvwVoucherTypesVLT.ColumnClick
         Dim item As ListViewItem
@@ -4979,7 +5019,18 @@ Public Class ReportParameters
             Next
         End If
     End Sub
-
+    Private Sub LstVehicleLstVR_ColumnClick(ByVal sender As Object, ByVal e As System.Windows.Forms.ColumnClickEventArgs) Handles LstVehicleVR.ColumnClick
+        Dim item As ListViewItem
+        If LstVehicleVR.CheckedItems.Count = LstVehicleVR.Items.Count Then
+            For Each item In LstVehicleVR.Items
+                item.Checked = False
+            Next
+        ElseIf LstVehicleVR.CheckedItems.Count >= 0 Then
+            For Each item In LstVehicleVR.Items
+                item.Checked = True
+            Next
+        End If
+    End Sub
     Private Sub LvwVoucherTypesVDO_ColumnClick(ByVal sender As Object, ByVal e As System.Windows.Forms.ColumnClickEventArgs) Handles LvwVoucherTypesVDO.ColumnClick
         Dim item As ListViewItem
         If LvwVoucherTypesVDO.CheckedItems.Count = LvwVoucherTypesVDO.Items.Count Then

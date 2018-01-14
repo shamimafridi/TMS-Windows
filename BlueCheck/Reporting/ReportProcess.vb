@@ -671,7 +671,7 @@ Module ReportProcess
             Return False
         End Try
     End Function
-    Public Function VehicleRevenuePivotProcess(ByVal ReportType As ReportFiles, ByVal IsShowOpeinging As Boolean, ByVal IsSummaryReport As Boolean, ByVal FromDate As Date, ByVal ToDate As Date, ByVal FromCode As String, ByVal ToCode As String, ByVal FromOwnerCode As String, ByVal ToOwnerCode As String, ByRef reportDoc As ReportDocument, Optional ByVal Progress As Object = Nothing, Optional ByVal nGroupBy As Integer = 0, Optional ByVal nReportType As Integer = 0, Optional ByVal IsDetail As Boolean = True) As Boolean
+    Public Function VehicleRevenuePivotProcess(ByVal ReportType As ReportFiles, ByVal LstVehicleCode As String, ByVal IsShowOpeinging As Boolean, ByVal IsSummaryReport As Boolean, ByVal FromDate As Date, ByVal ToDate As Date, ByVal FromCode As String, ByVal ToCode As String, ByVal FromOwnerCode As String, ByVal ToOwnerCode As String, ByRef reportDoc As ReportDocument, Optional ByVal Progress As Object = Nothing, Optional ByVal nGroupBy As Integer = 0, Optional ByVal nReportType As Integer = 0, Optional ByVal IsDetail As Boolean = True) As Boolean
         Dim strReporTitle As String
 
 
@@ -686,7 +686,7 @@ Module ReportProcess
             Acc = New AzamTechnologies.Database.DataAccess
             Dim Ds As DataSet = Nothing
             Acc.PopulateDataSet(Ds, "[SelectVehicleRevenuePivotReport]",
-            "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "ShowOpening", IsShowOpeinging)
+            "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "LstVehicles", LstVehicleCode, "FromDate", FromDate, "ToDate", ToDate, "ShowOpening", IsShowOpeinging)
 
             If Ds.Tables(0).Rows.Count = 0 Then
                 MessageBox.Show("No record found within the specified conditions..." & vbCrLf & vbCrLf & "Please specify valid parameters and " & vbCrLf & "Make sure that the records exists !", "Report Process", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
