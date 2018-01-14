@@ -283,6 +283,7 @@ Public Class ReportParameters
     Friend WithEvents TxtFDate As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label31 As System.Windows.Forms.Label
     Friend WithEvents GrpVehicleLedger As System.Windows.Forms.Panel
+    Friend WithEvents GrpVehicleRevenue As System.Windows.Forms.Panel
     Friend WithEvents CmbTypeVLR As System.Windows.Forms.ComboBox
     Friend WithEvents Label32 As System.Windows.Forms.Label
     Friend WithEvents TxtBranchCodeVLR As Infragistics.Win.UltraWinEditors.UltraTextEditor
@@ -593,6 +594,7 @@ Public Class ReportParameters
         Me.TxtFDate = New System.Windows.Forms.DateTimePicker()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.GrpVehicleLedger = New System.Windows.Forms.Panel()
+        Me.GrpVehicleRevenue = New System.Windows.Forms.Panel()
         Me.RbtSummaryVLR = New System.Windows.Forms.RadioButton()
         Me.RbtDetailVLR = New System.Windows.Forms.RadioButton()
         Me.BtnLstToOwnerVLR = New System.Windows.Forms.Button()
@@ -683,6 +685,7 @@ Public Class ReportParameters
         CType(Me.TxtToCode, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtFCode, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GrpVehicleLedger.SuspendLayout()
+        Me.GrpVehicleRevenue.SuspendLayout()
         CType(Me.TxtToOwnerVLR, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtFrOwnerVLR, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtBranchCodeVLR, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -3748,6 +3751,45 @@ Public Class ReportParameters
         Me.GrpVehicleLedger.TabIndex = 31
         Me.GrpVehicleLedger.Text = "General Ledger"
         Me.GrpVehicleLedger.Visible = False
+
+
+
+
+        '
+        'GrpVehicleRevenue
+        '
+        Me.GrpVehicleRevenue.Controls.Add(Me.ChkShowOpeneing)
+        Me.GrpVehicleRevenue.Controls.Add(Me.RbtSummaryVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.RbtDetailVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstToOwnerVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.TxtToOwnerVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label27)
+        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstFrOwnerVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.TxtFrOwnerVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label33)
+        Me.GrpVehicleRevenue.Controls.Add(Me.CmbTypeVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label32)
+        Me.GrpVehicleRevenue.Controls.Add(Me.TxtBranchCodeVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label42)
+        Me.GrpVehicleRevenue.Controls.Add(Me.LinkLabel9)
+        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstToVehicleVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.TxtToVehicleVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label83)
+        Me.GrpVehicleRevenue.Controls.Add(Me.TxtToDateVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label84)
+        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstFrVehicleVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.TxtFrVehicleVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label86)
+        Me.GrpVehicleRevenue.Controls.Add(Me.TxtFrDateVLR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label87)
+        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstBranchVLR)
+        Me.GrpVehicleRevenue.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GrpVehicleRevenue.Location = New System.Drawing.Point(0, 0)
+        Me.GrpVehicleRevenue.Name = "GrpVehicleRevenue"
+        Me.GrpVehicleRevenue.Size = New System.Drawing.Size(804, 521)
+        Me.GrpVehicleRevenue.TabIndex = 31
+        Me.GrpVehicleRevenue.Text = "Vehicle Revenue"
+        Me.GrpVehicleRevenue.Visible = False
         '
         'RbtSummaryVLR
         '
@@ -4034,6 +4076,7 @@ Public Class ReportParameters
         Me.CancelButton = Me.BtnCancel
         Me.ClientSize = New System.Drawing.Size(804, 583)
         Me.Controls.Add(Me.GrpVehicleLedger)
+        Me.Controls.Add(Me.GrpVehicleRevenue)
         Me.Controls.Add(Me.PnlProgressBare)
         Me.Controls.Add(Me.GrpButtons)
         Me.Controls.Add(Me.GrpVehicleBill)
@@ -4132,6 +4175,9 @@ Public Class ReportParameters
         CType(Me.TxtFCode, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GrpVehicleLedger.ResumeLayout(False)
         Me.GrpVehicleLedger.PerformLayout()
+
+        Me.GrpVehicleRevenue.ResumeLayout(False)
+        Me.GrpVehicleRevenue.PerformLayout()
         CType(Me.TxtToOwnerVLR, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtFrOwnerVLR, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtBranchCodeVLR, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4521,9 +4567,9 @@ Public Class ReportParameters
                 GrpButtons.Visible = True
             Case ReportProcess.ReportFiles.VehicleRevenuePivot
                 GrpOtherReports.Visible = False
-                GrpVehicleLedger.Visible = True
+                GrpVehicleRevenue.Visible = True
                 Me.Text = "Vehicle Revenue Pivot"
-                AddHandler GrpVehicleLedger.Paint, AddressOf mdlFunctions.PaintTheForms
+                AddHandler GrpVehicleRevenue.Paint, AddressOf mdlFunctions.PaintTheForms
                 GrpButtons.Visible = True
 
             Case ReportProcess.ReportFiles.VehicleBillAnalysis
