@@ -621,17 +621,23 @@ Module ReportProcess
         If ToDate = Nothing Then ToDate = Now.Date
 
         Try
-
-            strReporTitle = "Vehicle Revenue Summary"
+            Dim strReportPath As String = String.Empty
             Dim Acc As AzamTechnologies.Database.DataAccess
             Acc = New AzamTechnologies.Database.DataAccess
             Dim Ds As DataSet = Nothing
+
             if(IsSummaryReport) 
                 Acc.PopulateDataSet(Ds, "[SelectVehicleRevenueSummaryReport]",
                     "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "ShowOpening", IsShowOpeinging)
+
+                strReporTitle = "Vehicle Revenue Summary"
+                strReportPath = Application.StartupPath & "\Reports\VehicleRevenueSummary.rpt"
             Else 
                 Acc.PopulateDataSet(Ds, "[SelectVehicleRevenueReport]",
                     "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "ShowOpening", IsShowOpeinging)
+
+                strReporTitle = "Vehicle Revenue"
+                strReportPath = Application.StartupPath & "\Reports\VehicleRevenue.rpt"
             End If
 
             If Ds.Tables(0).Rows.Count = 0 Then
@@ -640,13 +646,7 @@ Module ReportProcess
                 Exit Function
             End If
             Ds.WriteXmlSchema(Application.StartupPath & "\Reports\VehicleRevenueReport.xsd")
-            Dim strReportPath As String = Application.StartupPath & "\Reports\VehicleRevenue.rpt"
-
-            If IsSummaryReport Then
-                strReportPath = Application.StartupPath & "\Reports\VehicleRevenueSummary.rpt"
-
-                strReporTitle = "Vehicle Ledger Summary"
-            End If
+            
             If Not IO.File.Exists(strReportPath) Then
                 Throw (New Exception("Unable to locate report file:" & vbCrLf & strReportPath))
             End If
