@@ -320,6 +320,11 @@ Public Class ReportParameters
     Friend WithEvents Label39 As Label
     Friend WithEvents LstVehicleVR As ListView
     Friend WithEvents ColumnHeader6 As ColumnHeader
+    Friend WithEvents DtToVR As DateTimePicker
+    Friend WithEvents Label82 As Label
+    Friend WithEvents DtFromVR As DateTimePicker
+    Friend WithEvents Label85 As Label
+    Friend WithEvents Label88 As Label
     Friend WithEvents GrpVouchersList As System.Windows.Forms.Panel
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -328,7 +333,7 @@ Public Class ReportParameters
         Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance16 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance17 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -599,6 +604,7 @@ Public Class ReportParameters
         Me.TxtFDate = New System.Windows.Forms.DateTimePicker()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.GrpVehicleLedger = New System.Windows.Forms.Panel()
+        Me.Label39 = New System.Windows.Forms.Label()
         Me.ChkShowOpeneing = New System.Windows.Forms.CheckBox()
         Me.RbtSummaryVLR = New System.Windows.Forms.RadioButton()
         Me.RbtDetailVLR = New System.Windows.Forms.RadioButton()
@@ -627,9 +633,13 @@ Public Class ReportParameters
         Me.GrpVehicleRevenue = New System.Windows.Forms.Panel()
         Me.BtnVehicleLstVR = New System.Windows.Forms.Button()
         Me.TxtVehicleLstVR = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.Label39 = New System.Windows.Forms.Label()
         Me.LstVehicleVR = New System.Windows.Forms.ListView()
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.DtToVR = New System.Windows.Forms.DateTimePicker()
+        Me.Label82 = New System.Windows.Forms.Label()
+        Me.DtFromVR = New System.Windows.Forms.DateTimePicker()
+        Me.Label85 = New System.Windows.Forms.Label()
+        Me.Label88 = New System.Windows.Forms.Label()
         Me.GrpButtons.SuspendLayout()
         Me.GrpTransactionDocuments.SuspendLayout()
         CType(Me.TxtToPartyCode, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -694,6 +704,7 @@ Public Class ReportParameters
         Me.GrpSetupList.SuspendLayout()
         CType(Me.TxtToCode, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtFCode, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GrpVehicleLedger.SuspendLayout()
         CType(Me.TxtToOwnerVLR, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtFrOwnerVLR, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtBranchCodeVLR, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1874,9 +1885,9 @@ Public Class ReportParameters
         Me.ChkTripWithBill.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
         Me.ChkTripWithBill.Checked = True
         Me.ChkTripWithBill.CheckState = System.Windows.Forms.CheckState.Checked
-        Appearance16.BackColor = System.Drawing.Color.Transparent
-        Appearance16.BackColor2 = System.Drawing.Color.Transparent
-        Me.ChkTripWithBill.HotTrackingAppearance = Appearance16
+        Appearance17.BackColor = System.Drawing.Color.Transparent
+        Appearance17.BackColor2 = System.Drawing.Color.Transparent
+        Me.ChkTripWithBill.HotTrackingAppearance = Appearance17
         Me.ChkTripWithBill.Location = New System.Drawing.Point(259, 262)
         Me.ChkTripWithBill.Name = "ChkTripWithBill"
         Me.ChkTripWithBill.Size = New System.Drawing.Size(299, 16)
@@ -2451,7 +2462,7 @@ Public Class ReportParameters
         Me.GrpVouchersList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpVouchersList.Location = New System.Drawing.Point(0, 0)
         Me.GrpVouchersList.Name = "GrpVouchersList"
-        Me.GrpVouchersList.Size = New System.Drawing.Size(804, 583)
+        Me.GrpVouchersList.Size = New System.Drawing.Size(804, 521)
         Me.GrpVouchersList.TabIndex = 26
         Me.GrpVouchersList.Text = "Vouchers List"
         Me.GrpVouchersList.Visible = False
@@ -3700,13 +3711,49 @@ Public Class ReportParameters
         '
         'GrpVehicleLedger
         '
+        Me.GrpVehicleLedger.Controls.Add(Me.Label39)
+        Me.GrpVehicleLedger.Controls.Add(Me.ChkShowOpeneing)
+        Me.GrpVehicleLedger.Controls.Add(Me.RbtSummaryVLR)
+        Me.GrpVehicleLedger.Controls.Add(Me.RbtDetailVLR)
+        Me.GrpVehicleLedger.Controls.Add(Me.BtnLstToOwnerVLR)
+        Me.GrpVehicleLedger.Controls.Add(Me.TxtToOwnerVLR)
+        Me.GrpVehicleLedger.Controls.Add(Me.Label27)
+        Me.GrpVehicleLedger.Controls.Add(Me.BtnLstFrOwnerVLR)
+        Me.GrpVehicleLedger.Controls.Add(Me.TxtFrOwnerVLR)
+        Me.GrpVehicleLedger.Controls.Add(Me.Label33)
+        Me.GrpVehicleLedger.Controls.Add(Me.CmbTypeVLR)
+        Me.GrpVehicleLedger.Controls.Add(Me.Label32)
+        Me.GrpVehicleLedger.Controls.Add(Me.TxtBranchCodeVLR)
+        Me.GrpVehicleLedger.Controls.Add(Me.Label42)
+        Me.GrpVehicleLedger.Controls.Add(Me.LinkLabel9)
+        Me.GrpVehicleLedger.Controls.Add(Me.BtnLstToVehicleVLR)
+        Me.GrpVehicleLedger.Controls.Add(Me.TxtToVehicleVLR)
+        Me.GrpVehicleLedger.Controls.Add(Me.Label83)
+        Me.GrpVehicleLedger.Controls.Add(Me.TxtToDateVLR)
+        Me.GrpVehicleLedger.Controls.Add(Me.Label84)
+        Me.GrpVehicleLedger.Controls.Add(Me.BtnLstFrVehicleVLR)
+        Me.GrpVehicleLedger.Controls.Add(Me.TxtFrVehicleVLR)
+        Me.GrpVehicleLedger.Controls.Add(Me.Label86)
+        Me.GrpVehicleLedger.Controls.Add(Me.TxtFrDateVLR)
+        Me.GrpVehicleLedger.Controls.Add(Me.Label87)
+        Me.GrpVehicleLedger.Controls.Add(Me.BtnLstBranchVLR)
         Me.GrpVehicleLedger.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpVehicleLedger.Location = New System.Drawing.Point(0, 0)
         Me.GrpVehicleLedger.Name = "GrpVehicleLedger"
         Me.GrpVehicleLedger.Size = New System.Drawing.Size(804, 521)
         Me.GrpVehicleLedger.TabIndex = 31
-        Me.GrpVehicleLedger.Text = "General Ledger"
+        Me.GrpVehicleLedger.Text = "Vehicle Revenue"
         Me.GrpVehicleLedger.Visible = False
+        '
+        'Label39
+        '
+        Me.Label39.BackColor = System.Drawing.Color.Transparent
+        Me.Label39.ForeColor = System.Drawing.Color.Navy
+        Me.Label39.Location = New System.Drawing.Point(137, 317)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(110, 20)
+        Me.Label39.TabIndex = 140
+        Me.Label39.Text = "Vehicles"
         '
         'ChkShowOpeneing
         '
@@ -3983,34 +4030,13 @@ Public Class ReportParameters
         '
         'GrpVehicleRevenue
         '
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label88)
+        Me.GrpVehicleRevenue.Controls.Add(Me.DtToVR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label82)
+        Me.GrpVehicleRevenue.Controls.Add(Me.DtFromVR)
+        Me.GrpVehicleRevenue.Controls.Add(Me.Label85)
         Me.GrpVehicleRevenue.Controls.Add(Me.BtnVehicleLstVR)
         Me.GrpVehicleRevenue.Controls.Add(Me.TxtVehicleLstVR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.Label39)
-        Me.GrpVehicleRevenue.Controls.Add(Me.ChkShowOpeneing)
-        Me.GrpVehicleRevenue.Controls.Add(Me.RbtSummaryVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.RbtDetailVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstToOwnerVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.TxtToOwnerVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.Label27)
-        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstFrOwnerVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.TxtFrOwnerVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.Label33)
-        Me.GrpVehicleRevenue.Controls.Add(Me.CmbTypeVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.Label32)
-        Me.GrpVehicleRevenue.Controls.Add(Me.TxtBranchCodeVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.Label42)
-        Me.GrpVehicleRevenue.Controls.Add(Me.LinkLabel9)
-        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstToVehicleVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.TxtToVehicleVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.Label83)
-        Me.GrpVehicleRevenue.Controls.Add(Me.TxtToDateVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.Label84)
-        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstFrVehicleVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.TxtFrVehicleVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.Label86)
-        Me.GrpVehicleRevenue.Controls.Add(Me.TxtFrDateVLR)
-        Me.GrpVehicleRevenue.Controls.Add(Me.Label87)
-        Me.GrpVehicleRevenue.Controls.Add(Me.BtnLstBranchVLR)
         Me.GrpVehicleRevenue.Controls.Add(Me.LstVehicleVR)
         Me.GrpVehicleRevenue.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpVehicleRevenue.Location = New System.Drawing.Point(0, 0)
@@ -4037,16 +4063,6 @@ Public Class ReportParameters
         Me.TxtVehicleLstVR.TabIndex = 142
         Me.TxtVehicleLstVR.Text = " All Selected"
         '
-        'Label39
-        '
-        Me.Label39.BackColor = System.Drawing.Color.Transparent
-        Me.Label39.ForeColor = System.Drawing.Color.Navy
-        Me.Label39.Location = New System.Drawing.Point(137, 317)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(110, 20)
-        Me.Label39.TabIndex = 140
-        Me.Label39.Text = "Vehicles"
-        '
         'LstVehicleVR
         '
         Me.LstVehicleVR.CheckBoxes = True
@@ -4064,6 +4080,65 @@ Public Class ReportParameters
         Me.ColumnHeader6.Text = "Vehicles"
         Me.ColumnHeader6.Width = 192
         '
+        'DtToVR
+        '
+        Me.DtToVR.CalendarTitleBackColor = System.Drawing.SystemColors.Control
+        Me.DtToVR.CalendarTitleForeColor = System.Drawing.SystemColors.WindowText
+        Me.DtToVR.CustomFormat = Global.BusinessLeaf.My.MySettings.Default.DateFormat
+        Me.DtToVR.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DtToVR.Location = New System.Drawing.Point(529, 285)
+        Me.DtToVR.MaxDate = New Date(2060, 12, 31, 0, 0, 0, 0)
+        Me.DtToVR.MinDate = New Date(1980, 1, 1, 0, 0, 0, 0)
+        Me.DtToVR.Name = "DtToVR"
+        Me.DtToVR.Size = New System.Drawing.Size(100, 20)
+        Me.DtToVR.TabIndex = 144
+        Me.DtToVR.Tag = "dt.TransactionDate"
+        '
+        'Label82
+        '
+        Me.Label82.BackColor = System.Drawing.Color.Transparent
+        Me.Label82.ForeColor = System.Drawing.Color.Navy
+        Me.Label82.Location = New System.Drawing.Point(417, 285)
+        Me.Label82.Name = "Label82"
+        Me.Label82.Size = New System.Drawing.Size(112, 20)
+        Me.Label82.TabIndex = 146
+        Me.Label82.Text = "To"
+        '
+        'DtFromVR
+        '
+        Me.DtFromVR.CalendarTitleBackColor = System.Drawing.SystemColors.Control
+        Me.DtFromVR.CalendarTitleForeColor = System.Drawing.SystemColors.WindowText
+        Me.DtFromVR.CustomFormat = Global.BusinessLeaf.My.MySettings.Default.DateFormat
+        Me.DtFromVR.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DtFromVR.Location = New System.Drawing.Point(245, 285)
+        Me.DtFromVR.MaxDate = New Date(2060, 12, 31, 0, 0, 0, 0)
+        Me.DtFromVR.MinDate = New Date(1980, 1, 1, 0, 0, 0, 0)
+        Me.DtFromVR.Name = "DtFromVR"
+        Me.DtFromVR.Size = New System.Drawing.Size(100, 20)
+        Me.DtFromVR.TabIndex = 143
+        Me.DtFromVR.Tag = "dt.TransactionDate"
+        Me.DtFromVR.Value = New Date(2005, 7, 1, 0, 0, 0, 0)
+        '
+        'Label85
+        '
+        Me.Label85.BackColor = System.Drawing.Color.Transparent
+        Me.Label85.ForeColor = System.Drawing.Color.Navy
+        Me.Label85.Location = New System.Drawing.Point(141, 285)
+        Me.Label85.Name = "Label85"
+        Me.Label85.Size = New System.Drawing.Size(99, 20)
+        Me.Label85.TabIndex = 145
+        Me.Label85.Text = "Document Date"
+        '
+        'Label88
+        '
+        Me.Label88.BackColor = System.Drawing.Color.Transparent
+        Me.Label88.ForeColor = System.Drawing.Color.Navy
+        Me.Label88.Location = New System.Drawing.Point(141, 314)
+        Me.Label88.Name = "Label88"
+        Me.Label88.Size = New System.Drawing.Size(99, 20)
+        Me.Label88.TabIndex = 147
+        Me.Label88.Text = "Vehicles"
+        '
         'ReportParameters
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
@@ -4071,12 +4146,12 @@ Public Class ReportParameters
         Me.CancelButton = Me.BtnCancel
         Me.ClientSize = New System.Drawing.Size(804, 583)
         Me.Controls.Add(Me.GrpVehicleRevenue)
+        Me.Controls.Add(Me.GrpVouchersList)
         Me.Controls.Add(Me.GrpVoucherDocuments)
         Me.Controls.Add(Me.GrpVehicleLedger)
         Me.Controls.Add(Me.PnlProgressBare)
         Me.Controls.Add(Me.GrpButtons)
         Me.Controls.Add(Me.GrpVehicleBill)
-        Me.Controls.Add(Me.GrpVouchersList)
         Me.Controls.Add(Me.GrpTransactionDocuments)
         Me.Controls.Add(Me.GrpCOAReportList)
         Me.Controls.Add(Me.GrpSetupList)
@@ -4168,6 +4243,8 @@ Public Class ReportParameters
         Me.GrpSetupList.PerformLayout()
         CType(Me.TxtToCode, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtFCode, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GrpVehicleLedger.ResumeLayout(False)
+        Me.GrpVehicleLedger.PerformLayout()
         CType(Me.TxtToOwnerVLR, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtFrOwnerVLR, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtBranchCodeVLR, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4406,7 +4483,9 @@ Public Class ReportParameters
             ''
         ElseIf ReportFile = ReportProcess.ReportFiles.VehicleRevenuePivot Then
             Dim reportDoc As CrystalDecisions.CrystalReports.Engine.ReportDocument = Nothing
-            If VehicleRevenuePivotProcess(ReportFiles.VehicleRevenue, GetDocumentTypeCode(LstVehicleVR), ChkShowOpeneing.Checked, RbtSummaryVLR.Checked, TxtFrDateVLR.Value, TxtToDateVLR.Value, TxtFrVehicleVLR.Text, TxtToVehicleVLR.Text, TxtFrOwnerVLR.Text, TxtToOwnerVLR.Text, reportDoc, Nothing, 0, CmbTypeVLR.SelectedIndex) = True Then
+            '  If VehicleRevenuePivotProcess(ReportFiles.VehicleRevenue, GetDocumentTypeCode(LstVehicleVR), ChkShowOpeneing.Checked, RbtSummaryVLR.Checked, DtFromVR.Value, DtToVR.Value, TxtFrVehicleVLR.Text, TxtToVehicleVLR.Text, TxtFrOwnerVLR.Text, TxtToOwnerVLR.Text, reportDoc, Nothing, 0, CmbTypeVLR.SelectedIndex) = True Then
+            If VehicleRevenuePivotProcess(ReportFiles.VehicleRevenue, GetDocumentTypeCode(LstVehicleVR), False, False, DtFromVR.Value, DtToVR.Value, String.Empty, String.Empty, String.Empty, String.Empty, reportDoc, Nothing, 0, CmbTypeVLR.SelectedIndex) = True Then
+
                 Dim rpViewer As New ReportViewer
                 rpViewer.SetSource = reportDoc
                 rpViewer.MdiParent = Me.MdiParent
