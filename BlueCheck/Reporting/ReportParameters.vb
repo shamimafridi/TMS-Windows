@@ -325,6 +325,8 @@ Public Class ReportParameters
     Friend WithEvents DtFromVR As DateTimePicker
     Friend WithEvents Label85 As Label
     Friend WithEvents Label88 As Label
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents GrpVouchersList As System.Windows.Forms.Panel
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -333,7 +335,7 @@ Public Class ReportParameters
         Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance17 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance16 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -631,15 +633,17 @@ Public Class ReportParameters
         Me.Label87 = New System.Windows.Forms.Label()
         Me.BtnLstBranchVLR = New System.Windows.Forms.Button()
         Me.GrpVehicleRevenue = New System.Windows.Forms.Panel()
-        Me.BtnVehicleLstVR = New System.Windows.Forms.Button()
-        Me.TxtVehicleLstVR = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.LstVehicleVR = New System.Windows.Forms.ListView()
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Label88 = New System.Windows.Forms.Label()
         Me.DtToVR = New System.Windows.Forms.DateTimePicker()
         Me.Label82 = New System.Windows.Forms.Label()
         Me.DtFromVR = New System.Windows.Forms.DateTimePicker()
         Me.Label85 = New System.Windows.Forms.Label()
-        Me.Label88 = New System.Windows.Forms.Label()
+        Me.BtnVehicleLstVR = New System.Windows.Forms.Button()
+        Me.TxtVehicleLstVR = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.LstVehicleVR = New System.Windows.Forms.ListView()
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.GrpButtons.SuspendLayout()
         Me.GrpTransactionDocuments.SuspendLayout()
         CType(Me.TxtToPartyCode, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1203,7 +1207,7 @@ Public Class ReportParameters
         Me.txtToPartyCodeTRL.Appearance = Appearance3
         Me.txtToPartyCodeTRL.BackColor = System.Drawing.SystemColors.Window
         Me.txtToPartyCodeTRL.Location = New System.Drawing.Point(544, 240)
-        Me.txtToPartyCodeTRL.MaxLength = Global.BusinessLeaf.My.MySettings.Default.VehicleCode_Length
+        Me.txtToPartyCodeTRL.MaxLength = 8
         Me.txtToPartyCodeTRL.Name = "txtToPartyCodeTRL"
         Me.txtToPartyCodeTRL.Size = New System.Drawing.Size(100, 21)
         Me.txtToPartyCodeTRL.TabIndex = 8
@@ -1280,7 +1284,7 @@ Public Class ReportParameters
         Me.txtFromPartyCodeTRL.Appearance = Appearance4
         Me.txtFromPartyCodeTRL.BackColor = System.Drawing.SystemColors.Window
         Me.txtFromPartyCodeTRL.Location = New System.Drawing.Point(260, 240)
-        Me.txtFromPartyCodeTRL.MaxLength = Global.BusinessLeaf.My.MySettings.Default.VehicleCode_Length
+        Me.txtFromPartyCodeTRL.MaxLength = 8
         Me.txtFromPartyCodeTRL.Name = "txtFromPartyCodeTRL"
         Me.txtFromPartyCodeTRL.Size = New System.Drawing.Size(100, 21)
         Me.txtFromPartyCodeTRL.TabIndex = 7
@@ -1654,7 +1658,7 @@ Public Class ReportParameters
         Me.txtToGLCodeIL.Appearance = Appearance5
         Me.txtToGLCodeIL.BackColor = System.Drawing.SystemColors.Window
         Me.txtToGLCodeIL.Location = New System.Drawing.Point(523, 268)
-        Me.txtToGLCodeIL.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
+        Me.txtToGLCodeIL.MaxLength = 12
         Me.txtToGLCodeIL.Name = "txtToGLCodeIL"
         Me.txtToGLCodeIL.Size = New System.Drawing.Size(109, 21)
         Me.txtToGLCodeIL.TabIndex = 8
@@ -1731,7 +1735,7 @@ Public Class ReportParameters
         Me.txtFromGLCodeIL.Appearance = Appearance6
         Me.txtFromGLCodeIL.BackColor = System.Drawing.SystemColors.Window
         Me.txtFromGLCodeIL.Location = New System.Drawing.Point(248, 268)
-        Me.txtFromGLCodeIL.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
+        Me.txtFromGLCodeIL.MaxLength = 12
         Me.txtFromGLCodeIL.Name = "txtFromGLCodeIL"
         Me.txtFromGLCodeIL.Size = New System.Drawing.Size(110, 21)
         Me.txtFromGLCodeIL.TabIndex = 7
@@ -1885,9 +1889,9 @@ Public Class ReportParameters
         Me.ChkTripWithBill.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
         Me.ChkTripWithBill.Checked = True
         Me.ChkTripWithBill.CheckState = System.Windows.Forms.CheckState.Checked
-        Appearance17.BackColor = System.Drawing.Color.Transparent
-        Appearance17.BackColor2 = System.Drawing.Color.Transparent
-        Me.ChkTripWithBill.HotTrackingAppearance = Appearance17
+        Appearance16.BackColor = System.Drawing.Color.Transparent
+        Appearance16.BackColor2 = System.Drawing.Color.Transparent
+        Me.ChkTripWithBill.HotTrackingAppearance = Appearance16
         Me.ChkTripWithBill.Location = New System.Drawing.Point(259, 262)
         Me.ChkTripWithBill.Name = "ChkTripWithBill"
         Me.ChkTripWithBill.Size = New System.Drawing.Size(299, 16)
@@ -3239,7 +3243,7 @@ Public Class ReportParameters
         Me.TxtToTransactionNoVFS.Appearance = Appearance8
         Me.TxtToTransactionNoVFS.BackColor = System.Drawing.SystemColors.Window
         Me.TxtToTransactionNoVFS.Location = New System.Drawing.Point(523, 268)
-        Me.TxtToTransactionNoVFS.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
+        Me.TxtToTransactionNoVFS.MaxLength = 12
         Me.TxtToTransactionNoVFS.Name = "TxtToTransactionNoVFS"
         Me.TxtToTransactionNoVFS.Size = New System.Drawing.Size(109, 21)
         Me.TxtToTransactionNoVFS.TabIndex = 9
@@ -3261,7 +3265,7 @@ Public Class ReportParameters
         Me.TxtFromTransactionNoVFS.Appearance = Appearance9
         Me.TxtFromTransactionNoVFS.BackColor = System.Drawing.SystemColors.Window
         Me.TxtFromTransactionNoVFS.Location = New System.Drawing.Point(248, 268)
-        Me.TxtFromTransactionNoVFS.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
+        Me.TxtFromTransactionNoVFS.MaxLength = 12
         Me.TxtFromTransactionNoVFS.Name = "TxtFromTransactionNoVFS"
         Me.TxtFromTransactionNoVFS.Size = New System.Drawing.Size(110, 21)
         Me.TxtFromTransactionNoVFS.TabIndex = 8
@@ -3407,7 +3411,7 @@ Public Class ReportParameters
         Me.TxtToCustomerVFS.Appearance = Appearance10
         Me.TxtToCustomerVFS.BackColor = System.Drawing.SystemColors.Window
         Me.TxtToCustomerVFS.Location = New System.Drawing.Point(523, 245)
-        Me.TxtToCustomerVFS.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
+        Me.TxtToCustomerVFS.MaxLength = 12
         Me.TxtToCustomerVFS.Name = "TxtToCustomerVFS"
         Me.TxtToCustomerVFS.Size = New System.Drawing.Size(109, 21)
         Me.TxtToCustomerVFS.TabIndex = 7
@@ -3484,7 +3488,7 @@ Public Class ReportParameters
         Me.TxtFromCustomerVFS.Appearance = Appearance11
         Me.TxtFromCustomerVFS.BackColor = System.Drawing.SystemColors.Window
         Me.TxtFromCustomerVFS.Location = New System.Drawing.Point(248, 245)
-        Me.TxtFromCustomerVFS.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
+        Me.TxtFromCustomerVFS.MaxLength = 12
         Me.TxtFromCustomerVFS.Name = "TxtFromCustomerVFS"
         Me.TxtFromCustomerVFS.Size = New System.Drawing.Size(110, 21)
         Me.TxtFromCustomerVFS.TabIndex = 6
@@ -3806,7 +3810,7 @@ Public Class ReportParameters
         Me.TxtToOwnerVLR.Appearance = Appearance12
         Me.TxtToOwnerVLR.BackColor = System.Drawing.SystemColors.Window
         Me.TxtToOwnerVLR.Location = New System.Drawing.Point(523, 291)
-        Me.TxtToOwnerVLR.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
+        Me.TxtToOwnerVLR.MaxLength = 12
         Me.TxtToOwnerVLR.Name = "TxtToOwnerVLR"
         Me.TxtToOwnerVLR.Size = New System.Drawing.Size(109, 21)
         Me.TxtToOwnerVLR.TabIndex = 131
@@ -3838,7 +3842,7 @@ Public Class ReportParameters
         Me.TxtFrOwnerVLR.Appearance = Appearance13
         Me.TxtFrOwnerVLR.BackColor = System.Drawing.SystemColors.Window
         Me.TxtFrOwnerVLR.Location = New System.Drawing.Point(248, 291)
-        Me.TxtFrOwnerVLR.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
+        Me.TxtFrOwnerVLR.MaxLength = 12
         Me.TxtFrOwnerVLR.Name = "TxtFrOwnerVLR"
         Me.TxtFrOwnerVLR.Size = New System.Drawing.Size(110, 21)
         Me.TxtFrOwnerVLR.TabIndex = 130
@@ -3921,7 +3925,7 @@ Public Class ReportParameters
         Me.TxtToVehicleVLR.Appearance = Appearance14
         Me.TxtToVehicleVLR.BackColor = System.Drawing.SystemColors.Window
         Me.TxtToVehicleVLR.Location = New System.Drawing.Point(523, 268)
-        Me.TxtToVehicleVLR.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
+        Me.TxtToVehicleVLR.MaxLength = 12
         Me.TxtToVehicleVLR.Name = "TxtToVehicleVLR"
         Me.TxtToVehicleVLR.Size = New System.Drawing.Size(109, 21)
         Me.TxtToVehicleVLR.TabIndex = 8
@@ -3977,7 +3981,7 @@ Public Class ReportParameters
         Me.TxtFrVehicleVLR.Appearance = Appearance15
         Me.TxtFrVehicleVLR.BackColor = System.Drawing.SystemColors.Window
         Me.TxtFrVehicleVLR.Location = New System.Drawing.Point(248, 268)
-        Me.TxtFrVehicleVLR.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
+        Me.TxtFrVehicleVLR.MaxLength = 12
         Me.TxtFrVehicleVLR.Name = "TxtFrVehicleVLR"
         Me.TxtFrVehicleVLR.Size = New System.Drawing.Size(110, 21)
         Me.TxtFrVehicleVLR.TabIndex = 7
@@ -4030,6 +4034,8 @@ Public Class ReportParameters
         '
         'GrpVehicleRevenue
         '
+        Me.GrpVehicleRevenue.Controls.Add(Me.RadioButton1)
+        Me.GrpVehicleRevenue.Controls.Add(Me.RadioButton2)
         Me.GrpVehicleRevenue.Controls.Add(Me.Label88)
         Me.GrpVehicleRevenue.Controls.Add(Me.DtToVR)
         Me.GrpVehicleRevenue.Controls.Add(Me.Label82)
@@ -4046,39 +4052,15 @@ Public Class ReportParameters
         Me.GrpVehicleRevenue.Text = "Vehicle Revenue"
         Me.GrpVehicleRevenue.Visible = False
         '
-        'BtnVehicleLstVR
+        'Label88
         '
-        Me.BtnVehicleLstVR.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnVehicleLstVR.Location = New System.Drawing.Point(606, 316)
-        Me.BtnVehicleLstVR.Name = "BtnVehicleLstVR"
-        Me.BtnVehicleLstVR.Size = New System.Drawing.Size(23, 18)
-        Me.BtnVehicleLstVR.TabIndex = 139
-        Me.BtnVehicleLstVR.Text = "--"
-        '
-        'TxtVehicleLstVR
-        '
-        Me.TxtVehicleLstVR.Location = New System.Drawing.Point(245, 315)
-        Me.TxtVehicleLstVR.Name = "TxtVehicleLstVR"
-        Me.TxtVehicleLstVR.Size = New System.Drawing.Size(385, 21)
-        Me.TxtVehicleLstVR.TabIndex = 142
-        Me.TxtVehicleLstVR.Text = " All Selected"
-        '
-        'LstVehicleVR
-        '
-        Me.LstVehicleVR.CheckBoxes = True
-        Me.LstVehicleVR.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader6})
-        Me.LstVehicleVR.Location = New System.Drawing.Point(245, 176)
-        Me.LstVehicleVR.Name = "LstVehicleVR"
-        Me.LstVehicleVR.Size = New System.Drawing.Size(383, 140)
-        Me.LstVehicleVR.TabIndex = 141
-        Me.LstVehicleVR.UseCompatibleStateImageBehavior = False
-        Me.LstVehicleVR.View = System.Windows.Forms.View.Details
-        Me.LstVehicleVR.Visible = False
-        '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "Vehicles"
-        Me.ColumnHeader6.Width = 192
+        Me.Label88.BackColor = System.Drawing.Color.Transparent
+        Me.Label88.ForeColor = System.Drawing.Color.Navy
+        Me.Label88.Location = New System.Drawing.Point(141, 314)
+        Me.Label88.Name = "Label88"
+        Me.Label88.Size = New System.Drawing.Size(99, 20)
+        Me.Label88.TabIndex = 147
+        Me.Label88.Text = "Vehicles"
         '
         'DtToVR
         '
@@ -4129,15 +4111,63 @@ Public Class ReportParameters
         Me.Label85.TabIndex = 145
         Me.Label85.Text = "Document Date"
         '
-        'Label88
+        'BtnVehicleLstVR
         '
-        Me.Label88.BackColor = System.Drawing.Color.Transparent
-        Me.Label88.ForeColor = System.Drawing.Color.Navy
-        Me.Label88.Location = New System.Drawing.Point(141, 314)
-        Me.Label88.Name = "Label88"
-        Me.Label88.Size = New System.Drawing.Size(99, 20)
-        Me.Label88.TabIndex = 147
-        Me.Label88.Text = "Vehicles"
+        Me.BtnVehicleLstVR.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnVehicleLstVR.Location = New System.Drawing.Point(606, 316)
+        Me.BtnVehicleLstVR.Name = "BtnVehicleLstVR"
+        Me.BtnVehicleLstVR.Size = New System.Drawing.Size(23, 18)
+        Me.BtnVehicleLstVR.TabIndex = 139
+        Me.BtnVehicleLstVR.Text = "--"
+        '
+        'TxtVehicleLstVR
+        '
+        Me.TxtVehicleLstVR.Location = New System.Drawing.Point(245, 315)
+        Me.TxtVehicleLstVR.Name = "TxtVehicleLstVR"
+        Me.TxtVehicleLstVR.Size = New System.Drawing.Size(385, 21)
+        Me.TxtVehicleLstVR.TabIndex = 142
+        Me.TxtVehicleLstVR.Text = " All Selected"
+        '
+        'LstVehicleVR
+        '
+        Me.LstVehicleVR.CheckBoxes = True
+        Me.LstVehicleVR.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader6})
+        Me.LstVehicleVR.Location = New System.Drawing.Point(245, 176)
+        Me.LstVehicleVR.Name = "LstVehicleVR"
+        Me.LstVehicleVR.Size = New System.Drawing.Size(383, 140)
+        Me.LstVehicleVR.TabIndex = 141
+        Me.LstVehicleVR.UseCompatibleStateImageBehavior = False
+        Me.LstVehicleVR.View = System.Windows.Forms.View.Details
+        Me.LstVehicleVR.Visible = False
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "Vehicles"
+        Me.ColumnHeader6.Width = 192
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.BackColor = System.Drawing.Color.Transparent
+        Me.RadioButton1.Location = New System.Drawing.Point(430, 349)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(68, 17)
+        Me.RadioButton1.TabIndex = 149
+        Me.RadioButton1.Text = "Summary"
+        Me.RadioButton1.UseVisualStyleBackColor = False
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.BackColor = System.Drawing.Color.Transparent
+        Me.RadioButton2.Checked = True
+        Me.RadioButton2.Location = New System.Drawing.Point(293, 349)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(52, 17)
+        Me.RadioButton2.TabIndex = 148
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Detail"
+        Me.RadioButton2.UseVisualStyleBackColor = False
         '
         'ReportParameters
         '
@@ -4146,9 +4176,9 @@ Public Class ReportParameters
         Me.CancelButton = Me.BtnCancel
         Me.ClientSize = New System.Drawing.Size(804, 583)
         Me.Controls.Add(Me.GrpVehicleRevenue)
+        Me.Controls.Add(Me.GrpVehicleLedger)
         Me.Controls.Add(Me.GrpVouchersList)
         Me.Controls.Add(Me.GrpVoucherDocuments)
-        Me.Controls.Add(Me.GrpVehicleLedger)
         Me.Controls.Add(Me.PnlProgressBare)
         Me.Controls.Add(Me.GrpButtons)
         Me.Controls.Add(Me.GrpVehicleBill)
@@ -5630,6 +5660,10 @@ Public Class ReportParameters
     End Sub
 
     Private Sub ChkTripWithBill_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChkTripWithBill.CheckedChanged
+
+    End Sub
+
+    Private Sub GrpVehicleRevenue_Paint(sender As Object, e As PaintEventArgs) Handles GrpVehicleRevenue.Paint
 
     End Sub
 End Class
