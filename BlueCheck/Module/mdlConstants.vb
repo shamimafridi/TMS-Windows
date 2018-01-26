@@ -25,6 +25,7 @@ Module mdlConstants
     Public Const SaleInvoiceReturnNature As String = "20"
     Public Const VehicleReceiptNature As String = "VR"
     Public Const VehiclePaymentNature As String = "VP"
+    Public Const VehicleFinancialExpenceNature As String = "FE"
     Public Const VehicleAdjustmentReceiptNature As String = "AR"
     Public Const VehicleAdjustmentPaymentNature As String = "AP"
     Public Const ReceiptNature As String = "REC"

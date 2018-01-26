@@ -674,10 +674,20 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=desktop-aja0s73;Initial Catalog=TMS_ALI;Integrated Security=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=shamim-pc\dotnetserver;Initial Catalog=TMS_ALI;Integrated Security=Tr"& _ 
+            "ue")>  _
         Public ReadOnly Property ConnectionString() As String
             Get
                 Return CType(Me("ConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public ReadOnly Property ShouldVoucherGenerate() As Boolean
+            Get
+                Return CType(Me("ShouldVoucherGenerate"),Boolean)
             End Get
         End Property
     End Class

@@ -60,6 +60,7 @@ Public Class frmMain
     Friend WithEvents MnuTransactionList As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem12 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem15 As ToolStripMenuItem
     Private CurrentActiveForm As Form
 #Region " Windows Form Designer generated code "
 
@@ -165,8 +166,8 @@ Public Class frmMain
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Dim DockAreaPane1 As Infragistics.Win.UltraWinDock.DockAreaPane = New Infragistics.Win.UltraWinDock.DockAreaPane(Infragistics.Win.UltraWinDock.DockedLocation.DockedRight, New System.Guid("24c5bda7-a9a9-48e7-b36b-66f6b783600a"))
-        Dim DockableControlPane1 As Infragistics.Win.UltraWinDock.DockableControlPane = New Infragistics.Win.UltraWinDock.DockableControlPane(New System.Guid("9046be86-00ea-4850-8adc-68b4a3722229"), New System.Guid("00000000-0000-0000-0000-000000000000"), -1, New System.Guid("24c5bda7-a9a9-48e7-b36b-66f6b783600a"), -1)
+        Dim DockAreaPane2 As Infragistics.Win.UltraWinDock.DockAreaPane = New Infragistics.Win.UltraWinDock.DockAreaPane(Infragistics.Win.UltraWinDock.DockedLocation.DockedRight, New System.Guid("24c5bda7-a9a9-48e7-b36b-66f6b783600a"))
+        Dim DockableControlPane2 As Infragistics.Win.UltraWinDock.DockableControlPane = New Infragistics.Win.UltraWinDock.DockableControlPane(New System.Guid("9046be86-00ea-4850-8adc-68b4a3722229"), New System.Guid("00000000-0000-0000-0000-000000000000"), -1, New System.Guid("24c5bda7-a9a9-48e7-b36b-66f6b783600a"), -1)
         Me.TransportManagementSystem = New Infragistics.Win.UltraWinExplorerBar.UltraExplorerBar()
         Me.imgList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -288,6 +289,7 @@ Public Class frmMain
         Me._frmMainAutoHideControl = New Infragistics.Win.UltraWinDock.AutoHideControl()
         Me.DockableWindow1 = New Infragistics.Win.UltraWinDock.DockableWindow()
         Me.WindowDockingArea1 = New Infragistics.Win.UltraWinDock.WindowDockingArea()
+        Me.ToolStripMenuItem15 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.TransportManagementSystem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.stpText, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -528,7 +530,7 @@ Public Class frmMain
         '
         'mnuTransactions
         '
-        Me.mnuTransactions.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuInvoice, Me.mnuReceivingRet, Me.MnuBillGeneration, Me.ToolStripSeparator8, Me.MnuVehAdjustRec, Me.MnuVehAdjPay, Me.MnuVehicleRec, Me.MnuVehiclePayment, Me.ToolStripMenuItem1, Me.MnuJournalVouchers, Me.MnuBankReceiptVoucher, Me.MnuCashReceiptVoucher, Me.MnuBankPaymentVoucher, Me.MnuCashPaymentVoucher})
+        Me.mnuTransactions.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuInvoice, Me.mnuReceivingRet, Me.MnuBillGeneration, Me.ToolStripSeparator8, Me.MnuVehAdjustRec, Me.MnuVehAdjPay, Me.MnuVehicleRec, Me.ToolStripMenuItem15, Me.MnuVehiclePayment, Me.ToolStripMenuItem1, Me.MnuJournalVouchers, Me.MnuBankReceiptVoucher, Me.MnuCashReceiptVoucher, Me.MnuBankPaymentVoucher, Me.MnuCashPaymentVoucher})
         Me.mnuTransactions.Name = "mnuTransactions"
         Me.mnuTransactions.Size = New System.Drawing.Size(85, 20)
         Me.mnuTransactions.Text = "&Transactions"
@@ -1063,15 +1065,15 @@ Public Class frmMain
         '
         'UltraDockManager1
         '
-        DockableControlPane1.Control = Me.TransportManagementSystem
-        DockableControlPane1.FlyoutSize = New System.Drawing.Size(204, -1)
-        DockableControlPane1.OriginalControlBounds = New System.Drawing.Rectangle(558, 77, 246, 230)
-        DockableControlPane1.Pinned = False
-        DockableControlPane1.Size = New System.Drawing.Size(100, 100)
-        DockableControlPane1.Text = "TMS Files"
-        DockAreaPane1.Panes.AddRange(New Infragistics.Win.UltraWinDock.DockablePaneBase() {DockableControlPane1})
-        DockAreaPane1.Size = New System.Drawing.Size(224, 481)
-        Me.UltraDockManager1.DockAreas.AddRange(New Infragistics.Win.UltraWinDock.DockAreaPane() {DockAreaPane1})
+        DockableControlPane2.Control = Me.TransportManagementSystem
+        DockableControlPane2.FlyoutSize = New System.Drawing.Size(204, -1)
+        DockableControlPane2.OriginalControlBounds = New System.Drawing.Rectangle(558, 77, 246, 230)
+        DockableControlPane2.Pinned = False
+        DockableControlPane2.Size = New System.Drawing.Size(100, 100)
+        DockableControlPane2.Text = "TMS Files"
+        DockAreaPane2.Panes.AddRange(New Infragistics.Win.UltraWinDock.DockablePaneBase() {DockableControlPane2})
+        DockAreaPane2.Size = New System.Drawing.Size(224, 481)
+        Me.UltraDockManager1.DockAreas.AddRange(New Infragistics.Win.UltraWinDock.DockAreaPane() {DockAreaPane2})
         Me.UltraDockManager1.HostControl = Me
         Me.UltraDockManager1.SplitterBarWidth = 4
         Me.UltraDockManager1.WindowStyle = Infragistics.Win.UltraWinDock.WindowStyle.VisualStudio2008
@@ -1144,6 +1146,12 @@ Public Class frmMain
         Me.WindowDockingArea1.Owner = Me.UltraDockManager1
         Me.WindowDockingArea1.Size = New System.Drawing.Size(228, 481)
         Me.WindowDockingArea1.TabIndex = 40
+        '
+        'ToolStripMenuItem15
+        '
+        Me.ToolStripMenuItem15.Name = "ToolStripMenuItem15"
+        Me.ToolStripMenuItem15.Size = New System.Drawing.Size(231, 22)
+        Me.ToolStripMenuItem15.Text = "Financial Expences"
         '
         'frmMain
         '
@@ -1674,6 +1682,23 @@ Public Class frmMain
                             mCurrentForm = New VehicleAdjustments
                             CType(mCurrentForm, VehicleAdjustments).NATURE.Text = VehicleReceiptNature
                             CType(mCurrentForm, VehicleAdjustments).Text = "Vehicle Receipt"
+                            For i = 0 To mdiFrm.Length - 1
+                                If mdiFrm(i).Text = mCurrentForm.Text Then
+                                    mdiFrm(i).Activate()
+                                    mdiFrm(i).BringToFront()
+                                    Exit Try
+                                End If
+                            Next
+                            mCurrentForm.MdiParent = Me
+                            mCurrentForm.AccessibleName = e.SelectedTable
+                            mCurrentForm.AccessibleDescription = e.SelectedTableNature
+                            mCurrentForm.WindowState = FormWindowState.Maximized
+                            mCurrentForm.Tag = AzamTechnologies.DataManager.DataMode.Insert
+                            mCurrentForm.Show()
+                        ElseIf e.SelectedTableNature = VehicleFinancialExpenceNature Then
+                            mCurrentForm = New VehicleAdjustments
+                            CType(mCurrentForm, VehicleAdjustments).NATURE.Text = VehicleFinancialExpenceNature
+                            CType(mCurrentForm, VehicleAdjustments).Text = "Financial Expence"
                             For i = 0 To mdiFrm.Length - 1
                                 If mdiFrm(i).Text = mCurrentForm.Text Then
                                     mdiFrm(i).Activate()
@@ -2443,6 +2468,11 @@ Public Class frmMain
         rptForm.MdiParent = Me
         rptForm.ReportFile = ReportProcess.ReportFiles.VehicleRevenue
         rptForm.Show()
+    End Sub
+
+    Private Sub ToolStripMenuItem15_Click_1(sender As Object, e As EventArgs) Handles ToolStripMenuItem15.Click
+        SelectFile(New ProjectViewerEventArgs(FormSelectedMode.Normal, "VehicleAdjustments", VehicleFinancialExpenceNature, Nothing, Nothing))
+
     End Sub
 End Class
 
