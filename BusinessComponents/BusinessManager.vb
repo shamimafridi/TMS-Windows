@@ -38,6 +38,7 @@ Public Class BusinessManager
     Const VehicleAdjustmentPaymentNature As String = "AP"
     Const VehicleReceiptNature As String = "VR"
     Const VehiclePaymentNature As String = "VP"
+    Const VehicleFinancialExpenceNature As String = "FE"
     Dim IsVoucherCancelled As Boolean
 
     Dim DocumentNo As String
@@ -60,28 +61,28 @@ Public Class BusinessManager
         Dim dsSVDetail As DataSet = Nothing
         Dim NewRecord As Boolean = True
 
-        If m_GeneratedFromNature = VehiclePaymentNature Or m_GeneratedFromNature = VehicleReceiptNature Then
+        If m_GeneratedFromNature = VehiclePaymentNature Or m_GeneratedFromNature = VehicleFinancialExpenceNature Or m_GeneratedFromNature = VehicleReceiptNature Then
             If Trim(FromGeneratedData.Tables(0).Rows(0).Item("Mode")) = "Cash" Then
                 m_GeneratedFromNature = FromGeneratedData.Tables(0).Rows(0).Item("TransactionNature")
                 If m_GeneratedFromNature = VehicleAdjustmentPaymentNature Or m_GeneratedFromNature = VehicleAdjustmentReceiptNature Then m_GeneratedToVoucherNature = JournalVoucherNature : GoTo ad
                 If m_GeneratedFromNature = VehicleReceiptNature Then
                     m_GeneratedToVoucherNature = BankReceiptsVoucherNature
-                ElseIf m_GeneratedFromNature = VehiclePaymentNature Then
+                ElseIf m_GeneratedFromNature = VehiclePaymentNature Or m_GeneratedFromNature = VehicleFinancialExpenceNature Then
                     m_GeneratedToVoucherNature = BankPaymentVoucherNature
                 End If ''For first removing BR and BP
 
                 DocumentNo = CheckReference() 'If already in Cheque mode so first delete the bank payment of it's reference
                 If DocumentNo <> String.Empty Then
-                    Query = "EXECUTE DeleteVouchers  @BranchCode='" & FromGeneratedData.Tables(0).Rows(0).Item("BranchCode") & _
-                            "' ,@TransactionNature='" & m_GeneratedToVoucherNature & _
+                    Query = "EXECUTE DeleteVouchers  @BranchCode='" & FromGeneratedData.Tables(0).Rows(0).Item("BranchCode") &
+                            "' ,@TransactionNature='" & m_GeneratedToVoucherNature &
                             "' ,@TransactionNo='" & DocumentNo & "'"
                     If DataModify.UpdateExecuteQuery(Query) <> 0 Then
-                        Query = "EXECUTE DeleteGeneratedReferences  @GenFrom='" & GeneratedFromModuleName & _
-                      "' ,@FormName='" & m_FromGeneratedData.DataSetName & _
-                      "' ,@TransactionNature='" & m_GeneratedFromNature & _
-                      "' ,@TransactionNo='" & FromGeneratedData.Tables(0).Rows(0).Item("TransactionNo") & _
-                      "' ,@BranchCode='" & FromGeneratedData.Tables(0).Rows(0).Item("BranchCode") & _
-                      "' ,@DocumentNature='" & m_GeneratedToVoucherNature & _
+                        Query = "EXECUTE DeleteGeneratedReferences  @GenFrom='" & GeneratedFromModuleName &
+                      "' ,@FormName='" & m_FromGeneratedData.DataSetName &
+                      "' ,@TransactionNature='" & m_GeneratedFromNature &
+                      "' ,@TransactionNo='" & FromGeneratedData.Tables(0).Rows(0).Item("TransactionNo") &
+                      "' ,@BranchCode='" & FromGeneratedData.Tables(0).Rows(0).Item("BranchCode") &
+                      "' ,@DocumentNature='" & m_GeneratedToVoucherNature &
                       "' ,@DocumentNo='" & DocumentNo & "'"
                         DataModify.UpdateExecuteQuery(Query)
                         'DataModify = Nothing
@@ -91,7 +92,7 @@ Public Class BusinessManager
                 End If
                 If m_GeneratedFromNature = VehicleReceiptNature Then
                     m_GeneratedToVoucherNature = CashReceiptsVoucherNature
-                ElseIf m_GeneratedFromNature = VehiclePaymentNature Then
+                ElseIf m_GeneratedFromNature = VehiclePaymentNature Or m_GeneratedFromNature = VehicleFinancialExpenceNature Then
                     m_GeneratedToVoucherNature = CashPaymentVoucherNature
                 End If 'Then setting the original natures
             Else
@@ -99,22 +100,22 @@ Public Class BusinessManager
                 m_GeneratedFromNature = FromGeneratedData.Tables(0).Rows(0).Item("TransactionNature")
                 If m_GeneratedFromNature = VehicleReceiptNature Then
                     m_GeneratedToVoucherNature = CashReceiptsVoucherNature
-                ElseIf m_GeneratedFromNature = VehiclePaymentNature Then
+                ElseIf m_GeneratedFromNature = VehiclePaymentNature Or m_GeneratedFromNature = VehicleFinancialExpenceNature Then
                     m_GeneratedToVoucherNature = CashPaymentVoucherNature
                 End If ''For first removing BP and CP
 
                 DocumentNo = CheckReference() 'If already in Cheque mode so first delete the bank payment of it's reference
                 If DocumentNo <> String.Empty Then
-                    Query = "EXECUTE DeleteVouchers  @BranchCode='" & FromGeneratedData.Tables(0).Rows(0).Item("BranchCode") & _
-                            "' ,@TransactionNature='" & m_GeneratedToVoucherNature & _
+                    Query = "EXECUTE DeleteVouchers  @BranchCode='" & FromGeneratedData.Tables(0).Rows(0).Item("BranchCode") &
+                            "' ,@TransactionNature='" & m_GeneratedToVoucherNature &
                             "' ,@TransactionNo='" & DocumentNo & "'"
                     If DataModify.UpdateExecuteQuery(Query) <> 0 Then
-                        Query = "EXECUTE DeleteGeneratedReferences  @GenFrom='" & GeneratedFromModuleName & _
-                      "' ,@FormName='" & m_FromGeneratedData.DataSetName & _
-                      "' ,@TransactionNature='" & m_GeneratedFromNature & _
-                      "' ,@TransactionNo='" & FromGeneratedData.Tables(0).Rows(0).Item("TransactionNo") & _
-                      "' ,@BranchCode='" & FromGeneratedData.Tables(0).Rows(0).Item("BranchCode") & _
-                      "' ,@DocumentNature='" & m_GeneratedToVoucherNature & _
+                        Query = "EXECUTE DeleteGeneratedReferences  @GenFrom='" & GeneratedFromModuleName &
+                      "' ,@FormName='" & m_FromGeneratedData.DataSetName &
+                      "' ,@TransactionNature='" & m_GeneratedFromNature &
+                      "' ,@TransactionNo='" & FromGeneratedData.Tables(0).Rows(0).Item("TransactionNo") &
+                      "' ,@BranchCode='" & FromGeneratedData.Tables(0).Rows(0).Item("BranchCode") &
+                      "' ,@DocumentNature='" & m_GeneratedToVoucherNature &
                       "' ,@DocumentNo='" & DocumentNo & "'"
                         DataModify.UpdateExecuteQuery(Query)
                         ' DataModify = Nothing
@@ -125,7 +126,7 @@ Public Class BusinessManager
 
                 If m_GeneratedFromNature = VehicleReceiptNature Then
                     m_GeneratedToVoucherNature = BankReceiptsVoucherNature
-                ElseIf m_GeneratedFromNature = VehiclePaymentNature Then
+                ElseIf m_GeneratedFromNature = VehiclePaymentNature Or m_GeneratedFromNature = VehicleFinancialExpenceNature Then
                     m_GeneratedToVoucherNature = BankPaymentVoucherNature
                 End If 'Then setting the original natures
 
@@ -167,7 +168,7 @@ ad:
 
                 Case BankReceiptsVoucherNature ' Bank receipt
 
-                    If m_GeneratedFromNature = VehiclePaymentNature Or m_GeneratedFromNature = VehicleReceiptNature Then
+                    If m_GeneratedFromNature = VehiclePaymentNature Or m_GeneratedFromNature = VehicleFinancialExpenceNature Or m_GeneratedFromNature = VehicleReceiptNature Then
                         dsSVMaster = GenerateMasterReceiptVouchers(m_GeneratedToVoucherNature)
                         dsSVDetail = GenerateDetailReceiptVouchers(m_GeneratedToVoucherNature)
                     Else
@@ -265,20 +266,20 @@ ad:
         m_FromGeneratedDetailData = FromGeneratedDetailData
         Dim DataModify As New AzamTechnologies.Database.DataModify
 
-        If m_GeneratedFromNature = VehiclePaymentNature Or m_GeneratedFromNature = VehicleReceiptNature Then
+        If m_GeneratedFromNature = VehiclePaymentNature Or m_GeneratedFromNature = VehicleReceiptNature Or m_GeneratedFromNature = VehicleFinancialExpenceNature Then
             If Trim(FromGeneratedData.Tables(0).Rows(0).Item("Mode")) = "Cash" Then
                 m_GeneratedFromNature = FromGeneratedData.Tables(0).Rows(0).Item("TransactionNature")
                 If m_GeneratedFromNature = VehicleAdjustmentPaymentNature Or m_GeneratedFromNature = VehicleAdjustmentReceiptNature Then m_GeneratedToVoucherNature = JournalVoucherNature : GoTo ad
                 If m_GeneratedFromNature = VehicleReceiptNature Then
                     m_GeneratedToVoucherNature = CashReceiptsVoucherNature
-                ElseIf m_GeneratedFromNature = VehiclePaymentNature Then
+                ElseIf m_GeneratedFromNature = VehiclePaymentNature Or m_GeneratedFromNature = VehicleFinancialExpenceNature Then
                     m_GeneratedToVoucherNature = CashPaymentVoucherNature
                 End If ''For first removing BR and BP
             ElseIf Trim(FromGeneratedData.Tables(0).Rows(0).Item("Mode")) = "Cheque" Then
                 m_GeneratedFromNature = FromGeneratedData.Tables(0).Rows(0).Item("TransactionNature")
                 If m_GeneratedFromNature = VehicleReceiptNature Then
                     m_GeneratedToVoucherNature = BankReceiptsVoucherNature
-                ElseIf m_GeneratedFromNature = VehiclePaymentNature Then
+                ElseIf m_GeneratedFromNature = VehiclePaymentNature Or m_GeneratedFromNature = VehicleFinancialExpenceNature Then
                     m_GeneratedToVoucherNature = BankPaymentVoucherNature
                 End If ''For first removing BR and BP
             End If
@@ -324,7 +325,7 @@ ad:
             TransDate = m_FromGeneratedData.Tables(0).Rows(0).Item("TransactionDate")
         ElseIf m_GeneratedFromNature = ReceiptsTransactionNature Then
             TransDate = m_FromGeneratedData.Tables(0).Rows(0).Item("ReceiptDate")
-        ElseIf m_GeneratedFromNature = VehicleReceiptNature Or m_GeneratedFromNature = VehiclePaymentNature Then
+        ElseIf m_GeneratedFromNature = VehicleReceiptNature Or m_GeneratedFromNature = VehiclePaymentNature Or m_GeneratedFromNature = VehicleFinancialExpenceNature Then
             TransDate = m_FromGeneratedData.Tables(0).Rows(0).Item("TransactionDate")
         Else
             Throw New Exception("Transaction Date must be Provided for Nature " & m_GeneratedFromNature & Chr(10) & "Provided Date are ReceiptDate & Sale Voucehr Date")

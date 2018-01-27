@@ -586,26 +586,33 @@ Public Class DataManager
         End Try
     End Sub
     Friend Sub DeleteReferenceProcess(ByVal FormName As String)
-        Dim Reader As New Xml.XmlTextReader(AppDomain.CurrentDomain.BaseDirectory.ToString & "\GLReferences.xml")
-        Reader.ReadToFollowing("GLReferences")
-        Do
-            If FormName = Reader.GetAttribute("GeneratedFrom") Then
-                Dim BusinessMgr As New AzamTechnologies.BusinessManager
-                BusinessMgr.DeleteVoucher(dsData, dsDetailData, Reader.GetAttribute("FromGeneratedNature"), Reader.GetAttribute("GeneratedTo"))
-                BusinessMgr = Nothing
-            End If
-        Loop While Reader.ReadToNextSibling("GLReferences")
+
+        If (CBool(MySettingReader.Read("ShouldVoucherGenerate", MySettingReader.FieldLevel.ApplicationLevel))) Then
+
+            Dim Reader As New Xml.XmlTextReader(AppDomain.CurrentDomain.BaseDirectory.ToString & "\GLReferences.xml")
+            Reader.ReadToFollowing("GLReferences")
+            Do
+                If FormName = Reader.GetAttribute("GeneratedFrom") Then
+                    Dim BusinessMgr As New AzamTechnologies.BusinessManager
+                    BusinessMgr.DeleteVoucher(dsData, dsDetailData, Reader.GetAttribute("FromGeneratedNature"), Reader.GetAttribute("GeneratedTo"))
+                    BusinessMgr = Nothing
+                End If
+            Loop While Reader.ReadToNextSibling("GLReferences")
+        End If
     End Sub
     Friend Sub GenerateReferenceProcess(ByVal FormName As String)
-        Dim Reader As New Xml.XmlTextReader(AppDomain.CurrentDomain.BaseDirectory.ToString & "\GLReferences.xml")
-        Reader.ReadToFollowing("GLReferences")
-        Do
-            If FormName = Reader.GetAttribute("GeneratedFrom") Then
-                Dim BusinessMgr As New AzamTechnologies.BusinessManager
-                BusinessMgr.GenerateVoucher(dsData, dsDetailData, Reader.GetAttribute("FromGeneratedNature"), Reader.GetAttribute("GeneratedTo"))
-                BusinessMgr = Nothing
-            End If
-        Loop While Reader.ReadToNextSibling("GLReferences")
+
+        If (CBool(MySettingReader.Read("ShouldVoucherGenerate", MySettingReader.FieldLevel.ApplicationLevel))) Then
+            Dim Reader As New Xml.XmlTextReader(AppDomain.CurrentDomain.BaseDirectory.ToString & "\GLReferences.xml")
+            Reader.ReadToFollowing("GLReferences")
+            Do
+                If FormName = Reader.GetAttribute("GeneratedFrom") Then
+                    Dim BusinessMgr As New AzamTechnologies.BusinessManager
+                    BusinessMgr.GenerateVoucher(dsData, dsDetailData, Reader.GetAttribute("FromGeneratedNature"), Reader.GetAttribute("GeneratedTo"))
+                    BusinessMgr = Nothing
+                End If
+            Loop While Reader.ReadToNextSibling("GLReferences")
+        End If
     End Sub
     Private Sub setColumnCaption()
         'Dim col As DataColumn
