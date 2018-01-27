@@ -687,7 +687,7 @@ Module ReportProcess
             Dim Ds As DataSet = Nothing
 
             If IsSummaryReport Then
-                Acc.PopulateDataSet(Ds, "[SelectVehicleRevenueSummaryReport]",
+                Acc.PopulateDataSet(Ds, "[SelectVehicleRevenuePivotSummeryReport]",
                                     "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "ShowOpening", IsShowOpeinging)
 
                 strReporTitle = "Vehicle Revenue Pivot Summary"
