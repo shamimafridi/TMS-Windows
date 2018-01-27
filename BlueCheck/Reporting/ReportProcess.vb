@@ -681,26 +681,37 @@ Module ReportProcess
 
         Try
 
-            strReporTitle = "Vehicle Revenue Pivot"
+            Dim strReportPath As String = String.Empty
             Dim Acc As AzamTechnologies.Database.DataAccess
             Acc = New AzamTechnologies.Database.DataAccess
             Dim Ds As DataSet = Nothing
-            Acc.PopulateDataSet(Ds, "[SelectVehicleRevenuePivotReport]",
-            "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "LstVehicles", LstVehicleCode, "FromDate", FromDate, "ToDate", ToDate, "ShowOpening", IsShowOpeinging)
 
+            If IsSummaryReport Then
+                Acc.PopulateDataSet(Ds, "[SelectVehicleRevenueSummaryReport]",
+                                    "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "ShowOpening", IsShowOpeinging)
+
+                strReporTitle = "Vehicle Revenue Pivot Summary"
+                strReportPath = Application.StartupPath & "\Reports\VehicleRevenuePivotSummary.rpt"
+
+                Ds.WriteXmlSchema(Application.StartupPath & "\Reports\VehicleRevenuePivotSummaryReport.xsd")
+                strReportPath = Application.StartupPath & "\Reports\VehicleRevenuePivotsummary.rpt"
+            Else
+                Acc.PopulateDataSet(Ds, "[SelectVehicleRevenuePivotReport]",
+                                    "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "LstVehicles", LstVehicleCode, "FromDate", FromDate, "ToDate", ToDate, "ShowOpening", IsShowOpeinging)
+
+                strReporTitle = "Vehicle Revenue Pivot"
+                strReportPath = Application.StartupPath & "\Reports\VehicleRevenuePivot.rpt"
+
+                Ds.WriteXmlSchema(Application.StartupPath & "\Reports\VehicleRevenueReport.xsd")
+                strReportPath = Application.StartupPath & "\Reports\VehicleRevenuePivot.rpt"
+            End If
+            
             If Ds.Tables(0).Rows.Count = 0 Then
                 MessageBox.Show("No record found within the specified conditions..." & vbCrLf & vbCrLf & "Please specify valid parameters and " & vbCrLf & "Make sure that the records exists !", "Report Process", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Return False
                 Exit Function
             End If
-            Ds.WriteXmlSchema(Application.StartupPath & "\Reports\VehicleRevenueReport.xsd")
-            Dim strReportPath As String = Application.StartupPath & "\Reports\VehicleRevenuePivot.rpt"
-
-            If IsSummaryReport Then
-                strReportPath = Application.StartupPath & "\Reports\VehicleRevenuePivotSummary.rpt"
-
-                strReporTitle = "Vehicle Ledger Summary"
-            End If
+            
             If Not IO.File.Exists(strReportPath) Then
                 Throw (New Exception("Unable to locate report file:" & vbCrLf & strReportPath))
             End If

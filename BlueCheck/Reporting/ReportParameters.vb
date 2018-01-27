@@ -325,7 +325,7 @@ Public Class ReportParameters
     Friend WithEvents DtFromVR As DateTimePicker
     Friend WithEvents Label85 As Label
     Friend WithEvents Label88 As Label
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents RptSummaryVRP As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents GrpVouchersList As System.Windows.Forms.Panel
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
@@ -335,7 +335,7 @@ Public Class ReportParameters
         Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance16 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -401,7 +401,7 @@ Public Class ReportParameters
         Me.Label12 = New System.Windows.Forms.Label()
         Me.cmbFromItemListTRL = New System.Windows.Forms.Button()
         Me.LstTransactionNatureTRL = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
         Me.cmbGroupBy = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.GrpGeneralLedger = New System.Windows.Forms.Panel()
@@ -442,7 +442,7 @@ Public Class ReportParameters
         Me.Label26 = New System.Windows.Forms.Label()
         Me.BtnFromBranchListIL = New System.Windows.Forms.Button()
         Me.lstTransactionNatureIL = New System.Windows.Forms.ListView()
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
         Me.PnlProgressBare = New System.Windows.Forms.Panel()
         Me.imgProgressBar = New System.Windows.Forms.PictureBox()
         Me.GrpVehicleBill = New System.Windows.Forms.Panel()
@@ -494,7 +494,7 @@ Public Class ReportParameters
         Me.DtpFromDefinitionDateVDO = New System.Windows.Forms.DateTimePicker()
         Me.Label56 = New System.Windows.Forms.Label()
         Me.LvwVoucherTypesVDO = New System.Windows.Forms.ListView()
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
         Me.GrpVouchersList = New System.Windows.Forms.Panel()
         Me.ChkPageBreakVLT = New System.Windows.Forms.CheckBox()
         Me.BtnToGLCodeListVLT = New System.Windows.Forms.Button()
@@ -518,7 +518,7 @@ Public Class ReportParameters
         Me.CmbGroupedByVLT = New System.Windows.Forms.ComboBox()
         Me.Label62 = New System.Windows.Forms.Label()
         Me.LvwVoucherTypesVLT = New System.Windows.Forms.ListView()
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
         Me.GrpCashFlowStatements = New System.Windows.Forms.Panel()
         Me.OptSummaryCFS = New System.Windows.Forms.RadioButton()
         Me.OptDetailCFS = New System.Windows.Forms.RadioButton()
@@ -545,7 +545,7 @@ Public Class ReportParameters
         Me.Label69 = New System.Windows.Forms.Label()
         Me.BtnFromBranchCodeCFS = New System.Windows.Forms.Button()
         Me.LstCashAccountsCFS = New System.Windows.Forms.ListView()
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
         Me.GrpFinancialStatements = New System.Windows.Forms.Panel()
         Me.BtnToGLCodeListFS = New System.Windows.Forms.Button()
         Me.BtnFrGLCodeListFS = New System.Windows.Forms.Button()
@@ -633,6 +633,8 @@ Public Class ReportParameters
         Me.Label87 = New System.Windows.Forms.Label()
         Me.BtnLstBranchVLR = New System.Windows.Forms.Button()
         Me.GrpVehicleRevenue = New System.Windows.Forms.Panel()
+        Me.RptSummaryVRP = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.Label88 = New System.Windows.Forms.Label()
         Me.DtToVR = New System.Windows.Forms.DateTimePicker()
         Me.Label82 = New System.Windows.Forms.Label()
@@ -641,82 +643,80 @@ Public Class ReportParameters
         Me.BtnVehicleLstVR = New System.Windows.Forms.Button()
         Me.TxtVehicleLstVR = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.LstVehicleVR = New System.Windows.Forms.ListView()
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.GrpButtons.SuspendLayout()
-        Me.GrpTransactionDocuments.SuspendLayout()
-        CType(Me.TxtToPartyCode, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtToTransactionNumber, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtFromPartyCode, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtFromTransactionNumber, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GrpOtherReports.SuspendLayout()
-        Me.GrpTransactionList.SuspendLayout()
-        CType(Me.TxtDocumentNatureTRL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtToItemCodeTRL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtFromItemCodeTRL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtToPartyCodeTRL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtToTransactionNoTRL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtFromPartyCodeTRL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtFromTransactionNoTRL, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GrpGeneralLedger.SuspendLayout()
-        CType(Me.txtDocumentNatureIL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtToBranchCodeIL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtFromBranchCodeIL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtToGLCodeIL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtToDivisionIL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtFromGLCodeIL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtFromDivisionCodeIL, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PnlProgressBare.SuspendLayout()
-        CType(Me.imgProgressBar, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GrpVehicleBill.SuspendLayout()
-        CType(Me.ChkTripWithBill, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtToOwnerCodeVB, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtFromOwnerCodeVB, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtToVehicleCodeVB, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtFromVehicleCodeVB, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GrpCOAReportList.SuspendLayout()
-        CType(Me.TxtToGlCodeCOAL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtFromGlCodeCOAL, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GrpVoucherDocuments.SuspendLayout()
-        CType(Me.TxtVoucherTypesVDO, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtToVoucherNoVDO, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtFromVoucherNoVDO, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GrpVouchersList.SuspendLayout()
-        CType(Me.TxtVoucherTypesVLT, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtToGLCodeVLT, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtFromGLCodeVLT, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtToVoucherNoListVLT, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtFromVoucherNoListVLT, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GrpCashFlowStatements.SuspendLayout()
-        CType(Me.TxtCashAccountsCFS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtToBranchCodeCFS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtFromBranchCodeCFS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtToDivisionCFS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtFromDivisionCFS, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GrpFinancialStatements.SuspendLayout()
-        CType(Me.TxtToGLCodeFS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtFromGLCodeFS, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GrpVehicleFreightStatements.SuspendLayout()
-        CType(Me.TxtToTransactionNoVFS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtFromTransactionNoVFS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtFromBranchVFS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtToCustomerVFS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtToVehicleVFS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtFromCustomerVFS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtFromVehicleVFS, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GrpSetupList.SuspendLayout()
-        CType(Me.TxtToCode, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtFCode, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GrpVehicleLedger.SuspendLayout()
-        CType(Me.TxtToOwnerVLR, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtFrOwnerVLR, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtBranchCodeVLR, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtToVehicleVLR, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TxtFrVehicleVLR, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GrpVehicleRevenue.SuspendLayout()
-        CType(Me.TxtVehicleLstVR, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
+        Me.GrpButtons.SuspendLayout
+        Me.GrpTransactionDocuments.SuspendLayout
+        CType(Me.TxtToPartyCode,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtToTransactionNumber,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtFromPartyCode,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtFromTransactionNumber,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GrpOtherReports.SuspendLayout
+        Me.GrpTransactionList.SuspendLayout
+        CType(Me.TxtDocumentNatureTRL,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtToItemCodeTRL,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtFromItemCodeTRL,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtToPartyCodeTRL,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtToTransactionNoTRL,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtFromPartyCodeTRL,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtFromTransactionNoTRL,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GrpGeneralLedger.SuspendLayout
+        CType(Me.txtDocumentNatureIL,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtToBranchCodeIL,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtFromBranchCodeIL,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtToGLCodeIL,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtToDivisionIL,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtFromGLCodeIL,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtFromDivisionCodeIL,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.PnlProgressBare.SuspendLayout
+        CType(Me.imgProgressBar,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GrpVehicleBill.SuspendLayout
+        CType(Me.ChkTripWithBill,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtToOwnerCodeVB,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtFromOwnerCodeVB,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtToVehicleCodeVB,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtFromVehicleCodeVB,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GrpCOAReportList.SuspendLayout
+        CType(Me.TxtToGlCodeCOAL,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtFromGlCodeCOAL,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GrpVoucherDocuments.SuspendLayout
+        CType(Me.TxtVoucherTypesVDO,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtToVoucherNoVDO,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtFromVoucherNoVDO,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GrpVouchersList.SuspendLayout
+        CType(Me.TxtVoucherTypesVLT,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtToGLCodeVLT,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtFromGLCodeVLT,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtToVoucherNoListVLT,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtFromVoucherNoListVLT,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GrpCashFlowStatements.SuspendLayout
+        CType(Me.TxtCashAccountsCFS,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtToBranchCodeCFS,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtFromBranchCodeCFS,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtToDivisionCFS,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtFromDivisionCFS,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GrpFinancialStatements.SuspendLayout
+        CType(Me.TxtToGLCodeFS,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtFromGLCodeFS,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GrpVehicleFreightStatements.SuspendLayout
+        CType(Me.TxtToTransactionNoVFS,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtFromTransactionNoVFS,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtFromBranchVFS,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtToCustomerVFS,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtToVehicleVFS,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtFromCustomerVFS,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtFromVehicleVFS,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GrpSetupList.SuspendLayout
+        CType(Me.TxtToCode,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtFCode,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GrpVehicleLedger.SuspendLayout
+        CType(Me.TxtToOwnerVLR,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtFrOwnerVLR,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtBranchCodeVLR,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtToVehicleVLR,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TxtFrVehicleVLR,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GrpVehicleRevenue.SuspendLayout
+        CType(Me.TxtVehicleLstVR,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
         '
         'GrpButtons
         '
@@ -789,7 +789,7 @@ Public Class ReportParameters
         Me.GrpTransactionDocuments.Size = New System.Drawing.Size(804, 583)
         Me.GrpTransactionDocuments.TabIndex = 8
         Me.GrpTransactionDocuments.Tag = "Transaction Document"
-        Me.GrpTransactionDocuments.Visible = False
+        Me.GrpTransactionDocuments.Visible = false
         '
         'lblBackToOther
         '
@@ -798,7 +798,7 @@ Public Class ReportParameters
         Me.lblBackToOther.Name = "lblBackToOther"
         Me.lblBackToOther.Size = New System.Drawing.Size(75, 20)
         Me.lblBackToOther.TabIndex = 107
-        Me.lblBackToOther.TabStop = True
+        Me.lblBackToOther.TabStop = true
         Me.lblBackToOther.Text = "Other Reports"
         Me.lblBackToOther.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -809,8 +809,8 @@ Public Class ReportParameters
         Me.BtnToPartyList.Name = "BtnToPartyList"
         Me.BtnToPartyList.Size = New System.Drawing.Size(24, 20)
         Me.BtnToPartyList.TabIndex = 106
-        Me.BtnToPartyList.TabStop = False
-        Me.BtnToPartyList.UseVisualStyleBackColor = False
+        Me.BtnToPartyList.TabStop = false
+        Me.BtnToPartyList.UseVisualStyleBackColor = false
         '
         'TxtToPartyCode
         '
@@ -826,7 +826,7 @@ Public Class ReportParameters
         '
         'txtToTransactionNumber
         '
-        Me.txtToTransactionNumber.AcceptsReturn = True
+        Me.txtToTransactionNumber.AcceptsReturn = true
         Me.txtToTransactionNumber.AccessibleDescription = "YM.AUTO"
         Me.txtToTransactionNumber.Location = New System.Drawing.Point(520, 208)
         Me.txtToTransactionNumber.MaxLength = 10
@@ -885,8 +885,8 @@ Public Class ReportParameters
         Me.BtnFromPartyList.Name = "BtnFromPartyList"
         Me.BtnFromPartyList.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromPartyList.TabIndex = 99
-        Me.BtnFromPartyList.TabStop = False
-        Me.BtnFromPartyList.UseVisualStyleBackColor = False
+        Me.BtnFromPartyList.TabStop = false
+        Me.BtnFromPartyList.UseVisualStyleBackColor = false
         '
         'TxtFromPartyCode
         '
@@ -902,7 +902,7 @@ Public Class ReportParameters
         '
         'txtFromTransactionNumber
         '
-        Me.txtFromTransactionNumber.AcceptsReturn = True
+        Me.txtFromTransactionNumber.AcceptsReturn = true
         Me.txtFromTransactionNumber.AccessibleDescription = "YM.AUTO"
         Me.txtFromTransactionNumber.Location = New System.Drawing.Point(240, 208)
         Me.txtFromTransactionNumber.MaxLength = 10
@@ -979,7 +979,7 @@ Public Class ReportParameters
         Me.chkItemList.Name = "chkItemList"
         Me.chkItemList.Size = New System.Drawing.Size(212, 20)
         Me.chkItemList.TabIndex = 20
-        Me.chkItemList.TabStop = True
+        Me.chkItemList.TabStop = true
         Me.chkItemList.Text = "Item List"
         '
         'chkItemTrialBalance
@@ -989,7 +989,7 @@ Public Class ReportParameters
         Me.chkItemTrialBalance.Name = "chkItemTrialBalance"
         Me.chkItemTrialBalance.Size = New System.Drawing.Size(212, 20)
         Me.chkItemTrialBalance.TabIndex = 19
-        Me.chkItemTrialBalance.TabStop = True
+        Me.chkItemTrialBalance.TabStop = true
         Me.chkItemTrialBalance.Text = "Item Trial Balance"
         '
         'chkGeneralLedgers
@@ -999,7 +999,7 @@ Public Class ReportParameters
         Me.chkGeneralLedgers.Name = "chkGeneralLedgers"
         Me.chkGeneralLedgers.Size = New System.Drawing.Size(212, 20)
         Me.chkGeneralLedgers.TabIndex = 18
-        Me.chkGeneralLedgers.TabStop = True
+        Me.chkGeneralLedgers.TabStop = true
         Me.chkGeneralLedgers.Text = "General Ledger"
         '
         'chkTransactionListing
@@ -1009,7 +1009,7 @@ Public Class ReportParameters
         Me.chkTransactionListing.Name = "chkTransactionListing"
         Me.chkTransactionListing.Size = New System.Drawing.Size(212, 20)
         Me.chkTransactionListing.TabIndex = 17
-        Me.chkTransactionListing.TabStop = True
+        Me.chkTransactionListing.TabStop = true
         Me.chkTransactionListing.Text = "Transaction Listing"
         '
         'chkSaleRet
@@ -1019,7 +1019,7 @@ Public Class ReportParameters
         Me.chkSaleRet.Name = "chkSaleRet"
         Me.chkSaleRet.Size = New System.Drawing.Size(212, 20)
         Me.chkSaleRet.TabIndex = 16
-        Me.chkSaleRet.TabStop = True
+        Me.chkSaleRet.TabStop = true
         Me.chkSaleRet.Text = "Sale Invoice Return"
         '
         'chkSale
@@ -1029,7 +1029,7 @@ Public Class ReportParameters
         Me.chkSale.Name = "chkSale"
         Me.chkSale.Size = New System.Drawing.Size(212, 20)
         Me.chkSale.TabIndex = 15
-        Me.chkSale.TabStop = True
+        Me.chkSale.TabStop = true
         Me.chkSale.Text = "Sale Invoice"
         '
         'chkProductRecRet
@@ -1039,7 +1039,7 @@ Public Class ReportParameters
         Me.chkProductRecRet.Name = "chkProductRecRet"
         Me.chkProductRecRet.Size = New System.Drawing.Size(212, 20)
         Me.chkProductRecRet.TabIndex = 14
-        Me.chkProductRecRet.TabStop = True
+        Me.chkProductRecRet.TabStop = true
         Me.chkProductRecRet.Text = "Product Receiving Return Document"
         '
         'chkProductRec
@@ -1049,7 +1049,7 @@ Public Class ReportParameters
         Me.chkProductRec.Name = "chkProductRec"
         Me.chkProductRec.Size = New System.Drawing.Size(212, 20)
         Me.chkProductRec.TabIndex = 13
-        Me.chkProductRec.TabStop = True
+        Me.chkProductRec.TabStop = true
         Me.chkProductRec.Text = "Product Receiving "
         '
         'GrpTransactionList
@@ -1088,7 +1088,7 @@ Public Class ReportParameters
         Me.GrpTransactionList.Size = New System.Drawing.Size(804, 583)
         Me.GrpTransactionList.TabIndex = 20
         Me.GrpTransactionList.Text = "Transaction List"
-        Me.GrpTransactionList.Visible = False
+        Me.GrpTransactionList.Visible = false
         '
         'chkPageBreakTRL
         '
@@ -1098,7 +1098,7 @@ Public Class ReportParameters
         Me.chkPageBreakTRL.Size = New System.Drawing.Size(116, 16)
         Me.chkPageBreakTRL.TabIndex = 121
         Me.chkPageBreakTRL.Text = "Page Break"
-        Me.chkPageBreakTRL.UseVisualStyleBackColor = False
+        Me.chkPageBreakTRL.UseVisualStyleBackColor = false
         '
         'cmbToItemListTRL
         '
@@ -1107,8 +1107,8 @@ Public Class ReportParameters
         Me.cmbToItemListTRL.Name = "cmbToItemListTRL"
         Me.cmbToItemListTRL.Size = New System.Drawing.Size(24, 20)
         Me.cmbToItemListTRL.TabIndex = 119
-        Me.cmbToItemListTRL.TabStop = False
-        Me.cmbToItemListTRL.UseVisualStyleBackColor = False
+        Me.cmbToItemListTRL.TabStop = false
+        Me.cmbToItemListTRL.UseVisualStyleBackColor = false
         '
         'BtnChkDocumentNatureListTRL
         '
@@ -1139,7 +1139,7 @@ Public Class ReportParameters
         '
         'txtToItemCodeTRL
         '
-        Me.txtToItemCodeTRL.AcceptsReturn = True
+        Me.txtToItemCodeTRL.AcceptsReturn = true
         Me.txtToItemCodeTRL.AccessibleDescription = "YM.AUTO"
         Me.txtToItemCodeTRL.Location = New System.Drawing.Point(544, 164)
         Me.txtToItemCodeTRL.MaxLength = 10
@@ -1160,7 +1160,7 @@ Public Class ReportParameters
         '
         'txtFromItemCodeTRL
         '
-        Me.txtFromItemCodeTRL.AcceptsReturn = True
+        Me.txtFromItemCodeTRL.AcceptsReturn = true
         Me.txtFromItemCodeTRL.AccessibleDescription = ""
         Me.txtFromItemCodeTRL.Location = New System.Drawing.Point(260, 168)
         Me.txtFromItemCodeTRL.MaxLength = 10
@@ -1187,7 +1187,7 @@ Public Class ReportParameters
         Me.LblOtherReportsTRL.Name = "LblOtherReportsTRL"
         Me.LblOtherReportsTRL.Size = New System.Drawing.Size(75, 20)
         Me.LblOtherReportsTRL.TabIndex = 107
-        Me.LblOtherReportsTRL.TabStop = True
+        Me.LblOtherReportsTRL.TabStop = true
         Me.LblOtherReportsTRL.Text = "Other Reports"
         Me.LblOtherReportsTRL.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -1198,8 +1198,8 @@ Public Class ReportParameters
         Me.cmbToPartyCodeListTRL.Name = "cmbToPartyCodeListTRL"
         Me.cmbToPartyCodeListTRL.Size = New System.Drawing.Size(24, 20)
         Me.cmbToPartyCodeListTRL.TabIndex = 106
-        Me.cmbToPartyCodeListTRL.TabStop = False
-        Me.cmbToPartyCodeListTRL.UseVisualStyleBackColor = False
+        Me.cmbToPartyCodeListTRL.TabStop = false
+        Me.cmbToPartyCodeListTRL.UseVisualStyleBackColor = false
         '
         'txtToPartyCodeTRL
         '
@@ -1215,7 +1215,7 @@ Public Class ReportParameters
         '
         'txtToTransactionNoTRL
         '
-        Me.txtToTransactionNoTRL.AcceptsReturn = True
+        Me.txtToTransactionNoTRL.AcceptsReturn = true
         Me.txtToTransactionNoTRL.AccessibleDescription = "YM.AUTO"
         Me.txtToTransactionNoTRL.Location = New System.Drawing.Point(544, 192)
         Me.txtToTransactionNoTRL.MaxLength = 10
@@ -1275,8 +1275,8 @@ Public Class ReportParameters
         Me.cmbFromPartyCodeListTRL.Name = "cmbFromPartyCodeListTRL"
         Me.cmbFromPartyCodeListTRL.Size = New System.Drawing.Size(24, 20)
         Me.cmbFromPartyCodeListTRL.TabIndex = 99
-        Me.cmbFromPartyCodeListTRL.TabStop = False
-        Me.cmbFromPartyCodeListTRL.UseVisualStyleBackColor = False
+        Me.cmbFromPartyCodeListTRL.TabStop = false
+        Me.cmbFromPartyCodeListTRL.UseVisualStyleBackColor = false
         '
         'txtFromPartyCodeTRL
         '
@@ -1292,7 +1292,7 @@ Public Class ReportParameters
         '
         'txtFromTransactionNoTRL
         '
-        Me.txtFromTransactionNoTRL.AcceptsReturn = True
+        Me.txtFromTransactionNoTRL.AcceptsReturn = true
         Me.txtFromTransactionNoTRL.AccessibleDescription = "YM.AUTO"
         Me.txtFromTransactionNoTRL.Location = New System.Drawing.Point(260, 192)
         Me.txtFromTransactionNoTRL.MaxLength = 10
@@ -1353,20 +1353,20 @@ Public Class ReportParameters
         Me.cmbFromItemListTRL.Name = "cmbFromItemListTRL"
         Me.cmbFromItemListTRL.Size = New System.Drawing.Size(24, 20)
         Me.cmbFromItemListTRL.TabIndex = 120
-        Me.cmbFromItemListTRL.TabStop = False
-        Me.cmbFromItemListTRL.UseVisualStyleBackColor = False
+        Me.cmbFromItemListTRL.TabStop = false
+        Me.cmbFromItemListTRL.UseVisualStyleBackColor = false
         '
         'LstTransactionNatureTRL
         '
-        Me.LstTransactionNatureTRL.CheckBoxes = True
+        Me.LstTransactionNatureTRL.CheckBoxes = true
         Me.LstTransactionNatureTRL.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1})
         Me.LstTransactionNatureTRL.Location = New System.Drawing.Point(260, 148)
         Me.LstTransactionNatureTRL.Name = "LstTransactionNatureTRL"
         Me.LstTransactionNatureTRL.Size = New System.Drawing.Size(380, 116)
         Me.LstTransactionNatureTRL.TabIndex = 115
-        Me.LstTransactionNatureTRL.UseCompatibleStateImageBehavior = False
+        Me.LstTransactionNatureTRL.UseCompatibleStateImageBehavior = false
         Me.LstTransactionNatureTRL.View = System.Windows.Forms.View.Details
-        Me.LstTransactionNatureTRL.Visible = False
+        Me.LstTransactionNatureTRL.Visible = false
         '
         'ColumnHeader1
         '
@@ -1437,7 +1437,7 @@ Public Class ReportParameters
         Me.GrpGeneralLedger.Size = New System.Drawing.Size(804, 583)
         Me.GrpGeneralLedger.TabIndex = 2
         Me.GrpGeneralLedger.Text = "General Ledger"
-        Me.GrpGeneralLedger.Visible = False
+        Me.GrpGeneralLedger.Visible = false
         '
         'CmbNarrationType
         '
@@ -1460,29 +1460,29 @@ Public Class ReportParameters
         '
         'OptSummary
         '
-        Me.OptSummary.AutoSize = True
+        Me.OptSummary.AutoSize = true
         Me.OptSummary.BackColor = System.Drawing.Color.Transparent
         Me.OptSummary.Location = New System.Drawing.Point(320, 327)
         Me.OptSummary.Name = "OptSummary"
         Me.OptSummary.Size = New System.Drawing.Size(68, 17)
         Me.OptSummary.TabIndex = 129
         Me.OptSummary.Text = "Summary"
-        Me.OptSummary.UseVisualStyleBackColor = False
-        Me.OptSummary.Visible = False
+        Me.OptSummary.UseVisualStyleBackColor = false
+        Me.OptSummary.Visible = false
         '
         'OptDetail
         '
-        Me.OptDetail.AutoSize = True
+        Me.OptDetail.AutoSize = true
         Me.OptDetail.BackColor = System.Drawing.Color.Transparent
-        Me.OptDetail.Checked = True
+        Me.OptDetail.Checked = true
         Me.OptDetail.Location = New System.Drawing.Point(251, 327)
         Me.OptDetail.Name = "OptDetail"
         Me.OptDetail.Size = New System.Drawing.Size(52, 17)
         Me.OptDetail.TabIndex = 128
-        Me.OptDetail.TabStop = True
+        Me.OptDetail.TabStop = true
         Me.OptDetail.Text = "Detail"
-        Me.OptDetail.UseVisualStyleBackColor = False
-        Me.OptDetail.Visible = False
+        Me.OptDetail.UseVisualStyleBackColor = false
+        Me.OptDetail.Visible = false
         '
         'Button1
         '
@@ -1491,8 +1491,8 @@ Public Class ReportParameters
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(24, 20)
         Me.Button1.TabIndex = 126
-        Me.Button1.TabStop = False
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Button1.TabStop = false
+        Me.Button1.UseVisualStyleBackColor = false
         '
         'Button3
         '
@@ -1501,8 +1501,8 @@ Public Class ReportParameters
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(24, 20)
         Me.Button3.TabIndex = 127
-        Me.Button3.TabStop = False
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.Button3.TabStop = false
+        Me.Button3.UseVisualStyleBackColor = false
         '
         'CmbLedgerTypeIL
         '
@@ -1531,7 +1531,7 @@ Public Class ReportParameters
         Me.chkIsHierarchicalView.Size = New System.Drawing.Size(116, 16)
         Me.chkIsHierarchicalView.TabIndex = 123
         Me.chkIsHierarchicalView.Text = "Hierarchical View"
-        Me.chkIsHierarchicalView.UseVisualStyleBackColor = False
+        Me.chkIsHierarchicalView.UseVisualStyleBackColor = false
         '
         'ChkPageBreakIL
         '
@@ -1541,7 +1541,7 @@ Public Class ReportParameters
         Me.ChkPageBreakIL.Size = New System.Drawing.Size(116, 16)
         Me.ChkPageBreakIL.TabIndex = 121
         Me.ChkPageBreakIL.Text = "Page Break"
-        Me.ChkPageBreakIL.UseVisualStyleBackColor = False
+        Me.ChkPageBreakIL.UseVisualStyleBackColor = false
         '
         'BtnToBranchListIL
         '
@@ -1550,8 +1550,8 @@ Public Class ReportParameters
         Me.BtnToBranchListIL.Name = "BtnToBranchListIL"
         Me.BtnToBranchListIL.Size = New System.Drawing.Size(24, 20)
         Me.BtnToBranchListIL.TabIndex = 119
-        Me.BtnToBranchListIL.TabStop = False
-        Me.BtnToBranchListIL.UseVisualStyleBackColor = False
+        Me.BtnToBranchListIL.TabStop = false
+        Me.BtnToBranchListIL.UseVisualStyleBackColor = false
         '
         'BtnDocumentNatureListIL
         '
@@ -1582,7 +1582,7 @@ Public Class ReportParameters
         '
         'txtToBranchCodeIL
         '
-        Me.txtToBranchCodeIL.AcceptsReturn = True
+        Me.txtToBranchCodeIL.AcceptsReturn = true
         Me.txtToBranchCodeIL.AccessibleDescription = "YM.AUTO"
         Me.txtToBranchCodeIL.Location = New System.Drawing.Point(524, 192)
         Me.txtToBranchCodeIL.MaxLength = 10
@@ -1603,7 +1603,7 @@ Public Class ReportParameters
         '
         'txtFromBranchCodeIL
         '
-        Me.txtFromBranchCodeIL.AcceptsReturn = True
+        Me.txtFromBranchCodeIL.AcceptsReturn = true
         Me.txtFromBranchCodeIL.AccessibleDescription = ""
         Me.txtFromBranchCodeIL.Location = New System.Drawing.Point(248, 196)
         Me.txtFromBranchCodeIL.MaxLength = 10
@@ -1638,7 +1638,7 @@ Public Class ReportParameters
         Me.lblOtherReportsIL.Name = "lblOtherReportsIL"
         Me.lblOtherReportsIL.Size = New System.Drawing.Size(75, 20)
         Me.lblOtherReportsIL.TabIndex = 107
-        Me.lblOtherReportsIL.TabStop = True
+        Me.lblOtherReportsIL.TabStop = true
         Me.lblOtherReportsIL.Text = "Other Reports"
         Me.lblOtherReportsIL.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -1649,8 +1649,8 @@ Public Class ReportParameters
         Me.BtnToGLCodeListIL.Name = "BtnToGLCodeListIL"
         Me.BtnToGLCodeListIL.Size = New System.Drawing.Size(24, 20)
         Me.BtnToGLCodeListIL.TabIndex = 106
-        Me.BtnToGLCodeListIL.TabStop = False
-        Me.BtnToGLCodeListIL.UseVisualStyleBackColor = False
+        Me.BtnToGLCodeListIL.TabStop = false
+        Me.BtnToGLCodeListIL.UseVisualStyleBackColor = false
         '
         'txtToGLCodeIL
         '
@@ -1666,7 +1666,7 @@ Public Class ReportParameters
         '
         'txtToDivisionIL
         '
-        Me.txtToDivisionIL.AcceptsReturn = True
+        Me.txtToDivisionIL.AcceptsReturn = true
         Me.txtToDivisionIL.AccessibleDescription = "YM.AUTO"
         Me.txtToDivisionIL.Location = New System.Drawing.Point(524, 220)
         Me.txtToDivisionIL.MaxLength = 10
@@ -1726,8 +1726,8 @@ Public Class ReportParameters
         Me.BtnFromGLCodeListIL.Name = "BtnFromGLCodeListIL"
         Me.BtnFromGLCodeListIL.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromGLCodeListIL.TabIndex = 99
-        Me.BtnFromGLCodeListIL.TabStop = False
-        Me.BtnFromGLCodeListIL.UseVisualStyleBackColor = False
+        Me.BtnFromGLCodeListIL.TabStop = false
+        Me.BtnFromGLCodeListIL.UseVisualStyleBackColor = false
         '
         'txtFromGLCodeIL
         '
@@ -1743,7 +1743,7 @@ Public Class ReportParameters
         '
         'txtFromDivisionCodeIL
         '
-        Me.txtFromDivisionCodeIL.AcceptsReturn = True
+        Me.txtFromDivisionCodeIL.AcceptsReturn = true
         Me.txtFromDivisionCodeIL.AccessibleDescription = "YM.AUTO"
         Me.txtFromDivisionCodeIL.Location = New System.Drawing.Point(248, 220)
         Me.txtFromDivisionCodeIL.MaxLength = 10
@@ -1814,20 +1814,20 @@ Public Class ReportParameters
         Me.BtnFromBranchListIL.Name = "BtnFromBranchListIL"
         Me.BtnFromBranchListIL.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromBranchListIL.TabIndex = 120
-        Me.BtnFromBranchListIL.TabStop = False
-        Me.BtnFromBranchListIL.UseVisualStyleBackColor = False
+        Me.BtnFromBranchListIL.TabStop = false
+        Me.BtnFromBranchListIL.UseVisualStyleBackColor = false
         '
         'lstTransactionNatureIL
         '
-        Me.lstTransactionNatureIL.CheckBoxes = True
+        Me.lstTransactionNatureIL.CheckBoxes = true
         Me.lstTransactionNatureIL.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader2})
         Me.lstTransactionNatureIL.Location = New System.Drawing.Point(248, 148)
         Me.lstTransactionNatureIL.Name = "lstTransactionNatureIL"
         Me.lstTransactionNatureIL.Size = New System.Drawing.Size(384, 144)
         Me.lstTransactionNatureIL.TabIndex = 0
-        Me.lstTransactionNatureIL.UseCompatibleStateImageBehavior = False
+        Me.lstTransactionNatureIL.UseCompatibleStateImageBehavior = false
         Me.lstTransactionNatureIL.View = System.Windows.Forms.View.Details
-        Me.lstTransactionNatureIL.Visible = False
+        Me.lstTransactionNatureIL.Visible = false
         '
         'ColumnHeader2
         '
@@ -1850,8 +1850,8 @@ Public Class ReportParameters
         Me.imgProgressBar.Size = New System.Drawing.Size(90, 20)
         Me.imgProgressBar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.imgProgressBar.TabIndex = 20
-        Me.imgProgressBar.TabStop = False
-        Me.imgProgressBar.Visible = False
+        Me.imgProgressBar.TabStop = false
+        Me.imgProgressBar.Visible = false
         '
         'GrpVehicleBill
         '
@@ -1880,18 +1880,18 @@ Public Class ReportParameters
         Me.GrpVehicleBill.Size = New System.Drawing.Size(804, 583)
         Me.GrpVehicleBill.TabIndex = 23
         Me.GrpVehicleBill.Text = "Vehicle Bills"
-        Me.GrpVehicleBill.Visible = False
+        Me.GrpVehicleBill.Visible = false
         '
         'ChkTripWithBill
         '
         Me.ChkTripWithBill.BackColor = System.Drawing.Color.Transparent
         Me.ChkTripWithBill.BackColorInternal = System.Drawing.Color.Transparent
         Me.ChkTripWithBill.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.ChkTripWithBill.Checked = True
+        Me.ChkTripWithBill.Checked = true
         Me.ChkTripWithBill.CheckState = System.Windows.Forms.CheckState.Checked
-        Appearance16.BackColor = System.Drawing.Color.Transparent
-        Appearance16.BackColor2 = System.Drawing.Color.Transparent
-        Me.ChkTripWithBill.HotTrackingAppearance = Appearance16
+        Appearance7.BackColor = System.Drawing.Color.Transparent
+        Appearance7.BackColor2 = System.Drawing.Color.Transparent
+        Me.ChkTripWithBill.HotTrackingAppearance = Appearance7
         Me.ChkTripWithBill.Location = New System.Drawing.Point(259, 262)
         Me.ChkTripWithBill.Name = "ChkTripWithBill"
         Me.ChkTripWithBill.Size = New System.Drawing.Size(299, 16)
@@ -1906,7 +1906,7 @@ Public Class ReportParameters
         Me.CmbGroupedByVB.Size = New System.Drawing.Size(140, 21)
         Me.CmbGroupedByVB.TabIndex = 134
         Me.CmbGroupedByVB.Text = "None"
-        Me.CmbGroupedByVB.Visible = False
+        Me.CmbGroupedByVB.Visible = false
         '
         'LblGroupByVB
         '
@@ -1917,7 +1917,7 @@ Public Class ReportParameters
         Me.LblGroupByVB.Size = New System.Drawing.Size(88, 20)
         Me.LblGroupByVB.TabIndex = 135
         Me.LblGroupByVB.Text = "Grouped by"
-        Me.LblGroupByVB.Visible = False
+        Me.LblGroupByVB.Visible = false
         '
         'BtnToOwnerList
         '
@@ -1927,12 +1927,12 @@ Public Class ReportParameters
         Me.BtnToOwnerList.Name = "BtnToOwnerList"
         Me.BtnToOwnerList.Size = New System.Drawing.Size(24, 20)
         Me.BtnToOwnerList.TabIndex = 125
-        Me.BtnToOwnerList.TabStop = False
-        Me.BtnToOwnerList.UseVisualStyleBackColor = False
+        Me.BtnToOwnerList.TabStop = false
+        Me.BtnToOwnerList.UseVisualStyleBackColor = false
         '
         'TxtToOwnerCodeVB
         '
-        Me.TxtToOwnerCodeVB.AcceptsReturn = True
+        Me.TxtToOwnerCodeVB.AcceptsReturn = true
         Me.TxtToOwnerCodeVB.AccessibleDescription = ""
         Me.TxtToOwnerCodeVB.Location = New System.Drawing.Point(542, 185)
         Me.TxtToOwnerCodeVB.MaxLength = Global.BusinessLeaf.My.MySettings.Default.VehicleOwnerCode_Length
@@ -1949,12 +1949,12 @@ Public Class ReportParameters
         Me.BtnFromOwnerList.Name = "BtnFromOwnerList"
         Me.BtnFromOwnerList.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromOwnerList.TabIndex = 123
-        Me.BtnFromOwnerList.TabStop = False
-        Me.BtnFromOwnerList.UseVisualStyleBackColor = False
+        Me.BtnFromOwnerList.TabStop = false
+        Me.BtnFromOwnerList.UseVisualStyleBackColor = false
         '
         'TxtFromOwnerCodeVB
         '
-        Me.TxtFromOwnerCodeVB.AcceptsReturn = True
+        Me.TxtFromOwnerCodeVB.AcceptsReturn = true
         Me.TxtFromOwnerCodeVB.AccessibleDescription = ""
         Me.TxtFromOwnerCodeVB.Location = New System.Drawing.Point(259, 185)
         Me.TxtFromOwnerCodeVB.MaxLength = Global.BusinessLeaf.My.MySettings.Default.VehicleOwnerCode_Length
@@ -1981,12 +1981,12 @@ Public Class ReportParameters
         Me.BtnToVehicleList.Name = "BtnToVehicleList"
         Me.BtnToVehicleList.Size = New System.Drawing.Size(24, 20)
         Me.BtnToVehicleList.TabIndex = 119
-        Me.BtnToVehicleList.TabStop = False
-        Me.BtnToVehicleList.UseVisualStyleBackColor = False
+        Me.BtnToVehicleList.TabStop = false
+        Me.BtnToVehicleList.UseVisualStyleBackColor = false
         '
         'TxtToVehicleCodeVB
         '
-        Me.TxtToVehicleCodeVB.AcceptsReturn = True
+        Me.TxtToVehicleCodeVB.AcceptsReturn = true
         Me.TxtToVehicleCodeVB.AccessibleDescription = "YM.AUTO"
         Me.TxtToVehicleCodeVB.Location = New System.Drawing.Point(543, 211)
         Me.TxtToVehicleCodeVB.MaxLength = Global.BusinessLeaf.My.MySettings.Default.VehicleCode_Length
@@ -2007,7 +2007,7 @@ Public Class ReportParameters
         '
         'TxtFromVehicleCodeVB
         '
-        Me.TxtFromVehicleCodeVB.AcceptsReturn = True
+        Me.TxtFromVehicleCodeVB.AcceptsReturn = true
         Me.TxtFromVehicleCodeVB.AccessibleDescription = ""
         Me.TxtFromVehicleCodeVB.Location = New System.Drawing.Point(259, 211)
         Me.TxtFromVehicleCodeVB.MaxLength = 10
@@ -2034,7 +2034,7 @@ Public Class ReportParameters
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel1.TabIndex = 107
-        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.TabStop = true
         Me.LinkLabel1.Text = "Other Reports"
         Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -2095,8 +2095,8 @@ Public Class ReportParameters
         Me.BtnFromVehicleList.Name = "BtnFromVehicleList"
         Me.BtnFromVehicleList.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromVehicleList.TabIndex = 120
-        Me.BtnFromVehicleList.TabStop = False
-        Me.BtnFromVehicleList.UseVisualStyleBackColor = False
+        Me.BtnFromVehicleList.TabStop = false
+        Me.BtnFromVehicleList.UseVisualStyleBackColor = false
         '
         'GrpCOAReportList
         '
@@ -2120,7 +2120,7 @@ Public Class ReportParameters
         Me.GrpCOAReportList.Size = New System.Drawing.Size(804, 583)
         Me.GrpCOAReportList.TabIndex = 24
         Me.GrpCOAReportList.Tag = "Transaction Document"
-        Me.GrpCOAReportList.Visible = False
+        Me.GrpCOAReportList.Visible = false
         '
         'ChkPageBreakCOAL
         '
@@ -2130,7 +2130,7 @@ Public Class ReportParameters
         Me.ChkPageBreakCOAL.Size = New System.Drawing.Size(116, 16)
         Me.ChkPageBreakCOAL.TabIndex = 123
         Me.ChkPageBreakCOAL.Text = "Page Break"
-        Me.ChkPageBreakCOAL.UseVisualStyleBackColor = False
+        Me.ChkPageBreakCOAL.UseVisualStyleBackColor = false
         '
         'CmbLevelsCOAL
         '
@@ -2158,7 +2158,7 @@ Public Class ReportParameters
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel2.TabIndex = 107
-        Me.LinkLabel2.TabStop = True
+        Me.LinkLabel2.TabStop = true
         Me.LinkLabel2.Text = "Other Reports"
         Me.LinkLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -2169,12 +2169,12 @@ Public Class ReportParameters
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(24, 20)
         Me.Button2.TabIndex = 106
-        Me.Button2.TabStop = False
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.Button2.TabStop = false
+        Me.Button2.UseVisualStyleBackColor = false
         '
         'TxtToGlCodeCOAL
         '
-        Me.TxtToGlCodeCOAL.AcceptsReturn = True
+        Me.TxtToGlCodeCOAL.AcceptsReturn = true
         Me.TxtToGlCodeCOAL.Location = New System.Drawing.Point(520, 208)
         Me.TxtToGlCodeCOAL.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
         Me.TxtToGlCodeCOAL.Name = "TxtToGlCodeCOAL"
@@ -2222,12 +2222,12 @@ Public Class ReportParameters
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(24, 20)
         Me.Button6.TabIndex = 99
-        Me.Button6.TabStop = False
-        Me.Button6.UseVisualStyleBackColor = False
+        Me.Button6.TabStop = false
+        Me.Button6.UseVisualStyleBackColor = false
         '
         'TxtFromGlCodeCOAL
         '
-        Me.TxtFromGlCodeCOAL.AcceptsReturn = True
+        Me.TxtFromGlCodeCOAL.AcceptsReturn = true
         Me.TxtFromGlCodeCOAL.AccessibleDescription = "YM.AUTO"
         Me.TxtFromGlCodeCOAL.Location = New System.Drawing.Point(240, 208)
         Me.TxtFromGlCodeCOAL.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
@@ -2288,10 +2288,10 @@ Public Class ReportParameters
         Me.GrpVoucherDocuments.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpVoucherDocuments.Location = New System.Drawing.Point(0, 0)
         Me.GrpVoucherDocuments.Name = "GrpVoucherDocuments"
-        Me.GrpVoucherDocuments.Size = New System.Drawing.Size(804, 521)
+        Me.GrpVoucherDocuments.Size = New System.Drawing.Size(804, 583)
         Me.GrpVoucherDocuments.TabIndex = 25
         Me.GrpVoucherDocuments.Text = "Transaction List"
-        Me.GrpVoucherDocuments.Visible = False
+        Me.GrpVoucherDocuments.Visible = false
         '
         'BtnVoucherTypeListVDO
         '
@@ -2327,13 +2327,13 @@ Public Class ReportParameters
         Me.LinkLabel3.Name = "LinkLabel3"
         Me.LinkLabel3.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel3.TabIndex = 107
-        Me.LinkLabel3.TabStop = True
+        Me.LinkLabel3.TabStop = true
         Me.LinkLabel3.Text = "Other Reports"
         Me.LinkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'TxtToVoucherNoVDO
         '
-        Me.TxtToVoucherNoVDO.AcceptsReturn = True
+        Me.TxtToVoucherNoVDO.AcceptsReturn = true
         Me.TxtToVoucherNoVDO.AccessibleDescription = "YM.AUTO"
         Me.TxtToVoucherNoVDO.Location = New System.Drawing.Point(544, 192)
         Me.TxtToVoucherNoVDO.MaxLength = 10
@@ -2378,7 +2378,7 @@ Public Class ReportParameters
         '
         'TxtFromVoucherNoVDO
         '
-        Me.TxtFromVoucherNoVDO.AcceptsReturn = True
+        Me.TxtFromVoucherNoVDO.AcceptsReturn = true
         Me.TxtFromVoucherNoVDO.AccessibleDescription = "YM.AUTO"
         Me.TxtFromVoucherNoVDO.Location = New System.Drawing.Point(260, 192)
         Me.TxtFromVoucherNoVDO.MaxLength = 10
@@ -2424,15 +2424,15 @@ Public Class ReportParameters
         '
         'LvwVoucherTypesVDO
         '
-        Me.LvwVoucherTypesVDO.CheckBoxes = True
+        Me.LvwVoucherTypesVDO.CheckBoxes = true
         Me.LvwVoucherTypesVDO.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3})
         Me.LvwVoucherTypesVDO.Location = New System.Drawing.Point(260, 100)
         Me.LvwVoucherTypesVDO.Name = "LvwVoucherTypesVDO"
         Me.LvwVoucherTypesVDO.Size = New System.Drawing.Size(383, 140)
         Me.LvwVoucherTypesVDO.TabIndex = 115
-        Me.LvwVoucherTypesVDO.UseCompatibleStateImageBehavior = False
+        Me.LvwVoucherTypesVDO.UseCompatibleStateImageBehavior = false
         Me.LvwVoucherTypesVDO.View = System.Windows.Forms.View.Details
-        Me.LvwVoucherTypesVDO.Visible = False
+        Me.LvwVoucherTypesVDO.Visible = false
         '
         'ColumnHeader3
         '
@@ -2466,10 +2466,10 @@ Public Class ReportParameters
         Me.GrpVouchersList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpVouchersList.Location = New System.Drawing.Point(0, 0)
         Me.GrpVouchersList.Name = "GrpVouchersList"
-        Me.GrpVouchersList.Size = New System.Drawing.Size(804, 521)
+        Me.GrpVouchersList.Size = New System.Drawing.Size(804, 583)
         Me.GrpVouchersList.TabIndex = 26
         Me.GrpVouchersList.Text = "Vouchers List"
-        Me.GrpVouchersList.Visible = False
+        Me.GrpVouchersList.Visible = false
         '
         'ChkPageBreakVLT
         '
@@ -2486,8 +2486,8 @@ Public Class ReportParameters
         Me.BtnToGLCodeListVLT.Name = "BtnToGLCodeListVLT"
         Me.BtnToGLCodeListVLT.Size = New System.Drawing.Size(24, 20)
         Me.BtnToGLCodeListVLT.TabIndex = 119
-        Me.BtnToGLCodeListVLT.TabStop = False
-        Me.BtnToGLCodeListVLT.UseVisualStyleBackColor = False
+        Me.BtnToGLCodeListVLT.TabStop = false
+        Me.BtnToGLCodeListVLT.UseVisualStyleBackColor = false
         '
         'BtnVoucherTypesListVLT
         '
@@ -2518,7 +2518,7 @@ Public Class ReportParameters
         '
         'TxtToGLCodeVLT
         '
-        Me.TxtToGLCodeVLT.AcceptsReturn = True
+        Me.TxtToGLCodeVLT.AcceptsReturn = true
         Me.TxtToGLCodeVLT.AccessibleDescription = "YM.AUTO"
         Me.TxtToGLCodeVLT.Location = New System.Drawing.Point(544, 188)
         Me.TxtToGLCodeVLT.MaxLength = 22
@@ -2539,7 +2539,7 @@ Public Class ReportParameters
         '
         'TxtFromGLCodeVLT
         '
-        Me.TxtFromGLCodeVLT.AcceptsReturn = True
+        Me.TxtFromGLCodeVLT.AcceptsReturn = true
         Me.TxtFromGLCodeVLT.AccessibleDescription = ""
         Me.TxtFromGLCodeVLT.Location = New System.Drawing.Point(260, 192)
         Me.TxtFromGLCodeVLT.MaxLength = 22
@@ -2565,13 +2565,13 @@ Public Class ReportParameters
         Me.LinkLabel4.Name = "LinkLabel4"
         Me.LinkLabel4.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel4.TabIndex = 107
-        Me.LinkLabel4.TabStop = True
+        Me.LinkLabel4.TabStop = true
         Me.LinkLabel4.Text = "Other Reports"
         Me.LinkLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'TxtToVoucherNoListVLT
         '
-        Me.TxtToVoucherNoListVLT.AcceptsReturn = True
+        Me.TxtToVoucherNoListVLT.AcceptsReturn = true
         Me.TxtToVoucherNoListVLT.AccessibleDescription = "YM.AUTO"
         Me.TxtToVoucherNoListVLT.Location = New System.Drawing.Point(544, 216)
         Me.TxtToVoucherNoListVLT.MaxLength = 10
@@ -2616,7 +2616,7 @@ Public Class ReportParameters
         '
         'TxtFromVoucherNoListVLT
         '
-        Me.TxtFromVoucherNoListVLT.AcceptsReturn = True
+        Me.TxtFromVoucherNoListVLT.AcceptsReturn = true
         Me.TxtFromVoucherNoListVLT.AccessibleDescription = "YM.AUTO"
         Me.TxtFromVoucherNoListVLT.Location = New System.Drawing.Point(260, 216)
         Me.TxtFromVoucherNoListVLT.MaxLength = 10
@@ -2667,8 +2667,8 @@ Public Class ReportParameters
         Me.BtnFromGLCodeListVLT.Name = "BtnFromGLCodeListVLT"
         Me.BtnFromGLCodeListVLT.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromGLCodeListVLT.TabIndex = 120
-        Me.BtnFromGLCodeListVLT.TabStop = False
-        Me.BtnFromGLCodeListVLT.UseVisualStyleBackColor = False
+        Me.BtnFromGLCodeListVLT.TabStop = false
+        Me.BtnFromGLCodeListVLT.UseVisualStyleBackColor = false
         '
         'CmbGroupedByVLT
         '
@@ -2691,15 +2691,15 @@ Public Class ReportParameters
         '
         'LvwVoucherTypesVLT
         '
-        Me.LvwVoucherTypesVLT.CheckBoxes = True
+        Me.LvwVoucherTypesVLT.CheckBoxes = true
         Me.LvwVoucherTypesVLT.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader4})
         Me.LvwVoucherTypesVLT.Location = New System.Drawing.Point(260, 130)
         Me.LvwVoucherTypesVLT.Name = "LvwVoucherTypesVLT"
         Me.LvwVoucherTypesVLT.Size = New System.Drawing.Size(380, 135)
         Me.LvwVoucherTypesVLT.TabIndex = 115
-        Me.LvwVoucherTypesVLT.UseCompatibleStateImageBehavior = False
+        Me.LvwVoucherTypesVLT.UseCompatibleStateImageBehavior = false
         Me.LvwVoucherTypesVLT.View = System.Windows.Forms.View.Details
-        Me.LvwVoucherTypesVLT.Visible = False
+        Me.LvwVoucherTypesVLT.Visible = false
         '
         'ColumnHeader4
         '
@@ -2739,29 +2739,29 @@ Public Class ReportParameters
         Me.GrpCashFlowStatements.Size = New System.Drawing.Size(804, 583)
         Me.GrpCashFlowStatements.TabIndex = 27
         Me.GrpCashFlowStatements.Text = "Cash Flow Statements"
-        Me.GrpCashFlowStatements.Visible = False
+        Me.GrpCashFlowStatements.Visible = false
         '
         'OptSummaryCFS
         '
-        Me.OptSummaryCFS.AutoSize = True
+        Me.OptSummaryCFS.AutoSize = true
         Me.OptSummaryCFS.Location = New System.Drawing.Point(320, 296)
         Me.OptSummaryCFS.Name = "OptSummaryCFS"
         Me.OptSummaryCFS.Size = New System.Drawing.Size(68, 17)
         Me.OptSummaryCFS.TabIndex = 129
         Me.OptSummaryCFS.Text = "Summary"
-        Me.OptSummaryCFS.UseVisualStyleBackColor = True
+        Me.OptSummaryCFS.UseVisualStyleBackColor = true
         '
         'OptDetailCFS
         '
-        Me.OptDetailCFS.AutoSize = True
-        Me.OptDetailCFS.Checked = True
+        Me.OptDetailCFS.AutoSize = true
+        Me.OptDetailCFS.Checked = true
         Me.OptDetailCFS.Location = New System.Drawing.Point(251, 296)
         Me.OptDetailCFS.Name = "OptDetailCFS"
         Me.OptDetailCFS.Size = New System.Drawing.Size(52, 17)
         Me.OptDetailCFS.TabIndex = 128
-        Me.OptDetailCFS.TabStop = True
+        Me.OptDetailCFS.TabStop = true
         Me.OptDetailCFS.Text = "Detail"
-        Me.OptDetailCFS.UseVisualStyleBackColor = True
+        Me.OptDetailCFS.UseVisualStyleBackColor = true
         '
         'Button4
         '
@@ -2770,8 +2770,8 @@ Public Class ReportParameters
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(24, 20)
         Me.Button4.TabIndex = 126
-        Me.Button4.TabStop = False
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.Button4.TabStop = false
+        Me.Button4.UseVisualStyleBackColor = false
         '
         'Button5
         '
@@ -2780,20 +2780,20 @@ Public Class ReportParameters
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(24, 20)
         Me.Button5.TabIndex = 127
-        Me.Button5.TabStop = False
-        Me.Button5.UseVisualStyleBackColor = False
+        Me.Button5.TabStop = false
+        Me.Button5.UseVisualStyleBackColor = false
         '
         'ChkShowOpenningCFS
         '
         Me.ChkShowOpenningCFS.BackColor = System.Drawing.Color.Transparent
-        Me.ChkShowOpenningCFS.Checked = True
+        Me.ChkShowOpenningCFS.Checked = true
         Me.ChkShowOpenningCFS.CheckState = System.Windows.Forms.CheckState.Checked
         Me.ChkShowOpenningCFS.Location = New System.Drawing.Point(248, 138)
         Me.ChkShowOpenningCFS.Name = "ChkShowOpenningCFS"
         Me.ChkShowOpenningCFS.Size = New System.Drawing.Size(116, 24)
         Me.ChkShowOpenningCFS.TabIndex = 123
         Me.ChkShowOpenningCFS.Text = "Show Opening"
-        Me.ChkShowOpenningCFS.UseVisualStyleBackColor = False
+        Me.ChkShowOpenningCFS.UseVisualStyleBackColor = false
         '
         'ChkPageBreakCFS
         '
@@ -2803,7 +2803,7 @@ Public Class ReportParameters
         Me.ChkPageBreakCFS.Size = New System.Drawing.Size(116, 24)
         Me.ChkPageBreakCFS.TabIndex = 121
         Me.ChkPageBreakCFS.Text = "Page Break"
-        Me.ChkPageBreakCFS.UseVisualStyleBackColor = False
+        Me.ChkPageBreakCFS.UseVisualStyleBackColor = false
         '
         'Button7
         '
@@ -2812,8 +2812,8 @@ Public Class ReportParameters
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(24, 20)
         Me.Button7.TabIndex = 119
-        Me.Button7.TabStop = False
-        Me.Button7.UseVisualStyleBackColor = False
+        Me.Button7.TabStop = false
+        Me.Button7.UseVisualStyleBackColor = false
         '
         'BtnCashAccountsCFS
         '
@@ -2844,7 +2844,7 @@ Public Class ReportParameters
         '
         'TxtToBranchCodeCFS
         '
-        Me.TxtToBranchCodeCFS.AcceptsReturn = True
+        Me.TxtToBranchCodeCFS.AcceptsReturn = true
         Me.TxtToBranchCodeCFS.AccessibleDescription = "YM.AUTO"
         Me.TxtToBranchCodeCFS.Location = New System.Drawing.Point(524, 192)
         Me.TxtToBranchCodeCFS.MaxLength = 10
@@ -2865,7 +2865,7 @@ Public Class ReportParameters
         '
         'TxtFromBranchCodeCFS
         '
-        Me.TxtFromBranchCodeCFS.AcceptsReturn = True
+        Me.TxtFromBranchCodeCFS.AcceptsReturn = true
         Me.TxtFromBranchCodeCFS.AccessibleDescription = ""
         Me.TxtFromBranchCodeCFS.Location = New System.Drawing.Point(248, 196)
         Me.TxtFromBranchCodeCFS.MaxLength = 10
@@ -2891,13 +2891,13 @@ Public Class ReportParameters
         Me.LinkLabel5.Name = "LinkLabel5"
         Me.LinkLabel5.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel5.TabIndex = 107
-        Me.LinkLabel5.TabStop = True
+        Me.LinkLabel5.TabStop = true
         Me.LinkLabel5.Text = "Other Reports"
         Me.LinkLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'TxtToDivisionCFS
         '
-        Me.TxtToDivisionCFS.AcceptsReturn = True
+        Me.TxtToDivisionCFS.AcceptsReturn = true
         Me.TxtToDivisionCFS.AccessibleDescription = "YM.AUTO"
         Me.TxtToDivisionCFS.Location = New System.Drawing.Point(524, 220)
         Me.TxtToDivisionCFS.MaxLength = 10
@@ -2942,7 +2942,7 @@ Public Class ReportParameters
         '
         'TxtFromDivisionCFS
         '
-        Me.TxtFromDivisionCFS.AcceptsReturn = True
+        Me.TxtFromDivisionCFS.AcceptsReturn = true
         Me.TxtFromDivisionCFS.AccessibleDescription = "YM.AUTO"
         Me.TxtFromDivisionCFS.Location = New System.Drawing.Point(248, 220)
         Me.TxtFromDivisionCFS.MaxLength = 10
@@ -2993,21 +2993,21 @@ Public Class ReportParameters
         Me.BtnFromBranchCodeCFS.Name = "BtnFromBranchCodeCFS"
         Me.BtnFromBranchCodeCFS.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromBranchCodeCFS.TabIndex = 120
-        Me.BtnFromBranchCodeCFS.TabStop = False
-        Me.BtnFromBranchCodeCFS.UseVisualStyleBackColor = False
+        Me.BtnFromBranchCodeCFS.TabStop = false
+        Me.BtnFromBranchCodeCFS.UseVisualStyleBackColor = false
         '
         'LstCashAccountsCFS
         '
-        Me.LstCashAccountsCFS.CheckBoxes = True
+        Me.LstCashAccountsCFS.CheckBoxes = true
         Me.LstCashAccountsCFS.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader5})
         Me.LstCashAccountsCFS.Location = New System.Drawing.Point(248, 124)
         Me.LstCashAccountsCFS.Name = "LstCashAccountsCFS"
-        Me.LstCashAccountsCFS.ShowItemToolTips = True
+        Me.LstCashAccountsCFS.ShowItemToolTips = true
         Me.LstCashAccountsCFS.Size = New System.Drawing.Size(384, 144)
         Me.LstCashAccountsCFS.TabIndex = 0
-        Me.LstCashAccountsCFS.UseCompatibleStateImageBehavior = False
+        Me.LstCashAccountsCFS.UseCompatibleStateImageBehavior = false
         Me.LstCashAccountsCFS.View = System.Windows.Forms.View.Details
-        Me.LstCashAccountsCFS.Visible = False
+        Me.LstCashAccountsCFS.Visible = false
         '
         'ColumnHeader5
         '
@@ -3034,7 +3034,7 @@ Public Class ReportParameters
         Me.GrpFinancialStatements.Size = New System.Drawing.Size(804, 583)
         Me.GrpFinancialStatements.TabIndex = 28
         Me.GrpFinancialStatements.Text = "Financial Statements"
-        Me.GrpFinancialStatements.Visible = False
+        Me.GrpFinancialStatements.Visible = false
         '
         'BtnToGLCodeListFS
         '
@@ -3043,9 +3043,9 @@ Public Class ReportParameters
         Me.BtnToGLCodeListFS.Name = "BtnToGLCodeListFS"
         Me.BtnToGLCodeListFS.Size = New System.Drawing.Size(24, 20)
         Me.BtnToGLCodeListFS.TabIndex = 126
-        Me.BtnToGLCodeListFS.TabStop = False
-        Me.BtnToGLCodeListFS.UseVisualStyleBackColor = False
-        Me.BtnToGLCodeListFS.Visible = False
+        Me.BtnToGLCodeListFS.TabStop = false
+        Me.BtnToGLCodeListFS.UseVisualStyleBackColor = false
+        Me.BtnToGLCodeListFS.Visible = false
         '
         'BtnFrGLCodeListFS
         '
@@ -3054,9 +3054,9 @@ Public Class ReportParameters
         Me.BtnFrGLCodeListFS.Name = "BtnFrGLCodeListFS"
         Me.BtnFrGLCodeListFS.Size = New System.Drawing.Size(24, 20)
         Me.BtnFrGLCodeListFS.TabIndex = 127
-        Me.BtnFrGLCodeListFS.TabStop = False
-        Me.BtnFrGLCodeListFS.UseVisualStyleBackColor = False
-        Me.BtnFrGLCodeListFS.Visible = False
+        Me.BtnFrGLCodeListFS.TabStop = false
+        Me.BtnFrGLCodeListFS.UseVisualStyleBackColor = false
+        Me.BtnFrGLCodeListFS.Visible = false
         '
         'ChkNotesToFS
         '
@@ -3067,7 +3067,7 @@ Public Class ReportParameters
         Me.ChkNotesToFS.TabIndex = 121
         Me.ChkNotesToFS.Text = "Notes To Financial Statements"
         Me.ChkNotesToFS.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ChkNotesToFS.UseVisualStyleBackColor = False
+        Me.ChkNotesToFS.UseVisualStyleBackColor = false
         '
         'LinkLabel6
         '
@@ -3076,13 +3076,13 @@ Public Class ReportParameters
         Me.LinkLabel6.Name = "LinkLabel6"
         Me.LinkLabel6.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel6.TabIndex = 107
-        Me.LinkLabel6.TabStop = True
+        Me.LinkLabel6.TabStop = true
         Me.LinkLabel6.Text = "Other Reports"
         Me.LinkLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'TxtToGLCodeFS
         '
-        Me.TxtToGLCodeFS.AcceptsReturn = True
+        Me.TxtToGLCodeFS.AcceptsReturn = true
         Me.TxtToGLCodeFS.AccessibleDescription = "YM.AUTO"
         Me.TxtToGLCodeFS.Location = New System.Drawing.Point(524, 220)
         Me.TxtToGLCodeFS.MaxLength = 10
@@ -3090,7 +3090,7 @@ Public Class ReportParameters
         Me.TxtToGLCodeFS.Size = New System.Drawing.Size(108, 21)
         Me.TxtToGLCodeFS.TabIndex = 4
         Me.TxtToGLCodeFS.Tag = "PK.TransactionNo"
-        Me.TxtToGLCodeFS.Visible = False
+        Me.TxtToGLCodeFS.Visible = false
         '
         'Label68
         '
@@ -3101,7 +3101,7 @@ Public Class ReportParameters
         Me.Label68.Size = New System.Drawing.Size(112, 20)
         Me.Label68.TabIndex = 105
         Me.Label68.Text = "To"
-        Me.Label68.Visible = False
+        Me.Label68.Visible = false
         '
         'TxtToDateFS
         '
@@ -3129,7 +3129,7 @@ Public Class ReportParameters
         '
         'TxtFromGLCodeFS
         '
-        Me.TxtFromGLCodeFS.AcceptsReturn = True
+        Me.TxtFromGLCodeFS.AcceptsReturn = true
         Me.TxtFromGLCodeFS.AccessibleDescription = "YM.AUTO"
         Me.TxtFromGLCodeFS.Location = New System.Drawing.Point(248, 220)
         Me.TxtFromGLCodeFS.MaxLength = 10
@@ -3137,7 +3137,7 @@ Public Class ReportParameters
         Me.TxtFromGLCodeFS.Size = New System.Drawing.Size(108, 21)
         Me.TxtFromGLCodeFS.TabIndex = 3
         Me.TxtFromGLCodeFS.Tag = "PK.TransactionNo"
-        Me.TxtFromGLCodeFS.Visible = False
+        Me.TxtFromGLCodeFS.Visible = false
         '
         'Label71
         '
@@ -3148,7 +3148,7 @@ Public Class ReportParameters
         Me.Label71.Size = New System.Drawing.Size(110, 20)
         Me.Label71.TabIndex = 98
         Me.Label71.Text = "GL Code"
-        Me.Label71.Visible = False
+        Me.Label71.Visible = false
         '
         'TxtFromDateFS
         '
@@ -3216,7 +3216,7 @@ Public Class ReportParameters
         Me.GrpVehicleFreightStatements.Size = New System.Drawing.Size(804, 583)
         Me.GrpVehicleFreightStatements.TabIndex = 29
         Me.GrpVehicleFreightStatements.Text = "Vehicle Freight Statements"
-        Me.GrpVehicleFreightStatements.Visible = False
+        Me.GrpVehicleFreightStatements.Visible = false
         '
         'CmbGroupbyVFS
         '
@@ -3302,27 +3302,27 @@ Public Class ReportParameters
         '
         'OptSummaryVFS
         '
-        Me.OptSummaryVFS.AutoSize = True
+        Me.OptSummaryVFS.AutoSize = true
         Me.OptSummaryVFS.BackColor = System.Drawing.Color.Transparent
         Me.OptSummaryVFS.Location = New System.Drawing.Point(320, 327)
         Me.OptSummaryVFS.Name = "OptSummaryVFS"
         Me.OptSummaryVFS.Size = New System.Drawing.Size(68, 17)
         Me.OptSummaryVFS.TabIndex = 129
         Me.OptSummaryVFS.Text = "Summary"
-        Me.OptSummaryVFS.UseVisualStyleBackColor = False
+        Me.OptSummaryVFS.UseVisualStyleBackColor = false
         '
         'OptDetailVFS
         '
-        Me.OptDetailVFS.AutoSize = True
+        Me.OptDetailVFS.AutoSize = true
         Me.OptDetailVFS.BackColor = System.Drawing.Color.Transparent
-        Me.OptDetailVFS.Checked = True
+        Me.OptDetailVFS.Checked = true
         Me.OptDetailVFS.Location = New System.Drawing.Point(251, 327)
         Me.OptDetailVFS.Name = "OptDetailVFS"
         Me.OptDetailVFS.Size = New System.Drawing.Size(52, 17)
         Me.OptDetailVFS.TabIndex = 128
-        Me.OptDetailVFS.TabStop = True
+        Me.OptDetailVFS.TabStop = true
         Me.OptDetailVFS.Text = "Detail"
-        Me.OptDetailVFS.UseVisualStyleBackColor = False
+        Me.OptDetailVFS.UseVisualStyleBackColor = false
         '
         'BtnToVehicleListVFS
         '
@@ -3331,8 +3331,8 @@ Public Class ReportParameters
         Me.BtnToVehicleListVFS.Name = "BtnToVehicleListVFS"
         Me.BtnToVehicleListVFS.Size = New System.Drawing.Size(24, 20)
         Me.BtnToVehicleListVFS.TabIndex = 126
-        Me.BtnToVehicleListVFS.TabStop = False
-        Me.BtnToVehicleListVFS.UseVisualStyleBackColor = False
+        Me.BtnToVehicleListVFS.TabStop = false
+        Me.BtnToVehicleListVFS.UseVisualStyleBackColor = false
         '
         'BtnFromVehicleListVFS
         '
@@ -3341,8 +3341,8 @@ Public Class ReportParameters
         Me.BtnFromVehicleListVFS.Name = "BtnFromVehicleListVFS"
         Me.BtnFromVehicleListVFS.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromVehicleListVFS.TabIndex = 127
-        Me.BtnFromVehicleListVFS.TabStop = False
-        Me.BtnFromVehicleListVFS.UseVisualStyleBackColor = False
+        Me.BtnFromVehicleListVFS.TabStop = false
+        Me.BtnFromVehicleListVFS.UseVisualStyleBackColor = false
         '
         'ChkPageBreakVFS
         '
@@ -3352,11 +3352,11 @@ Public Class ReportParameters
         Me.ChkPageBreakVFS.Size = New System.Drawing.Size(116, 16)
         Me.ChkPageBreakVFS.TabIndex = 121
         Me.ChkPageBreakVFS.Text = "Page Break"
-        Me.ChkPageBreakVFS.UseVisualStyleBackColor = False
+        Me.ChkPageBreakVFS.UseVisualStyleBackColor = false
         '
         'TxtFromBranchVFS
         '
-        Me.TxtFromBranchVFS.AcceptsReturn = True
+        Me.TxtFromBranchVFS.AcceptsReturn = true
         Me.TxtFromBranchVFS.AccessibleDescription = ""
         Me.TxtFromBranchVFS.Location = New System.Drawing.Point(248, 196)
         Me.TxtFromBranchVFS.MaxLength = 10
@@ -3391,7 +3391,7 @@ Public Class ReportParameters
         Me.LinkLabel7.Name = "LinkLabel7"
         Me.LinkLabel7.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel7.TabIndex = 107
-        Me.LinkLabel7.TabStop = True
+        Me.LinkLabel7.TabStop = true
         Me.LinkLabel7.Text = "Other Reports"
         Me.LinkLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -3402,8 +3402,8 @@ Public Class ReportParameters
         Me.BtnToCustomerListVFS.Name = "BtnToCustomerListVFS"
         Me.BtnToCustomerListVFS.Size = New System.Drawing.Size(24, 20)
         Me.BtnToCustomerListVFS.TabIndex = 106
-        Me.BtnToCustomerListVFS.TabStop = False
-        Me.BtnToCustomerListVFS.UseVisualStyleBackColor = False
+        Me.BtnToCustomerListVFS.TabStop = false
+        Me.BtnToCustomerListVFS.UseVisualStyleBackColor = false
         '
         'TxtToCustomerVFS
         '
@@ -3419,7 +3419,7 @@ Public Class ReportParameters
         '
         'TxtToVehicleVFS
         '
-        Me.TxtToVehicleVFS.AcceptsReturn = True
+        Me.TxtToVehicleVFS.AcceptsReturn = true
         Me.TxtToVehicleVFS.AccessibleDescription = "YM.AUTO"
         Me.TxtToVehicleVFS.Location = New System.Drawing.Point(524, 220)
         Me.TxtToVehicleVFS.MaxLength = 10
@@ -3479,8 +3479,8 @@ Public Class ReportParameters
         Me.BtnFromCustomerListVFS.Name = "BtnFromCustomerListVFS"
         Me.BtnFromCustomerListVFS.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromCustomerListVFS.TabIndex = 99
-        Me.BtnFromCustomerListVFS.TabStop = False
-        Me.BtnFromCustomerListVFS.UseVisualStyleBackColor = False
+        Me.BtnFromCustomerListVFS.TabStop = false
+        Me.BtnFromCustomerListVFS.UseVisualStyleBackColor = false
         '
         'TxtFromCustomerVFS
         '
@@ -3496,7 +3496,7 @@ Public Class ReportParameters
         '
         'TxtFromVehicleVFS
         '
-        Me.TxtFromVehicleVFS.AcceptsReturn = True
+        Me.TxtFromVehicleVFS.AcceptsReturn = true
         Me.TxtFromVehicleVFS.AccessibleDescription = "YM.AUTO"
         Me.TxtFromVehicleVFS.Location = New System.Drawing.Point(248, 220)
         Me.TxtFromVehicleVFS.MaxLength = 10
@@ -3567,8 +3567,8 @@ Public Class ReportParameters
         Me.BtnFromBranchListVFS.Name = "BtnFromBranchListVFS"
         Me.BtnFromBranchListVFS.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromBranchListVFS.TabIndex = 120
-        Me.BtnFromBranchListVFS.TabStop = False
-        Me.BtnFromBranchListVFS.UseVisualStyleBackColor = False
+        Me.BtnFromBranchListVFS.TabStop = false
+        Me.BtnFromBranchListVFS.UseVisualStyleBackColor = false
         '
         'GrpSetupList
         '
@@ -3588,7 +3588,7 @@ Public Class ReportParameters
         Me.GrpSetupList.Name = "GrpSetupList"
         Me.GrpSetupList.Size = New System.Drawing.Size(804, 583)
         Me.GrpSetupList.TabIndex = 30
-        Me.GrpSetupList.Visible = False
+        Me.GrpSetupList.Visible = false
         '
         'CmbGroupBySU
         '
@@ -3598,7 +3598,7 @@ Public Class ReportParameters
         Me.CmbGroupBySU.Size = New System.Drawing.Size(140, 21)
         Me.CmbGroupBySU.TabIndex = 132
         Me.CmbGroupBySU.Text = "None"
-        Me.CmbGroupBySU.Visible = False
+        Me.CmbGroupBySU.Visible = false
         '
         'LblGroupBySet
         '
@@ -3609,11 +3609,11 @@ Public Class ReportParameters
         Me.LblGroupBySet.Size = New System.Drawing.Size(88, 20)
         Me.LblGroupBySet.TabIndex = 133
         Me.LblGroupBySet.Text = "Grouped by"
-        Me.LblGroupBySet.Visible = False
+        Me.LblGroupBySet.Visible = false
         '
         'TxtToCode
         '
-        Me.TxtToCode.AcceptsReturn = True
+        Me.TxtToCode.AcceptsReturn = true
         Me.TxtToCode.AccessibleDescription = "YM.AUTO"
         Me.TxtToCode.Location = New System.Drawing.Point(543, 211)
         Me.TxtToCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.VehicleCode_Length
@@ -3634,7 +3634,7 @@ Public Class ReportParameters
         '
         'TxtFCode
         '
-        Me.TxtFCode.AcceptsReturn = True
+        Me.TxtFCode.AcceptsReturn = true
         Me.TxtFCode.AccessibleDescription = ""
         Me.TxtFCode.Location = New System.Drawing.Point(259, 211)
         Me.TxtFCode.MaxLength = 10
@@ -3660,7 +3660,7 @@ Public Class ReportParameters
         Me.LinkLabel8.Name = "LinkLabel8"
         Me.LinkLabel8.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel8.TabIndex = 107
-        Me.LinkLabel8.TabStop = True
+        Me.LinkLabel8.TabStop = true
         Me.LinkLabel8.Text = "Other Reports"
         Me.LinkLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -3744,10 +3744,10 @@ Public Class ReportParameters
         Me.GrpVehicleLedger.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpVehicleLedger.Location = New System.Drawing.Point(0, 0)
         Me.GrpVehicleLedger.Name = "GrpVehicleLedger"
-        Me.GrpVehicleLedger.Size = New System.Drawing.Size(804, 521)
+        Me.GrpVehicleLedger.Size = New System.Drawing.Size(804, 583)
         Me.GrpVehicleLedger.TabIndex = 31
         Me.GrpVehicleLedger.Text = "Vehicle Revenue"
-        Me.GrpVehicleLedger.Visible = False
+        Me.GrpVehicleLedger.Visible = false
         '
         'Label39
         '
@@ -3761,38 +3761,38 @@ Public Class ReportParameters
         '
         'ChkShowOpeneing
         '
-        Me.ChkShowOpeneing.AutoSize = True
+        Me.ChkShowOpeneing.AutoSize = true
         Me.ChkShowOpeneing.BackColor = System.Drawing.Color.Transparent
         Me.ChkShowOpeneing.Location = New System.Drawing.Point(423, 190)
         Me.ChkShowOpeneing.Name = "ChkShowOpeneing"
         Me.ChkShowOpeneing.Size = New System.Drawing.Size(96, 17)
         Me.ChkShowOpeneing.TabIndex = 138
         Me.ChkShowOpeneing.Text = "Show Opening"
-        Me.ChkShowOpeneing.UseVisualStyleBackColor = False
+        Me.ChkShowOpeneing.UseVisualStyleBackColor = false
         '
         'RbtSummaryVLR
         '
-        Me.RbtSummaryVLR.AutoSize = True
+        Me.RbtSummaryVLR.AutoSize = true
         Me.RbtSummaryVLR.BackColor = System.Drawing.Color.Transparent
         Me.RbtSummaryVLR.Location = New System.Drawing.Point(468, 349)
         Me.RbtSummaryVLR.Name = "RbtSummaryVLR"
         Me.RbtSummaryVLR.Size = New System.Drawing.Size(68, 17)
         Me.RbtSummaryVLR.TabIndex = 137
         Me.RbtSummaryVLR.Text = "Summary"
-        Me.RbtSummaryVLR.UseVisualStyleBackColor = False
+        Me.RbtSummaryVLR.UseVisualStyleBackColor = false
         '
         'RbtDetailVLR
         '
-        Me.RbtDetailVLR.AutoSize = True
+        Me.RbtDetailVLR.AutoSize = true
         Me.RbtDetailVLR.BackColor = System.Drawing.Color.Transparent
-        Me.RbtDetailVLR.Checked = True
+        Me.RbtDetailVLR.Checked = true
         Me.RbtDetailVLR.Location = New System.Drawing.Point(331, 349)
         Me.RbtDetailVLR.Name = "RbtDetailVLR"
         Me.RbtDetailVLR.Size = New System.Drawing.Size(52, 17)
         Me.RbtDetailVLR.TabIndex = 136
-        Me.RbtDetailVLR.TabStop = True
+        Me.RbtDetailVLR.TabStop = true
         Me.RbtDetailVLR.Text = "Detail"
-        Me.RbtDetailVLR.UseVisualStyleBackColor = False
+        Me.RbtDetailVLR.UseVisualStyleBackColor = false
         '
         'BtnLstToOwnerVLR
         '
@@ -3801,8 +3801,8 @@ Public Class ReportParameters
         Me.BtnLstToOwnerVLR.Name = "BtnLstToOwnerVLR"
         Me.BtnLstToOwnerVLR.Size = New System.Drawing.Size(24, 20)
         Me.BtnLstToOwnerVLR.TabIndex = 135
-        Me.BtnLstToOwnerVLR.TabStop = False
-        Me.BtnLstToOwnerVLR.UseVisualStyleBackColor = False
+        Me.BtnLstToOwnerVLR.TabStop = false
+        Me.BtnLstToOwnerVLR.UseVisualStyleBackColor = false
         '
         'TxtToOwnerVLR
         '
@@ -3833,8 +3833,8 @@ Public Class ReportParameters
         Me.BtnLstFrOwnerVLR.Name = "BtnLstFrOwnerVLR"
         Me.BtnLstFrOwnerVLR.Size = New System.Drawing.Size(24, 20)
         Me.BtnLstFrOwnerVLR.TabIndex = 133
-        Me.BtnLstFrOwnerVLR.TabStop = False
-        Me.BtnLstFrOwnerVLR.UseVisualStyleBackColor = False
+        Me.BtnLstFrOwnerVLR.TabStop = false
+        Me.BtnLstFrOwnerVLR.UseVisualStyleBackColor = false
         '
         'TxtFrOwnerVLR
         '
@@ -3879,7 +3879,7 @@ Public Class ReportParameters
         '
         'TxtBranchCodeVLR
         '
-        Me.TxtBranchCodeVLR.AcceptsReturn = True
+        Me.TxtBranchCodeVLR.AcceptsReturn = true
         Me.TxtBranchCodeVLR.AccessibleDescription = ""
         Me.TxtBranchCodeVLR.Location = New System.Drawing.Point(248, 219)
         Me.TxtBranchCodeVLR.MaxLength = 10
@@ -3905,7 +3905,7 @@ Public Class ReportParameters
         Me.LinkLabel9.Name = "LinkLabel9"
         Me.LinkLabel9.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel9.TabIndex = 107
-        Me.LinkLabel9.TabStop = True
+        Me.LinkLabel9.TabStop = true
         Me.LinkLabel9.Text = "Other Reports"
         Me.LinkLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -3916,8 +3916,8 @@ Public Class ReportParameters
         Me.BtnLstToVehicleVLR.Name = "BtnLstToVehicleVLR"
         Me.BtnLstToVehicleVLR.Size = New System.Drawing.Size(24, 20)
         Me.BtnLstToVehicleVLR.TabIndex = 106
-        Me.BtnLstToVehicleVLR.TabStop = False
-        Me.BtnLstToVehicleVLR.UseVisualStyleBackColor = False
+        Me.BtnLstToVehicleVLR.TabStop = false
+        Me.BtnLstToVehicleVLR.UseVisualStyleBackColor = false
         '
         'TxtToVehicleVLR
         '
@@ -3972,8 +3972,8 @@ Public Class ReportParameters
         Me.BtnLstFrVehicleVLR.Name = "BtnLstFrVehicleVLR"
         Me.BtnLstFrVehicleVLR.Size = New System.Drawing.Size(24, 20)
         Me.BtnLstFrVehicleVLR.TabIndex = 99
-        Me.BtnLstFrVehicleVLR.TabStop = False
-        Me.BtnLstFrVehicleVLR.UseVisualStyleBackColor = False
+        Me.BtnLstFrVehicleVLR.TabStop = false
+        Me.BtnLstFrVehicleVLR.UseVisualStyleBackColor = false
         '
         'TxtFrVehicleVLR
         '
@@ -4029,12 +4029,12 @@ Public Class ReportParameters
         Me.BtnLstBranchVLR.Name = "BtnLstBranchVLR"
         Me.BtnLstBranchVLR.Size = New System.Drawing.Size(24, 20)
         Me.BtnLstBranchVLR.TabIndex = 120
-        Me.BtnLstBranchVLR.TabStop = False
-        Me.BtnLstBranchVLR.UseVisualStyleBackColor = False
+        Me.BtnLstBranchVLR.TabStop = false
+        Me.BtnLstBranchVLR.UseVisualStyleBackColor = false
         '
         'GrpVehicleRevenue
         '
-        Me.GrpVehicleRevenue.Controls.Add(Me.RadioButton1)
+        Me.GrpVehicleRevenue.Controls.Add(Me.RptSummaryVRP)
         Me.GrpVehicleRevenue.Controls.Add(Me.RadioButton2)
         Me.GrpVehicleRevenue.Controls.Add(Me.Label88)
         Me.GrpVehicleRevenue.Controls.Add(Me.DtToVR)
@@ -4050,7 +4050,31 @@ Public Class ReportParameters
         Me.GrpVehicleRevenue.Size = New System.Drawing.Size(804, 521)
         Me.GrpVehicleRevenue.TabIndex = 31
         Me.GrpVehicleRevenue.Text = "Vehicle Revenue"
-        Me.GrpVehicleRevenue.Visible = False
+        Me.GrpVehicleRevenue.Visible = false
+        '
+        'RptSummaryVRP
+        '
+        Me.RptSummaryVRP.AutoSize = true
+        Me.RptSummaryVRP.BackColor = System.Drawing.Color.Transparent
+        Me.RptSummaryVRP.Location = New System.Drawing.Point(430, 349)
+        Me.RptSummaryVRP.Name = "RptSummaryVRP"
+        Me.RptSummaryVRP.Size = New System.Drawing.Size(68, 17)
+        Me.RptSummaryVRP.TabIndex = 149
+        Me.RptSummaryVRP.Text = "Summary"
+        Me.RptSummaryVRP.UseVisualStyleBackColor = false
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = true
+        Me.RadioButton2.BackColor = System.Drawing.Color.Transparent
+        Me.RadioButton2.Checked = true
+        Me.RadioButton2.Location = New System.Drawing.Point(293, 349)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(52, 17)
+        Me.RadioButton2.TabIndex = 148
+        Me.RadioButton2.TabStop = true
+        Me.RadioButton2.Text = "Detail"
+        Me.RadioButton2.UseVisualStyleBackColor = false
         '
         'Label88
         '
@@ -4130,44 +4154,20 @@ Public Class ReportParameters
         '
         'LstVehicleVR
         '
-        Me.LstVehicleVR.CheckBoxes = True
+        Me.LstVehicleVR.CheckBoxes = true
         Me.LstVehicleVR.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader6})
         Me.LstVehicleVR.Location = New System.Drawing.Point(245, 176)
         Me.LstVehicleVR.Name = "LstVehicleVR"
         Me.LstVehicleVR.Size = New System.Drawing.Size(383, 140)
         Me.LstVehicleVR.TabIndex = 141
-        Me.LstVehicleVR.UseCompatibleStateImageBehavior = False
+        Me.LstVehicleVR.UseCompatibleStateImageBehavior = false
         Me.LstVehicleVR.View = System.Windows.Forms.View.Details
-        Me.LstVehicleVR.Visible = False
+        Me.LstVehicleVR.Visible = false
         '
         'ColumnHeader6
         '
         Me.ColumnHeader6.Text = "Vehicles"
         Me.ColumnHeader6.Width = 192
-        '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.BackColor = System.Drawing.Color.Transparent
-        Me.RadioButton1.Location = New System.Drawing.Point(430, 349)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(68, 17)
-        Me.RadioButton1.TabIndex = 149
-        Me.RadioButton1.Text = "Summary"
-        Me.RadioButton1.UseVisualStyleBackColor = False
-        '
-        'RadioButton2
-        '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.BackColor = System.Drawing.Color.Transparent
-        Me.RadioButton2.Checked = True
-        Me.RadioButton2.Location = New System.Drawing.Point(293, 349)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(52, 17)
-        Me.RadioButton2.TabIndex = 148
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Detail"
-        Me.RadioButton2.UseVisualStyleBackColor = False
         '
         'ReportParameters
         '
@@ -4176,11 +4176,14 @@ Public Class ReportParameters
         Me.CancelButton = Me.BtnCancel
         Me.ClientSize = New System.Drawing.Size(804, 583)
         Me.Controls.Add(Me.GrpVehicleRevenue)
+        Me.Controls.Add(Me.PnlProgressBare)
+        Me.Controls.Add(Me.GrpButtons)
+        Me.Controls.Add(Me.GrpTransactionList)
+        Me.Controls.Add(Me.GrpGeneralLedger)
+        Me.Controls.Add(Me.GrpOtherReports)
         Me.Controls.Add(Me.GrpVehicleLedger)
         Me.Controls.Add(Me.GrpVouchersList)
         Me.Controls.Add(Me.GrpVoucherDocuments)
-        Me.Controls.Add(Me.PnlProgressBare)
-        Me.Controls.Add(Me.GrpButtons)
         Me.Controls.Add(Me.GrpVehicleBill)
         Me.Controls.Add(Me.GrpTransactionDocuments)
         Me.Controls.Add(Me.GrpCOAReportList)
@@ -4188,104 +4191,101 @@ Public Class ReportParameters
         Me.Controls.Add(Me.GrpFinancialStatements)
         Me.Controls.Add(Me.GrpCashFlowStatements)
         Me.Controls.Add(Me.GrpVehicleFreightStatements)
-        Me.Controls.Add(Me.GrpTransactionList)
-        Me.Controls.Add(Me.GrpGeneralLedger)
-        Me.Controls.Add(Me.GrpOtherReports)
-        Me.KeyPreview = True
+        Me.KeyPreview = true
         Me.Name = "ReportParameters"
-        Me.ShowInTaskbar = False
+        Me.ShowInTaskbar = false
         Me.Text = "Print"
-        Me.TopMost = True
+        Me.TopMost = true
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.GrpButtons.ResumeLayout(False)
-        Me.GrpTransactionDocuments.ResumeLayout(False)
-        Me.GrpTransactionDocuments.PerformLayout()
-        CType(Me.TxtToPartyCode, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtToTransactionNumber, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtFromPartyCode, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtFromTransactionNumber, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GrpOtherReports.ResumeLayout(False)
-        Me.GrpTransactionList.ResumeLayout(False)
-        Me.GrpTransactionList.PerformLayout()
-        CType(Me.TxtDocumentNatureTRL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtToItemCodeTRL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtFromItemCodeTRL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtToPartyCodeTRL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtToTransactionNoTRL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtFromPartyCodeTRL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtFromTransactionNoTRL, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GrpGeneralLedger.ResumeLayout(False)
-        Me.GrpGeneralLedger.PerformLayout()
-        CType(Me.txtDocumentNatureIL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtToBranchCodeIL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtFromBranchCodeIL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtToGLCodeIL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtToDivisionIL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtFromGLCodeIL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtFromDivisionCodeIL, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PnlProgressBare.ResumeLayout(False)
-        Me.PnlProgressBare.PerformLayout()
-        CType(Me.imgProgressBar, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GrpVehicleBill.ResumeLayout(False)
-        Me.GrpVehicleBill.PerformLayout()
-        CType(Me.ChkTripWithBill, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtToOwnerCodeVB, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtFromOwnerCodeVB, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtToVehicleCodeVB, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtFromVehicleCodeVB, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GrpCOAReportList.ResumeLayout(False)
-        Me.GrpCOAReportList.PerformLayout()
-        CType(Me.TxtToGlCodeCOAL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtFromGlCodeCOAL, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GrpVoucherDocuments.ResumeLayout(False)
-        Me.GrpVoucherDocuments.PerformLayout()
-        CType(Me.TxtVoucherTypesVDO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtToVoucherNoVDO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtFromVoucherNoVDO, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GrpVouchersList.ResumeLayout(False)
-        Me.GrpVouchersList.PerformLayout()
-        CType(Me.TxtVoucherTypesVLT, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtToGLCodeVLT, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtFromGLCodeVLT, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtToVoucherNoListVLT, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtFromVoucherNoListVLT, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GrpCashFlowStatements.ResumeLayout(False)
-        Me.GrpCashFlowStatements.PerformLayout()
-        CType(Me.TxtCashAccountsCFS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtToBranchCodeCFS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtFromBranchCodeCFS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtToDivisionCFS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtFromDivisionCFS, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GrpFinancialStatements.ResumeLayout(False)
-        Me.GrpFinancialStatements.PerformLayout()
-        CType(Me.TxtToGLCodeFS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtFromGLCodeFS, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GrpVehicleFreightStatements.ResumeLayout(False)
-        Me.GrpVehicleFreightStatements.PerformLayout()
-        CType(Me.TxtToTransactionNoVFS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtFromTransactionNoVFS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtFromBranchVFS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtToCustomerVFS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtToVehicleVFS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtFromCustomerVFS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtFromVehicleVFS, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GrpSetupList.ResumeLayout(False)
-        Me.GrpSetupList.PerformLayout()
-        CType(Me.TxtToCode, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtFCode, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GrpVehicleLedger.ResumeLayout(False)
-        Me.GrpVehicleLedger.PerformLayout()
-        CType(Me.TxtToOwnerVLR, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtFrOwnerVLR, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtBranchCodeVLR, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtToVehicleVLR, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TxtFrVehicleVLR, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GrpVehicleRevenue.ResumeLayout(False)
-        Me.GrpVehicleRevenue.PerformLayout()
-        CType(Me.TxtVehicleLstVR, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
+        Me.GrpButtons.ResumeLayout(false)
+        Me.GrpTransactionDocuments.ResumeLayout(false)
+        Me.GrpTransactionDocuments.PerformLayout
+        CType(Me.TxtToPartyCode,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtToTransactionNumber,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtFromPartyCode,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtFromTransactionNumber,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GrpOtherReports.ResumeLayout(false)
+        Me.GrpTransactionList.ResumeLayout(false)
+        Me.GrpTransactionList.PerformLayout
+        CType(Me.TxtDocumentNatureTRL,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtToItemCodeTRL,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtFromItemCodeTRL,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtToPartyCodeTRL,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtToTransactionNoTRL,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtFromPartyCodeTRL,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtFromTransactionNoTRL,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GrpGeneralLedger.ResumeLayout(false)
+        Me.GrpGeneralLedger.PerformLayout
+        CType(Me.txtDocumentNatureIL,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtToBranchCodeIL,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtFromBranchCodeIL,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtToGLCodeIL,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtToDivisionIL,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtFromGLCodeIL,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtFromDivisionCodeIL,System.ComponentModel.ISupportInitialize).EndInit
+        Me.PnlProgressBare.ResumeLayout(false)
+        Me.PnlProgressBare.PerformLayout
+        CType(Me.imgProgressBar,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GrpVehicleBill.ResumeLayout(false)
+        Me.GrpVehicleBill.PerformLayout
+        CType(Me.ChkTripWithBill,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtToOwnerCodeVB,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtFromOwnerCodeVB,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtToVehicleCodeVB,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtFromVehicleCodeVB,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GrpCOAReportList.ResumeLayout(false)
+        Me.GrpCOAReportList.PerformLayout
+        CType(Me.TxtToGlCodeCOAL,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtFromGlCodeCOAL,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GrpVoucherDocuments.ResumeLayout(false)
+        Me.GrpVoucherDocuments.PerformLayout
+        CType(Me.TxtVoucherTypesVDO,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtToVoucherNoVDO,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtFromVoucherNoVDO,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GrpVouchersList.ResumeLayout(false)
+        Me.GrpVouchersList.PerformLayout
+        CType(Me.TxtVoucherTypesVLT,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtToGLCodeVLT,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtFromGLCodeVLT,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtToVoucherNoListVLT,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtFromVoucherNoListVLT,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GrpCashFlowStatements.ResumeLayout(false)
+        Me.GrpCashFlowStatements.PerformLayout
+        CType(Me.TxtCashAccountsCFS,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtToBranchCodeCFS,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtFromBranchCodeCFS,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtToDivisionCFS,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtFromDivisionCFS,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GrpFinancialStatements.ResumeLayout(false)
+        Me.GrpFinancialStatements.PerformLayout
+        CType(Me.TxtToGLCodeFS,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtFromGLCodeFS,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GrpVehicleFreightStatements.ResumeLayout(false)
+        Me.GrpVehicleFreightStatements.PerformLayout
+        CType(Me.TxtToTransactionNoVFS,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtFromTransactionNoVFS,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtFromBranchVFS,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtToCustomerVFS,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtToVehicleVFS,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtFromCustomerVFS,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtFromVehicleVFS,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GrpSetupList.ResumeLayout(false)
+        Me.GrpSetupList.PerformLayout
+        CType(Me.TxtToCode,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtFCode,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GrpVehicleLedger.ResumeLayout(false)
+        Me.GrpVehicleLedger.PerformLayout
+        CType(Me.TxtToOwnerVLR,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtFrOwnerVLR,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtBranchCodeVLR,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtToVehicleVLR,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TxtFrVehicleVLR,System.ComponentModel.ISupportInitialize).EndInit
+        Me.GrpVehicleRevenue.ResumeLayout(false)
+        Me.GrpVehicleRevenue.PerformLayout
+        CType(Me.TxtVehicleLstVR,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
 
 #End Region
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -4514,7 +4514,7 @@ Public Class ReportParameters
         ElseIf ReportFile = ReportProcess.ReportFiles.VehicleRevenuePivot Then
             Dim reportDoc As CrystalDecisions.CrystalReports.Engine.ReportDocument = Nothing
             '  If VehicleRevenuePivotProcess(ReportFiles.VehicleRevenue, GetDocumentTypeCode(LstVehicleVR), ChkShowOpeneing.Checked, RbtSummaryVLR.Checked, DtFromVR.Value, DtToVR.Value, TxtFrVehicleVLR.Text, TxtToVehicleVLR.Text, TxtFrOwnerVLR.Text, TxtToOwnerVLR.Text, reportDoc, Nothing, 0, CmbTypeVLR.SelectedIndex) = True Then
-            If VehicleRevenuePivotProcess(ReportFiles.VehicleRevenue, GetDocumentTypeCode(LstVehicleVR), False, False, DtFromVR.Value, DtToVR.Value, String.Empty, String.Empty, String.Empty, String.Empty, reportDoc, Nothing, 0, CmbTypeVLR.SelectedIndex) = True Then
+            If VehicleRevenuePivotProcess(ReportFiles.VehicleRevenue, GetDocumentTypeCode(LstVehicleVR), False, RptSummaryVRP.Checked, DtFromVR.Value, DtToVR.Value, String.Empty, String.Empty, String.Empty, String.Empty, reportDoc, Nothing, 0, CmbTypeVLR.SelectedIndex) = True Then
 
                 Dim rpViewer As New ReportViewer
                 rpViewer.SetSource = reportDoc
