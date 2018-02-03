@@ -15,9 +15,10 @@ Namespace GeneralLedger
             TypeCode = 3
             Type = 4
             UrduDescription = 5
-            Amount = 6
-            GLCode = 7
-            GLDescription = 8
+            Description = 6
+            Amount = 7
+            GLCode = 8
+            GLDescription = 9
         End Enum
         Private Sub JournalVehicleAdjustment_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
             ''''''''''''For just solving the problem of this form when closing then mdi windows handling problum
@@ -25,7 +26,6 @@ Namespace GeneralLedger
             CmbGlDesc = New FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
             CmbDivCode = New FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
             CmbDivDesc = New FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
-
             AddHandler Me.Paint, AddressOf mdlFunctions.PaintTheForms
             PainFPGrid(FpVehicleAdjustmentGrid)
             keychange()
@@ -108,28 +108,35 @@ Namespace GeneralLedger
                 Me.lblCheque.Visible = True : Me.CmbMode.Visible = True : Me.lblMode.Visible = True : Me.TxtChequeNo.Visible = True
             End If
 
+
+            
+            'TOTAL CELL SETTINGS
+            Dim TotalCellType= New FarPoint.Win.Spread.CellType.CurrencyCellType
+            TotalCellType.ShowCurrencySymbol=False
+            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.Cells(0, GridCols.Amount - 1).Value = "Total:"
+
+            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.Cells(0, GridCols.Amount).HorizontalAlignment=FarPoint.Win.Spread.CellHorizontalAlignment.Right
+            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.Cells(0, GridCols.Amount - 1).HorizontalAlignment=FarPoint.Win.Spread.CellHorizontalAlignment.Right
+            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.Cells(0, GridCols.Amount).CellType= TotalCellType
+            Dim r As Integer
+            Dim j As Integer
+            For r = 0 To Me.FpVehicleAdjustmentGrid.Sheets(0).RowCount
+                For j = 0 To Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnCount
+                    Me.FpVehicleAdjustmentGrid.Sheets(0).Models.Data.SetValue(r, j, j + r * Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnCount)
+                Next j
+            Next r
+            Dim i As Integer
+            i = 0
+            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.SetAggregationType(0, GridCols.Amount, FarPoint.Win.Spread.Model.AggregationType.Sum)
+            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.Cells(0, i).Value = "Sum"
+
+
+
         End Sub
         Dim DsVehicle As DataSet
         Dim DsGLs As DataSet
         Dim DsDiv As DataSet
-        Public Sub CalculateTotals()
-            Dim nRow As Long
-            Dim Dedit As Double
-            Dim Credit As Double
-            For nRow = 0 To FpVehicleAdjustmentGrid.Sheets(0).RowCount - 1
-                If Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(nRow, GridCols.VehicleAdjustmentNumber)) <> "" And Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(nRow, GridCols.GLCode)) <> "" Then
-
-                    Dedit = Dedit + CDbl(FpVehicleAdjustmentGrid.Sheets(0).GetText(nRow, GridCols.Amount) & "0")
-                    'Credit = Credit + CDbl(FpVehicleAdjustmentGrid.Sheets(0).GetText(nRow, GridCols.Credit) & "0")
-                    'nSalesTax = nSalesTax + FpVehicleAdjustmentGrid.Sheets(0).GetText(GridCols.SalesTax, nRow)
-                    'CreditIncSTax = CreditIncSTax + Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(GridCols.AmountIncludeSTax, nRow))
-                End If
-            Next
-            TxtDebit.Text = Dedit
-            TxtCredit.Text = Credit
-            'CheckTotalBalance()
-
-        End Sub
+        
         Public Function ValidateData() As Boolean
             Dim nGridRowCount As Long
             If CheckGridData(nGridRowCount) Then
@@ -197,12 +204,12 @@ Namespace GeneralLedger
         Private Sub mnuClearGrid_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MnuClearGrid.Click
             FpVehicleAdjustmentGrid.Sheets(0).ClearRange(0, 0, FpVehicleAdjustmentGrid.Sheets(0).Rows.Count, FpVehicleAdjustmentGrid.Sheets(0).ColumnCount, True)
             FpVehicleAdjustmentGrid.Sheets(0).Cells(0, 0, FpVehicleAdjustmentGrid.Sheets(0).Rows.Count - 1, FpVehicleAdjustmentGrid.Sheets(0).ColumnCount - 1).Tag = String.Empty
-            CalculateTotals()
+            
         End Sub
         Private Sub mnuDelete_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles MnuDeleteRow.Click
             FpVehicleAdjustmentGrid.Sheets(0).ClearRange(FpVehicleAdjustmentGrid.Sheets(0).ActiveRowIndex, 0, 1, FpVehicleAdjustmentGrid.Sheets(0).ColumnCount, True)
             FpVehicleAdjustmentGrid.Sheets(0).Cells(FpVehicleAdjustmentGrid.Sheets(0).ActiveRowIndex, 0, FpVehicleAdjustmentGrid.Sheets(0).ActiveRowIndex, FpVehicleAdjustmentGrid.Sheets(0).ColumnCount - 1).Tag = String.Empty
-            CalculateTotals()
+            
         End Sub
         Private Sub MnuInsertRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MnuInsertRow.Click
             FpVehicleAdjustmentGrid.Sheets(0).Rows.Add(FpVehicleAdjustmentGrid.Sheets(0).ActiveRowIndex, 1)
@@ -245,9 +252,6 @@ Namespace GeneralLedger
 
             End Try
 
-        End Sub
-        Public Sub SetCreditDebitTotal(ByVal mode As AzamTechnologies.DataManager.DataMode)
-            CalculateTotals()
         End Sub
         Private Sub CmdBranchList_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
             If txtBranchCode.Enabled = False Then Exit Sub
@@ -402,7 +406,7 @@ Namespace GeneralLedger
             End If
             If LockGrid = False Then
                 LockGrid = True
-                CalculateTotals()
+                
                 ' Call VehicleAdjustmentGrid_ButtonClicked(Col, e.row, 0)
                 LockGrid = False
             End If
