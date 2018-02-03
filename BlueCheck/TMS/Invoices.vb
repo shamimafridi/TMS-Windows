@@ -700,7 +700,7 @@ Namespace GeneralLedger
         Me.TxtAdvanceReferenceNo.Appearance = Appearance1
         Me.TxtAdvanceReferenceNo.BackColor = System.Drawing.SystemColors.Window
         Me.TxtAdvanceReferenceNo.Location = New System.Drawing.Point(152, 332)
-        Me.TxtAdvanceReferenceNo.MaxLength = Global.BusinessLeaf.My.MySettings.Default.VehicleCode_Length
+        Me.TxtAdvanceReferenceNo.MaxLength = 10
         Me.TxtAdvanceReferenceNo.Name = "TxtAdvanceReferenceNo"
         Me.TxtAdvanceReferenceNo.Size = New System.Drawing.Size(138, 21)
         Me.TxtAdvanceReferenceNo.TabIndex = 9
