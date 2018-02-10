@@ -1,7 +1,8 @@
-Infragistics.Win.UltraWinEditors.UltraTextEditor, Infragistics4.Win.UltraWinEditors.v17.2, Version=17.2.20172.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
 Infragistics.Win.UltraWinDock.UltraDockManager, Infragistics4.Win.UltraWinDock.v17.2, Version=17.2.20172.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
-Infragistics.Win.UltraWinEditors.UltraComboEditor, Infragistics4.Win.UltraWinEditors.v17.2, Version=17.2.20172.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
-Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager, Infragistics4.Win.UltraWinTabbedMdi.v17.2, Version=17.2.20172.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
 Infragistics.Win.UltraWinExplorerBar.UltraExplorerBar, Infragistics4.Win.UltraWinExplorerBar.v17.2, Version=17.2.20172.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
-Infragistics.Win.UltraWinEditors.UltraNumericEditor, Infragistics4.Win.UltraWinEditors.v17.2, Version=17.2.20172.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
 Infragistics.Win.UltraWinEditors.UltraCheckEditor, Infragistics4.Win.UltraWinEditors.v17.2, Version=17.2.20172.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Win.UltraWinEditors.UltraNumericEditor, Infragistics4.Win.UltraWinEditors.v17.2, Version=17.2.20172.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager, Infragistics4.Win.UltraWinTabbedMdi.v17.2, Version=17.2.20172.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Win.UltraWinEditors.UltraComboEditor, Infragistics4.Win.UltraWinEditors.v17.2, Version=17.2.20172.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Win.UltraWinEditors.UltraTextEditor, Infragistics4.Win.UltraWinEditors.v17.2, Version=17.2.20172.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+FarPoint.Win.Spread.FpSpread, FarPoint.Win.Spread, Version=5.0.3511.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457

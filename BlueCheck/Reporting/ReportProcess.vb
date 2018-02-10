@@ -630,13 +630,13 @@ Module ReportProcess
                 Acc.PopulateDataSet(Ds, "[SelectVehicleRevenueSummaryReport]",
                     "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "ShowOpening", IsShowOpeinging)
 
-                strReporTitle = "Vehicle Revenue Summary"
+                strReporTitle = "INCOME & EXPENSES SUMMERY"
                 strReportPath = Application.StartupPath & "\Reports\VehicleRevenueSummary.rpt"
             Else 
                 Acc.PopulateDataSet(Ds, "[SelectVehicleRevenueReport]",
                     "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "ShowOpening", IsShowOpeinging)
 
-                strReporTitle = "Vehicle Revenue"
+                strReporTitle = "INCOME & EXPENSES"
                 strReportPath = Application.StartupPath & "\Reports\VehicleRevenue.rpt"
             End If
 
