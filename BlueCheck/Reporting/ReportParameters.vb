@@ -804,19 +804,19 @@ Public Class ReportParameters
         '
         'BtnToPartyList
         '
-        Me.BtnToPartyList.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnToPartyList.BackColor = System.Drawing.SystemColors.Control
         Me.BtnToPartyList.Location = New System.Drawing.Point(624, 256)
         Me.BtnToPartyList.Name = "BtnToPartyList"
         Me.BtnToPartyList.Size = New System.Drawing.Size(24, 20)
         Me.BtnToPartyList.TabIndex = 106
-        Me.BtnToPartyList.TabStop = false
-        Me.BtnToPartyList.UseVisualStyleBackColor = false
+        Me.BtnToPartyList.TabStop = False
+        Me.BtnToPartyList.UseVisualStyleBackColor = False
         '
         'TxtToPartyCode
         '
-        Appearance1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Appearance1.BackColor = System.Drawing.SystemColors.Control
         Me.TxtToPartyCode.Appearance = Appearance1
-        Me.TxtToPartyCode.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.TxtToPartyCode.BackColor = System.Drawing.SystemColors.Control
         Me.TxtToPartyCode.Location = New System.Drawing.Point(520, 256)
         Me.TxtToPartyCode.MaxLength = 5
         Me.TxtToPartyCode.Name = "TxtToPartyCode"
@@ -826,7 +826,7 @@ Public Class ReportParameters
         '
         'txtToTransactionNumber
         '
-        Me.txtToTransactionNumber.AcceptsReturn = true
+        Me.txtToTransactionNumber.AcceptsReturn = True
         Me.txtToTransactionNumber.AccessibleDescription = "YM.AUTO"
         Me.txtToTransactionNumber.Location = New System.Drawing.Point(520, 208)
         Me.txtToTransactionNumber.MaxLength = 10
@@ -880,19 +880,19 @@ Public Class ReportParameters
         '
         'BtnFromPartyList
         '
-        Me.BtnFromPartyList.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromPartyList.BackColor = System.Drawing.SystemColors.Control
         Me.BtnFromPartyList.Location = New System.Drawing.Point(344, 256)
         Me.BtnFromPartyList.Name = "BtnFromPartyList"
         Me.BtnFromPartyList.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromPartyList.TabIndex = 99
-        Me.BtnFromPartyList.TabStop = false
-        Me.BtnFromPartyList.UseVisualStyleBackColor = false
+        Me.BtnFromPartyList.TabStop = False
+        Me.BtnFromPartyList.UseVisualStyleBackColor = False
         '
         'TxtFromPartyCode
         '
-        Appearance2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Appearance2.BackColor = System.Drawing.SystemColors.Control
         Me.TxtFromPartyCode.Appearance = Appearance2
-        Me.TxtFromPartyCode.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.TxtFromPartyCode.BackColor = System.Drawing.SystemColors.Control
         Me.TxtFromPartyCode.Location = New System.Drawing.Point(240, 256)
         Me.TxtFromPartyCode.MaxLength = 5
         Me.TxtFromPartyCode.Name = "TxtFromPartyCode"
@@ -902,7 +902,7 @@ Public Class ReportParameters
         '
         'txtFromTransactionNumber
         '
-        Me.txtFromTransactionNumber.AcceptsReturn = true
+        Me.txtFromTransactionNumber.AcceptsReturn = True
         Me.txtFromTransactionNumber.AccessibleDescription = "YM.AUTO"
         Me.txtFromTransactionNumber.Location = New System.Drawing.Point(240, 208)
         Me.txtFromTransactionNumber.MaxLength = 10
@@ -979,7 +979,7 @@ Public Class ReportParameters
         Me.chkItemList.Name = "chkItemList"
         Me.chkItemList.Size = New System.Drawing.Size(212, 20)
         Me.chkItemList.TabIndex = 20
-        Me.chkItemList.TabStop = true
+        Me.chkItemList.TabStop = True
         Me.chkItemList.Text = "Item List"
         '
         'chkItemTrialBalance
@@ -989,7 +989,7 @@ Public Class ReportParameters
         Me.chkItemTrialBalance.Name = "chkItemTrialBalance"
         Me.chkItemTrialBalance.Size = New System.Drawing.Size(212, 20)
         Me.chkItemTrialBalance.TabIndex = 19
-        Me.chkItemTrialBalance.TabStop = true
+        Me.chkItemTrialBalance.TabStop = True
         Me.chkItemTrialBalance.Text = "Item Trial Balance"
         '
         'chkGeneralLedgers
@@ -999,7 +999,7 @@ Public Class ReportParameters
         Me.chkGeneralLedgers.Name = "chkGeneralLedgers"
         Me.chkGeneralLedgers.Size = New System.Drawing.Size(212, 20)
         Me.chkGeneralLedgers.TabIndex = 18
-        Me.chkGeneralLedgers.TabStop = true
+        Me.chkGeneralLedgers.TabStop = True
         Me.chkGeneralLedgers.Text = "General Ledger"
         '
         'chkTransactionListing
@@ -1009,7 +1009,7 @@ Public Class ReportParameters
         Me.chkTransactionListing.Name = "chkTransactionListing"
         Me.chkTransactionListing.Size = New System.Drawing.Size(212, 20)
         Me.chkTransactionListing.TabIndex = 17
-        Me.chkTransactionListing.TabStop = true
+        Me.chkTransactionListing.TabStop = True
         Me.chkTransactionListing.Text = "Transaction Listing"
         '
         'chkSaleRet
@@ -1019,7 +1019,7 @@ Public Class ReportParameters
         Me.chkSaleRet.Name = "chkSaleRet"
         Me.chkSaleRet.Size = New System.Drawing.Size(212, 20)
         Me.chkSaleRet.TabIndex = 16
-        Me.chkSaleRet.TabStop = true
+        Me.chkSaleRet.TabStop = True
         Me.chkSaleRet.Text = "Sale Invoice Return"
         '
         'chkSale
@@ -1029,7 +1029,7 @@ Public Class ReportParameters
         Me.chkSale.Name = "chkSale"
         Me.chkSale.Size = New System.Drawing.Size(212, 20)
         Me.chkSale.TabIndex = 15
-        Me.chkSale.TabStop = true
+        Me.chkSale.TabStop = True
         Me.chkSale.Text = "Sale Invoice"
         '
         'chkProductRecRet
@@ -1039,7 +1039,7 @@ Public Class ReportParameters
         Me.chkProductRecRet.Name = "chkProductRecRet"
         Me.chkProductRecRet.Size = New System.Drawing.Size(212, 20)
         Me.chkProductRecRet.TabIndex = 14
-        Me.chkProductRecRet.TabStop = true
+        Me.chkProductRecRet.TabStop = True
         Me.chkProductRecRet.Text = "Product Receiving Return Document"
         '
         'chkProductRec
@@ -1049,7 +1049,7 @@ Public Class ReportParameters
         Me.chkProductRec.Name = "chkProductRec"
         Me.chkProductRec.Size = New System.Drawing.Size(212, 20)
         Me.chkProductRec.TabIndex = 13
-        Me.chkProductRec.TabStop = true
+        Me.chkProductRec.TabStop = True
         Me.chkProductRec.Text = "Product Receiving "
         '
         'GrpTransactionList
@@ -1088,7 +1088,7 @@ Public Class ReportParameters
         Me.GrpTransactionList.Size = New System.Drawing.Size(804, 583)
         Me.GrpTransactionList.TabIndex = 20
         Me.GrpTransactionList.Text = "Transaction List"
-        Me.GrpTransactionList.Visible = false
+        Me.GrpTransactionList.Visible = False
         '
         'chkPageBreakTRL
         '
@@ -1098,17 +1098,17 @@ Public Class ReportParameters
         Me.chkPageBreakTRL.Size = New System.Drawing.Size(116, 16)
         Me.chkPageBreakTRL.TabIndex = 121
         Me.chkPageBreakTRL.Text = "Page Break"
-        Me.chkPageBreakTRL.UseVisualStyleBackColor = false
+        Me.chkPageBreakTRL.UseVisualStyleBackColor = False
         '
         'cmbToItemListTRL
         '
-        Me.cmbToItemListTRL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cmbToItemListTRL.BackColor = System.Drawing.SystemColors.Control
         Me.cmbToItemListTRL.Location = New System.Drawing.Point(648, 164)
         Me.cmbToItemListTRL.Name = "cmbToItemListTRL"
         Me.cmbToItemListTRL.Size = New System.Drawing.Size(24, 20)
         Me.cmbToItemListTRL.TabIndex = 119
-        Me.cmbToItemListTRL.TabStop = false
-        Me.cmbToItemListTRL.UseVisualStyleBackColor = false
+        Me.cmbToItemListTRL.TabStop = False
+        Me.cmbToItemListTRL.UseVisualStyleBackColor = False
         '
         'BtnChkDocumentNatureListTRL
         '
@@ -1139,7 +1139,7 @@ Public Class ReportParameters
         '
         'txtToItemCodeTRL
         '
-        Me.txtToItemCodeTRL.AcceptsReturn = true
+        Me.txtToItemCodeTRL.AcceptsReturn = True
         Me.txtToItemCodeTRL.AccessibleDescription = "YM.AUTO"
         Me.txtToItemCodeTRL.Location = New System.Drawing.Point(544, 164)
         Me.txtToItemCodeTRL.MaxLength = 10
@@ -1160,7 +1160,7 @@ Public Class ReportParameters
         '
         'txtFromItemCodeTRL
         '
-        Me.txtFromItemCodeTRL.AcceptsReturn = true
+        Me.txtFromItemCodeTRL.AcceptsReturn = True
         Me.txtFromItemCodeTRL.AccessibleDescription = ""
         Me.txtFromItemCodeTRL.Location = New System.Drawing.Point(260, 168)
         Me.txtFromItemCodeTRL.MaxLength = 10
@@ -1187,19 +1187,19 @@ Public Class ReportParameters
         Me.LblOtherReportsTRL.Name = "LblOtherReportsTRL"
         Me.LblOtherReportsTRL.Size = New System.Drawing.Size(75, 20)
         Me.LblOtherReportsTRL.TabIndex = 107
-        Me.LblOtherReportsTRL.TabStop = true
+        Me.LblOtherReportsTRL.TabStop = True
         Me.LblOtherReportsTRL.Text = "Other Reports"
         Me.LblOtherReportsTRL.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'cmbToPartyCodeListTRL
         '
-        Me.cmbToPartyCodeListTRL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cmbToPartyCodeListTRL.BackColor = System.Drawing.SystemColors.Control
         Me.cmbToPartyCodeListTRL.Location = New System.Drawing.Point(648, 240)
         Me.cmbToPartyCodeListTRL.Name = "cmbToPartyCodeListTRL"
         Me.cmbToPartyCodeListTRL.Size = New System.Drawing.Size(24, 20)
         Me.cmbToPartyCodeListTRL.TabIndex = 106
-        Me.cmbToPartyCodeListTRL.TabStop = false
-        Me.cmbToPartyCodeListTRL.UseVisualStyleBackColor = false
+        Me.cmbToPartyCodeListTRL.TabStop = False
+        Me.cmbToPartyCodeListTRL.UseVisualStyleBackColor = False
         '
         'txtToPartyCodeTRL
         '
@@ -1215,7 +1215,7 @@ Public Class ReportParameters
         '
         'txtToTransactionNoTRL
         '
-        Me.txtToTransactionNoTRL.AcceptsReturn = true
+        Me.txtToTransactionNoTRL.AcceptsReturn = True
         Me.txtToTransactionNoTRL.AccessibleDescription = "YM.AUTO"
         Me.txtToTransactionNoTRL.Location = New System.Drawing.Point(544, 192)
         Me.txtToTransactionNoTRL.MaxLength = 10
@@ -1270,13 +1270,13 @@ Public Class ReportParameters
         '
         'cmbFromPartyCodeListTRL
         '
-        Me.cmbFromPartyCodeListTRL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cmbFromPartyCodeListTRL.BackColor = System.Drawing.SystemColors.Control
         Me.cmbFromPartyCodeListTRL.Location = New System.Drawing.Point(364, 240)
         Me.cmbFromPartyCodeListTRL.Name = "cmbFromPartyCodeListTRL"
         Me.cmbFromPartyCodeListTRL.Size = New System.Drawing.Size(24, 20)
         Me.cmbFromPartyCodeListTRL.TabIndex = 99
-        Me.cmbFromPartyCodeListTRL.TabStop = false
-        Me.cmbFromPartyCodeListTRL.UseVisualStyleBackColor = false
+        Me.cmbFromPartyCodeListTRL.TabStop = False
+        Me.cmbFromPartyCodeListTRL.UseVisualStyleBackColor = False
         '
         'txtFromPartyCodeTRL
         '
@@ -1292,7 +1292,7 @@ Public Class ReportParameters
         '
         'txtFromTransactionNoTRL
         '
-        Me.txtFromTransactionNoTRL.AcceptsReturn = true
+        Me.txtFromTransactionNoTRL.AcceptsReturn = True
         Me.txtFromTransactionNoTRL.AccessibleDescription = "YM.AUTO"
         Me.txtFromTransactionNoTRL.Location = New System.Drawing.Point(260, 192)
         Me.txtFromTransactionNoTRL.MaxLength = 10
@@ -1348,25 +1348,25 @@ Public Class ReportParameters
         '
         'cmbFromItemListTRL
         '
-        Me.cmbFromItemListTRL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cmbFromItemListTRL.BackColor = System.Drawing.SystemColors.Control
         Me.cmbFromItemListTRL.Location = New System.Drawing.Point(364, 168)
         Me.cmbFromItemListTRL.Name = "cmbFromItemListTRL"
         Me.cmbFromItemListTRL.Size = New System.Drawing.Size(24, 20)
         Me.cmbFromItemListTRL.TabIndex = 120
-        Me.cmbFromItemListTRL.TabStop = false
-        Me.cmbFromItemListTRL.UseVisualStyleBackColor = false
+        Me.cmbFromItemListTRL.TabStop = False
+        Me.cmbFromItemListTRL.UseVisualStyleBackColor = False
         '
         'LstTransactionNatureTRL
         '
-        Me.LstTransactionNatureTRL.CheckBoxes = true
+        Me.LstTransactionNatureTRL.CheckBoxes = True
         Me.LstTransactionNatureTRL.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1})
         Me.LstTransactionNatureTRL.Location = New System.Drawing.Point(260, 148)
         Me.LstTransactionNatureTRL.Name = "LstTransactionNatureTRL"
         Me.LstTransactionNatureTRL.Size = New System.Drawing.Size(380, 116)
         Me.LstTransactionNatureTRL.TabIndex = 115
-        Me.LstTransactionNatureTRL.UseCompatibleStateImageBehavior = false
+        Me.LstTransactionNatureTRL.UseCompatibleStateImageBehavior = False
         Me.LstTransactionNatureTRL.View = System.Windows.Forms.View.Details
-        Me.LstTransactionNatureTRL.Visible = false
+        Me.LstTransactionNatureTRL.Visible = False
         '
         'ColumnHeader1
         '
@@ -1437,7 +1437,7 @@ Public Class ReportParameters
         Me.GrpGeneralLedger.Size = New System.Drawing.Size(804, 583)
         Me.GrpGeneralLedger.TabIndex = 2
         Me.GrpGeneralLedger.Text = "General Ledger"
-        Me.GrpGeneralLedger.Visible = false
+        Me.GrpGeneralLedger.Visible = False
         '
         'CmbNarrationType
         '
@@ -1460,49 +1460,49 @@ Public Class ReportParameters
         '
         'OptSummary
         '
-        Me.OptSummary.AutoSize = true
+        Me.OptSummary.AutoSize = True
         Me.OptSummary.BackColor = System.Drawing.Color.Transparent
         Me.OptSummary.Location = New System.Drawing.Point(320, 327)
         Me.OptSummary.Name = "OptSummary"
         Me.OptSummary.Size = New System.Drawing.Size(68, 17)
         Me.OptSummary.TabIndex = 129
         Me.OptSummary.Text = "Summary"
-        Me.OptSummary.UseVisualStyleBackColor = false
-        Me.OptSummary.Visible = false
+        Me.OptSummary.UseVisualStyleBackColor = False
+        Me.OptSummary.Visible = False
         '
         'OptDetail
         '
-        Me.OptDetail.AutoSize = true
+        Me.OptDetail.AutoSize = True
         Me.OptDetail.BackColor = System.Drawing.Color.Transparent
-        Me.OptDetail.Checked = true
+        Me.OptDetail.Checked = True
         Me.OptDetail.Location = New System.Drawing.Point(251, 327)
         Me.OptDetail.Name = "OptDetail"
         Me.OptDetail.Size = New System.Drawing.Size(52, 17)
         Me.OptDetail.TabIndex = 128
-        Me.OptDetail.TabStop = true
+        Me.OptDetail.TabStop = True
         Me.OptDetail.Text = "Detail"
-        Me.OptDetail.UseVisualStyleBackColor = false
-        Me.OptDetail.Visible = false
+        Me.OptDetail.UseVisualStyleBackColor = False
+        Me.OptDetail.Visible = False
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.BackColor = System.Drawing.SystemColors.Control
         Me.Button1.Location = New System.Drawing.Point(636, 222)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(24, 20)
         Me.Button1.TabIndex = 126
-        Me.Button1.TabStop = false
-        Me.Button1.UseVisualStyleBackColor = false
+        Me.Button1.TabStop = False
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Button3
         '
-        Me.Button3.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button3.BackColor = System.Drawing.SystemColors.Control
         Me.Button3.Location = New System.Drawing.Point(364, 220)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(24, 20)
         Me.Button3.TabIndex = 127
-        Me.Button3.TabStop = false
-        Me.Button3.UseVisualStyleBackColor = false
+        Me.Button3.TabStop = False
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'CmbLedgerTypeIL
         '
@@ -1531,7 +1531,7 @@ Public Class ReportParameters
         Me.chkIsHierarchicalView.Size = New System.Drawing.Size(116, 16)
         Me.chkIsHierarchicalView.TabIndex = 123
         Me.chkIsHierarchicalView.Text = "Hierarchical View"
-        Me.chkIsHierarchicalView.UseVisualStyleBackColor = false
+        Me.chkIsHierarchicalView.UseVisualStyleBackColor = False
         '
         'ChkPageBreakIL
         '
@@ -1541,17 +1541,17 @@ Public Class ReportParameters
         Me.ChkPageBreakIL.Size = New System.Drawing.Size(116, 16)
         Me.ChkPageBreakIL.TabIndex = 121
         Me.ChkPageBreakIL.Text = "Page Break"
-        Me.ChkPageBreakIL.UseVisualStyleBackColor = false
+        Me.ChkPageBreakIL.UseVisualStyleBackColor = False
         '
         'BtnToBranchListIL
         '
-        Me.BtnToBranchListIL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnToBranchListIL.BackColor = System.Drawing.SystemColors.Control
         Me.BtnToBranchListIL.Location = New System.Drawing.Point(636, 190)
         Me.BtnToBranchListIL.Name = "BtnToBranchListIL"
         Me.BtnToBranchListIL.Size = New System.Drawing.Size(24, 20)
         Me.BtnToBranchListIL.TabIndex = 119
-        Me.BtnToBranchListIL.TabStop = false
-        Me.BtnToBranchListIL.UseVisualStyleBackColor = false
+        Me.BtnToBranchListIL.TabStop = False
+        Me.BtnToBranchListIL.UseVisualStyleBackColor = False
         '
         'BtnDocumentNatureListIL
         '
@@ -1582,7 +1582,7 @@ Public Class ReportParameters
         '
         'txtToBranchCodeIL
         '
-        Me.txtToBranchCodeIL.AcceptsReturn = true
+        Me.txtToBranchCodeIL.AcceptsReturn = True
         Me.txtToBranchCodeIL.AccessibleDescription = "YM.AUTO"
         Me.txtToBranchCodeIL.Location = New System.Drawing.Point(524, 192)
         Me.txtToBranchCodeIL.MaxLength = 10
@@ -1603,7 +1603,7 @@ Public Class ReportParameters
         '
         'txtFromBranchCodeIL
         '
-        Me.txtFromBranchCodeIL.AcceptsReturn = true
+        Me.txtFromBranchCodeIL.AcceptsReturn = True
         Me.txtFromBranchCodeIL.AccessibleDescription = ""
         Me.txtFromBranchCodeIL.Location = New System.Drawing.Point(248, 196)
         Me.txtFromBranchCodeIL.MaxLength = 10
@@ -1638,19 +1638,19 @@ Public Class ReportParameters
         Me.lblOtherReportsIL.Name = "lblOtherReportsIL"
         Me.lblOtherReportsIL.Size = New System.Drawing.Size(75, 20)
         Me.lblOtherReportsIL.TabIndex = 107
-        Me.lblOtherReportsIL.TabStop = true
+        Me.lblOtherReportsIL.TabStop = True
         Me.lblOtherReportsIL.Text = "Other Reports"
         Me.lblOtherReportsIL.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'BtnToGLCodeListIL
         '
-        Me.BtnToGLCodeListIL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnToGLCodeListIL.BackColor = System.Drawing.SystemColors.Control
         Me.BtnToGLCodeListIL.Location = New System.Drawing.Point(636, 270)
         Me.BtnToGLCodeListIL.Name = "BtnToGLCodeListIL"
         Me.BtnToGLCodeListIL.Size = New System.Drawing.Size(24, 20)
         Me.BtnToGLCodeListIL.TabIndex = 106
-        Me.BtnToGLCodeListIL.TabStop = false
-        Me.BtnToGLCodeListIL.UseVisualStyleBackColor = false
+        Me.BtnToGLCodeListIL.TabStop = False
+        Me.BtnToGLCodeListIL.UseVisualStyleBackColor = False
         '
         'txtToGLCodeIL
         '
@@ -1666,7 +1666,7 @@ Public Class ReportParameters
         '
         'txtToDivisionIL
         '
-        Me.txtToDivisionIL.AcceptsReturn = true
+        Me.txtToDivisionIL.AcceptsReturn = True
         Me.txtToDivisionIL.AccessibleDescription = "YM.AUTO"
         Me.txtToDivisionIL.Location = New System.Drawing.Point(524, 220)
         Me.txtToDivisionIL.MaxLength = 10
@@ -1721,13 +1721,13 @@ Public Class ReportParameters
         '
         'BtnFromGLCodeListIL
         '
-        Me.BtnFromGLCodeListIL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromGLCodeListIL.BackColor = System.Drawing.SystemColors.Control
         Me.BtnFromGLCodeListIL.Location = New System.Drawing.Point(364, 268)
         Me.BtnFromGLCodeListIL.Name = "BtnFromGLCodeListIL"
         Me.BtnFromGLCodeListIL.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromGLCodeListIL.TabIndex = 99
-        Me.BtnFromGLCodeListIL.TabStop = false
-        Me.BtnFromGLCodeListIL.UseVisualStyleBackColor = false
+        Me.BtnFromGLCodeListIL.TabStop = False
+        Me.BtnFromGLCodeListIL.UseVisualStyleBackColor = False
         '
         'txtFromGLCodeIL
         '
@@ -1743,7 +1743,7 @@ Public Class ReportParameters
         '
         'txtFromDivisionCodeIL
         '
-        Me.txtFromDivisionCodeIL.AcceptsReturn = true
+        Me.txtFromDivisionCodeIL.AcceptsReturn = True
         Me.txtFromDivisionCodeIL.AccessibleDescription = "YM.AUTO"
         Me.txtFromDivisionCodeIL.Location = New System.Drawing.Point(248, 220)
         Me.txtFromDivisionCodeIL.MaxLength = 10
@@ -1809,25 +1809,25 @@ Public Class ReportParameters
         '
         'BtnFromBranchListIL
         '
-        Me.BtnFromBranchListIL.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromBranchListIL.BackColor = System.Drawing.SystemColors.Control
         Me.BtnFromBranchListIL.Location = New System.Drawing.Point(364, 194)
         Me.BtnFromBranchListIL.Name = "BtnFromBranchListIL"
         Me.BtnFromBranchListIL.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromBranchListIL.TabIndex = 120
-        Me.BtnFromBranchListIL.TabStop = false
-        Me.BtnFromBranchListIL.UseVisualStyleBackColor = false
+        Me.BtnFromBranchListIL.TabStop = False
+        Me.BtnFromBranchListIL.UseVisualStyleBackColor = False
         '
         'lstTransactionNatureIL
         '
-        Me.lstTransactionNatureIL.CheckBoxes = true
+        Me.lstTransactionNatureIL.CheckBoxes = True
         Me.lstTransactionNatureIL.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader2})
         Me.lstTransactionNatureIL.Location = New System.Drawing.Point(248, 148)
         Me.lstTransactionNatureIL.Name = "lstTransactionNatureIL"
         Me.lstTransactionNatureIL.Size = New System.Drawing.Size(384, 144)
         Me.lstTransactionNatureIL.TabIndex = 0
-        Me.lstTransactionNatureIL.UseCompatibleStateImageBehavior = false
+        Me.lstTransactionNatureIL.UseCompatibleStateImageBehavior = False
         Me.lstTransactionNatureIL.View = System.Windows.Forms.View.Details
-        Me.lstTransactionNatureIL.Visible = false
+        Me.lstTransactionNatureIL.Visible = False
         '
         'ColumnHeader2
         '
@@ -1850,8 +1850,8 @@ Public Class ReportParameters
         Me.imgProgressBar.Size = New System.Drawing.Size(90, 20)
         Me.imgProgressBar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.imgProgressBar.TabIndex = 20
-        Me.imgProgressBar.TabStop = false
-        Me.imgProgressBar.Visible = false
+        Me.imgProgressBar.TabStop = False
+        Me.imgProgressBar.Visible = False
         '
         'GrpVehicleBill
         '
@@ -1880,14 +1880,14 @@ Public Class ReportParameters
         Me.GrpVehicleBill.Size = New System.Drawing.Size(804, 583)
         Me.GrpVehicleBill.TabIndex = 23
         Me.GrpVehicleBill.Text = "Vehicle Bills"
-        Me.GrpVehicleBill.Visible = false
+        Me.GrpVehicleBill.Visible = False
         '
         'ChkTripWithBill
         '
         Me.ChkTripWithBill.BackColor = System.Drawing.Color.Transparent
         Me.ChkTripWithBill.BackColorInternal = System.Drawing.Color.Transparent
         Me.ChkTripWithBill.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.ChkTripWithBill.Checked = true
+        Me.ChkTripWithBill.Checked = True
         Me.ChkTripWithBill.CheckState = System.Windows.Forms.CheckState.Checked
         Appearance7.BackColor = System.Drawing.Color.Transparent
         Appearance7.BackColor2 = System.Drawing.Color.Transparent
@@ -1906,7 +1906,7 @@ Public Class ReportParameters
         Me.CmbGroupedByVB.Size = New System.Drawing.Size(140, 21)
         Me.CmbGroupedByVB.TabIndex = 134
         Me.CmbGroupedByVB.Text = "None"
-        Me.CmbGroupedByVB.Visible = false
+        Me.CmbGroupedByVB.Visible = False
         '
         'LblGroupByVB
         '
@@ -1917,22 +1917,22 @@ Public Class ReportParameters
         Me.LblGroupByVB.Size = New System.Drawing.Size(88, 20)
         Me.LblGroupByVB.TabIndex = 135
         Me.LblGroupByVB.Text = "Grouped by"
-        Me.LblGroupByVB.Visible = false
+        Me.LblGroupByVB.Visible = False
         '
         'BtnToOwnerList
         '
-        Me.BtnToOwnerList.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnToOwnerList.BackColor = System.Drawing.SystemColors.Control
         Me.BtnToOwnerList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BtnToOwnerList.Location = New System.Drawing.Point(647, 185)
         Me.BtnToOwnerList.Name = "BtnToOwnerList"
         Me.BtnToOwnerList.Size = New System.Drawing.Size(24, 20)
         Me.BtnToOwnerList.TabIndex = 125
-        Me.BtnToOwnerList.TabStop = false
-        Me.BtnToOwnerList.UseVisualStyleBackColor = false
+        Me.BtnToOwnerList.TabStop = False
+        Me.BtnToOwnerList.UseVisualStyleBackColor = False
         '
         'TxtToOwnerCodeVB
         '
-        Me.TxtToOwnerCodeVB.AcceptsReturn = true
+        Me.TxtToOwnerCodeVB.AcceptsReturn = True
         Me.TxtToOwnerCodeVB.AccessibleDescription = ""
         Me.TxtToOwnerCodeVB.Location = New System.Drawing.Point(542, 185)
         Me.TxtToOwnerCodeVB.MaxLength = Global.BusinessLeaf.My.MySettings.Default.VehicleOwnerCode_Length
@@ -1943,18 +1943,18 @@ Public Class ReportParameters
         '
         'BtnFromOwnerList
         '
-        Me.BtnFromOwnerList.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromOwnerList.BackColor = System.Drawing.SystemColors.Control
         Me.BtnFromOwnerList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BtnFromOwnerList.Location = New System.Drawing.Point(364, 185)
         Me.BtnFromOwnerList.Name = "BtnFromOwnerList"
         Me.BtnFromOwnerList.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromOwnerList.TabIndex = 123
-        Me.BtnFromOwnerList.TabStop = false
-        Me.BtnFromOwnerList.UseVisualStyleBackColor = false
+        Me.BtnFromOwnerList.TabStop = False
+        Me.BtnFromOwnerList.UseVisualStyleBackColor = False
         '
         'TxtFromOwnerCodeVB
         '
-        Me.TxtFromOwnerCodeVB.AcceptsReturn = true
+        Me.TxtFromOwnerCodeVB.AcceptsReturn = True
         Me.TxtFromOwnerCodeVB.AccessibleDescription = ""
         Me.TxtFromOwnerCodeVB.Location = New System.Drawing.Point(259, 185)
         Me.TxtFromOwnerCodeVB.MaxLength = Global.BusinessLeaf.My.MySettings.Default.VehicleOwnerCode_Length
@@ -1975,18 +1975,18 @@ Public Class ReportParameters
         '
         'BtnToVehicleList
         '
-        Me.BtnToVehicleList.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnToVehicleList.BackColor = System.Drawing.SystemColors.Control
         Me.BtnToVehicleList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BtnToVehicleList.Location = New System.Drawing.Point(647, 211)
         Me.BtnToVehicleList.Name = "BtnToVehicleList"
         Me.BtnToVehicleList.Size = New System.Drawing.Size(24, 20)
         Me.BtnToVehicleList.TabIndex = 119
-        Me.BtnToVehicleList.TabStop = false
-        Me.BtnToVehicleList.UseVisualStyleBackColor = false
+        Me.BtnToVehicleList.TabStop = False
+        Me.BtnToVehicleList.UseVisualStyleBackColor = False
         '
         'TxtToVehicleCodeVB
         '
-        Me.TxtToVehicleCodeVB.AcceptsReturn = true
+        Me.TxtToVehicleCodeVB.AcceptsReturn = True
         Me.TxtToVehicleCodeVB.AccessibleDescription = "YM.AUTO"
         Me.TxtToVehicleCodeVB.Location = New System.Drawing.Point(543, 211)
         Me.TxtToVehicleCodeVB.MaxLength = Global.BusinessLeaf.My.MySettings.Default.VehicleCode_Length
@@ -2007,7 +2007,7 @@ Public Class ReportParameters
         '
         'TxtFromVehicleCodeVB
         '
-        Me.TxtFromVehicleCodeVB.AcceptsReturn = true
+        Me.TxtFromVehicleCodeVB.AcceptsReturn = True
         Me.TxtFromVehicleCodeVB.AccessibleDescription = ""
         Me.TxtFromVehicleCodeVB.Location = New System.Drawing.Point(259, 211)
         Me.TxtFromVehicleCodeVB.MaxLength = 10
@@ -2034,7 +2034,7 @@ Public Class ReportParameters
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel1.TabIndex = 107
-        Me.LinkLabel1.TabStop = true
+        Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "Other Reports"
         Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -2089,14 +2089,14 @@ Public Class ReportParameters
         '
         'BtnFromVehicleList
         '
-        Me.BtnFromVehicleList.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromVehicleList.BackColor = System.Drawing.SystemColors.Control
         Me.BtnFromVehicleList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BtnFromVehicleList.Location = New System.Drawing.Point(363, 211)
         Me.BtnFromVehicleList.Name = "BtnFromVehicleList"
         Me.BtnFromVehicleList.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromVehicleList.TabIndex = 120
-        Me.BtnFromVehicleList.TabStop = false
-        Me.BtnFromVehicleList.UseVisualStyleBackColor = false
+        Me.BtnFromVehicleList.TabStop = False
+        Me.BtnFromVehicleList.UseVisualStyleBackColor = False
         '
         'GrpCOAReportList
         '
@@ -2120,7 +2120,7 @@ Public Class ReportParameters
         Me.GrpCOAReportList.Size = New System.Drawing.Size(804, 583)
         Me.GrpCOAReportList.TabIndex = 24
         Me.GrpCOAReportList.Tag = "Transaction Document"
-        Me.GrpCOAReportList.Visible = false
+        Me.GrpCOAReportList.Visible = False
         '
         'ChkPageBreakCOAL
         '
@@ -2130,7 +2130,7 @@ Public Class ReportParameters
         Me.ChkPageBreakCOAL.Size = New System.Drawing.Size(116, 16)
         Me.ChkPageBreakCOAL.TabIndex = 123
         Me.ChkPageBreakCOAL.Text = "Page Break"
-        Me.ChkPageBreakCOAL.UseVisualStyleBackColor = false
+        Me.ChkPageBreakCOAL.UseVisualStyleBackColor = False
         '
         'CmbLevelsCOAL
         '
@@ -2158,23 +2158,23 @@ Public Class ReportParameters
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel2.TabIndex = 107
-        Me.LinkLabel2.TabStop = true
+        Me.LinkLabel2.TabStop = True
         Me.LinkLabel2.Text = "Other Reports"
         Me.LinkLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button2.BackColor = System.Drawing.SystemColors.Control
         Me.Button2.Location = New System.Drawing.Point(624, 208)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(24, 20)
         Me.Button2.TabIndex = 106
-        Me.Button2.TabStop = false
-        Me.Button2.UseVisualStyleBackColor = false
+        Me.Button2.TabStop = False
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'TxtToGlCodeCOAL
         '
-        Me.TxtToGlCodeCOAL.AcceptsReturn = true
+        Me.TxtToGlCodeCOAL.AcceptsReturn = True
         Me.TxtToGlCodeCOAL.Location = New System.Drawing.Point(520, 208)
         Me.TxtToGlCodeCOAL.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
         Me.TxtToGlCodeCOAL.Name = "TxtToGlCodeCOAL"
@@ -2217,17 +2217,17 @@ Public Class ReportParameters
         '
         'Button6
         '
-        Me.Button6.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button6.BackColor = System.Drawing.SystemColors.Control
         Me.Button6.Location = New System.Drawing.Point(344, 208)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(24, 20)
         Me.Button6.TabIndex = 99
-        Me.Button6.TabStop = false
-        Me.Button6.UseVisualStyleBackColor = false
+        Me.Button6.TabStop = False
+        Me.Button6.UseVisualStyleBackColor = False
         '
         'TxtFromGlCodeCOAL
         '
-        Me.TxtFromGlCodeCOAL.AcceptsReturn = true
+        Me.TxtFromGlCodeCOAL.AcceptsReturn = True
         Me.TxtFromGlCodeCOAL.AccessibleDescription = "YM.AUTO"
         Me.TxtFromGlCodeCOAL.Location = New System.Drawing.Point(240, 208)
         Me.TxtFromGlCodeCOAL.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length
@@ -2291,7 +2291,7 @@ Public Class ReportParameters
         Me.GrpVoucherDocuments.Size = New System.Drawing.Size(804, 583)
         Me.GrpVoucherDocuments.TabIndex = 25
         Me.GrpVoucherDocuments.Text = "Transaction List"
-        Me.GrpVoucherDocuments.Visible = false
+        Me.GrpVoucherDocuments.Visible = False
         '
         'BtnVoucherTypeListVDO
         '
@@ -2327,13 +2327,13 @@ Public Class ReportParameters
         Me.LinkLabel3.Name = "LinkLabel3"
         Me.LinkLabel3.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel3.TabIndex = 107
-        Me.LinkLabel3.TabStop = true
+        Me.LinkLabel3.TabStop = True
         Me.LinkLabel3.Text = "Other Reports"
         Me.LinkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'TxtToVoucherNoVDO
         '
-        Me.TxtToVoucherNoVDO.AcceptsReturn = true
+        Me.TxtToVoucherNoVDO.AcceptsReturn = True
         Me.TxtToVoucherNoVDO.AccessibleDescription = "YM.AUTO"
         Me.TxtToVoucherNoVDO.Location = New System.Drawing.Point(544, 192)
         Me.TxtToVoucherNoVDO.MaxLength = 10
@@ -2378,7 +2378,7 @@ Public Class ReportParameters
         '
         'TxtFromVoucherNoVDO
         '
-        Me.TxtFromVoucherNoVDO.AcceptsReturn = true
+        Me.TxtFromVoucherNoVDO.AcceptsReturn = True
         Me.TxtFromVoucherNoVDO.AccessibleDescription = "YM.AUTO"
         Me.TxtFromVoucherNoVDO.Location = New System.Drawing.Point(260, 192)
         Me.TxtFromVoucherNoVDO.MaxLength = 10
@@ -2424,15 +2424,15 @@ Public Class ReportParameters
         '
         'LvwVoucherTypesVDO
         '
-        Me.LvwVoucherTypesVDO.CheckBoxes = true
+        Me.LvwVoucherTypesVDO.CheckBoxes = True
         Me.LvwVoucherTypesVDO.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3})
         Me.LvwVoucherTypesVDO.Location = New System.Drawing.Point(260, 100)
         Me.LvwVoucherTypesVDO.Name = "LvwVoucherTypesVDO"
         Me.LvwVoucherTypesVDO.Size = New System.Drawing.Size(383, 140)
         Me.LvwVoucherTypesVDO.TabIndex = 115
-        Me.LvwVoucherTypesVDO.UseCompatibleStateImageBehavior = false
+        Me.LvwVoucherTypesVDO.UseCompatibleStateImageBehavior = False
         Me.LvwVoucherTypesVDO.View = System.Windows.Forms.View.Details
-        Me.LvwVoucherTypesVDO.Visible = false
+        Me.LvwVoucherTypesVDO.Visible = False
         '
         'ColumnHeader3
         '
@@ -2469,7 +2469,7 @@ Public Class ReportParameters
         Me.GrpVouchersList.Size = New System.Drawing.Size(804, 583)
         Me.GrpVouchersList.TabIndex = 26
         Me.GrpVouchersList.Text = "Vouchers List"
-        Me.GrpVouchersList.Visible = false
+        Me.GrpVouchersList.Visible = False
         '
         'ChkPageBreakVLT
         '
@@ -2481,13 +2481,13 @@ Public Class ReportParameters
         '
         'BtnToGLCodeListVLT
         '
-        Me.BtnToGLCodeListVLT.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnToGLCodeListVLT.BackColor = System.Drawing.SystemColors.Control
         Me.BtnToGLCodeListVLT.Location = New System.Drawing.Point(648, 188)
         Me.BtnToGLCodeListVLT.Name = "BtnToGLCodeListVLT"
         Me.BtnToGLCodeListVLT.Size = New System.Drawing.Size(24, 20)
         Me.BtnToGLCodeListVLT.TabIndex = 119
-        Me.BtnToGLCodeListVLT.TabStop = false
-        Me.BtnToGLCodeListVLT.UseVisualStyleBackColor = false
+        Me.BtnToGLCodeListVLT.TabStop = False
+        Me.BtnToGLCodeListVLT.UseVisualStyleBackColor = False
         '
         'BtnVoucherTypesListVLT
         '
@@ -2518,7 +2518,7 @@ Public Class ReportParameters
         '
         'TxtToGLCodeVLT
         '
-        Me.TxtToGLCodeVLT.AcceptsReturn = true
+        Me.TxtToGLCodeVLT.AcceptsReturn = True
         Me.TxtToGLCodeVLT.AccessibleDescription = "YM.AUTO"
         Me.TxtToGLCodeVLT.Location = New System.Drawing.Point(544, 188)
         Me.TxtToGLCodeVLT.MaxLength = 22
@@ -2539,7 +2539,7 @@ Public Class ReportParameters
         '
         'TxtFromGLCodeVLT
         '
-        Me.TxtFromGLCodeVLT.AcceptsReturn = true
+        Me.TxtFromGLCodeVLT.AcceptsReturn = True
         Me.TxtFromGLCodeVLT.AccessibleDescription = ""
         Me.TxtFromGLCodeVLT.Location = New System.Drawing.Point(260, 192)
         Me.TxtFromGLCodeVLT.MaxLength = 22
@@ -2565,13 +2565,13 @@ Public Class ReportParameters
         Me.LinkLabel4.Name = "LinkLabel4"
         Me.LinkLabel4.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel4.TabIndex = 107
-        Me.LinkLabel4.TabStop = true
+        Me.LinkLabel4.TabStop = True
         Me.LinkLabel4.Text = "Other Reports"
         Me.LinkLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'TxtToVoucherNoListVLT
         '
-        Me.TxtToVoucherNoListVLT.AcceptsReturn = true
+        Me.TxtToVoucherNoListVLT.AcceptsReturn = True
         Me.TxtToVoucherNoListVLT.AccessibleDescription = "YM.AUTO"
         Me.TxtToVoucherNoListVLT.Location = New System.Drawing.Point(544, 216)
         Me.TxtToVoucherNoListVLT.MaxLength = 10
@@ -2616,7 +2616,7 @@ Public Class ReportParameters
         '
         'TxtFromVoucherNoListVLT
         '
-        Me.TxtFromVoucherNoListVLT.AcceptsReturn = true
+        Me.TxtFromVoucherNoListVLT.AcceptsReturn = True
         Me.TxtFromVoucherNoListVLT.AccessibleDescription = "YM.AUTO"
         Me.TxtFromVoucherNoListVLT.Location = New System.Drawing.Point(260, 216)
         Me.TxtFromVoucherNoListVLT.MaxLength = 10
@@ -2662,13 +2662,13 @@ Public Class ReportParameters
         '
         'BtnFromGLCodeListVLT
         '
-        Me.BtnFromGLCodeListVLT.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromGLCodeListVLT.BackColor = System.Drawing.SystemColors.Control
         Me.BtnFromGLCodeListVLT.Location = New System.Drawing.Point(364, 192)
         Me.BtnFromGLCodeListVLT.Name = "BtnFromGLCodeListVLT"
         Me.BtnFromGLCodeListVLT.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromGLCodeListVLT.TabIndex = 120
-        Me.BtnFromGLCodeListVLT.TabStop = false
-        Me.BtnFromGLCodeListVLT.UseVisualStyleBackColor = false
+        Me.BtnFromGLCodeListVLT.TabStop = False
+        Me.BtnFromGLCodeListVLT.UseVisualStyleBackColor = False
         '
         'CmbGroupedByVLT
         '
@@ -2691,15 +2691,15 @@ Public Class ReportParameters
         '
         'LvwVoucherTypesVLT
         '
-        Me.LvwVoucherTypesVLT.CheckBoxes = true
+        Me.LvwVoucherTypesVLT.CheckBoxes = True
         Me.LvwVoucherTypesVLT.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader4})
         Me.LvwVoucherTypesVLT.Location = New System.Drawing.Point(260, 130)
         Me.LvwVoucherTypesVLT.Name = "LvwVoucherTypesVLT"
         Me.LvwVoucherTypesVLT.Size = New System.Drawing.Size(380, 135)
         Me.LvwVoucherTypesVLT.TabIndex = 115
-        Me.LvwVoucherTypesVLT.UseCompatibleStateImageBehavior = false
+        Me.LvwVoucherTypesVLT.UseCompatibleStateImageBehavior = False
         Me.LvwVoucherTypesVLT.View = System.Windows.Forms.View.Details
-        Me.LvwVoucherTypesVLT.Visible = false
+        Me.LvwVoucherTypesVLT.Visible = False
         '
         'ColumnHeader4
         '
@@ -2739,61 +2739,61 @@ Public Class ReportParameters
         Me.GrpCashFlowStatements.Size = New System.Drawing.Size(804, 583)
         Me.GrpCashFlowStatements.TabIndex = 27
         Me.GrpCashFlowStatements.Text = "Cash Flow Statements"
-        Me.GrpCashFlowStatements.Visible = false
+        Me.GrpCashFlowStatements.Visible = False
         '
         'OptSummaryCFS
         '
-        Me.OptSummaryCFS.AutoSize = true
+        Me.OptSummaryCFS.AutoSize = True
         Me.OptSummaryCFS.Location = New System.Drawing.Point(320, 296)
         Me.OptSummaryCFS.Name = "OptSummaryCFS"
         Me.OptSummaryCFS.Size = New System.Drawing.Size(68, 17)
         Me.OptSummaryCFS.TabIndex = 129
         Me.OptSummaryCFS.Text = "Summary"
-        Me.OptSummaryCFS.UseVisualStyleBackColor = true
+        Me.OptSummaryCFS.UseVisualStyleBackColor = True
         '
         'OptDetailCFS
         '
-        Me.OptDetailCFS.AutoSize = true
-        Me.OptDetailCFS.Checked = true
+        Me.OptDetailCFS.AutoSize = True
+        Me.OptDetailCFS.Checked = True
         Me.OptDetailCFS.Location = New System.Drawing.Point(251, 296)
         Me.OptDetailCFS.Name = "OptDetailCFS"
         Me.OptDetailCFS.Size = New System.Drawing.Size(52, 17)
         Me.OptDetailCFS.TabIndex = 128
-        Me.OptDetailCFS.TabStop = true
+        Me.OptDetailCFS.TabStop = True
         Me.OptDetailCFS.Text = "Detail"
-        Me.OptDetailCFS.UseVisualStyleBackColor = true
+        Me.OptDetailCFS.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button4.BackColor = System.Drawing.SystemColors.Control
         Me.Button4.Location = New System.Drawing.Point(636, 222)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(24, 20)
         Me.Button4.TabIndex = 126
-        Me.Button4.TabStop = false
-        Me.Button4.UseVisualStyleBackColor = false
+        Me.Button4.TabStop = False
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Button5
         '
-        Me.Button5.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button5.BackColor = System.Drawing.SystemColors.Control
         Me.Button5.Location = New System.Drawing.Point(364, 220)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(24, 20)
         Me.Button5.TabIndex = 127
-        Me.Button5.TabStop = false
-        Me.Button5.UseVisualStyleBackColor = false
+        Me.Button5.TabStop = False
+        Me.Button5.UseVisualStyleBackColor = False
         '
         'ChkShowOpenningCFS
         '
         Me.ChkShowOpenningCFS.BackColor = System.Drawing.Color.Transparent
-        Me.ChkShowOpenningCFS.Checked = true
+        Me.ChkShowOpenningCFS.Checked = True
         Me.ChkShowOpenningCFS.CheckState = System.Windows.Forms.CheckState.Checked
         Me.ChkShowOpenningCFS.Location = New System.Drawing.Point(248, 138)
         Me.ChkShowOpenningCFS.Name = "ChkShowOpenningCFS"
         Me.ChkShowOpenningCFS.Size = New System.Drawing.Size(116, 24)
         Me.ChkShowOpenningCFS.TabIndex = 123
         Me.ChkShowOpenningCFS.Text = "Show Opening"
-        Me.ChkShowOpenningCFS.UseVisualStyleBackColor = false
+        Me.ChkShowOpenningCFS.UseVisualStyleBackColor = False
         '
         'ChkPageBreakCFS
         '
@@ -2803,17 +2803,17 @@ Public Class ReportParameters
         Me.ChkPageBreakCFS.Size = New System.Drawing.Size(116, 24)
         Me.ChkPageBreakCFS.TabIndex = 121
         Me.ChkPageBreakCFS.Text = "Page Break"
-        Me.ChkPageBreakCFS.UseVisualStyleBackColor = false
+        Me.ChkPageBreakCFS.UseVisualStyleBackColor = False
         '
         'Button7
         '
-        Me.Button7.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button7.BackColor = System.Drawing.SystemColors.Control
         Me.Button7.Location = New System.Drawing.Point(636, 190)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(24, 20)
         Me.Button7.TabIndex = 119
-        Me.Button7.TabStop = false
-        Me.Button7.UseVisualStyleBackColor = false
+        Me.Button7.TabStop = False
+        Me.Button7.UseVisualStyleBackColor = False
         '
         'BtnCashAccountsCFS
         '
@@ -2844,7 +2844,7 @@ Public Class ReportParameters
         '
         'TxtToBranchCodeCFS
         '
-        Me.TxtToBranchCodeCFS.AcceptsReturn = true
+        Me.TxtToBranchCodeCFS.AcceptsReturn = True
         Me.TxtToBranchCodeCFS.AccessibleDescription = "YM.AUTO"
         Me.TxtToBranchCodeCFS.Location = New System.Drawing.Point(524, 192)
         Me.TxtToBranchCodeCFS.MaxLength = 10
@@ -2865,7 +2865,7 @@ Public Class ReportParameters
         '
         'TxtFromBranchCodeCFS
         '
-        Me.TxtFromBranchCodeCFS.AcceptsReturn = true
+        Me.TxtFromBranchCodeCFS.AcceptsReturn = True
         Me.TxtFromBranchCodeCFS.AccessibleDescription = ""
         Me.TxtFromBranchCodeCFS.Location = New System.Drawing.Point(248, 196)
         Me.TxtFromBranchCodeCFS.MaxLength = 10
@@ -2891,13 +2891,13 @@ Public Class ReportParameters
         Me.LinkLabel5.Name = "LinkLabel5"
         Me.LinkLabel5.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel5.TabIndex = 107
-        Me.LinkLabel5.TabStop = true
+        Me.LinkLabel5.TabStop = True
         Me.LinkLabel5.Text = "Other Reports"
         Me.LinkLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'TxtToDivisionCFS
         '
-        Me.TxtToDivisionCFS.AcceptsReturn = true
+        Me.TxtToDivisionCFS.AcceptsReturn = True
         Me.TxtToDivisionCFS.AccessibleDescription = "YM.AUTO"
         Me.TxtToDivisionCFS.Location = New System.Drawing.Point(524, 220)
         Me.TxtToDivisionCFS.MaxLength = 10
@@ -2942,7 +2942,7 @@ Public Class ReportParameters
         '
         'TxtFromDivisionCFS
         '
-        Me.TxtFromDivisionCFS.AcceptsReturn = true
+        Me.TxtFromDivisionCFS.AcceptsReturn = True
         Me.TxtFromDivisionCFS.AccessibleDescription = "YM.AUTO"
         Me.TxtFromDivisionCFS.Location = New System.Drawing.Point(248, 220)
         Me.TxtFromDivisionCFS.MaxLength = 10
@@ -2988,26 +2988,26 @@ Public Class ReportParameters
         '
         'BtnFromBranchCodeCFS
         '
-        Me.BtnFromBranchCodeCFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromBranchCodeCFS.BackColor = System.Drawing.SystemColors.Control
         Me.BtnFromBranchCodeCFS.Location = New System.Drawing.Point(364, 194)
         Me.BtnFromBranchCodeCFS.Name = "BtnFromBranchCodeCFS"
         Me.BtnFromBranchCodeCFS.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromBranchCodeCFS.TabIndex = 120
-        Me.BtnFromBranchCodeCFS.TabStop = false
-        Me.BtnFromBranchCodeCFS.UseVisualStyleBackColor = false
+        Me.BtnFromBranchCodeCFS.TabStop = False
+        Me.BtnFromBranchCodeCFS.UseVisualStyleBackColor = False
         '
         'LstCashAccountsCFS
         '
-        Me.LstCashAccountsCFS.CheckBoxes = true
+        Me.LstCashAccountsCFS.CheckBoxes = True
         Me.LstCashAccountsCFS.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader5})
         Me.LstCashAccountsCFS.Location = New System.Drawing.Point(248, 124)
         Me.LstCashAccountsCFS.Name = "LstCashAccountsCFS"
-        Me.LstCashAccountsCFS.ShowItemToolTips = true
+        Me.LstCashAccountsCFS.ShowItemToolTips = True
         Me.LstCashAccountsCFS.Size = New System.Drawing.Size(384, 144)
         Me.LstCashAccountsCFS.TabIndex = 0
-        Me.LstCashAccountsCFS.UseCompatibleStateImageBehavior = false
+        Me.LstCashAccountsCFS.UseCompatibleStateImageBehavior = False
         Me.LstCashAccountsCFS.View = System.Windows.Forms.View.Details
-        Me.LstCashAccountsCFS.Visible = false
+        Me.LstCashAccountsCFS.Visible = False
         '
         'ColumnHeader5
         '
@@ -3034,29 +3034,29 @@ Public Class ReportParameters
         Me.GrpFinancialStatements.Size = New System.Drawing.Size(804, 583)
         Me.GrpFinancialStatements.TabIndex = 28
         Me.GrpFinancialStatements.Text = "Financial Statements"
-        Me.GrpFinancialStatements.Visible = false
+        Me.GrpFinancialStatements.Visible = False
         '
         'BtnToGLCodeListFS
         '
-        Me.BtnToGLCodeListFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnToGLCodeListFS.BackColor = System.Drawing.SystemColors.Control
         Me.BtnToGLCodeListFS.Location = New System.Drawing.Point(636, 219)
         Me.BtnToGLCodeListFS.Name = "BtnToGLCodeListFS"
         Me.BtnToGLCodeListFS.Size = New System.Drawing.Size(24, 20)
         Me.BtnToGLCodeListFS.TabIndex = 126
-        Me.BtnToGLCodeListFS.TabStop = false
-        Me.BtnToGLCodeListFS.UseVisualStyleBackColor = false
-        Me.BtnToGLCodeListFS.Visible = false
+        Me.BtnToGLCodeListFS.TabStop = False
+        Me.BtnToGLCodeListFS.UseVisualStyleBackColor = False
+        Me.BtnToGLCodeListFS.Visible = False
         '
         'BtnFrGLCodeListFS
         '
-        Me.BtnFrGLCodeListFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFrGLCodeListFS.BackColor = System.Drawing.SystemColors.Control
         Me.BtnFrGLCodeListFS.Location = New System.Drawing.Point(364, 220)
         Me.BtnFrGLCodeListFS.Name = "BtnFrGLCodeListFS"
         Me.BtnFrGLCodeListFS.Size = New System.Drawing.Size(24, 20)
         Me.BtnFrGLCodeListFS.TabIndex = 127
-        Me.BtnFrGLCodeListFS.TabStop = false
-        Me.BtnFrGLCodeListFS.UseVisualStyleBackColor = false
-        Me.BtnFrGLCodeListFS.Visible = false
+        Me.BtnFrGLCodeListFS.TabStop = False
+        Me.BtnFrGLCodeListFS.UseVisualStyleBackColor = False
+        Me.BtnFrGLCodeListFS.Visible = False
         '
         'ChkNotesToFS
         '
@@ -3067,7 +3067,7 @@ Public Class ReportParameters
         Me.ChkNotesToFS.TabIndex = 121
         Me.ChkNotesToFS.Text = "Notes To Financial Statements"
         Me.ChkNotesToFS.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ChkNotesToFS.UseVisualStyleBackColor = false
+        Me.ChkNotesToFS.UseVisualStyleBackColor = False
         '
         'LinkLabel6
         '
@@ -3076,13 +3076,13 @@ Public Class ReportParameters
         Me.LinkLabel6.Name = "LinkLabel6"
         Me.LinkLabel6.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel6.TabIndex = 107
-        Me.LinkLabel6.TabStop = true
+        Me.LinkLabel6.TabStop = True
         Me.LinkLabel6.Text = "Other Reports"
         Me.LinkLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'TxtToGLCodeFS
         '
-        Me.TxtToGLCodeFS.AcceptsReturn = true
+        Me.TxtToGLCodeFS.AcceptsReturn = True
         Me.TxtToGLCodeFS.AccessibleDescription = "YM.AUTO"
         Me.TxtToGLCodeFS.Location = New System.Drawing.Point(524, 220)
         Me.TxtToGLCodeFS.MaxLength = 10
@@ -3090,7 +3090,7 @@ Public Class ReportParameters
         Me.TxtToGLCodeFS.Size = New System.Drawing.Size(108, 21)
         Me.TxtToGLCodeFS.TabIndex = 4
         Me.TxtToGLCodeFS.Tag = "PK.TransactionNo"
-        Me.TxtToGLCodeFS.Visible = false
+        Me.TxtToGLCodeFS.Visible = False
         '
         'Label68
         '
@@ -3101,7 +3101,7 @@ Public Class ReportParameters
         Me.Label68.Size = New System.Drawing.Size(112, 20)
         Me.Label68.TabIndex = 105
         Me.Label68.Text = "To"
-        Me.Label68.Visible = false
+        Me.Label68.Visible = False
         '
         'TxtToDateFS
         '
@@ -3129,7 +3129,7 @@ Public Class ReportParameters
         '
         'TxtFromGLCodeFS
         '
-        Me.TxtFromGLCodeFS.AcceptsReturn = true
+        Me.TxtFromGLCodeFS.AcceptsReturn = True
         Me.TxtFromGLCodeFS.AccessibleDescription = "YM.AUTO"
         Me.TxtFromGLCodeFS.Location = New System.Drawing.Point(248, 220)
         Me.TxtFromGLCodeFS.MaxLength = 10
@@ -3137,7 +3137,7 @@ Public Class ReportParameters
         Me.TxtFromGLCodeFS.Size = New System.Drawing.Size(108, 21)
         Me.TxtFromGLCodeFS.TabIndex = 3
         Me.TxtFromGLCodeFS.Tag = "PK.TransactionNo"
-        Me.TxtFromGLCodeFS.Visible = false
+        Me.TxtFromGLCodeFS.Visible = False
         '
         'Label71
         '
@@ -3148,7 +3148,7 @@ Public Class ReportParameters
         Me.Label71.Size = New System.Drawing.Size(110, 20)
         Me.Label71.TabIndex = 98
         Me.Label71.Text = "GL Code"
-        Me.Label71.Visible = false
+        Me.Label71.Visible = False
         '
         'TxtFromDateFS
         '
@@ -3216,7 +3216,7 @@ Public Class ReportParameters
         Me.GrpVehicleFreightStatements.Size = New System.Drawing.Size(804, 583)
         Me.GrpVehicleFreightStatements.TabIndex = 29
         Me.GrpVehicleFreightStatements.Text = "Vehicle Freight Statements"
-        Me.GrpVehicleFreightStatements.Visible = false
+        Me.GrpVehicleFreightStatements.Visible = False
         '
         'CmbGroupbyVFS
         '
@@ -3302,47 +3302,47 @@ Public Class ReportParameters
         '
         'OptSummaryVFS
         '
-        Me.OptSummaryVFS.AutoSize = true
+        Me.OptSummaryVFS.AutoSize = True
         Me.OptSummaryVFS.BackColor = System.Drawing.Color.Transparent
         Me.OptSummaryVFS.Location = New System.Drawing.Point(320, 327)
         Me.OptSummaryVFS.Name = "OptSummaryVFS"
         Me.OptSummaryVFS.Size = New System.Drawing.Size(68, 17)
         Me.OptSummaryVFS.TabIndex = 129
         Me.OptSummaryVFS.Text = "Summary"
-        Me.OptSummaryVFS.UseVisualStyleBackColor = false
+        Me.OptSummaryVFS.UseVisualStyleBackColor = False
         '
         'OptDetailVFS
         '
-        Me.OptDetailVFS.AutoSize = true
+        Me.OptDetailVFS.AutoSize = True
         Me.OptDetailVFS.BackColor = System.Drawing.Color.Transparent
-        Me.OptDetailVFS.Checked = true
+        Me.OptDetailVFS.Checked = True
         Me.OptDetailVFS.Location = New System.Drawing.Point(251, 327)
         Me.OptDetailVFS.Name = "OptDetailVFS"
         Me.OptDetailVFS.Size = New System.Drawing.Size(52, 17)
         Me.OptDetailVFS.TabIndex = 128
-        Me.OptDetailVFS.TabStop = true
+        Me.OptDetailVFS.TabStop = True
         Me.OptDetailVFS.Text = "Detail"
-        Me.OptDetailVFS.UseVisualStyleBackColor = false
+        Me.OptDetailVFS.UseVisualStyleBackColor = False
         '
         'BtnToVehicleListVFS
         '
-        Me.BtnToVehicleListVFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnToVehicleListVFS.BackColor = System.Drawing.SystemColors.Control
         Me.BtnToVehicleListVFS.Location = New System.Drawing.Point(636, 219)
         Me.BtnToVehicleListVFS.Name = "BtnToVehicleListVFS"
         Me.BtnToVehicleListVFS.Size = New System.Drawing.Size(24, 20)
         Me.BtnToVehicleListVFS.TabIndex = 126
-        Me.BtnToVehicleListVFS.TabStop = false
-        Me.BtnToVehicleListVFS.UseVisualStyleBackColor = false
+        Me.BtnToVehicleListVFS.TabStop = False
+        Me.BtnToVehicleListVFS.UseVisualStyleBackColor = False
         '
         'BtnFromVehicleListVFS
         '
-        Me.BtnFromVehicleListVFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromVehicleListVFS.BackColor = System.Drawing.SystemColors.Control
         Me.BtnFromVehicleListVFS.Location = New System.Drawing.Point(364, 220)
         Me.BtnFromVehicleListVFS.Name = "BtnFromVehicleListVFS"
         Me.BtnFromVehicleListVFS.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromVehicleListVFS.TabIndex = 127
-        Me.BtnFromVehicleListVFS.TabStop = false
-        Me.BtnFromVehicleListVFS.UseVisualStyleBackColor = false
+        Me.BtnFromVehicleListVFS.TabStop = False
+        Me.BtnFromVehicleListVFS.UseVisualStyleBackColor = False
         '
         'ChkPageBreakVFS
         '
@@ -3352,11 +3352,11 @@ Public Class ReportParameters
         Me.ChkPageBreakVFS.Size = New System.Drawing.Size(116, 16)
         Me.ChkPageBreakVFS.TabIndex = 121
         Me.ChkPageBreakVFS.Text = "Page Break"
-        Me.ChkPageBreakVFS.UseVisualStyleBackColor = false
+        Me.ChkPageBreakVFS.UseVisualStyleBackColor = False
         '
         'TxtFromBranchVFS
         '
-        Me.TxtFromBranchVFS.AcceptsReturn = true
+        Me.TxtFromBranchVFS.AcceptsReturn = True
         Me.TxtFromBranchVFS.AccessibleDescription = ""
         Me.TxtFromBranchVFS.Location = New System.Drawing.Point(248, 196)
         Me.TxtFromBranchVFS.MaxLength = 10
@@ -3391,19 +3391,19 @@ Public Class ReportParameters
         Me.LinkLabel7.Name = "LinkLabel7"
         Me.LinkLabel7.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel7.TabIndex = 107
-        Me.LinkLabel7.TabStop = true
+        Me.LinkLabel7.TabStop = True
         Me.LinkLabel7.Text = "Other Reports"
         Me.LinkLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'BtnToCustomerListVFS
         '
-        Me.BtnToCustomerListVFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnToCustomerListVFS.BackColor = System.Drawing.SystemColors.Control
         Me.BtnToCustomerListVFS.Location = New System.Drawing.Point(636, 245)
         Me.BtnToCustomerListVFS.Name = "BtnToCustomerListVFS"
         Me.BtnToCustomerListVFS.Size = New System.Drawing.Size(24, 20)
         Me.BtnToCustomerListVFS.TabIndex = 106
-        Me.BtnToCustomerListVFS.TabStop = false
-        Me.BtnToCustomerListVFS.UseVisualStyleBackColor = false
+        Me.BtnToCustomerListVFS.TabStop = False
+        Me.BtnToCustomerListVFS.UseVisualStyleBackColor = False
         '
         'TxtToCustomerVFS
         '
@@ -3419,7 +3419,7 @@ Public Class ReportParameters
         '
         'TxtToVehicleVFS
         '
-        Me.TxtToVehicleVFS.AcceptsReturn = true
+        Me.TxtToVehicleVFS.AcceptsReturn = True
         Me.TxtToVehicleVFS.AccessibleDescription = "YM.AUTO"
         Me.TxtToVehicleVFS.Location = New System.Drawing.Point(524, 220)
         Me.TxtToVehicleVFS.MaxLength = 10
@@ -3474,13 +3474,13 @@ Public Class ReportParameters
         '
         'BtnFromCustomerListVFS
         '
-        Me.BtnFromCustomerListVFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromCustomerListVFS.BackColor = System.Drawing.SystemColors.Control
         Me.BtnFromCustomerListVFS.Location = New System.Drawing.Point(364, 245)
         Me.BtnFromCustomerListVFS.Name = "BtnFromCustomerListVFS"
         Me.BtnFromCustomerListVFS.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromCustomerListVFS.TabIndex = 99
-        Me.BtnFromCustomerListVFS.TabStop = false
-        Me.BtnFromCustomerListVFS.UseVisualStyleBackColor = false
+        Me.BtnFromCustomerListVFS.TabStop = False
+        Me.BtnFromCustomerListVFS.UseVisualStyleBackColor = False
         '
         'TxtFromCustomerVFS
         '
@@ -3496,7 +3496,7 @@ Public Class ReportParameters
         '
         'TxtFromVehicleVFS
         '
-        Me.TxtFromVehicleVFS.AcceptsReturn = true
+        Me.TxtFromVehicleVFS.AcceptsReturn = True
         Me.TxtFromVehicleVFS.AccessibleDescription = "YM.AUTO"
         Me.TxtFromVehicleVFS.Location = New System.Drawing.Point(248, 220)
         Me.TxtFromVehicleVFS.MaxLength = 10
@@ -3562,13 +3562,13 @@ Public Class ReportParameters
         '
         'BtnFromBranchListVFS
         '
-        Me.BtnFromBranchListVFS.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnFromBranchListVFS.BackColor = System.Drawing.SystemColors.Control
         Me.BtnFromBranchListVFS.Location = New System.Drawing.Point(364, 194)
         Me.BtnFromBranchListVFS.Name = "BtnFromBranchListVFS"
         Me.BtnFromBranchListVFS.Size = New System.Drawing.Size(24, 20)
         Me.BtnFromBranchListVFS.TabIndex = 120
-        Me.BtnFromBranchListVFS.TabStop = false
-        Me.BtnFromBranchListVFS.UseVisualStyleBackColor = false
+        Me.BtnFromBranchListVFS.TabStop = False
+        Me.BtnFromBranchListVFS.UseVisualStyleBackColor = False
         '
         'GrpSetupList
         '
@@ -3588,7 +3588,7 @@ Public Class ReportParameters
         Me.GrpSetupList.Name = "GrpSetupList"
         Me.GrpSetupList.Size = New System.Drawing.Size(804, 583)
         Me.GrpSetupList.TabIndex = 30
-        Me.GrpSetupList.Visible = false
+        Me.GrpSetupList.Visible = False
         '
         'CmbGroupBySU
         '
@@ -3598,7 +3598,7 @@ Public Class ReportParameters
         Me.CmbGroupBySU.Size = New System.Drawing.Size(140, 21)
         Me.CmbGroupBySU.TabIndex = 132
         Me.CmbGroupBySU.Text = "None"
-        Me.CmbGroupBySU.Visible = false
+        Me.CmbGroupBySU.Visible = False
         '
         'LblGroupBySet
         '
@@ -3609,11 +3609,11 @@ Public Class ReportParameters
         Me.LblGroupBySet.Size = New System.Drawing.Size(88, 20)
         Me.LblGroupBySet.TabIndex = 133
         Me.LblGroupBySet.Text = "Grouped by"
-        Me.LblGroupBySet.Visible = false
+        Me.LblGroupBySet.Visible = False
         '
         'TxtToCode
         '
-        Me.TxtToCode.AcceptsReturn = true
+        Me.TxtToCode.AcceptsReturn = True
         Me.TxtToCode.AccessibleDescription = "YM.AUTO"
         Me.TxtToCode.Location = New System.Drawing.Point(543, 211)
         Me.TxtToCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.VehicleCode_Length
@@ -3634,7 +3634,7 @@ Public Class ReportParameters
         '
         'TxtFCode
         '
-        Me.TxtFCode.AcceptsReturn = true
+        Me.TxtFCode.AcceptsReturn = True
         Me.TxtFCode.AccessibleDescription = ""
         Me.TxtFCode.Location = New System.Drawing.Point(259, 211)
         Me.TxtFCode.MaxLength = 10
@@ -3660,7 +3660,7 @@ Public Class ReportParameters
         Me.LinkLabel8.Name = "LinkLabel8"
         Me.LinkLabel8.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel8.TabIndex = 107
-        Me.LinkLabel8.TabStop = true
+        Me.LinkLabel8.TabStop = True
         Me.LinkLabel8.Text = "Other Reports"
         Me.LinkLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -3747,7 +3747,7 @@ Public Class ReportParameters
         Me.GrpVehicleLedger.Size = New System.Drawing.Size(804, 583)
         Me.GrpVehicleLedger.TabIndex = 31
         Me.GrpVehicleLedger.Text = "Vehicle Revenue"
-        Me.GrpVehicleLedger.Visible = false
+        Me.GrpVehicleLedger.Visible = False
         '
         'Label39
         '
@@ -3761,48 +3761,48 @@ Public Class ReportParameters
         '
         'ChkShowOpeneing
         '
-        Me.ChkShowOpeneing.AutoSize = true
+        Me.ChkShowOpeneing.AutoSize = True
         Me.ChkShowOpeneing.BackColor = System.Drawing.Color.Transparent
         Me.ChkShowOpeneing.Location = New System.Drawing.Point(423, 190)
         Me.ChkShowOpeneing.Name = "ChkShowOpeneing"
         Me.ChkShowOpeneing.Size = New System.Drawing.Size(96, 17)
         Me.ChkShowOpeneing.TabIndex = 138
         Me.ChkShowOpeneing.Text = "Show Opening"
-        Me.ChkShowOpeneing.UseVisualStyleBackColor = false
+        Me.ChkShowOpeneing.UseVisualStyleBackColor = False
         '
         'RbtSummaryVLR
         '
-        Me.RbtSummaryVLR.AutoSize = true
+        Me.RbtSummaryVLR.AutoSize = True
         Me.RbtSummaryVLR.BackColor = System.Drawing.Color.Transparent
         Me.RbtSummaryVLR.Location = New System.Drawing.Point(468, 349)
         Me.RbtSummaryVLR.Name = "RbtSummaryVLR"
         Me.RbtSummaryVLR.Size = New System.Drawing.Size(68, 17)
         Me.RbtSummaryVLR.TabIndex = 137
         Me.RbtSummaryVLR.Text = "Summary"
-        Me.RbtSummaryVLR.UseVisualStyleBackColor = false
+        Me.RbtSummaryVLR.UseVisualStyleBackColor = False
         '
         'RbtDetailVLR
         '
-        Me.RbtDetailVLR.AutoSize = true
+        Me.RbtDetailVLR.AutoSize = True
         Me.RbtDetailVLR.BackColor = System.Drawing.Color.Transparent
-        Me.RbtDetailVLR.Checked = true
+        Me.RbtDetailVLR.Checked = True
         Me.RbtDetailVLR.Location = New System.Drawing.Point(331, 349)
         Me.RbtDetailVLR.Name = "RbtDetailVLR"
         Me.RbtDetailVLR.Size = New System.Drawing.Size(52, 17)
         Me.RbtDetailVLR.TabIndex = 136
-        Me.RbtDetailVLR.TabStop = true
+        Me.RbtDetailVLR.TabStop = True
         Me.RbtDetailVLR.Text = "Detail"
-        Me.RbtDetailVLR.UseVisualStyleBackColor = false
+        Me.RbtDetailVLR.UseVisualStyleBackColor = False
         '
         'BtnLstToOwnerVLR
         '
-        Me.BtnLstToOwnerVLR.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnLstToOwnerVLR.BackColor = System.Drawing.SystemColors.Control
         Me.BtnLstToOwnerVLR.Location = New System.Drawing.Point(636, 293)
         Me.BtnLstToOwnerVLR.Name = "BtnLstToOwnerVLR"
         Me.BtnLstToOwnerVLR.Size = New System.Drawing.Size(24, 20)
         Me.BtnLstToOwnerVLR.TabIndex = 135
-        Me.BtnLstToOwnerVLR.TabStop = false
-        Me.BtnLstToOwnerVLR.UseVisualStyleBackColor = false
+        Me.BtnLstToOwnerVLR.TabStop = False
+        Me.BtnLstToOwnerVLR.UseVisualStyleBackColor = False
         '
         'TxtToOwnerVLR
         '
@@ -3828,13 +3828,13 @@ Public Class ReportParameters
         '
         'BtnLstFrOwnerVLR
         '
-        Me.BtnLstFrOwnerVLR.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnLstFrOwnerVLR.BackColor = System.Drawing.SystemColors.Control
         Me.BtnLstFrOwnerVLR.Location = New System.Drawing.Point(364, 291)
         Me.BtnLstFrOwnerVLR.Name = "BtnLstFrOwnerVLR"
         Me.BtnLstFrOwnerVLR.Size = New System.Drawing.Size(24, 20)
         Me.BtnLstFrOwnerVLR.TabIndex = 133
-        Me.BtnLstFrOwnerVLR.TabStop = false
-        Me.BtnLstFrOwnerVLR.UseVisualStyleBackColor = false
+        Me.BtnLstFrOwnerVLR.TabStop = False
+        Me.BtnLstFrOwnerVLR.UseVisualStyleBackColor = False
         '
         'TxtFrOwnerVLR
         '
@@ -3879,7 +3879,7 @@ Public Class ReportParameters
         '
         'TxtBranchCodeVLR
         '
-        Me.TxtBranchCodeVLR.AcceptsReturn = true
+        Me.TxtBranchCodeVLR.AcceptsReturn = True
         Me.TxtBranchCodeVLR.AccessibleDescription = ""
         Me.TxtBranchCodeVLR.Location = New System.Drawing.Point(248, 219)
         Me.TxtBranchCodeVLR.MaxLength = 10
@@ -3905,19 +3905,19 @@ Public Class ReportParameters
         Me.LinkLabel9.Name = "LinkLabel9"
         Me.LinkLabel9.Size = New System.Drawing.Size(75, 20)
         Me.LinkLabel9.TabIndex = 107
-        Me.LinkLabel9.TabStop = true
+        Me.LinkLabel9.TabStop = True
         Me.LinkLabel9.Text = "Other Reports"
         Me.LinkLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'BtnLstToVehicleVLR
         '
-        Me.BtnLstToVehicleVLR.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnLstToVehicleVLR.BackColor = System.Drawing.SystemColors.Control
         Me.BtnLstToVehicleVLR.Location = New System.Drawing.Point(636, 270)
         Me.BtnLstToVehicleVLR.Name = "BtnLstToVehicleVLR"
         Me.BtnLstToVehicleVLR.Size = New System.Drawing.Size(24, 20)
         Me.BtnLstToVehicleVLR.TabIndex = 106
-        Me.BtnLstToVehicleVLR.TabStop = false
-        Me.BtnLstToVehicleVLR.UseVisualStyleBackColor = false
+        Me.BtnLstToVehicleVLR.TabStop = False
+        Me.BtnLstToVehicleVLR.UseVisualStyleBackColor = False
         '
         'TxtToVehicleVLR
         '
@@ -3967,13 +3967,13 @@ Public Class ReportParameters
         '
         'BtnLstFrVehicleVLR
         '
-        Me.BtnLstFrVehicleVLR.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnLstFrVehicleVLR.BackColor = System.Drawing.SystemColors.Control
         Me.BtnLstFrVehicleVLR.Location = New System.Drawing.Point(364, 268)
         Me.BtnLstFrVehicleVLR.Name = "BtnLstFrVehicleVLR"
         Me.BtnLstFrVehicleVLR.Size = New System.Drawing.Size(24, 20)
         Me.BtnLstFrVehicleVLR.TabIndex = 99
-        Me.BtnLstFrVehicleVLR.TabStop = false
-        Me.BtnLstFrVehicleVLR.UseVisualStyleBackColor = false
+        Me.BtnLstFrVehicleVLR.TabStop = False
+        Me.BtnLstFrVehicleVLR.UseVisualStyleBackColor = False
         '
         'TxtFrVehicleVLR
         '
@@ -4024,13 +4024,13 @@ Public Class ReportParameters
         '
         'BtnLstBranchVLR
         '
-        Me.BtnLstBranchVLR.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnLstBranchVLR.BackColor = System.Drawing.SystemColors.Control
         Me.BtnLstBranchVLR.Location = New System.Drawing.Point(362, 219)
         Me.BtnLstBranchVLR.Name = "BtnLstBranchVLR"
         Me.BtnLstBranchVLR.Size = New System.Drawing.Size(24, 20)
         Me.BtnLstBranchVLR.TabIndex = 120
-        Me.BtnLstBranchVLR.TabStop = false
-        Me.BtnLstBranchVLR.UseVisualStyleBackColor = false
+        Me.BtnLstBranchVLR.TabStop = False
+        Me.BtnLstBranchVLR.UseVisualStyleBackColor = False
         '
         'GrpVehicleRevenue
         '
@@ -4047,34 +4047,34 @@ Public Class ReportParameters
         Me.GrpVehicleRevenue.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpVehicleRevenue.Location = New System.Drawing.Point(0, 0)
         Me.GrpVehicleRevenue.Name = "GrpVehicleRevenue"
-        Me.GrpVehicleRevenue.Size = New System.Drawing.Size(804, 521)
+        Me.GrpVehicleRevenue.Size = New System.Drawing.Size(804, 583)
         Me.GrpVehicleRevenue.TabIndex = 31
         Me.GrpVehicleRevenue.Text = "Vehicle Revenue"
-        Me.GrpVehicleRevenue.Visible = false
+        Me.GrpVehicleRevenue.Visible = False
         '
         'RptSummaryVRP
         '
-        Me.RptSummaryVRP.AutoSize = true
+        Me.RptSummaryVRP.AutoSize = True
         Me.RptSummaryVRP.BackColor = System.Drawing.Color.Transparent
         Me.RptSummaryVRP.Location = New System.Drawing.Point(430, 349)
         Me.RptSummaryVRP.Name = "RptSummaryVRP"
         Me.RptSummaryVRP.Size = New System.Drawing.Size(68, 17)
         Me.RptSummaryVRP.TabIndex = 149
         Me.RptSummaryVRP.Text = "Summary"
-        Me.RptSummaryVRP.UseVisualStyleBackColor = false
+        Me.RptSummaryVRP.UseVisualStyleBackColor = False
         '
         'RadioButton2
         '
-        Me.RadioButton2.AutoSize = true
+        Me.RadioButton2.AutoSize = True
         Me.RadioButton2.BackColor = System.Drawing.Color.Transparent
-        Me.RadioButton2.Checked = true
+        Me.RadioButton2.Checked = True
         Me.RadioButton2.Location = New System.Drawing.Point(293, 349)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(52, 17)
         Me.RadioButton2.TabIndex = 148
-        Me.RadioButton2.TabStop = true
+        Me.RadioButton2.TabStop = True
         Me.RadioButton2.Text = "Detail"
-        Me.RadioButton2.UseVisualStyleBackColor = false
+        Me.RadioButton2.UseVisualStyleBackColor = False
         '
         'Label88
         '
@@ -4154,15 +4154,15 @@ Public Class ReportParameters
         '
         'LstVehicleVR
         '
-        Me.LstVehicleVR.CheckBoxes = true
+        Me.LstVehicleVR.CheckBoxes = True
         Me.LstVehicleVR.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader6})
         Me.LstVehicleVR.Location = New System.Drawing.Point(245, 176)
         Me.LstVehicleVR.Name = "LstVehicleVR"
         Me.LstVehicleVR.Size = New System.Drawing.Size(383, 140)
         Me.LstVehicleVR.TabIndex = 141
-        Me.LstVehicleVR.UseCompatibleStateImageBehavior = false
+        Me.LstVehicleVR.UseCompatibleStateImageBehavior = False
         Me.LstVehicleVR.View = System.Windows.Forms.View.Details
-        Me.LstVehicleVR.Visible = false
+        Me.LstVehicleVR.Visible = False
         '
         'ColumnHeader6
         '
@@ -4175,7 +4175,6 @@ Public Class ReportParameters
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.CancelButton = Me.BtnCancel
         Me.ClientSize = New System.Drawing.Size(804, 583)
-        Me.Controls.Add(Me.GrpVehicleRevenue)
         Me.Controls.Add(Me.PnlProgressBare)
         Me.Controls.Add(Me.GrpButtons)
         Me.Controls.Add(Me.GrpTransactionList)
@@ -4191,7 +4190,8 @@ Public Class ReportParameters
         Me.Controls.Add(Me.GrpFinancialStatements)
         Me.Controls.Add(Me.GrpCashFlowStatements)
         Me.Controls.Add(Me.GrpVehicleFreightStatements)
-        Me.KeyPreview = true
+        Me.Controls.Add(Me.GrpVehicleRevenue)
+        Me.KeyPreview = True
         Me.Name = "ReportParameters"
         Me.ShowInTaskbar = false
         Me.Text = "Print"

@@ -70,9 +70,9 @@ Namespace GeneralLedger
         Friend WithEvents TxtAdvanceReferenceNo As Infragistics.Win.UltraWinEditors.UltraTextEditor
         Friend WithEvents TxtTripAdvance As Infragistics.Win.UltraWinEditors.UltraNumericEditor
         Friend WithEvents Label21 As System.Windows.Forms.Label
-        Friend WithEvents TxtCommissionRate As Infragistics.Win.UltraWinEditors.UltraComboEditor
         Friend WithEvents Label22 As System.Windows.Forms.Label
         Friend WithEvents ChkIsThirdparty As CheckBox
+        Friend WithEvents TxtCommissionRate As Infragistics.Win.UltraWinEditors.UltraNumericEditor
         Friend WithEvents TxtQuantity As Infragistics.Win.UltraWinEditors.UltraNumericEditor
         <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
@@ -90,789 +90,752 @@ Namespace GeneralLedger
         Dim Appearance13 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim ValueListItem12 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem1 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem2 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem3 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem4 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem5 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem6 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem7 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem8 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem9 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem10 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem11 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Me.txtDescription = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.ErrProvider = New AzamTechnologies.ATErrorProvider(Me.components)
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtBranch = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.TxtCustomer = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TxtStationPoint = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TxtDestinationPoint = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TxtProduct = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TxtVehicle = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtAmount = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TxtRate = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.TxtShortage = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.TxtQuantity = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.TxtCommission = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
-        Me.TxtVehicleCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.TxtDestinationPointCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.TxtStationPointCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.Desc = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.txtBranchCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.txtTransactionNumber = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.TxtDate = New System.Windows.Forms.DateTimePicker()
-        Me.TxtTokenNo = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.TxtProductCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.TxtShortageQuantity = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.TxtQuantityValue = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.TxtAdvanceReferenceNo = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.TxtTripAdvance = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
-        Me.TxtCommissionRate = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.ChkIsThirdparty = New System.Windows.Forms.CheckBox()
-        CType(Me.txtDescription,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ErrProvider,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txtBranch,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtCustomer,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtStationPoint,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtDestinationPoint,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtProduct,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtVehicle,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txtAmount,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtRate,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtShortage,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtQuantity,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtCommission,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtVehicleCode,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtDestinationPointCode,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtStationPointCode,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.Desc,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txtBranchCode,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txtTransactionNumber,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtTokenNo,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtProductCode,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtShortageQuantity,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtQuantityValue,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtAdvanceReferenceNo,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtTripAdvance,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtCommissionRate,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SuspendLayout
-        '
-        'txtDescription
-        '
-        Me.txtDescription.Location = New System.Drawing.Point(152, 272)
-        Me.txtDescription.Multiline = true
-        Me.txtDescription.Name = "txtDescription"
-        Me.txtDescription.Scrollbars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtDescription.Size = New System.Drawing.Size(272, 56)
-        Me.txtDescription.TabIndex = 8
-        Me.txtDescription.Tag = "ds.Description"
-        '
-        'Label2
-        '
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.ForeColor = System.Drawing.Color.Navy
-        Me.Label2.Location = New System.Drawing.Point(40, 281)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(110, 20)
-        Me.Label2.TabIndex = 77
-        Me.Label2.Text = "Description"
-        '
-        'Label1
-        '
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.ForeColor = System.Drawing.Color.Navy
-        Me.Label1.Location = New System.Drawing.Point(40, 103)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(110, 20)
-        Me.Label1.TabIndex = 76
-        Me.Label1.Text = "Document No"
-        '
-        'Label9
-        '
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.ForeColor = System.Drawing.Color.Navy
-        Me.Label9.Location = New System.Drawing.Point(40, 249)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(110, 20)
-        Me.Label9.TabIndex = 74
-        Me.Label9.Text = "Document Date"
-        '
-        'ErrProvider
-        '
-        Me.ErrProvider.BlinkColor = System.Drawing.Color.Orange
-        Me.ErrProvider.ContainerControl = Me
-        Me.ErrProvider.Icon = CType(resources.GetObject("ErrProvider.Icon"),System.Drawing.Icon)
-        Me.ErrProvider.SettleColor = System.Drawing.Color.LightPink
-        '
-        'Label3
-        '
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.ForeColor = System.Drawing.Color.Navy
-        Me.Label3.Location = New System.Drawing.Point(40, 79)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(110, 20)
-        Me.Label3.TabIndex = 97
-        Me.Label3.Text = "Branch"
-        '
-        'txtBranch
-        '
-        Me.txtBranch.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Appearance12.BackColor = System.Drawing.SystemColors.Window
-        Me.txtBranch.Appearance = Appearance12
-        Me.txtBranch.BackColor = System.Drawing.SystemColors.Window
-        Me.txtBranch.Location = New System.Drawing.Point(290, 79)
-        Me.txtBranch.Name = "txtBranch"
-        Me.txtBranch.Size = New System.Drawing.Size(628, 21)
-        Me.txtBranch.TabIndex = 6
-        Me.txtBranch.TabStop = false
-        Me.txtBranch.Tag = "dd.BranchName"
-        '
-        'TxtCustomer
-        '
-        Me.TxtCustomer.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Appearance10.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtCustomer.Appearance = Appearance10
-        Me.TxtCustomer.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtCustomer.Location = New System.Drawing.Point(290, 127)
-        Me.TxtCustomer.Name = "TxtCustomer"
-        Me.TxtCustomer.Size = New System.Drawing.Size(628, 21)
-        Me.TxtCustomer.TabIndex = 100
-        Me.TxtCustomer.TabStop = false
-        Me.TxtCustomer.Tag = "dd.CustomerName"
-        '
-        'Label4
-        '
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.ForeColor = System.Drawing.Color.Navy
-        Me.Label4.Location = New System.Drawing.Point(40, 127)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(110, 20)
-        Me.Label4.TabIndex = 101
-        Me.Label4.Text = "Customer"
-        '
-        'TxtStationPoint
-        '
-        Me.TxtStationPoint.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Appearance8.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtStationPoint.Appearance = Appearance8
-        Me.TxtStationPoint.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtStationPoint.Enabled = false
-        Me.TxtStationPoint.Location = New System.Drawing.Point(290, 199)
-        Me.TxtStationPoint.Name = "TxtStationPoint"
-        Me.TxtStationPoint.Size = New System.Drawing.Size(628, 21)
-        Me.TxtStationPoint.TabIndex = 104
-        Me.TxtStationPoint.TabStop = false
-        Me.TxtStationPoint.Tag = "dd.StationPointName"
-        '
-        'Label5
-        '
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.ForeColor = System.Drawing.Color.Navy
-        Me.Label5.Location = New System.Drawing.Point(40, 199)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(110, 20)
-        Me.Label5.TabIndex = 105
-        Me.Label5.Text = "Station Point"
-        '
-        'TxtDestinationPoint
-        '
-        Me.TxtDestinationPoint.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Appearance6.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtDestinationPoint.Appearance = Appearance6
-        Me.TxtDestinationPoint.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtDestinationPoint.Enabled = false
-        Me.TxtDestinationPoint.Location = New System.Drawing.Point(290, 223)
-        Me.TxtDestinationPoint.Name = "TxtDestinationPoint"
-        Me.TxtDestinationPoint.Size = New System.Drawing.Size(628, 21)
-        Me.TxtDestinationPoint.TabIndex = 108
-        Me.TxtDestinationPoint.TabStop = false
-        Me.TxtDestinationPoint.Tag = "dd.DestinationPointName"
-        '
-        'Label6
-        '
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.ForeColor = System.Drawing.Color.Navy
-        Me.Label6.Location = New System.Drawing.Point(40, 223)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(110, 20)
-        Me.Label6.TabIndex = 109
-        Me.Label6.Text = "Destination Point"
-        '
-        'TxtProduct
-        '
-        Me.TxtProduct.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Appearance4.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtProduct.Appearance = Appearance4
-        Me.TxtProduct.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtProduct.Location = New System.Drawing.Point(290, 175)
-        Me.TxtProduct.Name = "TxtProduct"
-        Me.TxtProduct.Size = New System.Drawing.Size(628, 21)
-        Me.TxtProduct.TabIndex = 112
-        Me.TxtProduct.TabStop = false
-        Me.TxtProduct.Tag = "dd.ProductName"
-        '
-        'Label7
-        '
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.ForeColor = System.Drawing.Color.Navy
-        Me.Label7.Location = New System.Drawing.Point(40, 173)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(110, 20)
-        Me.Label7.TabIndex = 113
-        Me.Label7.Text = "Product"
-        '
-        'TxtVehicle
-        '
-        Me.TxtVehicle.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Appearance2.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtVehicle.Appearance = Appearance2
-        Me.TxtVehicle.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtVehicle.Location = New System.Drawing.Point(290, 151)
-        Me.TxtVehicle.Name = "TxtVehicle"
-        Me.TxtVehicle.Size = New System.Drawing.Size(628, 21)
-        Me.TxtVehicle.TabIndex = 116
-        Me.TxtVehicle.TabStop = false
-        Me.TxtVehicle.Tag = "dd.VehicleDescription"
-        '
-        'Label8
-        '
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.ForeColor = System.Drawing.Color.Navy
-        Me.Label8.Location = New System.Drawing.Point(40, 151)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(110, 20)
-        Me.Label8.TabIndex = 117
-        Me.Label8.Text = "Vehicle "
-        '
-        'txtAmount
-        '
-        Me.txtAmount.Location = New System.Drawing.Point(412, 512)
-        Me.txtAmount.MaxValue = CType(21474836471222,Long)
-        Me.txtAmount.Name = "txtAmount"
-        Me.txtAmount.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
-        Me.txtAmount.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.txtAmount.Size = New System.Drawing.Size(120, 21)
-        Me.txtAmount.TabIndex = 12
-        Me.txtAmount.Tag = "dt.Amount"
-        '
-        'Label10
-        '
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.ForeColor = System.Drawing.Color.Navy
-        Me.Label10.Location = New System.Drawing.Point(302, 512)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(110, 20)
-        Me.Label10.TabIndex = 121
-        Me.Label10.Text = "Amount"
-        '
-        'TxtRate
-        '
-        Me.TxtRate.Location = New System.Drawing.Point(412, 440)
-        Me.TxtRate.MinValue = CType(-21474836489999,Long)
-        Me.TxtRate.Name = "TxtRate"
-        Me.TxtRate.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
-        Me.TxtRate.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.TxtRate.Size = New System.Drawing.Size(120, 21)
-        Me.TxtRate.TabIndex = 11
-        Me.TxtRate.Tag = "dt.Rate"
-        '
-        'Label11
-        '
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.ForeColor = System.Drawing.Color.Navy
-        Me.Label11.Location = New System.Drawing.Point(302, 445)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(110, 20)
-        Me.Label11.TabIndex = 120
-        Me.Label11.Text = "Rate"
-        '
-        'TxtShortage
-        '
-        Me.TxtShortage.AccessibleDescription = "Last"
-        Me.TxtShortage.Location = New System.Drawing.Point(711, 461)
-        Me.TxtShortage.Name = "TxtShortage"
-        Me.TxtShortage.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
-        Me.TxtShortage.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.TxtShortage.Size = New System.Drawing.Size(120, 21)
-        Me.TxtShortage.TabIndex = 15
-        Me.TxtShortage.Tag = "dt.Shortage"
-        Me.TxtShortage.Visible = false
-        '
-        'Label12
-        '
-        Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.ForeColor = System.Drawing.Color.Navy
-        Me.Label12.Location = New System.Drawing.Point(601, 461)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(110, 20)
-        Me.Label12.TabIndex = 125
-        Me.Label12.Text = "Shortage"
-        Me.Label12.Visible = false
-        '
-        'Label13
-        '
-        Me.Label13.BackColor = System.Drawing.Color.Transparent
-        Me.Label13.ForeColor = System.Drawing.Color.Navy
-        Me.Label13.Location = New System.Drawing.Point(302, 489)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(110, 20)
-        Me.Label13.TabIndex = 124
-        Me.Label13.Text = "Commission"
-        '
-        'TxtQuantity
-        '
-        Me.TxtQuantity.Location = New System.Drawing.Point(412, 416)
-        Me.TxtQuantity.Name = "TxtQuantity"
-        Me.TxtQuantity.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
-        Me.TxtQuantity.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.TxtQuantity.Size = New System.Drawing.Size(120, 21)
-        Me.TxtQuantity.TabIndex = 10
-        Me.TxtQuantity.Tag = "dt.Quantity"
-        '
-        'Label14
-        '
-        Me.Label14.BackColor = System.Drawing.Color.Transparent
-        Me.Label14.ForeColor = System.Drawing.Color.Navy
-        Me.Label14.Location = New System.Drawing.Point(302, 416)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(110, 20)
-        Me.Label14.TabIndex = 127
-        Me.Label14.Text = "Quantity"
-        '
-        'TxtCommission
-        '
-        Me.TxtCommission.Enabled = false
-        Me.TxtCommission.Location = New System.Drawing.Point(412, 488)
-        Me.TxtCommission.Name = "TxtCommission"
-        Me.TxtCommission.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
-        Me.TxtCommission.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.TxtCommission.ReadOnly = true
-        Me.TxtCommission.Size = New System.Drawing.Size(120, 21)
-        Me.TxtCommission.TabIndex = 20
-        Me.TxtCommission.Tag = "dt.Commission"
-        '
-        'TxtVehicleCode
-        '
-        Me.TxtVehicleCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-        Appearance3.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtVehicleCode.Appearance = Appearance3
-        Me.TxtVehicleCode.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtVehicleCode.Location = New System.Drawing.Point(152, 151)
-        Me.TxtVehicleCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.VehicleCode_Length
-        Me.TxtVehicleCode.Name = "TxtVehicleCode"
-        Me.TxtVehicleCode.Size = New System.Drawing.Size(138, 21)
-        Me.TxtVehicleCode.TabIndex = 3
-        Me.TxtVehicleCode.Tag = "FK.VehicleCode"
-        '
-        'TxtDestinationPointCode
-        '
-        Me.TxtDestinationPointCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-        Appearance7.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtDestinationPointCode.Appearance = Appearance7
-        Me.TxtDestinationPointCode.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtDestinationPointCode.Location = New System.Drawing.Point(152, 223)
-        Me.TxtDestinationPointCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.RegionCode_Length
-        Me.TxtDestinationPointCode.Name = "TxtDestinationPointCode"
-        Me.TxtDestinationPointCode.Size = New System.Drawing.Size(138, 21)
-        Me.TxtDestinationPointCode.TabIndex = 6
-        Me.TxtDestinationPointCode.Tag = "FK.DestinationPointCode"
-        '
-        'TxtStationPointCode
-        '
-        Me.TxtStationPointCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-        Appearance9.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtStationPointCode.Appearance = Appearance9
-        Me.TxtStationPointCode.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtStationPointCode.Location = New System.Drawing.Point(152, 199)
-        Me.TxtStationPointCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.RegionCode_Length
-        Me.TxtStationPointCode.Name = "TxtStationPointCode"
-        Me.TxtStationPointCode.Size = New System.Drawing.Size(138, 21)
-        Me.TxtStationPointCode.TabIndex = 5
-        Me.TxtStationPointCode.Tag = "FK.StationPointCode"
-        '
-        'Desc
-        '
-        Me.Desc.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-        Appearance11.BackColor = System.Drawing.SystemColors.Window
-        Me.Desc.Appearance = Appearance11
-        Me.Desc.BackColor = System.Drawing.SystemColors.Window
-        Me.Desc.Location = New System.Drawing.Point(152, 127)
-        Me.Desc.MaxLength = 5
-        Me.Desc.Name = "Desc"
-        Me.Desc.Size = New System.Drawing.Size(138, 21)
-        Me.Desc.TabIndex = 2
-        Me.Desc.Tag = "FK.CustomerCode"
-        '
-        'txtBranchCode
-        '
-        Me.txtBranchCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-        Appearance13.BackColor = System.Drawing.SystemColors.Window
-        Me.txtBranchCode.Appearance = Appearance13
-        Me.txtBranchCode.BackColor = System.Drawing.SystemColors.Window
-        Me.txtBranchCode.Location = New System.Drawing.Point(152, 79)
-        Me.txtBranchCode.MaxLength = 2
-        Me.txtBranchCode.Name = "txtBranchCode"
-        Me.txtBranchCode.Size = New System.Drawing.Size(138, 21)
-        Me.txtBranchCode.TabIndex = 0
-        Me.txtBranchCode.Tag = "PK.BranchCode"
-        '
-        'txtTransactionNumber
-        '
-        Me.txtTransactionNumber.AcceptsReturn = true
-        Me.txtTransactionNumber.Location = New System.Drawing.Point(152, 103)
-        Me.txtTransactionNumber.MaxLength = 10
-        Me.txtTransactionNumber.Name = "txtTransactionNumber"
-        Me.txtTransactionNumber.Size = New System.Drawing.Size(138, 21)
-        Me.txtTransactionNumber.TabIndex = 1
-        Me.txtTransactionNumber.Tag = "PK.TransactionNo"
-        '
-        'TxtDate
-        '
-        Me.TxtDate.CalendarTitleBackColor = System.Drawing.SystemColors.Control
-        Me.TxtDate.CalendarTitleForeColor = System.Drawing.SystemColors.WindowText
-        Me.TxtDate.CustomFormat = Global.BusinessLeaf.My.MySettings.Default.DateFormat
-        Me.TxtDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.TxtDate.Location = New System.Drawing.Point(152, 248)
-        Me.TxtDate.MaxDate = New Date(2060, 12, 31, 0, 0, 0, 0)
-        Me.TxtDate.MinDate = New Date(1980, 1, 1, 0, 0, 0, 0)
-        Me.TxtDate.Name = "TxtDate"
-        Me.TxtDate.Size = New System.Drawing.Size(100, 20)
-        Me.TxtDate.TabIndex = 7
-        Me.TxtDate.Tag = "dt.TransactionDate"
-        '
-        'TxtTokenNo
-        '
-        Me.TxtTokenNo.Location = New System.Drawing.Point(412, 102)
-        Me.TxtTokenNo.MaxLength = 10
-        Me.TxtTokenNo.Name = "TxtTokenNo"
-        Me.TxtTokenNo.Size = New System.Drawing.Size(120, 21)
-        Me.TxtTokenNo.TabIndex = 2
-        Me.TxtTokenNo.Tag = "IM.CustomerReference"
-        '
-        'Label15
-        '
-        Me.Label15.BackColor = System.Drawing.Color.Transparent
-        Me.Label15.ForeColor = System.Drawing.Color.Navy
-        Me.Label15.Location = New System.Drawing.Point(330, 105)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(82, 20)
-        Me.Label15.TabIndex = 129
-        Me.Label15.Text = "Token No"
-        '
-        'TxtProductCode
-        '
-        Me.TxtProductCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-        Appearance5.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtProductCode.Appearance = Appearance5
-        Me.TxtProductCode.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtProductCode.Location = New System.Drawing.Point(152, 175)
-        Me.TxtProductCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.ProductCode_Length
-        Me.TxtProductCode.Name = "TxtProductCode"
-        Me.TxtProductCode.Size = New System.Drawing.Size(138, 21)
-        Me.TxtProductCode.TabIndex = 4
-        Me.TxtProductCode.Tag = "FK.ProductCode"
-        '
-        'TxtShortageQuantity
-        '
-        Me.TxtShortageQuantity.Location = New System.Drawing.Point(711, 416)
-        Me.TxtShortageQuantity.Name = "TxtShortageQuantity"
-        Me.TxtShortageQuantity.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
-        Me.TxtShortageQuantity.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.TxtShortageQuantity.Size = New System.Drawing.Size(120, 21)
-        Me.TxtShortageQuantity.TabIndex = 13
-        Me.TxtShortageQuantity.Tag = "dt.ShortageQuantity"
-        Me.TxtShortageQuantity.Visible = false
-        '
-        'Label16
-        '
-        Me.Label16.BackColor = System.Drawing.Color.Transparent
-        Me.Label16.ForeColor = System.Drawing.Color.Navy
-        Me.Label16.Location = New System.Drawing.Point(601, 416)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(110, 20)
-        Me.Label16.TabIndex = 131
-        Me.Label16.Text = "Shortage Quantity"
-        Me.Label16.Visible = false
-        '
-        'Label17
-        '
-        Me.Label17.BackColor = System.Drawing.Color.Transparent
-        Me.Label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label17.Font = New System.Drawing.Font("Courier New", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline),System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.Purple
-        Me.Label17.Location = New System.Drawing.Point(591, 379)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(258, 171)
-        Me.Label17.TabIndex = 132
-        Me.Label17.Text = "Shortage"
-        Me.Label17.Visible = false
-        '
-        'TxtQuantityValue
-        '
-        Me.TxtQuantityValue.Location = New System.Drawing.Point(711, 438)
-        Me.TxtQuantityValue.Name = "TxtQuantityValue"
-        Me.TxtQuantityValue.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
-        Me.TxtQuantityValue.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.TxtQuantityValue.Size = New System.Drawing.Size(120, 21)
-        Me.TxtQuantityValue.TabIndex = 14
-        Me.TxtQuantityValue.Tag = "dt.QuantityValue"
-        Me.TxtQuantityValue.Visible = false
-        '
-        'Label18
-        '
-        Me.Label18.BackColor = System.Drawing.Color.Transparent
-        Me.Label18.ForeColor = System.Drawing.Color.Navy
-        Me.Label18.Location = New System.Drawing.Point(601, 438)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(110, 20)
-        Me.Label18.TabIndex = 134
-        Me.Label18.Text = "Quantity Value"
-        Me.Label18.Visible = false
-        '
-        'Label19
-        '
-        Me.Label19.BackColor = System.Drawing.Color.Transparent
-        Me.Label19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label19.Font = New System.Drawing.Font("Courier New", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline),System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label19.ForeColor = System.Drawing.Color.Purple
-        Me.Label19.Location = New System.Drawing.Point(288, 379)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(258, 171)
-        Me.Label19.TabIndex = 135
-        Me.Label19.Text = "Total"
-        '
-        'Label20
-        '
-        Me.Label20.BackColor = System.Drawing.Color.Transparent
-        Me.Label20.ForeColor = System.Drawing.Color.Navy
-        Me.Label20.Location = New System.Drawing.Point(40, 333)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(110, 20)
-        Me.Label20.TabIndex = 137
-        Me.Label20.Text = "Expences Reference"
-        '
-        'TxtAdvanceReferenceNo
-        '
-        Me.TxtAdvanceReferenceNo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-        Appearance1.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtAdvanceReferenceNo.Appearance = Appearance1
-        Me.TxtAdvanceReferenceNo.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtAdvanceReferenceNo.Location = New System.Drawing.Point(152, 332)
-        Me.TxtAdvanceReferenceNo.MaxLength = 10
-        Me.TxtAdvanceReferenceNo.Name = "TxtAdvanceReferenceNo"
-        Me.TxtAdvanceReferenceNo.Size = New System.Drawing.Size(138, 21)
-        Me.TxtAdvanceReferenceNo.TabIndex = 9
-        Me.TxtAdvanceReferenceNo.Tag = "FK.TripAdvanceReference"
-        '
-        'TxtTripAdvance
-        '
-        Me.TxtTripAdvance.Location = New System.Drawing.Point(290, 332)
-        Me.TxtTripAdvance.Name = "TxtTripAdvance"
-        Me.TxtTripAdvance.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
-        Me.TxtTripAdvance.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.TxtTripAdvance.ReadOnly = true
-        Me.TxtTripAdvance.Size = New System.Drawing.Size(120, 21)
-        Me.TxtTripAdvance.TabIndex = 138
-        Me.TxtTripAdvance.Tag = "dt.TripAdvance"
-        Me.TxtTripAdvance.Visible = false
-        '
-        'TxtCommissionRate
-        '
-        Me.TxtCommissionRate.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
-        ValueListItem12.DataValue = "0"
-        ValueListItem12.DisplayText = "0"
-        ValueListItem1.DataValue = "5"
-        ValueListItem1.DisplayText = "5"
-        ValueListItem2.DataValue = "6"
-        ValueListItem2.DisplayText = "6"
-        ValueListItem3.DataValue = "7"
-        ValueListItem3.DisplayText = "7"
-        ValueListItem4.DataValue = "8"
-        ValueListItem4.DisplayText = "8"
-        ValueListItem5.DataValue = "9"
-        ValueListItem5.DisplayText = "9"
-        ValueListItem6.DataValue = "10"
-        ValueListItem6.DisplayText = "10"
-        ValueListItem7.DataValue = "11"
-        ValueListItem7.DisplayText = "11"
-        ValueListItem8.DataValue = "12"
-        ValueListItem8.DisplayText = "12"
-        ValueListItem9.DataValue = "13"
-        ValueListItem9.DisplayText = "13"
-        ValueListItem10.DataValue = "14"
-        ValueListItem10.DisplayText = "14"
-        ValueListItem11.DataValue = "15"
-        ValueListItem11.DisplayText = "15"
-        Me.TxtCommissionRate.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem12, ValueListItem1, ValueListItem2, ValueListItem3, ValueListItem4, ValueListItem5, ValueListItem6, ValueListItem7, ValueListItem8, ValueListItem9, ValueListItem10, ValueListItem11})
-        Me.TxtCommissionRate.Location = New System.Drawing.Point(412, 464)
-        Me.TxtCommissionRate.Name = "TxtCommissionRate"
-        Me.TxtCommissionRate.NullText = "0"
-        Me.TxtCommissionRate.Size = New System.Drawing.Size(38, 21)
-        Me.TxtCommissionRate.TabIndex = 16
-        Me.TxtCommissionRate.TabStop = false
-        Me.TxtCommissionRate.Tag = "dd.CommissionRate"
-        '
-        'Label21
-        '
-        Me.Label21.BackColor = System.Drawing.Color.Transparent
-        Me.Label21.ForeColor = System.Drawing.Color.Navy
-        Me.Label21.Location = New System.Drawing.Point(302, 464)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(110, 20)
-        Me.Label21.TabIndex = 140
-        Me.Label21.Text = "Commission Rate"
-        '
-        'Label22
-        '
-        Me.Label22.BackColor = System.Drawing.Color.Transparent
-        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label22.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label22.Location = New System.Drawing.Point(456, 466)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(69, 20)
-        Me.Label22.TabIndex = 141
-        Me.Label22.Text = "%"
-        '
-        'ChkIsThirdparty
-        '
-        Me.ChkIsThirdparty.AutoSize = true
-        Me.ChkIsThirdparty.Location = New System.Drawing.Point(444, 300)
-        Me.ChkIsThirdparty.Name = "ChkIsThirdparty"
-        Me.ChkIsThirdparty.Size = New System.Drawing.Size(73, 17)
-        Me.ChkIsThirdparty.TabIndex = 142
-        Me.ChkIsThirdparty.Tag = "dd.IsLocalTrip"
-        Me.ChkIsThirdparty.Text = "Local Trip"
-        Me.ChkIsThirdparty.UseVisualStyleBackColor = true
-        '
-        'Invoices
-        '
-        Me.AccessibleName = "Invoices"
-        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-        Me.ClientSize = New System.Drawing.Size(964, 617)
-        Me.Controls.Add(Me.ChkIsThirdparty)
-        Me.Controls.Add(Me.Label22)
-        Me.Controls.Add(Me.Label21)
-        Me.Controls.Add(Me.TxtCommissionRate)
-        Me.Controls.Add(Me.TxtTripAdvance)
-        Me.Controls.Add(Me.Label20)
-        Me.Controls.Add(Me.TxtAdvanceReferenceNo)
-        Me.Controls.Add(Me.TxtQuantityValue)
-        Me.Controls.Add(Me.Label18)
-        Me.Controls.Add(Me.TxtShortageQuantity)
-        Me.Controls.Add(Me.Label16)
-        Me.Controls.Add(Me.TxtTokenNo)
-        Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.TxtQuantity)
-        Me.Controls.Add(Me.TxtShortage)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.TxtCommission)
-        Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.txtAmount)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.TxtRate)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.TxtVehicle)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TxtVehicleCode)
-        Me.Controls.Add(Me.TxtProduct)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.TxtProductCode)
-        Me.Controls.Add(Me.TxtDestinationPoint)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TxtDestinationPointCode)
-        Me.Controls.Add(Me.TxtStationPoint)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.TxtStationPointCode)
-        Me.Controls.Add(Me.TxtCustomer)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Desc)
-        Me.Controls.Add(Me.txtBranch)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.txtBranchCode)
-        Me.Controls.Add(Me.txtDescription)
-        Me.Controls.Add(Me.txtTransactionNumber)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.TxtDate)
-        Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.Label17)
-        Me.KeyPreview = true
-        Me.Name = "Invoices"
-        Me.Text = "Invoice File "
-        CType(Me.txtDescription,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.ErrProvider,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txtBranch,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtCustomer,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtStationPoint,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtDestinationPoint,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtProduct,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtVehicle,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txtAmount,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtRate,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtShortage,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtQuantity,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtCommission,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtVehicleCode,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtDestinationPointCode,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtStationPointCode,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.Desc,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txtBranchCode,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txtTransactionNumber,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtTokenNo,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtProductCode,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtShortageQuantity,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtQuantityValue,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtAdvanceReferenceNo,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtTripAdvance,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TxtCommissionRate,System.ComponentModel.ISupportInitialize).EndInit
-        Me.ResumeLayout(false)
-        Me.PerformLayout
+            Me.txtDescription = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label2 = New System.Windows.Forms.Label()
+            Me.Label1 = New System.Windows.Forms.Label()
+            Me.Label9 = New System.Windows.Forms.Label()
+            Me.ErrProvider = New AzamTechnologies.ATErrorProvider(Me.components)
+            Me.Label3 = New System.Windows.Forms.Label()
+            Me.txtBranch = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtCustomer = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label4 = New System.Windows.Forms.Label()
+            Me.TxtStationPoint = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label5 = New System.Windows.Forms.Label()
+            Me.TxtDestinationPoint = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label6 = New System.Windows.Forms.Label()
+            Me.TxtProduct = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label7 = New System.Windows.Forms.Label()
+            Me.TxtVehicle = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label8 = New System.Windows.Forms.Label()
+            Me.txtAmount = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+            Me.Label10 = New System.Windows.Forms.Label()
+            Me.TxtRate = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+            Me.Label11 = New System.Windows.Forms.Label()
+            Me.TxtShortage = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+            Me.Label12 = New System.Windows.Forms.Label()
+            Me.Label13 = New System.Windows.Forms.Label()
+            Me.TxtQuantity = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+            Me.Label14 = New System.Windows.Forms.Label()
+            Me.TxtCommission = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+            Me.TxtVehicleCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtDestinationPointCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtStationPointCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Desc = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.txtBranchCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.txtTransactionNumber = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtDate = New System.Windows.Forms.DateTimePicker()
+            Me.TxtTokenNo = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label15 = New System.Windows.Forms.Label()
+            Me.TxtProductCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtShortageQuantity = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+            Me.Label16 = New System.Windows.Forms.Label()
+            Me.Label17 = New System.Windows.Forms.Label()
+            Me.TxtQuantityValue = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+            Me.Label18 = New System.Windows.Forms.Label()
+            Me.Label19 = New System.Windows.Forms.Label()
+            Me.Label20 = New System.Windows.Forms.Label()
+            Me.TxtAdvanceReferenceNo = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtTripAdvance = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+            Me.Label21 = New System.Windows.Forms.Label()
+            Me.Label22 = New System.Windows.Forms.Label()
+            Me.ChkIsThirdparty = New System.Windows.Forms.CheckBox()
+            Me.TxtCommissionRate = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+            CType(Me.txtDescription, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.ErrProvider, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.txtBranch, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtStationPoint, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtDestinationPoint, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtProduct, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtVehicle, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.txtAmount, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtRate, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtShortage, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtCommission, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtVehicleCode, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtDestinationPointCode, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtStationPointCode, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.Desc, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.txtBranchCode, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.txtTransactionNumber, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtTokenNo, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtProductCode, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtShortageQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtQuantityValue, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtAdvanceReferenceNo, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtTripAdvance, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtCommissionRate, System.ComponentModel.ISupportInitialize).BeginInit()
+            Me.SuspendLayout()
+            '
+            'txtDescription
+            '
+            Me.txtDescription.Location = New System.Drawing.Point(152, 272)
+            Me.txtDescription.Multiline = True
+            Me.txtDescription.Name = "txtDescription"
+            Me.txtDescription.Scrollbars = System.Windows.Forms.ScrollBars.Vertical
+            Me.txtDescription.Size = New System.Drawing.Size(272, 56)
+            Me.txtDescription.TabIndex = 8
+            Me.txtDescription.Tag = "ds.Description"
+            '
+            'Label2
+            '
+            Me.Label2.BackColor = System.Drawing.Color.Transparent
+            Me.Label2.ForeColor = System.Drawing.Color.Navy
+            Me.Label2.Location = New System.Drawing.Point(40, 281)
+            Me.Label2.Name = "Label2"
+            Me.Label2.Size = New System.Drawing.Size(110, 20)
+            Me.Label2.TabIndex = 77
+            Me.Label2.Text = "Description"
+            '
+            'Label1
+            '
+            Me.Label1.BackColor = System.Drawing.Color.Transparent
+            Me.Label1.ForeColor = System.Drawing.Color.Navy
+            Me.Label1.Location = New System.Drawing.Point(40, 103)
+            Me.Label1.Name = "Label1"
+            Me.Label1.Size = New System.Drawing.Size(110, 20)
+            Me.Label1.TabIndex = 76
+            Me.Label1.Text = "Document No"
+            '
+            'Label9
+            '
+            Me.Label9.BackColor = System.Drawing.Color.Transparent
+            Me.Label9.ForeColor = System.Drawing.Color.Navy
+            Me.Label9.Location = New System.Drawing.Point(40, 249)
+            Me.Label9.Name = "Label9"
+            Me.Label9.Size = New System.Drawing.Size(110, 20)
+            Me.Label9.TabIndex = 74
+            Me.Label9.Text = "Document Date"
+            '
+            'ErrProvider
+            '
+            Me.ErrProvider.BlinkColor = System.Drawing.Color.Orange
+            Me.ErrProvider.ContainerControl = Me
+            Me.ErrProvider.Icon = CType(resources.GetObject("ErrProvider.Icon"), System.Drawing.Icon)
+            Me.ErrProvider.SettleColor = System.Drawing.Color.LightPink
+            '
+            'Label3
+            '
+            Me.Label3.BackColor = System.Drawing.Color.Transparent
+            Me.Label3.ForeColor = System.Drawing.Color.Navy
+            Me.Label3.Location = New System.Drawing.Point(40, 79)
+            Me.Label3.Name = "Label3"
+            Me.Label3.Size = New System.Drawing.Size(110, 20)
+            Me.Label3.TabIndex = 97
+            Me.Label3.Text = "Branch"
+            '
+            'txtBranch
+            '
+            Me.txtBranch.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Appearance12.BackColor = System.Drawing.SystemColors.Window
+            Me.txtBranch.Appearance = Appearance12
+            Me.txtBranch.BackColor = System.Drawing.SystemColors.Window
+            Me.txtBranch.Location = New System.Drawing.Point(290, 79)
+            Me.txtBranch.Name = "txtBranch"
+            Me.txtBranch.Size = New System.Drawing.Size(628, 21)
+            Me.txtBranch.TabIndex = 6
+            Me.txtBranch.TabStop = False
+            Me.txtBranch.Tag = "dd.BranchName"
+            '
+            'TxtCustomer
+            '
+            Me.TxtCustomer.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Appearance10.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtCustomer.Appearance = Appearance10
+            Me.TxtCustomer.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtCustomer.Location = New System.Drawing.Point(290, 127)
+            Me.TxtCustomer.Name = "TxtCustomer"
+            Me.TxtCustomer.Size = New System.Drawing.Size(628, 21)
+            Me.TxtCustomer.TabIndex = 100
+            Me.TxtCustomer.TabStop = False
+            Me.TxtCustomer.Tag = "dd.CustomerName"
+            '
+            'Label4
+            '
+            Me.Label4.BackColor = System.Drawing.Color.Transparent
+            Me.Label4.ForeColor = System.Drawing.Color.Navy
+            Me.Label4.Location = New System.Drawing.Point(40, 127)
+            Me.Label4.Name = "Label4"
+            Me.Label4.Size = New System.Drawing.Size(110, 20)
+            Me.Label4.TabIndex = 101
+            Me.Label4.Text = "Customer"
+            '
+            'TxtStationPoint
+            '
+            Me.TxtStationPoint.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Appearance8.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtStationPoint.Appearance = Appearance8
+            Me.TxtStationPoint.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtStationPoint.Enabled = False
+            Me.TxtStationPoint.Location = New System.Drawing.Point(290, 199)
+            Me.TxtStationPoint.Name = "TxtStationPoint"
+            Me.TxtStationPoint.Size = New System.Drawing.Size(628, 21)
+            Me.TxtStationPoint.TabIndex = 104
+            Me.TxtStationPoint.TabStop = False
+            Me.TxtStationPoint.Tag = "dd.StationPointName"
+            '
+            'Label5
+            '
+            Me.Label5.BackColor = System.Drawing.Color.Transparent
+            Me.Label5.ForeColor = System.Drawing.Color.Navy
+            Me.Label5.Location = New System.Drawing.Point(40, 199)
+            Me.Label5.Name = "Label5"
+            Me.Label5.Size = New System.Drawing.Size(110, 20)
+            Me.Label5.TabIndex = 105
+            Me.Label5.Text = "Station Point"
+            '
+            'TxtDestinationPoint
+            '
+            Me.TxtDestinationPoint.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Appearance6.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtDestinationPoint.Appearance = Appearance6
+            Me.TxtDestinationPoint.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtDestinationPoint.Enabled = False
+            Me.TxtDestinationPoint.Location = New System.Drawing.Point(290, 223)
+            Me.TxtDestinationPoint.Name = "TxtDestinationPoint"
+            Me.TxtDestinationPoint.Size = New System.Drawing.Size(628, 21)
+            Me.TxtDestinationPoint.TabIndex = 108
+            Me.TxtDestinationPoint.TabStop = False
+            Me.TxtDestinationPoint.Tag = "dd.DestinationPointName"
+            '
+            'Label6
+            '
+            Me.Label6.BackColor = System.Drawing.Color.Transparent
+            Me.Label6.ForeColor = System.Drawing.Color.Navy
+            Me.Label6.Location = New System.Drawing.Point(40, 223)
+            Me.Label6.Name = "Label6"
+            Me.Label6.Size = New System.Drawing.Size(110, 20)
+            Me.Label6.TabIndex = 109
+            Me.Label6.Text = "Destination Point"
+            '
+            'TxtProduct
+            '
+            Me.TxtProduct.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Appearance4.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtProduct.Appearance = Appearance4
+            Me.TxtProduct.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtProduct.Location = New System.Drawing.Point(290, 175)
+            Me.TxtProduct.Name = "TxtProduct"
+            Me.TxtProduct.Size = New System.Drawing.Size(628, 21)
+            Me.TxtProduct.TabIndex = 112
+            Me.TxtProduct.TabStop = False
+            Me.TxtProduct.Tag = "dd.ProductName"
+            '
+            'Label7
+            '
+            Me.Label7.BackColor = System.Drawing.Color.Transparent
+            Me.Label7.ForeColor = System.Drawing.Color.Navy
+            Me.Label7.Location = New System.Drawing.Point(40, 173)
+            Me.Label7.Name = "Label7"
+            Me.Label7.Size = New System.Drawing.Size(110, 20)
+            Me.Label7.TabIndex = 113
+            Me.Label7.Text = "Product"
+            '
+            'TxtVehicle
+            '
+            Me.TxtVehicle.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Appearance2.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtVehicle.Appearance = Appearance2
+            Me.TxtVehicle.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtVehicle.Location = New System.Drawing.Point(290, 151)
+            Me.TxtVehicle.Name = "TxtVehicle"
+            Me.TxtVehicle.Size = New System.Drawing.Size(628, 21)
+            Me.TxtVehicle.TabIndex = 116
+            Me.TxtVehicle.TabStop = False
+            Me.TxtVehicle.Tag = "dd.VehicleDescription"
+            '
+            'Label8
+            '
+            Me.Label8.BackColor = System.Drawing.Color.Transparent
+            Me.Label8.ForeColor = System.Drawing.Color.Navy
+            Me.Label8.Location = New System.Drawing.Point(40, 151)
+            Me.Label8.Name = "Label8"
+            Me.Label8.Size = New System.Drawing.Size(110, 20)
+            Me.Label8.TabIndex = 117
+            Me.Label8.Text = "Vehicle "
+            '
+            'txtAmount
+            '
+            Me.txtAmount.Location = New System.Drawing.Point(412, 512)
+            Me.txtAmount.MaxValue = CType(21474836471222, Long)
+            Me.txtAmount.Name = "txtAmount"
+            Me.txtAmount.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
+            Me.txtAmount.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
+            Me.txtAmount.Size = New System.Drawing.Size(120, 21)
+            Me.txtAmount.TabIndex = 12
+            Me.txtAmount.Tag = "dt.Amount"
+            '
+            'Label10
+            '
+            Me.Label10.BackColor = System.Drawing.Color.Transparent
+            Me.Label10.ForeColor = System.Drawing.Color.Navy
+            Me.Label10.Location = New System.Drawing.Point(302, 512)
+            Me.Label10.Name = "Label10"
+            Me.Label10.Size = New System.Drawing.Size(110, 20)
+            Me.Label10.TabIndex = 121
+            Me.Label10.Text = "Amount"
+            '
+            'TxtRate
+            '
+            Me.TxtRate.Location = New System.Drawing.Point(412, 440)
+            Me.TxtRate.MinValue = CType(-21474836489999, Long)
+            Me.TxtRate.Name = "TxtRate"
+            Me.TxtRate.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
+            Me.TxtRate.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
+            Me.TxtRate.Size = New System.Drawing.Size(120, 21)
+            Me.TxtRate.TabIndex = 11
+            Me.TxtRate.Tag = "dt.Rate"
+            '
+            'Label11
+            '
+            Me.Label11.BackColor = System.Drawing.Color.Transparent
+            Me.Label11.ForeColor = System.Drawing.Color.Navy
+            Me.Label11.Location = New System.Drawing.Point(302, 445)
+            Me.Label11.Name = "Label11"
+            Me.Label11.Size = New System.Drawing.Size(110, 20)
+            Me.Label11.TabIndex = 120
+            Me.Label11.Text = "Rate"
+            '
+            'TxtShortage
+            '
+            Me.TxtShortage.AccessibleDescription = "Last"
+            Me.TxtShortage.Location = New System.Drawing.Point(711, 461)
+            Me.TxtShortage.Name = "TxtShortage"
+            Me.TxtShortage.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
+            Me.TxtShortage.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
+            Me.TxtShortage.Size = New System.Drawing.Size(120, 21)
+            Me.TxtShortage.TabIndex = 15
+            Me.TxtShortage.Tag = "dt.Shortage"
+            Me.TxtShortage.Visible = False
+            '
+            'Label12
+            '
+            Me.Label12.BackColor = System.Drawing.Color.Transparent
+            Me.Label12.ForeColor = System.Drawing.Color.Navy
+            Me.Label12.Location = New System.Drawing.Point(601, 461)
+            Me.Label12.Name = "Label12"
+            Me.Label12.Size = New System.Drawing.Size(110, 20)
+            Me.Label12.TabIndex = 125
+            Me.Label12.Text = "Shortage"
+            Me.Label12.Visible = False
+            '
+            'Label13
+            '
+            Me.Label13.BackColor = System.Drawing.Color.Transparent
+            Me.Label13.ForeColor = System.Drawing.Color.Navy
+            Me.Label13.Location = New System.Drawing.Point(302, 489)
+            Me.Label13.Name = "Label13"
+            Me.Label13.Size = New System.Drawing.Size(110, 20)
+            Me.Label13.TabIndex = 124
+            Me.Label13.Text = "Commission"
+            '
+            'TxtQuantity
+            '
+            Me.TxtQuantity.Location = New System.Drawing.Point(412, 416)
+            Me.TxtQuantity.Name = "TxtQuantity"
+            Me.TxtQuantity.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
+            Me.TxtQuantity.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
+            Me.TxtQuantity.Size = New System.Drawing.Size(120, 21)
+            Me.TxtQuantity.TabIndex = 10
+            Me.TxtQuantity.Tag = "dt.Quantity"
+            '
+            'Label14
+            '
+            Me.Label14.BackColor = System.Drawing.Color.Transparent
+            Me.Label14.ForeColor = System.Drawing.Color.Navy
+            Me.Label14.Location = New System.Drawing.Point(302, 416)
+            Me.Label14.Name = "Label14"
+            Me.Label14.Size = New System.Drawing.Size(110, 20)
+            Me.Label14.TabIndex = 127
+            Me.Label14.Text = "Quantity"
+            '
+            'TxtCommission
+            '
+            Me.TxtCommission.Enabled = False
+            Me.TxtCommission.Location = New System.Drawing.Point(412, 488)
+            Me.TxtCommission.Name = "TxtCommission"
+            Me.TxtCommission.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
+            Me.TxtCommission.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
+            Me.TxtCommission.ReadOnly = True
+            Me.TxtCommission.Size = New System.Drawing.Size(120, 21)
+            Me.TxtCommission.TabIndex = 20
+            Me.TxtCommission.Tag = "dt.Commission"
+            '
+            'TxtVehicleCode
+            '
+            Me.TxtVehicleCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Appearance3.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtVehicleCode.Appearance = Appearance3
+            Me.TxtVehicleCode.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtVehicleCode.Location = New System.Drawing.Point(152, 151)
+            Me.TxtVehicleCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.VehicleCode_Length
+            Me.TxtVehicleCode.Name = "TxtVehicleCode"
+            Me.TxtVehicleCode.Size = New System.Drawing.Size(138, 21)
+            Me.TxtVehicleCode.TabIndex = 3
+            Me.TxtVehicleCode.Tag = "FK.VehicleCode"
+            '
+            'TxtDestinationPointCode
+            '
+            Me.TxtDestinationPointCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Appearance7.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtDestinationPointCode.Appearance = Appearance7
+            Me.TxtDestinationPointCode.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtDestinationPointCode.Location = New System.Drawing.Point(152, 223)
+            Me.TxtDestinationPointCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.RegionCode_Length
+            Me.TxtDestinationPointCode.Name = "TxtDestinationPointCode"
+            Me.TxtDestinationPointCode.Size = New System.Drawing.Size(138, 21)
+            Me.TxtDestinationPointCode.TabIndex = 6
+            Me.TxtDestinationPointCode.Tag = "FK.DestinationPointCode"
+            '
+            'TxtStationPointCode
+            '
+            Me.TxtStationPointCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Appearance9.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtStationPointCode.Appearance = Appearance9
+            Me.TxtStationPointCode.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtStationPointCode.Location = New System.Drawing.Point(152, 199)
+            Me.TxtStationPointCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.RegionCode_Length
+            Me.TxtStationPointCode.Name = "TxtStationPointCode"
+            Me.TxtStationPointCode.Size = New System.Drawing.Size(138, 21)
+            Me.TxtStationPointCode.TabIndex = 5
+            Me.TxtStationPointCode.Tag = "FK.StationPointCode"
+            '
+            'Desc
+            '
+            Me.Desc.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Appearance11.BackColor = System.Drawing.SystemColors.Window
+            Me.Desc.Appearance = Appearance11
+            Me.Desc.BackColor = System.Drawing.SystemColors.Window
+            Me.Desc.Location = New System.Drawing.Point(152, 127)
+            Me.Desc.MaxLength = 5
+            Me.Desc.Name = "Desc"
+            Me.Desc.Size = New System.Drawing.Size(138, 21)
+            Me.Desc.TabIndex = 2
+            Me.Desc.Tag = "FK.CustomerCode"
+            '
+            'txtBranchCode
+            '
+            Me.txtBranchCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Appearance13.BackColor = System.Drawing.SystemColors.Window
+            Me.txtBranchCode.Appearance = Appearance13
+            Me.txtBranchCode.BackColor = System.Drawing.SystemColors.Window
+            Me.txtBranchCode.Location = New System.Drawing.Point(152, 79)
+            Me.txtBranchCode.MaxLength = 2
+            Me.txtBranchCode.Name = "txtBranchCode"
+            Me.txtBranchCode.Size = New System.Drawing.Size(138, 21)
+            Me.txtBranchCode.TabIndex = 0
+            Me.txtBranchCode.Tag = "PK.BranchCode"
+            '
+            'txtTransactionNumber
+            '
+            Me.txtTransactionNumber.AcceptsReturn = True
+            Me.txtTransactionNumber.Location = New System.Drawing.Point(152, 103)
+            Me.txtTransactionNumber.MaxLength = 10
+            Me.txtTransactionNumber.Name = "txtTransactionNumber"
+            Me.txtTransactionNumber.Size = New System.Drawing.Size(138, 21)
+            Me.txtTransactionNumber.TabIndex = 1
+            Me.txtTransactionNumber.Tag = "PK.TransactionNo"
+            '
+            'TxtDate
+            '
+            Me.TxtDate.CalendarTitleBackColor = System.Drawing.SystemColors.Control
+            Me.TxtDate.CalendarTitleForeColor = System.Drawing.SystemColors.WindowText
+            Me.TxtDate.CustomFormat = Global.BusinessLeaf.My.MySettings.Default.DateFormat
+            Me.TxtDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+            Me.TxtDate.Location = New System.Drawing.Point(152, 248)
+            Me.TxtDate.MaxDate = New Date(2060, 12, 31, 0, 0, 0, 0)
+            Me.TxtDate.MinDate = New Date(1980, 1, 1, 0, 0, 0, 0)
+            Me.TxtDate.Name = "TxtDate"
+            Me.TxtDate.Size = New System.Drawing.Size(100, 20)
+            Me.TxtDate.TabIndex = 7
+            Me.TxtDate.Tag = "dt.TransactionDate"
+            '
+            'TxtTokenNo
+            '
+            Me.TxtTokenNo.Location = New System.Drawing.Point(412, 102)
+            Me.TxtTokenNo.MaxLength = 10
+            Me.TxtTokenNo.Name = "TxtTokenNo"
+            Me.TxtTokenNo.Size = New System.Drawing.Size(120, 21)
+            Me.TxtTokenNo.TabIndex = 2
+            Me.TxtTokenNo.Tag = "IM.CustomerReference"
+            '
+            'Label15
+            '
+            Me.Label15.BackColor = System.Drawing.Color.Transparent
+            Me.Label15.ForeColor = System.Drawing.Color.Navy
+            Me.Label15.Location = New System.Drawing.Point(330, 105)
+            Me.Label15.Name = "Label15"
+            Me.Label15.Size = New System.Drawing.Size(82, 20)
+            Me.Label15.TabIndex = 129
+            Me.Label15.Text = "Token No"
+            '
+            'TxtProductCode
+            '
+            Me.TxtProductCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Appearance5.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtProductCode.Appearance = Appearance5
+            Me.TxtProductCode.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtProductCode.Location = New System.Drawing.Point(152, 175)
+            Me.TxtProductCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.ProductCode_Length
+            Me.TxtProductCode.Name = "TxtProductCode"
+            Me.TxtProductCode.Size = New System.Drawing.Size(138, 21)
+            Me.TxtProductCode.TabIndex = 4
+            Me.TxtProductCode.Tag = "FK.ProductCode"
+            '
+            'TxtShortageQuantity
+            '
+            Me.TxtShortageQuantity.Location = New System.Drawing.Point(711, 416)
+            Me.TxtShortageQuantity.Name = "TxtShortageQuantity"
+            Me.TxtShortageQuantity.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
+            Me.TxtShortageQuantity.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
+            Me.TxtShortageQuantity.Size = New System.Drawing.Size(120, 21)
+            Me.TxtShortageQuantity.TabIndex = 13
+            Me.TxtShortageQuantity.Tag = "dt.ShortageQuantity"
+            Me.TxtShortageQuantity.Visible = False
+            '
+            'Label16
+            '
+            Me.Label16.BackColor = System.Drawing.Color.Transparent
+            Me.Label16.ForeColor = System.Drawing.Color.Navy
+            Me.Label16.Location = New System.Drawing.Point(601, 416)
+            Me.Label16.Name = "Label16"
+            Me.Label16.Size = New System.Drawing.Size(110, 20)
+            Me.Label16.TabIndex = 131
+            Me.Label16.Text = "Shortage Quantity"
+            Me.Label16.Visible = False
+            '
+            'Label17
+            '
+            Me.Label17.BackColor = System.Drawing.Color.Transparent
+            Me.Label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+            Me.Label17.Font = New System.Drawing.Font("Courier New", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.Label17.ForeColor = System.Drawing.Color.Purple
+            Me.Label17.Location = New System.Drawing.Point(591, 379)
+            Me.Label17.Name = "Label17"
+            Me.Label17.Size = New System.Drawing.Size(258, 171)
+            Me.Label17.TabIndex = 132
+            Me.Label17.Text = "Shortage"
+            Me.Label17.Visible = False
+            '
+            'TxtQuantityValue
+            '
+            Me.TxtQuantityValue.Location = New System.Drawing.Point(711, 438)
+            Me.TxtQuantityValue.Name = "TxtQuantityValue"
+            Me.TxtQuantityValue.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
+            Me.TxtQuantityValue.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
+            Me.TxtQuantityValue.Size = New System.Drawing.Size(120, 21)
+            Me.TxtQuantityValue.TabIndex = 14
+            Me.TxtQuantityValue.Tag = "dt.QuantityValue"
+            Me.TxtQuantityValue.Visible = False
+            '
+            'Label18
+            '
+            Me.Label18.BackColor = System.Drawing.Color.Transparent
+            Me.Label18.ForeColor = System.Drawing.Color.Navy
+            Me.Label18.Location = New System.Drawing.Point(601, 438)
+            Me.Label18.Name = "Label18"
+            Me.Label18.Size = New System.Drawing.Size(110, 20)
+            Me.Label18.TabIndex = 134
+            Me.Label18.Text = "Quantity Value"
+            Me.Label18.Visible = False
+            '
+            'Label19
+            '
+            Me.Label19.BackColor = System.Drawing.Color.Transparent
+            Me.Label19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+            Me.Label19.Font = New System.Drawing.Font("Courier New", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.Label19.ForeColor = System.Drawing.Color.Purple
+            Me.Label19.Location = New System.Drawing.Point(288, 379)
+            Me.Label19.Name = "Label19"
+            Me.Label19.Size = New System.Drawing.Size(258, 171)
+            Me.Label19.TabIndex = 135
+            Me.Label19.Text = "Total"
+            '
+            'Label20
+            '
+            Me.Label20.BackColor = System.Drawing.Color.Transparent
+            Me.Label20.ForeColor = System.Drawing.Color.Navy
+            Me.Label20.Location = New System.Drawing.Point(40, 333)
+            Me.Label20.Name = "Label20"
+            Me.Label20.Size = New System.Drawing.Size(110, 20)
+            Me.Label20.TabIndex = 137
+            Me.Label20.Text = "Expences Reference"
+            '
+            'TxtAdvanceReferenceNo
+            '
+            Me.TxtAdvanceReferenceNo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Appearance1.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtAdvanceReferenceNo.Appearance = Appearance1
+            Me.TxtAdvanceReferenceNo.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtAdvanceReferenceNo.Location = New System.Drawing.Point(152, 332)
+            Me.TxtAdvanceReferenceNo.MaxLength = 10
+            Me.TxtAdvanceReferenceNo.Name = "TxtAdvanceReferenceNo"
+            Me.TxtAdvanceReferenceNo.Size = New System.Drawing.Size(138, 21)
+            Me.TxtAdvanceReferenceNo.TabIndex = 9
+            Me.TxtAdvanceReferenceNo.Tag = "FK.TripAdvanceReference"
+            '
+            'TxtTripAdvance
+            '
+            Me.TxtTripAdvance.Location = New System.Drawing.Point(290, 332)
+            Me.TxtTripAdvance.Name = "TxtTripAdvance"
+            Me.TxtTripAdvance.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
+            Me.TxtTripAdvance.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
+            Me.TxtTripAdvance.ReadOnly = True
+            Me.TxtTripAdvance.Size = New System.Drawing.Size(120, 21)
+            Me.TxtTripAdvance.TabIndex = 138
+            Me.TxtTripAdvance.Tag = "dt.TripAdvance"
+            Me.TxtTripAdvance.Visible = False
+            '
+            'Label21
+            '
+            Me.Label21.BackColor = System.Drawing.Color.Transparent
+            Me.Label21.ForeColor = System.Drawing.Color.Navy
+            Me.Label21.Location = New System.Drawing.Point(302, 464)
+            Me.Label21.Name = "Label21"
+            Me.Label21.Size = New System.Drawing.Size(110, 20)
+            Me.Label21.TabIndex = 140
+            Me.Label21.Text = "Commission Rate"
+            '
+            'Label22
+            '
+            Me.Label22.BackColor = System.Drawing.Color.Transparent
+            Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.Label22.ForeColor = System.Drawing.SystemColors.ControlText
+            Me.Label22.Location = New System.Drawing.Point(456, 466)
+            Me.Label22.Name = "Label22"
+            Me.Label22.Size = New System.Drawing.Size(69, 20)
+            Me.Label22.TabIndex = 141
+            Me.Label22.Text = "%"
+            '
+            'ChkIsThirdparty
+            '
+            Me.ChkIsThirdparty.AutoSize = True
+            Me.ChkIsThirdparty.Location = New System.Drawing.Point(444, 300)
+            Me.ChkIsThirdparty.Name = "ChkIsThirdparty"
+            Me.ChkIsThirdparty.Size = New System.Drawing.Size(73, 17)
+            Me.ChkIsThirdparty.TabIndex = 142
+            Me.ChkIsThirdparty.Tag = "dd.IsLocalTrip"
+            Me.ChkIsThirdparty.Text = "Local Trip"
+            Me.ChkIsThirdparty.UseVisualStyleBackColor = True
+            '
+            'TxtCommissionRate
+            '
+            Me.TxtCommissionRate.Location = New System.Drawing.Point(412, 464)
+            Me.TxtCommissionRate.MinValue = CType(-21474836489999, Long)
+            Me.TxtCommissionRate.Name = "TxtCommissionRate"
+            Me.TxtCommissionRate.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
+            Me.TxtCommissionRate.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
+            Me.TxtCommissionRate.Size = New System.Drawing.Size(120, 21)
+            Me.TxtCommissionRate.TabIndex = 143
+            Me.TxtCommissionRate.Tag = "dt.CommissionRate"
+            '
+            'Invoices
+            '
+            Me.AccessibleName = "Invoices"
+            Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
+            Me.ClientSize = New System.Drawing.Size(964, 617)
+            Me.Controls.Add(Me.TxtCommissionRate)
+            Me.Controls.Add(Me.ChkIsThirdparty)
+            Me.Controls.Add(Me.Label22)
+            Me.Controls.Add(Me.Label21)
+            Me.Controls.Add(Me.TxtTripAdvance)
+            Me.Controls.Add(Me.Label20)
+            Me.Controls.Add(Me.TxtAdvanceReferenceNo)
+            Me.Controls.Add(Me.TxtQuantityValue)
+            Me.Controls.Add(Me.Label18)
+            Me.Controls.Add(Me.TxtShortageQuantity)
+            Me.Controls.Add(Me.Label16)
+            Me.Controls.Add(Me.TxtTokenNo)
+            Me.Controls.Add(Me.Label15)
+            Me.Controls.Add(Me.Label14)
+            Me.Controls.Add(Me.TxtQuantity)
+            Me.Controls.Add(Me.TxtShortage)
+            Me.Controls.Add(Me.Label12)
+            Me.Controls.Add(Me.TxtCommission)
+            Me.Controls.Add(Me.Label13)
+            Me.Controls.Add(Me.txtAmount)
+            Me.Controls.Add(Me.Label10)
+            Me.Controls.Add(Me.TxtRate)
+            Me.Controls.Add(Me.Label11)
+            Me.Controls.Add(Me.TxtVehicle)
+            Me.Controls.Add(Me.Label8)
+            Me.Controls.Add(Me.TxtVehicleCode)
+            Me.Controls.Add(Me.TxtProduct)
+            Me.Controls.Add(Me.Label7)
+            Me.Controls.Add(Me.TxtProductCode)
+            Me.Controls.Add(Me.TxtDestinationPoint)
+            Me.Controls.Add(Me.Label6)
+            Me.Controls.Add(Me.TxtDestinationPointCode)
+            Me.Controls.Add(Me.TxtStationPoint)
+            Me.Controls.Add(Me.Label5)
+            Me.Controls.Add(Me.TxtStationPointCode)
+            Me.Controls.Add(Me.TxtCustomer)
+            Me.Controls.Add(Me.Label4)
+            Me.Controls.Add(Me.Desc)
+            Me.Controls.Add(Me.txtBranch)
+            Me.Controls.Add(Me.Label3)
+            Me.Controls.Add(Me.txtBranchCode)
+            Me.Controls.Add(Me.txtDescription)
+            Me.Controls.Add(Me.txtTransactionNumber)
+            Me.Controls.Add(Me.Label2)
+            Me.Controls.Add(Me.Label1)
+            Me.Controls.Add(Me.Label9)
+            Me.Controls.Add(Me.TxtDate)
+            Me.Controls.Add(Me.Label19)
+            Me.Controls.Add(Me.Label17)
+            Me.KeyPreview = True
+            Me.Name = "Invoices"
+            Me.Text = "Invoice File "
+            CType(Me.txtDescription, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.ErrProvider, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.txtBranch, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtCustomer, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtStationPoint, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtDestinationPoint, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtProduct, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtVehicle, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.txtAmount, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtRate, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtShortage, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtQuantity, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtCommission, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtVehicleCode, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtDestinationPointCode, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtStationPointCode, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.Desc, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.txtBranchCode, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.txtTransactionNumber, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtTokenNo, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtProductCode, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtShortageQuantity, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtQuantityValue, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtAdvanceReferenceNo, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtTripAdvance, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.TxtCommissionRate, System.ComponentModel.ISupportInitialize).EndInit()
+            Me.ResumeLayout(False)
+            Me.PerformLayout()
 
-End Sub
+        End Sub
 #End Region
 
 

@@ -22,16 +22,16 @@ Partial Class FrmOption
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmOption))
-        Me.TbOption = New System.Windows.Forms.TabControl
-        Me.TabPage1 = New System.Windows.Forms.TabPage
-        Me.CmbIncrDays = New System.Windows.Forms.ComboBox
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox
-        Me.Label9 = New System.Windows.Forms.Label
-        Me.DtpWorkingDate = New System.Windows.Forms.DateTimePicker
-        Me.BtnCancel = New System.Windows.Forms.Button
-        Me.BtnOK = New System.Windows.Forms.Button
+        Me.TbOption = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.CmbIncrDays = New System.Windows.Forms.ComboBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.DtpWorkingDate = New System.Windows.Forms.DateTimePicker()
+        Me.BtnCancel = New System.Windows.Forms.Button()
+        Me.BtnOK = New System.Windows.Forms.Button()
         Me.ErrProvider = New AzamTechnologies.ATErrorProvider(Me.components)
         Me.TbOption.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -104,7 +104,6 @@ Partial Class FrmOption
         Me.DtpWorkingDate.CalendarTitleForeColor = System.Drawing.SystemColors.WindowText
         Me.DtpWorkingDate.Checked = False
         Me.DtpWorkingDate.CustomFormat = Global.BusinessLeaf.My.MySettings.Default.DateFormat
-        Me.DtpWorkingDate.Enabled = False
         Me.DtpWorkingDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DtpWorkingDate.Location = New System.Drawing.Point(214, 103)
         Me.DtpWorkingDate.MaxDate = New Date(2060, 12, 31, 0, 0, 0, 0)
