@@ -1,5 +1,7 @@
 Imports System.Windows.Forms
 Imports System.Drawing
+Imports Infragistics.Win.UltraWinTabControl
+
 Public Class DataManager
     '***********************************************************************
     'The purpose of this control is to manage the data (insert,update,delete ,lock, e.t.c.)
@@ -151,12 +153,12 @@ Public Class DataManager
             PkCount = 0
             ReDim PrimaryKeyControl(0)
             For Each ctr In mActiveForm.Controls
-                If TypeOf ctr Is TabControl Then
+                If TypeOf ctr Is UltraTabControl Then
                     Dim cont As Int16
-                    Dim Tab As TabControl = ctr
+                    Dim Tab As UltraTabControl = ctr
                     Dim chCtr As Control
-                    For cont = 0 To Tab.TabPages.Count - 1
-                        For Each chCtr In Tab.TabPages(cont).Controls
+                    For cont = 0 To Tab.Tabs.Count - 1
+                        For Each chCtr In Tab.Tabs(cont).TabPage.Controls
                             If Not IsNothing(chCtr.Tag) Then
                                 Dim ctrType As String = chCtr.GetType.ToString
                                 If Mid(chCtr.Tag, 1, 2) = "PK" Or Mid(chCtr.Tag, 1, 2) = "CK" Then
@@ -302,26 +304,26 @@ Public Class DataManager
             Dim ctr As Control
 
             For Each ctr In mActiveForm.Controls
-                If TypeOf ctr Is TabControl Then
+                If TypeOf ctr Is UltraTabControl Then
 
                     ''''''''Tab control found
-                    Dim tab As TabControl = ctr
+                    Dim tab As UltraTabControl = ctr
                     Dim chCtr As Control
                     Dim cont As Int16
-                    For cont = 0 To tab.TabPages.Count - 1
-                        For Each chCtr In tab.TabPages(cont).Controls
+                    For cont = 0 To tab.Tabs.Count - 1
+                        For Each chCtr In tab.Tabs(cont).TabPage.Controls
                             ctrType = chCtr.GetType.ToString
                             If Not IsNothing(chCtr.Tag) Or ctrType = "FarPoint.Win.Spread.FpSpread" Then
                                 If ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" Or ctrType = "System.Windows.Forms.ComboBox" _
                                           Or ctrType = "System.Windows.Forms.ListBox" Or ctrType = "ATUrduTextBox.UrduTextBox" Or ctrType = "Infragistics.Win.UltraWinGrid.UltraCombo" Then
                                     chCtr.BackColor = Drawing.SystemColors.Control
-                                    ctr.Enabled = True
+                                    chCtr.Enabled = True
                                 ElseIf ctrType = "System.Windows.Forms.RadioButton" Then
-                                    ctr.Enabled = True
+                                    chCtr.Enabled = True
                                 ElseIf ctrType = "Infragistics.Win.UltraWinEditors.UltraCheckEditor" Then
-                                    ctr.Enabled = True
+                                    chCtr.Enabled = True
                                 ElseIf ctrType = "System.Windows.Forms.CheckBox" Then
-                                    ctr.Enabled = True
+                                    chCtr.Enabled = True
                                 ElseIf ctrType = "System.Windows.Forms.NumericUpDown" Then
                                     chCtr.BackColor = Me.DisableControlColor
                                     CType(chCtr, NumericUpDown).Enabled = True
@@ -335,7 +337,9 @@ Public Class DataManager
                                 End If
                             End If
                         Next
+                        tab.Tabs(cont).TabPage.Enabled = True
                     Next
+                    tab.Enabled = True
 
 
                 Else
@@ -376,8 +380,8 @@ Public Class DataManager
                                 IsPrimaryKeysLocked = True
                             End If
                         End If
-                End If
                     End If
+                End If
 
             Next
             LockControls = False
@@ -392,12 +396,12 @@ Public Class DataManager
             Dim ctr As Control
 
             For Each ctr In mActiveForm.Controls
-                If TypeOf ctr Is TabControl Then
+                If TypeOf ctr Is UltraTabControl Then
                     Dim cont As Int16
-                    Dim Tab As TabControl = ctr
+                    Dim Tab As UltraTabControl = ctr
                     Dim chCtr As Control
-                    For cont = 0 To Tab.TabPages.Count - 1
-                        For Each chCtr In Tab.TabPages(cont).Controls
+                    For cont = 0 To Tab.Tabs.Count - 1
+                        For Each chCtr In Tab.Tabs(cont).TabPage.Controls
                             If Not IsNothing(chCtr.Tag) Then
                                 Dim ctrType As String = chCtr.GetType.ToString
                                 If Mid(chCtr.Tag, 1, 2) = "PK" Or Mid(chCtr.Tag, 1, 2) = "CK" Then
@@ -439,13 +443,13 @@ Public Class DataManager
         Try
             Dim ctr As Control
             For Each ctr In mActiveForm.Controls
-                If TypeOf ctr Is TabControl Then
+                If TypeOf ctr Is UltraTabControl Then
                     ''''''''Tab control found
-                    Dim tab As TabControl = ctr
+                    Dim tab As UltraTabControl = ctr
                     Dim chCtr As Control
                     Dim cont As Int16
-                    For cont = 0 To tab.TabPages.Count - 1
-                        For Each chCtr In tab.TabPages(cont).Controls
+                    For cont = 0 To tab.Tabs.Count - 1
+                        For Each chCtr In tab.Tabs(cont).TabPage.Controls
                             ctrType = ctr.GetType.ToString
                             If Not IsNothing(chCtr.Tag) Or ctrType = "FarPoint.Win.Spread.FpSpread" Then
                                 If ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" Or ctrType = "System.Windows.Forms.ComboBox" _
@@ -748,34 +752,31 @@ Public Class DataManager
         Friend Sub CheckRows()
             Dim ctr As Control
             For Each ctr In mActiveForm.Controls
-                If TypeOf ctr Is TabControl Then
-                    Dim tabCantrol As TabControl = ctr
-                    Dim cont As Int16
-                    Dim chCtr As Control
-                    For cont = 0 To CType(ctr, TabControl).TabPages.Count - 1
-                        For Each chCtr In tabCantrol.TabPages(cont).Controls
-                            Dim ctrType As String = ctr.GetType.ToString
-                            If ctr.Tag <> "" Or Not IsNothing(ctr.Tag) Then
-                                If Mid(ctr.Tag, 1, 2).ToUpper = "IM" Or Mid(ctr.Tag, 1, 2).ToUpper = "PK" Or Mid(ctr.Tag, 1, 2).ToUpper = "CK" Then
-                                    If ctrType = "System.Windows.Forms.TextBox" Or ctrType = "System.Windows.Forms.ComboBox" Or ctrType = "ATUrduTextBox.UrduTextBox" Or ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" _
-                                            Or ctrType = "Infragistics.Win.UltraWinEditors.UltraComboEditor" Then
-                                        If ctr.Text Is Nothing Or Trim(ctr.Text) = "" Then
-                                            'If some one enter empty data
-                                            mActiveForm.ActiveControl = ctr
-                                            Throw New InvalidDataEntryInformation(" Please Enter a valid " & Mid(ctr.Tag, 4, Len(ctr.Tag)))
-                                        End If
+                If TypeOf ctr Is UltraTabControl Then
+                    Dim tabCantrol As UltraTabControl = ctr
+                    'Dim chCtr As UltraTab
+                    For Each chCtr As UltraTab In tabCantrol.Tabs
+                        Dim ctrType As String = ctr.GetType.ToString
+                        If ctr.Tag <> "" Or Not IsNothing(ctr.Tag) Then
+                            If Mid(ctr.Tag, 1, 2).ToUpper = "IM" Or Mid(ctr.Tag, 1, 2).ToUpper = "PK" Or Mid(ctr.Tag, 1, 2).ToUpper = "CK" Then
+                                If ctrType = "System.Windows.Forms.TextBox" Or ctrType = "System.Windows.Forms.ComboBox" Or ctrType = "ATUrduTextBox.UrduTextBox" Or ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" _
+                                        Or ctrType = "Infragistics.Win.UltraWinEditors.UltraComboEditor" Then
+                                    If ctr.Text Is Nothing Or Trim(ctr.Text) = "" Then
+                                        'If some one enter empty data
+                                        mActiveForm.ActiveControl = ctr
+                                        Throw New InvalidDataEntryInformation(" Please Enter a valid " & Mid(ctr.Tag, 4, Len(ctr.Tag)))
                                     End If
-                                ElseIf Mid(ctr.Tag, 1, 2).ToUpper = "PK" Or Mid(ctr.Tag, 1, 2).ToUpper = "CK" Then
-                                    If ctrType = "System.Windows.Forms.TextBox" Or ctrType = "System.Windows.Forms.ComboBox" Or ctrType = "ATUrduTextBox.UrduTextBox" Or ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" _
-                                            Or ctrType = "Infragistics.Win.UltraWinEditors.UltraComboEditor" Then
-                                        If ctr.Text.Length <> CType(ctr, TextBox).MaxLength Then
-                                            'If some one not provide proper length code
-                                            Throw New InvalidDataEntryInformation(" Please Enter a valid length code for " & Mid(ctr.Name, 4, Len(ctr.Name)) & vbCrLf & " Valid length is " & CType(ctr, TextBox).MaxLength.ToString)
-                                        End If
+                                End If
+                            ElseIf Mid(ctr.Tag, 1, 2).ToUpper = "PK" Or Mid(ctr.Tag, 1, 2).ToUpper = "CK" Then
+                                If ctrType = "System.Windows.Forms.TextBox" Or ctrType = "System.Windows.Forms.ComboBox" Or ctrType = "ATUrduTextBox.UrduTextBox" Or ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" _
+                                        Or ctrType = "Infragistics.Win.UltraWinEditors.UltraComboEditor" Then
+                                    If ctr.Text.Length <> CType(ctr, TextBox).MaxLength Then
+                                        'If some one not provide proper length code
+                                        Throw New InvalidDataEntryInformation(" Please Enter a valid length code for " & Mid(ctr.Name, 4, Len(ctr.Name)) & vbCrLf & " Valid length is " & CType(ctr, TextBox).MaxLength.ToString)
                                     End If
                                 End If
                             End If
-                        Next
+                        End If
                     Next
                 Else
                     Dim ctrType As String = ctr.GetType.ToString

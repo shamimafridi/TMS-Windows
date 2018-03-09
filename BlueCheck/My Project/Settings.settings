@@ -201,7 +201,7 @@
       <Value Profile="(Default)">TMS</Value>
     </Setting>
     <Setting Name="ConnectionString" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Data Source=.;Initial Catalog=TMS_ALI;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=SHAMIM-PC\DOTNETSERVER;Initial Catalog=TMS_ALI;Integrated Security=True</Value>
     </Setting>
     <Setting Name="ShouldVoucherGenerate" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>

@@ -1,6 +1,8 @@
 Imports System.Windows.Forms
 Imports Infragistics.Win.UltraWinEditors
 Imports System.Drawing
+Imports Infragistics.Win.UltraWinTabControl
+
 Public Class DataDirector
     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     'The purpose of this control is to give service of Navigation of data ,filling of Data on the
@@ -239,15 +241,15 @@ Public Class DataDirector
                     FindingPostingButton(mData)
 
                     For Each ctr In mActiveForm.Controls
-                        If TypeOf ctr Is TabControl Then
-                            Dim tabControl As TabControl = ctr
-                            FillControlsOnTab(tabControl, mData.Tables(0))
+                        If TypeOf ctr Is UltraTabControl Then
+                            '    Dim tabControl As UltraTabControl = ctr
+                            FillControlsOnTab(ctr, mData.Tables(0))
                         End If
 
                         ctrType = ctr.GetType.ToString
                         If Not IsNothing(ctr.Tag) Or ctrType = "FarPoint.Win.Spread.FpSpread" Then
                             'User Must set The tag with the same name as table column name
-                            If ctrType = "Infragistics.Win.UltraWinEditors.UltraComboEditor" Or ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" Or ctrType = "System.Windows.Forms.ComboBox" Or ctrType = "System.Windows.Forms.ListBox" Or ctrType = "ATUrduTextBox.UrduTextBox" Or _
+                            If ctrType = "Infragistics.Win.UltraWinEditors.UltraComboEditor" Or ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" Or ctrType = "System.Windows.Forms.ComboBox" Or ctrType = "System.Windows.Forms.ListBox" Or ctrType = "ATUrduTextBox.UrduTextBox" Or
                             ctrType = "Infragistics.Win.UltraWinGrid.UltraCombo" Then
                                 ctr.Text = IIf(IsDBNull(.Rows(RowPosition).Item(Mid(ctr.Tag, 4))), String.Empty, .Rows(RowPosition).Item(Mid(ctr.Tag, 4)))
                                 ''Checking Null =IIF
@@ -303,16 +305,16 @@ Public Class DataDirector
 
         End Try
     End Sub
-    Private Sub FillControlsOnTab(ByVal tabControl As TabControl, ByVal dataTable As DataTable)
+    Private Sub FillControlsOnTab(ByRef tabControl As UltraTabControl, ByVal dataTable As DataTable)
         Dim chCtr As Control
 
-        For Each lTabPage As TabPage In tabControl.TabPages
+        For Each lTabPage As UltraTab In tabControl.Tabs
             Dim ctrType As String = String.Empty
-            For Each chCtr In lTabPage.Controls
+            For Each chCtr In lTabPage.TabPage.Controls
                 ctrType = chCtr.GetType.ToString
                 If Not IsNothing(chCtr.Tag) Or ctrType = "FarPoint.Win.Spread.FpSpread" Then
                     'User Must set The tag with the same name as table column name
-                    If ctrType = "Infragistics.Win.UltraWinEditors.UltraComboEditor" Or ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" Or ctrType = "System.Windows.Forms.ComboBox" Or _
+                    If ctrType = "Infragistics.Win.UltraWinEditors.UltraComboEditor" Or ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" Or ctrType = "System.Windows.Forms.ComboBox" Or
                         ctrType = "System.Windows.Forms.ListBox" Or ctrType = "ATUrduTextBox.UrduTextBox" Or ctrType = "Infragistics.Win.UltraWinGrid.UltraCombo" Then
                         chCtr.Text = IIf(IsDBNull(dataTable.Rows(RowPosition).Item(Mid(chCtr.Tag, 4))), "", dataTable.Rows(RowPosition).Item(Mid(chCtr.Tag, 4)))
                         ''Checking Null =IIF
@@ -527,9 +529,9 @@ Public Class DataDirector
         Try
             For Each ctr In mActiveForm.Controls
                 Dim ctrType As String = ctr.GetType.ToString
-                If TypeOf ctr Is TabControl Then  'IF tab control found
-                    Dim TabControl As TabControl = ctr
-                    CreateRowFromControlsOnTab(TabControl, row, Col, rowTable)
+                If TypeOf ctr Is UltraTabControl Then  'IF tab control found
+                    ' Dim TabControl As UltraTabControl = ctr
+                    CreateRowFromControlsOnTab(ctr, row, Col, rowTable)
                 Else
                     If ctr.Tag <> "" Or Not IsNothing(ctr.Tag) Or ctrType = "FarPoint.Win.Spread.FpSpread" Then
                         If ctrType <> "FarPoint.Win.Spread.FpSpread" Then
@@ -596,10 +598,10 @@ Public Class DataDirector
             Return Nothing
         End Try
     End Function
-    Private Sub CreateRowFromControlsOnTab(ByVal tabControl As TabControl, ByVal rRow As DataRow, ByVal Col As DataColumn, ByVal rowTable As DataTable)
-        For Each iTabPage As TabPage In tabControl.TabPages()
+    Private Sub CreateRowFromControlsOnTab(ByRef tabControl As UltraTabControl, ByVal rRow As DataRow, ByVal Col As DataColumn, ByVal rowTable As DataTable)
+        For Each iTabPage As UltraTab In tabControl.Tabs
             Dim chCtrType As String = String.Empty
-            For Each chCtr As Control In iTabPage.Controls
+            For Each chCtr As Control In iTabPage.TabPage.Controls
                 chCtrType = chCtr.GetType.ToString
                 If chCtr.Tag <> "" Or Not IsNothing(chCtr.Tag) Or chCtrType = "FarPoint.Win.Spread.FpSpread" Then
                     Dim cntCol As Integer = 0
@@ -828,7 +830,7 @@ Public Class DataDirector
                 If mActiveForm.Tag = DataManager.DataMode.Insert Then
                     mManager.EnableDisable(False)
                     For Each ctr In mActiveForm.Controls
-                        If TypeOf ctr Is TabControl Then
+                        If TypeOf ctr Is UltraTabControl Then
                             InitalizeActiveTabControls(ctr)
                         Else
                             Dim ctrType As String = ctr.GetType.ToString
@@ -924,18 +926,18 @@ Public Class DataDirector
         'oldRow = CreateRow(table)
         '''''''''''''''''''
     End Sub
-    Private Sub InitalizeActiveTabControls(ByVal tabControl As Control)
-        Dim Tab As TabControl = tabControl
+    Private Sub InitalizeActiveTabControls(ByRef Tab As UltraTabControl)
+        '  Dim Tab As UltraTabControl = TabControl
         Dim chCtr As Control
-        For Each lTabPage As TabPage In Tab.TabPages
-            For Each chCtr In lTabPage.Controls
+        For Each lTabPage As UltraTab In Tab.Tabs
+            For Each chCtr In lTabPage.TabPage.Controls
                 Dim ctrType As String = chCtr.GetType.ToString
                 If Not IsNothing(chCtr.Tag) Then
                     ControlFormatter.InitializedFormat(chCtr)
                     If chCtr.AccessibleDescription = "Last" Then LastControl = chCtr
-                    
-                    With tabControl
-                        If ctrType = "Infragistics.Win.UltraWinEditors.UltraComboEditor" Or ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" Or ctrType = "System.Windows.Forms.ComboBox" Or _
+
+                    With chCtr
+                        If ctrType = "Infragistics.Win.UltraWinEditors.UltraComboEditor" Or ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" Or ctrType = "System.Windows.Forms.ComboBox" Or
                             ctrType = "System.Windows.Forms.ListBox" Or ctrType = "ATUrduTextBox.UrduTextBox" Or ctrType = "Infragistics.Win.UltraWinGrid.UltraCombo" Then
                             If .AccessibleDescription = "" Then
                                 If .Name.ToUpper = "NATURE" Or .Name.ToUpper = "MODIFIED_BY" Or .Name.ToUpper = "CREATED_BY" Or .Name.ToUpper = "MODIFIED_DATE" Or .Name.ToUpper = "CREATED_DATE" Then
@@ -1023,20 +1025,20 @@ Public Class DataDirector
                             If String.IsNullOrEmpty(User) Then
                                 Acc.PopulateDataSet(read, String.Format("Select{0}", TableName), "OPTION", OPTIONVALIDATION, Mid(PrimaryKeyControl(0).Tag, 4), PrimaryKeyControl(0).Text, Mid(PrimaryKeyControl(1).Tag, 4), PrimaryKeyControl(1).Text, Mid(PrimaryKeyControl(2).Tag, 4), PrimaryKeyControl(2).Text)
                             Else
-                                Acc.PopulateDataSet(read, String.Format("Select{0}", TableName), "OPTION", OPTIONVALIDATION, Mid(PrimaryKeyControl(0).Tag, 4), PrimaryKeyControl(0).Text, Mid(PrimaryKeyControl(1).Tag, 4), PrimaryKeyControl(1).Text, Mid(PrimaryKeyControl(2).Tag, 4), PrimaryKeyControl(2).Text,"User",User)
+                                Acc.PopulateDataSet(read, String.Format("Select{0}", TableName), "OPTION", OPTIONVALIDATION, Mid(PrimaryKeyControl(0).Tag, 4), PrimaryKeyControl(0).Text, Mid(PrimaryKeyControl(1).Tag, 4), PrimaryKeyControl(1).Text, Mid(PrimaryKeyControl(2).Tag, 4), PrimaryKeyControl(2).Text, "User", User)
                             End If
 
                         End If
-                            '''''''''''''''''''''
+                        '''''''''''''''''''''
 
-                            If read.Tables(0).Rows.Count > 0 Then
+                        If read.Tables(0).Rows.Count > 0 Then
                             Me.SetData(read, 0)
-                            Else
-                                If Me.ActiveForm.Tag = DataManager.DataMode.Edit Then
-                                    mActiveForm.Tag = DataManager.DataMode.Insert
-                                    Me.InitalizeActiveFormComponents()
-                                End If
+                        Else
+                            If Me.ActiveForm.Tag = DataManager.DataMode.Edit Then
+                                mActiveForm.Tag = DataManager.DataMode.Insert
+                                Me.InitalizeActiveFormComponents()
                             End If
+                        End If
                     End If
 
                 Else
@@ -1082,7 +1084,7 @@ Public Class DataDirector
                             End If
                         End If
                     End If
-                    End If
+                End If
             End If
         Catch ex As NullReferenceException
 
