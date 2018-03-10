@@ -1,3 +1,4 @@
+Imports System.ComponentModel
 Imports System.Data.SqlClient
 Namespace GeneralLedger
     Public Class Invoices
@@ -1407,10 +1408,15 @@ Namespace GeneralLedger
         Private Sub txtLocalTrip1_EditorButtonClick(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinEditors.EditorButtonEventArgs) Handles TxtLongTripRefNo.EditorButtonClick
             If TxtLongTripRefNo.Enabled = False Then Exit Sub
             Try
+
+                If Me.TxtVehicleCode.Text = String.Empty Or Me.txtBranchCode.Text = String.Empty Then
+                    Me.ErrProvider.SetError(Me.TxtVehicleCode, "Please Enter First Vehicle Code and Branch Code")
+                    Exit Sub
+                End If
                 Dim iRow As Integer
                 Dim frmser As FrmSearch
                 frmser = New FrmSearch
-                frmser.FillData("Invoices", "OPTION", "ALL")
+                frmser.FillData("Invoices", "OPTION", "SEARCHLONGTRIP", "VehicleNo", TxtVehicleCode.Text)
                 frmser.ShowDialog()
                 iRow = frmser.UGSearch.ActiveRow.Index
                 Me.txtBranchCode.Text = frmser.UGSearch.Rows(iRow).Cells("BranchCode").Value
@@ -1420,6 +1426,8 @@ Namespace GeneralLedger
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             End Try
+
+
         End Sub
 
         Private Sub UltraTextEditor1_EditorButtonClick(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinEditors.EditorButtonEventArgs) Handles TxtAdvanceReferenceNo.EditorButtonClick
@@ -1527,13 +1535,54 @@ Namespace GeneralLedger
 
         Private Sub ChkIsThirdparty_CheckedChanged(sender As Object, e As EventArgs) Handles ChkIsLocalTrip.CheckedChanged
             If ChkIsLocalTrip.Checked Then
-                TxtLongTripRefNo.Text = String.Empty
+                ' TxtLongTripRefNo.Text = String.Empty
                 TxtLongTripRefNo.Enabled = True
             Else
                 TxtLongTripRefNo.Text = String.Empty
                 TxtLongTripRefNo.Enabled = False
 
             End If
+        End Sub
+
+        Private Sub TxtLongTripRefNo_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtLongTripRefNo.KeyDown
+
+            Try
+                If e.KeyCode = Keys.F3 Then
+                    Call Me.txtLocalTrip1_EditorButtonClick(sender, New Infragistics.Win.UltraWinEditors.EditorButtonEventArgs(Nothing, Nothing))
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End Sub
+
+        Private Sub TxtLongTripRefNo_Validated(sender As Object, e As EventArgs) Handles TxtLongTripRefNo.Validated
+            If TxtLongTripRefNo.Text.Length > 0 Then
+                ChkIsLocalTrip.Checked = True
+            End If
+        End Sub
+
+        Private Sub TxtLongTripRefNo_Validating(sender As Object, e As CancelEventArgs) Handles TxtLongTripRefNo.Validating
+            Try
+                If TxtLongTripRefNo.Text <> String.Empty Then
+                    Dim Acc As New AzamTechnologies.Database.DataAccess
+                    Dim Reader As SqlDataReader
+                    Reader = Acc.GetRecord("SelectInvoices", "VehicleNo", Trim(TxtVehicleCode.Text), "Option", "LONGTRIPVALIDATE", "TransactionNo", TxtLongTripRefNo.Text)
+                    If Reader.HasRows = False Then
+                        ErrProvider.SetError(TxtProductCode, "Invalid Trip No")
+                        ErrProvider.SetIconAlignment(TxtProductCode, ErrorIconAlignment.TopLeft)
+                        TxtLongTripRefNo.Text = String.Empty
+                        e.Cancel = True
+                    Else
+                        Reader.Read()
+                        ErrProvider.SetError(TxtLongTripRefNo, String.Empty)
+                        TxtLongTripRefNo.Text = Reader.Item("TransactionNo")
+
+                        e.Cancel = False
+                    End If
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
         End Sub
     End Class
 End Namespace
