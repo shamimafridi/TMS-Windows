@@ -1,3 +1,5 @@
+Imports Infragistics.Win.UltraWinEditors
+
 Public Class DestinationPoints
 
     Private Sub txtDestinationPointCode_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtDestinationPointCode.KeyDown
@@ -42,5 +44,7 @@ Public Class DestinationPoints
         End Try
     End Sub
 
-   
+    Private Sub txtDestinationPointCode_EditorButtonClick(sender As Object, e As EditorButtonEventArgs) Handles txtDestinationPointCode.EditorButtonClick
+        Call Me.CmdDestinationPointList_Click(sender, New System.EventArgs)
+    End Sub
 End Class
