@@ -599,12 +599,13 @@ Public Class DataDirector
         End Try
     End Function
     Private Sub CreateRowFromControlsOnTab(ByRef tabControl As UltraTabControl, ByVal rRow As DataRow, ByVal Col As DataColumn, ByVal rowTable As DataTable)
+        Dim cntCol As Integer = 0
         For Each iTabPage As UltraTab In tabControl.Tabs
             Dim chCtrType As String = String.Empty
             For Each chCtr As Control In iTabPage.TabPage.Controls
                 chCtrType = chCtr.GetType.ToString
                 If chCtr.Tag <> "" Or Not IsNothing(chCtr.Tag) Or chCtrType = "FarPoint.Win.Spread.FpSpread" Then
-                    Dim cntCol As Integer = 0
+
                     If chCtrType <> "FarPoint.Win.Spread.FpSpread" Then
                         Select Case chCtrType
                             Case "System.Windows.Forms.CheckBox"
