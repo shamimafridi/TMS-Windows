@@ -705,13 +705,13 @@ Module ReportProcess
                 Ds.WriteXmlSchema(Application.StartupPath & "\Reports\VehicleRevenueReport.xsd")
                 strReportPath = Application.StartupPath & "\Reports\VehicleRevenuePivot.rpt"
             End If
-            
+
             If Ds.Tables(0).Rows.Count = 0 Then
                 MessageBox.Show("No record found within the specified conditions..." & vbCrLf & vbCrLf & "Please specify valid parameters and " & vbCrLf & "Make sure that the records exists !", "Report Process", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Return False
                 Exit Function
             End If
-            
+
             If Not IO.File.Exists(strReportPath) Then
                 Throw (New Exception("Unable to locate report file:" & vbCrLf & strReportPath))
             End If
@@ -734,6 +734,7 @@ Module ReportProcess
         Catch ex As Exception
             MsgBox(ex.Message)
             Return False
+
         End Try
     End Function
 

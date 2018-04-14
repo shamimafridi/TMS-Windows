@@ -65,7 +65,7 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Zarwali Group of Companies")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Ali & Company")>  _
         Public ReadOnly Property CompanyName() As String
             Get
                 Return CType(Me("CompanyName"),String)

@@ -6,7 +6,7 @@
       <Value Profile="(Default)">100</Value>
     </Setting>
     <Setting Name="CompanyName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Zarwali Group of Companies</Value>
+      <Value Profile="(Default)">Ali &amp; Company</Value>
     </Setting>
     <Setting Name="ServerName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">DotnetServer</Value>
