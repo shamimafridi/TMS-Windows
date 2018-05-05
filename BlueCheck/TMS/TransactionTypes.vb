@@ -172,6 +172,10 @@
         Private Sub TxtTransactionTypeCode_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TxtTransactionTypeCode.ValueChanged
 
         End Sub
+
+        Private Sub TxtGLCode_ValueChanged(sender As Object, e As EventArgs) Handles TxtGLCode.ValueChanged
+
+        End Sub
     End Class
 
 End Namespace

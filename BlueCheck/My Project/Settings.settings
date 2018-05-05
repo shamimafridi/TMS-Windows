@@ -84,7 +84,7 @@
       <Value Profile="(Default)">0202</Value>
     </Setting>
     <Setting Name="Debtors" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">01010001</Value>
+      <Value Profile="(Default)">0101</Value>
     </Setting>
     <Setting Name="ProductCode_Length" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">3</Value>

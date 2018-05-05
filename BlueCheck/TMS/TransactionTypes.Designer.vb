@@ -24,13 +24,13 @@
         <System.Diagnostics.DebuggerStepThrough()> _
         Private Sub InitializeComponent()
             Me.components = New System.ComponentModel.Container()
-            Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
             Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-            Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TransactionTypes))
             Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TransactionTypes))
+            Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
             Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-            Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-            Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
             Me.Desc = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
             Me.Label1 = New System.Windows.Forms.Label()
             Me.Label2 = New System.Windows.Forms.Label()
@@ -61,8 +61,8 @@
             Me.Desc.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Appearance5.BackColor = System.Drawing.SystemColors.Window
-            Me.Desc.Appearance = Appearance5
+            Appearance1.BackColor = System.Drawing.SystemColors.Window
+            Me.Desc.Appearance = Appearance1
             Me.Desc.BackColor = System.Drawing.SystemColors.Window
             Me.Desc.Location = New System.Drawing.Point(236, 217)
             Me.Desc.Name = "Desc"
@@ -106,8 +106,8 @@
             Me.txtNature.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Appearance1.BackColor = System.Drawing.SystemColors.Window
-            Me.txtNature.Appearance = Appearance1
+            Appearance2.BackColor = System.Drawing.SystemColors.Window
+            Me.txtNature.Appearance = Appearance2
             Me.txtNature.BackColor = System.Drawing.SystemColors.Window
             Me.txtNature.Location = New System.Drawing.Point(366, 169)
             Me.txtNature.Name = "txtNature"
@@ -148,8 +148,8 @@
             '
             Me.TxtNatureCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-            Appearance2.BackColor = System.Drawing.SystemColors.Window
-            Me.TxtNatureCode.Appearance = Appearance2
+            Appearance5.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtNatureCode.Appearance = Appearance5
             Me.TxtNatureCode.BackColor = System.Drawing.SystemColors.Window
             Me.TxtNatureCode.Location = New System.Drawing.Point(236, 169)
             Me.TxtNatureCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.TransactionTypeCode_Length
@@ -204,8 +204,8 @@
             Me.TxtGLDesc.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Appearance10.BackColor = System.Drawing.SystemColors.Window
-            Me.TxtGLDesc.Appearance = Appearance10
+            Appearance3.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtGLDesc.Appearance = Appearance3
             Me.TxtGLDesc.BackColor = System.Drawing.SystemColors.Window
             Me.TxtGLDesc.Location = New System.Drawing.Point(360, 270)
             Me.TxtGLDesc.Name = "TxtGLDesc"
@@ -219,8 +219,8 @@
             '
             Me.TxtGLCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-            Appearance11.BackColor = System.Drawing.SystemColors.Window
-            Me.TxtGLCode.Appearance = Appearance11
+            Appearance4.BackColor = System.Drawing.SystemColors.Window
+            Me.TxtGLCode.Appearance = Appearance4
             Me.TxtGLCode.BackColor = System.Drawing.SystemColors.Window
             Me.TxtGLCode.Location = New System.Drawing.Point(236, 270)
             Me.TxtGLCode.MaxLength = Global.BusinessLeaf.My.MySettings.Default.GLCode_Length

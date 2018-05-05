@@ -40,21 +40,21 @@ Namespace GeneralLedger
         Friend WithEvents LinkLabel3 As System.Windows.Forms.LinkLabel
         Friend WithEvents ErrProvider As AzamTechnologies.ATErrorProvider
         <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-            Me.components = New System.ComponentModel.Container
-            Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-            Me.Label2 = New System.Windows.Forms.Label
-            Me.dtpDate = New System.Windows.Forms.DateTimePicker
-            Me.Label3 = New System.Windows.Forms.Label
-            Me.Desc = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.txtBranchCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.Label9 = New System.Windows.Forms.Label
+            Me.components = New System.ComponentModel.Container()
+            Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Me.Label2 = New System.Windows.Forms.Label()
+            Me.dtpDate = New System.Windows.Forms.DateTimePicker()
+            Me.Label3 = New System.Windows.Forms.Label()
+            Me.Desc = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.txtBranchCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label9 = New System.Windows.Forms.Label()
             Me.ErrProvider = New AzamTechnologies.ATErrorProvider(Me.components)
-            Me.TxtFreightGLDesc = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.TxtFreightGLCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor
-            Me.LinkLabel3 = New System.Windows.Forms.LinkLabel
+            Me.TxtFreightGLDesc = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.TxtFreightGLCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
             CType(Me.Desc, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.txtBranchCode, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.ErrProvider, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,7 +76,7 @@ Namespace GeneralLedger
             '
             Me.dtpDate.AccessibleDescription = "Last"
             Me.dtpDate.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
             Me.dtpDate.CalendarTitleBackColor = System.Drawing.SystemColors.Control
             Me.dtpDate.CalendarTitleForeColor = System.Drawing.SystemColors.WindowText
             Me.dtpDate.CustomFormat = Global.BusinessLeaf.My.MySettings.Default.DateFormat
@@ -102,8 +102,8 @@ Namespace GeneralLedger
             'Desc
             '
             Me.Desc.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Appearance1.BackColor = System.Drawing.SystemColors.Window
             Me.Desc.Appearance = Appearance1
             Me.Desc.BackColor = System.Drawing.SystemColors.Window
@@ -116,7 +116,7 @@ Namespace GeneralLedger
             'txtBranchCode
             '
             Me.txtBranchCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
             Appearance2.BackColor = System.Drawing.SystemColors.Window
             Me.txtBranchCode.Appearance = Appearance2
             Me.txtBranchCode.BackColor = System.Drawing.SystemColors.Window
@@ -146,8 +146,8 @@ Namespace GeneralLedger
             'TxtFreightGLDesc
             '
             Me.TxtFreightGLDesc.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left) _
-                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Appearance3.BackColor = System.Drawing.SystemColors.Window
             Me.TxtFreightGLDesc.Appearance = Appearance3
             Me.TxtFreightGLDesc.BackColor = System.Drawing.SystemColors.Window
@@ -161,7 +161,7 @@ Namespace GeneralLedger
             'TxtFreightGLCode
             '
             Me.TxtFreightGLCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                        Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
             Appearance4.BackColor = System.Drawing.SystemColors.Window
             Me.TxtFreightGLCode.Appearance = Appearance4
             Me.TxtFreightGLCode.BackColor = System.Drawing.SystemColors.Window

@@ -308,7 +308,7 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("01010001")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0101")>  _
         Public ReadOnly Property Debtors() As String
             Get
                 Return CType(Me("Debtors"),String)

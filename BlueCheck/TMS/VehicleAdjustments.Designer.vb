@@ -196,7 +196,8 @@
             Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(6).Width = 218.0!
             CurrencyCellType1.DecimalPlaces = 2
             CurrencyCellType1.MaximumValue = New Decimal(New Integer() {-727379969, 232, 0, 131072})
-            CurrencyCellType1.MinimumValue = New Decimal(New Integer() {0, 0, 0, 0})
+            CurrencyCellType1.MinimumValue = New Decimal(New Integer() {1215752191, 23, 0, -2147352576})
+            CurrencyCellType1.NegativeRed = True
             CurrencyCellType1.Separator = ","
             CurrencyCellType1.ShowCurrencySymbol = False
             CurrencyCellType1.ShowSeparator = True
@@ -443,12 +444,12 @@
             Me.TxtVehicleCode.MaxLength = 8
             Me.TxtVehicleCode.Name = "TxtVehicleCode"
             Me.TxtVehicleCode.Size = New System.Drawing.Size(133, 21)
-        Me.TxtVehicleCode.TabIndex = 2
-        Me.TxtVehicleCode.Tag = "FK.VehicleCode"
-        '
-        'VehicleAdjustments
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+            Me.TxtVehicleCode.TabIndex = 2
+            Me.TxtVehicleCode.Tag = "FK.VehicleCode"
+            '
+            'VehicleAdjustments
+            '
+            Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1016, 741)
         Me.Controls.Add(Me.TxtVehicle)

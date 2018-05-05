@@ -395,9 +395,9 @@ Namespace GeneralLedger
                     FpVehicleAdjustmentGrid.Sheets(0).SetTag(e.Row, GridCols.VehicleAdjustmentNature, "TransactionNature")
 
 
-                    If Val(FpVehicleAdjustmentGrid.Sheets(0).GetText(e.Row, GridCols.Amount)) = 0 Then
-                        FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.Amount, 0D)
-                    End If
+                    'If Val(FpVehicleAdjustmentGrid.Sheets(0).GetText(e.Row, GridCols.Amount)) = 0 Then
+                    '    FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.Amount, 0D)
+                    'End If
                     If e.NewRow = FpVehicleAdjustmentGrid.Sheets(0).RowCount - 1 Then
                         FpVehicleAdjustmentGrid_Sheet1.AddRows(FpVehicleAdjustmentGrid.Sheets(0).RowCount, 1)
                     End If
