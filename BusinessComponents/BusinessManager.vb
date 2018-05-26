@@ -2,6 +2,7 @@ Option Explicit On
 Option Infer On
 
 Imports System.Data.SqlClient
+Imports AzamTechnologies.Database
 'Imports System.EnterpriseServices
 ' <Transaction(TransactionOption.RequiresNew), ObjectPooling(True, 5, 10), ComClass(DataModify.ClassId, DataModify.InterfaceId, DataModify.EventsId)> _
 
@@ -49,6 +50,7 @@ Public Class BusinessManager
     Dim DataModify As AzamTechnologies.Database.DataModify
     Dim Query As String = String.Empty
     Dim SaveMode As AzamTechnologies.Database.DataModify.UpdateMode
+
     Sub GenerateVoucher(ByRef FromGeneratedData As DataSet, ByVal FromGeneratedDetailData As DataSet, ByVal FromGeneratedNature As String, ByVal GeneratedToVoucherNature As String)
         m_GeneratedToVoucherNature = GeneratedToVoucherNature
         m_GeneratedFromNature = FromGeneratedNature
@@ -56,11 +58,9 @@ Public Class BusinessManager
         m_FromGeneratedDetailData = FromGeneratedDetailData
         DataModify = New AzamTechnologies.Database.DataModify
 
-
         Dim dsSVMaster As DataSet = Nothing
         Dim dsSVDetail As DataSet = Nothing
         Dim NewRecord As Boolean = True
-
         If m_GeneratedFromNature = VehiclePaymentNature Or m_GeneratedFromNature = VehicleFinancialExpenceNature Or m_GeneratedFromNature = VehicleReceiptNature Then
             If Trim(FromGeneratedData.Tables(0).Rows(0).Item("Mode")) = "Cash" Then
                 m_GeneratedFromNature = FromGeneratedData.Tables(0).Rows(0).Item("TransactionNature")
@@ -141,8 +141,8 @@ ad:
         Try
             DocumentNo = CheckReference()
             If DocumentNo <> String.Empty Then
-                Query = "EXECUTE DeleteVouchers  @BranchCode='" & FromGeneratedData.Tables(0).Rows(0).Item("BranchCode") & _
-                        "' ,@TransactionNature='" & m_GeneratedToVoucherNature & _
+                Query = "EXECUTE DeleteVouchers  @BranchCode='" & FromGeneratedData.Tables(0).Rows(0).Item("BranchCode") &
+                        "' ,@TransactionNature='" & m_GeneratedToVoucherNature &
                         "' ,@TransactionNo='" & DocumentNo & "'"
 
                 If DataModify.UpdateExecuteQuery(Query) <> 0 Then
@@ -160,6 +160,30 @@ ad:
                 Case SaleVoucherNature
                     dsSVMaster = GenerateMasterSaleVouchers()
                     dsSVDetail = GenerateDetailSaleVouchers()
+                    If IsVoucherCancelled = False Then
+                        If DataModify.UpdateDetailData("UpdateVouchers", "UpdateVouchersDetails", "DeleteVouchersDetails", dsSVMaster, dsSVDetail, SaveMode) <> 0 Then
+                            UpdateReference()
+                        End If
+                    End If
+                    m_GeneratedToVoucherNature = CashPaymentVoucherNature
+                    DocumentNo = CheckReference()
+                    If DocumentNo <> String.Empty Then
+                        Query = "EXECUTE DeleteVouchers  @BranchCode='" & FromGeneratedData.Tables(0).Rows(0).Item("BranchCode") &
+                                "' ,@TransactionNature='" & CashPaymentVoucherNature &
+                                "' ,@TransactionNo='" & DocumentNo & "'"
+
+                        If DataModify.UpdateExecuteQuery(Query) <> 0 Then
+                        End If
+                        NewRecord = False
+                        SaveMode = Database.DataModify.UpdateMode.Update
+                        'GetNextVoucherNo()
+                    Else
+                        NewRecord = True
+                        SaveMode = Database.DataModify.UpdateMode.Insert
+                        DocumentNo = GetNextVoucherNo()
+                    End If
+                    dsSVMaster = GenerateMasterPaymentVouchers(CashPaymentVoucherNature)
+                    dsSVDetail = GenerateDetailPaymentVouchers(CashPaymentVoucherNature)
                     If IsVoucherCancelled = False Then
                         If DataModify.UpdateDetailData("UpdateVouchers", "UpdateVouchersDetails", "DeleteVouchersDetails", dsSVMaster, dsSVDetail, SaveMode) <> 0 Then
                             UpdateReference()
@@ -249,12 +273,12 @@ ad:
         End Try
     End Sub
     Sub UpdateReference()
-        Query = "EXECUTE UpdateGeneratedReferences  @GenFrom='" & GeneratedFromModuleName & _
-                        "' ,@FormName='" & m_FromGeneratedData.DataSetName & _
-                        "' ,@TransactionNature='" & m_GeneratedFromNature & _
-                        "' ,@TransactionNo='" & m_FromGeneratedData.Tables(0).Rows(0).Item("TransactionNo") & _
-                        "' ,@BranchCode='" & m_FromGeneratedData.Tables(0).Rows(0).Item("BranchCode") & _
-                        "' ,@DocumentNature='" & m_GeneratedToVoucherNature & _
+        Query = "EXECUTE UpdateGeneratedReferences  @GenFrom='" & GeneratedFromModuleName &
+                        "' ,@FormName='" & m_FromGeneratedData.DataSetName &
+                        "' ,@TransactionNature='" & m_GeneratedFromNature &
+                        "' ,@TransactionNo='" & m_FromGeneratedData.Tables(0).Rows(0).Item("TransactionNo") &
+                        "' ,@BranchCode='" & m_FromGeneratedData.Tables(0).Rows(0).Item("BranchCode") &
+                        "' ,@DocumentNature='" & m_GeneratedToVoucherNature &
                         "' ,@DocumentNo='" & DocumentNo & "'"
         DataModify.UpdateExecuteQuery(Query)
     End Sub
@@ -292,8 +316,8 @@ ad:
         Try
             DocumentNo = CheckReference()
             If DocumentNo <> String.Empty Then
-                Query = "EXECUTE DeleteVouchers  @BranchCode='" & FromGeneratedData.Tables(0).Rows(0).Item("BranchCode") & _
-                        "' ,@TransactionNature='" & m_GeneratedToVoucherNature & _
+                Query = "EXECUTE DeleteVouchers  @BranchCode='" & FromGeneratedData.Tables(0).Rows(0).Item("BranchCode") &
+                        "' ,@TransactionNature='" & m_GeneratedToVoucherNature &
                         "' ,@TransactionNo='" & DocumentNo & "'"
 
                 If DataModify.UpdateExecuteQuery(Query) <> 0 Then
@@ -358,11 +382,11 @@ ad:
         ' Get OLD VoucherNo Document No
         Dim dt As New AzamTechnologies.Database.DataAccess
         Dim Reader As SqlDataReader
-        Reader = dt.GetRecord("SelectGeneratedReferences", "GenFrom", GeneratedFromModuleName, _
-                "FormName", m_FromGeneratedData.DataSetName, _
-                "BranchCode", m_FromGeneratedData.Tables(0).Rows(0).Item("BranchCode"), _
-                "TransactionNature", m_GeneratedFromNature, _
-                "TransactionNo", m_FromGeneratedData.Tables(0).Rows(0).Item("TransactionNo"), _
+        Reader = dt.GetRecord("SelectGeneratedReferences", "GenFrom", GeneratedFromModuleName,
+                "FormName", m_FromGeneratedData.DataSetName,
+                "BranchCode", m_FromGeneratedData.Tables(0).Rows(0).Item("BranchCode"),
+                "TransactionNature", m_GeneratedFromNature,
+                "TransactionNo", m_FromGeneratedData.Tables(0).Rows(0).Item("TransactionNo"),
                 "DocumentNature", m_GeneratedToVoucherNature, "OPTION", "CHECK_IF_EXIST")
         If Reader.Read Then
             DocumentNo = Trim(Reader("DocumentNo"))
@@ -404,9 +428,9 @@ ad:
                     SVD.Credit = 0
                     SVD.Narration = ""
                     SVD.CreateRow()
-                    
+
                 End If
-            
+
                 'AppDomain.CurrentDomain.SetupInformation.ConfigurationFile
                 '   Generate Row For Vehicle Freight
                 If (.Rows(0).Item("Rate") * .Rows(0).Item("Quantity")) <> 0 Then
@@ -469,9 +493,9 @@ ad:
         With Me.m_FromGeneratedData.Tables(0)
             Dim SVM As New MasterVoucher(.Rows(0).Item("BranchCode").ToString, Me.DocumentNo, ToGenNature)
             SVM.Branch = .Rows(0).Item("BranchName")
-            SVM.Description = " Vehicle Reference: " & .Rows(0).Item("VehicleCode") & _
+            SVM.Description = " Vehicle Reference: " & .Rows(0).Item("VehicleCode") &
                             vbCrLf & "Transaction No: " & .Rows(0).Item("TransactionNo") & "[ " & m_GeneratedFromNature & "]"
-            SVM.UrduDescription = .Rows(0).Item("UrduTitle")
+          '  SVM.UrduDescription = .Rows(0).Item("UrduTitle")
             SVM.VoucherDate = .Rows(0).Item("TransactionDate")
             SVM.CreateRow()
             Dim MasterDataSet As New DataSet(Me.m_FromGeneratedData.DataSetName)
@@ -484,9 +508,11 @@ ad:
         With Me.m_FromGeneratedData.Tables(0)
             Dim SVM As New MasterVoucher(.Rows(0).Item("BranchCode").ToString, Me.DocumentNo, ToGenNature)
             SVM.Branch = .Rows(0).Item("BranchName")
-            SVM.Description = " Vehicle Reference: " & .Rows(0).Item("VehicleCode") & _
+            SVM.Description = " Vehicle Reference: " & .Rows(0).Item("VehicleCode") &
                             vbCrLf & "Transaction No: " & .Rows(0).Item("TransactionNo") & " [" & m_GeneratedFromNature & "]"
-            SVM.UrduDescription = .Rows(0).Item("UrduTitle")
+            If Me.m_FromGeneratedData.Tables(0).Columns.Contains("UrduTitle") Then
+                SVM.UrduDescription = .Rows(0).Item("UrduTitle")
+            End If
             SVM.VoucherDate = .Rows(0).Item("TransactionDate")
             SVM.CreateRow()
             Dim MasterDataSet As New DataSet(Me.m_FromGeneratedData.DataSetName)
@@ -601,7 +627,14 @@ ad:
                     SVD.Reference = "" '"TMS/REC/" & SVD.BranchCode & " - " & .Rows(irow).Item("TransactionNo")
                     SVD.Debit = CDbl(.Rows(iRow).Item("Amount"))
                     SVD.Credit = 0D
-                    SVD.Narration = ""
+                    If Me.m_FromGeneratedDetailData.Tables(0).Columns.Contains("Date") Then
+                        SVD.Narration = .Rows(iRow).Item("Date").ToString()
+                    End If
+                    If Me.m_FromGeneratedDetailData.Tables(0).Columns.Contains("Description") Then
+                        If Not String.IsNullOrEmpty(.Rows(iRow).Item("Description")) Then
+                            SVD.Narration = $"{SVD.Narration} - { .Rows(iRow).Item("Description")}"
+                        End If
+                    End If
                     SVD.CreateRow()
                 End If
 
@@ -640,7 +673,7 @@ ad:
         With Me.m_FromGeneratedData.Tables(0)
             Dim SVM As New MasterVoucher(.Rows(0).Item("BranchCode").ToString, Me.DocumentNo, "BR")
             SVM.Branch = .Rows(0).Item("BranchName")
-            SVM.Description = " Customer Reference: " & .Rows(0).Item("CustomerCode") & "-" & .Rows(0).Item("CustomerName") & _
+            SVM.Description = " Customer Reference: " & .Rows(0).Item("CustomerCode") & "-" & .Rows(0).Item("CustomerName") &
                             vbCrLf & "Bill No: " & .Rows(0).Item("BillNo")
             SVM.VoucherDate = .Rows(0).Item("ReceiptDate")
             SVM.CreateRow()

@@ -76,6 +76,9 @@ Namespace GeneralLedger
         Friend WithEvents Label17 As Label
         Friend WithEvents Label26 As Label
         Friend WithEvents TxtLongTripRefNo As Infragistics.Win.UltraWinEditors.UltraTextEditor
+        Friend WithEvents UltraTabPageControl2 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
+        Friend WithEvents FpVehicleAdjustmentGrid As FarPoint.Win.Spread.FpSpread
+        Friend WithEvents FpVehicleAdjustmentGrid_Sheet1 As FarPoint.Win.Spread.SheetView
         Friend WithEvents ErrProvider As AzamTechnologies.ATErrorProvider
         <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
             Me.components = New System.ComponentModel.Container()
@@ -93,8 +96,20 @@ Namespace GeneralLedger
             Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
             Dim Appearance13 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
             Dim Appearance14 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-            Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+            Dim BevelBorder1 As FarPoint.Win.BevelBorder = New FarPoint.Win.BevelBorder(FarPoint.Win.BevelBorderType.Lowered)
+            Dim TextCellType1 As FarPoint.Win.Spread.CellType.TextCellType = New FarPoint.Win.Spread.CellType.TextCellType()
+            Dim TextCellType2 As FarPoint.Win.Spread.CellType.TextCellType = New FarPoint.Win.Spread.CellType.TextCellType()
+            Dim TextCellType3 As FarPoint.Win.Spread.CellType.TextCellType = New FarPoint.Win.Spread.CellType.TextCellType()
+            Dim TextCellType4 As FarPoint.Win.Spread.CellType.TextCellType = New FarPoint.Win.Spread.CellType.TextCellType()
+            Dim TextCellType5 As FarPoint.Win.Spread.CellType.TextCellType = New FarPoint.Win.Spread.CellType.TextCellType()
+            Dim DateTimeCellType1 As FarPoint.Win.Spread.CellType.DateTimeCellType = New FarPoint.Win.Spread.CellType.DateTimeCellType()
             Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Invoices))
+            Dim TextCellType6 As FarPoint.Win.Spread.CellType.TextCellType = New FarPoint.Win.Spread.CellType.TextCellType()
+            Dim CurrencyCellType1 As FarPoint.Win.Spread.CellType.CurrencyCellType = New FarPoint.Win.Spread.CellType.CurrencyCellType()
+            Dim TextCellType7 As FarPoint.Win.Spread.CellType.TextCellType = New FarPoint.Win.Spread.CellType.TextCellType()
+            Dim TextCellType8 As FarPoint.Win.Spread.CellType.TextCellType = New FarPoint.Win.Spread.CellType.TextCellType()
+            Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+            Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
             Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
             Me.Label26 = New System.Windows.Forms.Label()
             Me.TxtLongTripRefNo = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
@@ -147,6 +162,9 @@ Namespace GeneralLedger
             Me.TxtDate = New System.Windows.Forms.DateTimePicker()
             Me.Label19 = New System.Windows.Forms.Label()
             Me.Label17 = New System.Windows.Forms.Label()
+            Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
+            Me.FpVehicleAdjustmentGrid = New FarPoint.Win.Spread.FpSpread()
+            Me.FpVehicleAdjustmentGrid_Sheet1 = New FarPoint.Win.Spread.SheetView()
             Me.UltraTabControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
             Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
             Me.ErrProvider = New AzamTechnologies.ATErrorProvider(Me.components)
@@ -177,6 +195,9 @@ Namespace GeneralLedger
             CType(Me.txtBranchCode, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.txtDescription, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.txtTransactionNumber, System.ComponentModel.ISupportInitialize).BeginInit()
+            Me.UltraTabPageControl2.SuspendLayout()
+            CType(Me.FpVehicleAdjustmentGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.FpVehicleAdjustmentGrid_Sheet1, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.UltraTabControl1.SuspendLayout()
             CType(Me.ErrProvider, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -235,7 +256,7 @@ Namespace GeneralLedger
             Me.UltraTabPageControl1.Controls.Add(Me.TxtDate)
             Me.UltraTabPageControl1.Controls.Add(Me.Label19)
             Me.UltraTabPageControl1.Controls.Add(Me.Label17)
-            Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 23)
+            Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
             Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
             Me.UltraTabPageControl1.Size = New System.Drawing.Size(960, 591)
             '
@@ -838,10 +859,134 @@ Namespace GeneralLedger
             Me.Label17.Text = "Shortage"
             Me.Label17.Visible = False
             '
+            'UltraTabPageControl2
+            '
+            Me.UltraTabPageControl2.Controls.Add(Me.FpVehicleAdjustmentGrid)
+            Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 23)
+            Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
+            Me.UltraTabPageControl2.Size = New System.Drawing.Size(960, 591)
+            '
+            'FpVehicleAdjustmentGrid
+            '
+            Me.FpVehicleAdjustmentGrid.AccessibleDescription = "FpVehicleAdjustmentGrid, Sheet1, Row 0, Column 0, "
+            Me.FpVehicleAdjustmentGrid.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Me.FpVehicleAdjustmentGrid.BackColor = System.Drawing.SystemColors.Control
+            Me.FpVehicleAdjustmentGrid.EditModeReplace = True
+            Me.FpVehicleAdjustmentGrid.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+            Me.FpVehicleAdjustmentGrid.Location = New System.Drawing.Point(24, 106)
+            Me.FpVehicleAdjustmentGrid.Name = "FpVehicleAdjustmentGrid"
+            Me.FpVehicleAdjustmentGrid.RightToLeft = System.Windows.Forms.RightToLeft.No
+            Me.FpVehicleAdjustmentGrid.Sheets.AddRange(New FarPoint.Win.Spread.SheetView() {Me.FpVehicleAdjustmentGrid_Sheet1})
+            Me.FpVehicleAdjustmentGrid.Size = New System.Drawing.Size(913, 488)
+            Me.FpVehicleAdjustmentGrid.TabIndex = 9
+            '
+            'FpVehicleAdjustmentGrid_Sheet1
+            '
+            Me.FpVehicleAdjustmentGrid_Sheet1.Reset()
+            Me.FpVehicleAdjustmentGrid_Sheet1.SheetName = "Sheet1"
+            'Formulas and custom names must be loaded with R1C1 reference style
+            Me.FpVehicleAdjustmentGrid_Sheet1.ReferenceStyle = FarPoint.Win.Spread.Model.ReferenceStyle.R1C1
+            FpVehicleAdjustmentGrid_Sheet1.ColumnCount = 11
+            FpVehicleAdjustmentGrid_Sheet1.RowCount = 10
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnFooter.DefaultStyle.Border = BevelBorder1
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnFooter.DefaultStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnFooter.DefaultStyle.NoteIndicatorColor = System.Drawing.Color.Red
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnFooter.DefaultStyle.Parent = "ColumnFooterEnhanced"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnFooter.Rows.Get(0).Height = 37.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnFooter.Visible = True
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 0).Value = "BranchCode"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 1).Value = "TransactionNature"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 2).Value = "TransactionNo"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 3).Value = "TypeCode"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 4).Value = "Type"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 5).Value = "Date"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 6).Value = "UrduDescription"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 7).Value = "Description"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 8).Value = "Amount"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 9).Value = "GLCode"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 10).Value = "GLDescription"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Rows.Get(0).Height = 19.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(0).CellType = TextCellType1
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(0).Label = "BranchCode"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(0).Visible = False
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(1).CellType = TextCellType2
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(1).Label = "TransactionNature"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(1).Visible = False
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(2).CellType = TextCellType3
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(2).Label = "TransactionNo"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(2).Visible = False
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(3).CellType = TextCellType4
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(3).HorizontalAlignment = FarPoint.Win.Spread.CellHorizontalAlignment.General
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(3).Label = "TypeCode"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(3).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Bottom
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(3).Width = 56.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(4).CellType = TextCellType5
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(4).Label = "Type"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(4).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Bottom
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(4).Width = 176.0!
+            DateTimeCellType1.Calendar = CType(resources.GetObject("DateTimeCellType1.Calendar"), System.Globalization.Calendar)
+            DateTimeCellType1.CalendarSurroundingDaysColor = System.Drawing.SystemColors.GrayText
+            DateTimeCellType1.DateDefault = New Date(2018, 5, 12, 9, 21, 1, 0)
+            DateTimeCellType1.DropDownButton = True
+            DateTimeCellType1.MaximumTime = System.TimeSpan.Parse("23:59:59.9999999")
+            DateTimeCellType1.SimpleEdit = True
+            DateTimeCellType1.SpinButton = True
+            DateTimeCellType1.TimeDefault = New Date(2018, 5, 12, 9, 21, 1, 0)
+            DateTimeCellType1.UserDefinedFormat = "DD/MMM/YYYY"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(5).CellType = DateTimeCellType1
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(5).Label = "Date"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(5).Locked = False
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(5).Width = 85.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(6).CellType = TextCellType6
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(6).Label = "UrduDescription"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(6).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Bottom
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(6).Width = 120.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(7).Label = "Description"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(7).Width = 218.0!
+            CurrencyCellType1.DecimalPlaces = 2
+            CurrencyCellType1.MaximumValue = New Decimal(New Integer() {-727379969, 232, 0, 131072})
+            CurrencyCellType1.MinimumValue = New Decimal(New Integer() {1215752191, 23, 0, -2147352576})
+            CurrencyCellType1.NegativeRed = True
+            CurrencyCellType1.Separator = ","
+            CurrencyCellType1.ShowCurrencySymbol = False
+            CurrencyCellType1.ShowSeparator = True
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(8).CellType = CurrencyCellType1
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(8).Label = "Amount"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(8).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Bottom
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(8).Width = 88.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(9).CellType = TextCellType7
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(9).Label = "GLCode"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(9).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Bottom
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(9).Width = 123.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(10).CellType = TextCellType8
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(10).Label = "GLDescription"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(10).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Bottom
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(10).Width = 194.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.DefaultStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
+            Me.FpVehicleAdjustmentGrid_Sheet1.DefaultStyle.NoteIndicatorColor = System.Drawing.Color.Red
+            Me.FpVehicleAdjustmentGrid_Sheet1.DefaultStyle.Parent = "DataAreaDefault"
+            Me.FpVehicleAdjustmentGrid_Sheet1.RowHeader.Columns.Default.Resizable = False
+            Me.FpVehicleAdjustmentGrid_Sheet1.RowHeader.Columns.Get(0).Width = 26.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Rows.Get(0).Height = 21.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Rows.Get(1).Height = 21.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Rows.Get(2).Height = 21.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Rows.Get(3).Height = 21.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Rows.Get(4).Height = 21.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Rows.Get(5).Height = 21.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Rows.Get(6).Height = 21.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Rows.Get(7).Height = 21.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Rows.Get(8).Height = 21.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Rows.Get(9).Height = 21.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Tag = "VehicleAdjustmentsDetails"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ReferenceStyle = FarPoint.Win.Spread.Model.ReferenceStyle.A1
+            '
             'UltraTabControl1
             '
             Me.UltraTabControl1.Controls.Add(Me.UltraTabSharedControlsPage1)
             Me.UltraTabControl1.Controls.Add(Me.UltraTabPageControl1)
+            Me.UltraTabControl1.Controls.Add(Me.UltraTabPageControl2)
             Me.UltraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
             Me.UltraTabControl1.Location = New System.Drawing.Point(0, 0)
             Me.UltraTabControl1.Name = "UltraTabControl1"
@@ -850,8 +995,10 @@ Namespace GeneralLedger
             Me.UltraTabControl1.TabIndex = 0
             Me.UltraTabControl1.TabOrientation = Infragistics.Win.UltraWinTabs.TabOrientation.TopRight
             UltraTab3.TabPage = Me.UltraTabPageControl1
-            UltraTab3.Text = "General"
-            Me.UltraTabControl1.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab3})
+            UltraTab3.Text = "Freight"
+            UltraTab1.TabPage = Me.UltraTabPageControl2
+            UltraTab1.Text = "Freight Expences"
+            Me.UltraTabControl1.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab3, UltraTab1})
             '
             'UltraTabSharedControlsPage1
             '
@@ -903,6 +1050,9 @@ Namespace GeneralLedger
             CType(Me.txtBranchCode, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.txtDescription, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.txtTransactionNumber, System.ComponentModel.ISupportInitialize).EndInit()
+            Me.UltraTabPageControl2.ResumeLayout(False)
+            CType(Me.FpVehicleAdjustmentGrid, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.FpVehicleAdjustmentGrid_Sheet1, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
             Me.UltraTabControl1.ResumeLayout(False)
             CType(Me.ErrProvider, System.ComponentModel.ISupportInitialize).EndInit()
@@ -911,7 +1061,237 @@ Namespace GeneralLedger
         End Sub
 #End Region
 
+        Dim CmbGlCode As FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
+        Dim CmbGlDesc As FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
+        Dim CmbDivCode As FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
+        Dim CmbDivDesc As FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
+        Private Dr As SqlDataReader
+        Dim FreshMode As Boolean
+        Dim LockGrid As Boolean
+        Dim DsVehicle As DataSet
+        Dim DsGLs As DataSet
+        Dim DsDiv As DataSet
+        Private Enum GridCols
+            BranchCode = 0
+            VehicleAdjustmentNature = 1
+            VehicleAdjustmentNumber = 2
+            TypeCode = 3
+            Type = 4
+            FreightDate = 5
+            UrduDescription = 6
+            Description = 7
+            Amount = 8
+            GLCode = 9
+            GLDescription = 10
+        End Enum
+        Private Sub JournalVehicleAdjustment_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+            ''''''''''''For just solving the problem of this form when closing then mdi windows handling problum
+            CmbGlCode = New FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
+            CmbGlDesc = New FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
+            CmbDivCode = New FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
+            CmbDivDesc = New FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
+            AddHandler Me.Paint, AddressOf mdlFunctions.PaintTheForms
+            PainFPGrid(FpVehicleAdjustmentGrid)
+            keychange()
+            If Me.Tag = AzamTechnologies.DataManager.DataMode.Insert Or Me.Tag = AzamTechnologies.DataManager.DataMode.Inserting Then
+                TxtDate.Value = CurrentWorkingDate
+            End If
+            Try
+                ''''''
+                SettingGrid()
+                ''
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End Sub
+        Sub SettingGrid()
+            ''''''''''''''''''''''''
+            ''''''''''''''''''''''''''
 
+            ''''Combo setting
+
+            'GL Accounts
+            ''''''''''''''''''''''''''''''''''''''
+            FillCombo(DsGLs, "SelectCOASubSubsidiaries", "OPTION", "COMBO")
+
+            Me.FpVehicleAdjustmentGrid.ButtonDrawMode = FarPoint.Win.Spread.ButtonDrawModes.CurrentCell
+
+            With DsGLs.Tables(0)
+                CmbGlCode.DataSourceList = DsGLs
+                CmbGlCode.ListOffset = 10
+                CmbGlCode.AutoSearch = FarPoint.Win.AutoSearch.MultipleCharacter
+                CmbGlCode.ShowColumnHeaders = True
+                CmbGlCode.DataMemberList = "Table"
+
+            End With
+
+            CmbGlCode.ListWidth = 300
+
+            With DsGLs.Tables(0)
+                CmbGlDesc.DataSourceList = DsGLs
+                CmbGlDesc.ListOffset = 10
+                CmbGlDesc.AutoSearch = FarPoint.Win.AutoSearch.MultipleCharacter
+                CmbGlDesc.ShowColumnHeaders = True
+                CmbGlDesc.DataMemberList = "Table"
+
+
+            End With
+            CmbGlDesc.ListWidth = 300
+
+            'Types
+            ''''''''''''''''''''''''''''''''''''''
+            FillCombo(DsDiv, "SelectTransactionTypes", "OPTION", "COMBO", "NatureCode", VehiclePaymentNature)
+
+            Me.FpVehicleAdjustmentGrid.ButtonDrawMode = FarPoint.Win.Spread.ButtonDrawModes.CurrentCell
+
+            With DsDiv.Tables(0)
+                CmbDivCode.DataSourceList = DsDiv
+                CmbDivCode.ListOffset = 10
+                CmbDivCode.AutoSearch = FarPoint.Win.AutoSearch.MultipleCharacter
+                CmbDivCode.ShowColumnHeaders = True
+                CmbDivCode.DataMemberList = "Table"
+
+            End With
+
+
+
+            With DsDiv.Tables(0)
+                CmbDivDesc.DataSourceList = DsDiv
+                CmbDivDesc.ListOffset = 10
+                CmbDivDesc.AutoSearch = FarPoint.Win.AutoSearch.MultipleCharacter
+                CmbDivDesc.ShowColumnHeaders = True
+                CmbDivDesc.DataMemberList = "Table"
+
+            End With
+            FpVehicleAdjustmentGrid.Sheets(0).Tag = "VehicleAdjustmentsDetails"
+            CmbDivDesc.ListWidth = 500
+
+            'If Me.NATURE.Text = VehicleAdjustmentPaymentNature Or Me.NATURE.Text = VehicleAdjustmentReceiptNature Then
+            '    Me.lblCheque.Visible = False : Me.CmbMode.Visible = False : Me.lblMode.Visible = False : Me.TxtChequeNo.Visible = False
+            'Else
+            '    Me.lblCheque.Visible = True : Me.CmbMode.Visible = True : Me.lblMode.Visible = True : Me.TxtChequeNo.Visible = True
+            'End If
+
+
+
+            'TOTAL CELL SETTINGS
+            Dim TotalCellType = New FarPoint.Win.Spread.CellType.CurrencyCellType
+            TotalCellType.ShowCurrencySymbol = False
+            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.Cells(0, GridCols.Amount - 1).Value = "Total:"
+
+            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.Cells(0, GridCols.Amount).HorizontalAlignment = FarPoint.Win.Spread.CellHorizontalAlignment.Right
+            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.Cells(0, GridCols.Amount - 1).HorizontalAlignment = FarPoint.Win.Spread.CellHorizontalAlignment.Right
+            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.Cells(0, GridCols.Amount).CellType = TotalCellType
+            Dim r As Integer
+            Dim j As Integer
+            For r = 0 To Me.FpVehicleAdjustmentGrid.Sheets(0).RowCount
+                For j = 0 To Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnCount
+                    Me.FpVehicleAdjustmentGrid.Sheets(0).Models.Data.SetValue(r, j, j + r * Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnCount)
+                Next j
+            Next r
+            Dim i As Integer
+            i = 0
+            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.SetAggregationType(0, GridCols.Amount, FarPoint.Win.Spread.Model.AggregationType.Sum)
+            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.Cells(0, i).Value = "Sum"
+
+
+
+        End Sub
+        Sub keychange()
+            Dim im As New FarPoint.Win.Spread.InputMap
+            ' Define the operation of pressing Enter key in cells not beingedited as "Move to the next row".
+            im = FpVehicleAdjustmentGrid.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenFocused)
+            im.Put(New FarPoint.Win.Spread.Keystroke(Keys.Enter, Keys.None), FarPoint.Win.Spread.SpreadActions.MoveToNextColumnWrap)
+            ' Define the operation of pressing Enter key in cells being editedas "Move to the next row".
+            im = FpVehicleAdjustmentGrid.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenAncestorOfFocused)
+            im.Put(New FarPoint.Win.Spread.Keystroke(Keys.Enter, Keys.None), FarPoint.Win.Spread.SpreadActions.MoveToNextColumnWrap)
+        End Sub
+        Private Sub FpVehicleAdjustmentGrid_LeaveCell(ByVal sender As Object, ByVal e As FarPoint.Win.Spread.LeaveCellEventArgs) Handles FpVehicleAdjustmentGrid.LeaveCell
+            Me.Cursor = Cursors.WaitCursor
+            ''''''''''''
+            Dim ErrString As String = String.Empty
+            ''''''''''''
+            'SetComboToGrid(NewCol, NewRow)
+            If LockGrid = False Then
+                Select Case e.Column
+                    Case GridCols.GLCode
+                        validComboData(GridCols.GLCode, e.Row)
+                    Case GridCols.GLDescription
+                        validComboData(GridCols.GLDescription, e.Row)
+                    Case GridCols.TypeCode
+                        validComboData(GridCols.TypeCode, e.Row)
+                    Case GridCols.Type
+                        validComboData(GridCols.Type, e.Row)
+
+
+                End Select
+                LockGrid = True
+                'If Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(GridCols.GLCode, e.row)) = "" And Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(GridCols.PONo, Row)) = "" Then
+                If Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(e.Row, GridCols.TypeCode)) = "" Then
+
+                    FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.VehicleAdjustmentNature, String.Empty)
+                    FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.VehicleAdjustmentNumber, String.Empty)
+                    FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.BranchCode, String.Empty)
+
+                    FpVehicleAdjustmentGrid.Sheets(0).SetTag(e.Row, GridCols.BranchCode, String.Empty)
+                    FpVehicleAdjustmentGrid.Sheets(0).SetTag(e.Row, GridCols.VehicleAdjustmentNumber, String.Empty)
+                    FpVehicleAdjustmentGrid.Sheets(0).SetTag(e.Row, GridCols.VehicleAdjustmentNature, String.Empty)
+
+                    FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.GLCode, String.Empty)
+                    FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.GLDescription, String.Empty)
+
+
+                Else
+                    FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.VehicleAdjustmentNumber, txtTransactionNumber.Text)
+                    FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.VehicleAdjustmentNature, VehiclePaymentNature)
+                    FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.BranchCode, txtBranchCode.Text)
+
+                    FpVehicleAdjustmentGrid.Sheets(0).SetTag(e.Row, GridCols.BranchCode, "BranchCode")
+                    FpVehicleAdjustmentGrid.Sheets(0).SetTag(e.Row, GridCols.VehicleAdjustmentNumber, "TransactionNo")
+                    FpVehicleAdjustmentGrid.Sheets(0).SetTag(e.Row, GridCols.VehicleAdjustmentNature, "TransactionNature")
+
+
+                    'If Val(FpVehicleAdjustmentGrid.Sheets(0).GetText(e.Row, GridCols.Amount)) = 0 Then
+                    '    FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.Amount, 0D)
+                    'End If
+                    If e.NewRow = FpVehicleAdjustmentGrid.Sheets(0).RowCount - 1 Then
+                        FpVehicleAdjustmentGrid_Sheet1.AddRows(FpVehicleAdjustmentGrid.Sheets(0).RowCount, 1)
+                    End If
+                End If
+                LockGrid = False
+            End If
+            If LockGrid = False Then
+                LockGrid = True
+
+                ' Call VehicleAdjustmentGrid_ButtonClicked(Col, e.row, 0)
+                LockGrid = False
+            End If
+            Me.Cursor = Cursors.Default
+        End Sub
+
+        Private Sub FpVehicleAdjustmentGrid_EnterCell(ByVal sender As Object, ByVal e As FarPoint.Win.Spread.EnterCellEventArgs) Handles FpVehicleAdjustmentGrid.EnterCell
+            If e.Column = GridCols.GLCode Then
+                CmbGlCode.ColumnEdit = 0
+                CmbGlCode.DataColumn = 0
+                FpVehicleAdjustmentGrid.Sheets(0).Cells(e.Row, e.Column, e.Row, e.Column).CellType = CmbGlCode
+                CmbGlCode.ListWidth = 380
+            ElseIf e.Column = GridCols.GLDescription Then
+                CmbGlDesc.ColumnEdit = 1
+                CmbGlDesc.DataColumn = 1
+                FpVehicleAdjustmentGrid.Sheets(0).Cells(e.Row, e.Column, e.Row, e.Column).CellType = CmbGlDesc
+                CmbGlDesc.ListWidth = 380
+            ElseIf e.Column = GridCols.TypeCode Then
+                CmbDivCode.ColumnEdit = 0
+                CmbDivCode.DataColumn = 0
+                FpVehicleAdjustmentGrid.Sheets(0).Cells(e.Row, e.Column, e.Row, e.Column).CellType = CmbDivCode
+                CmbDivCode.ListWidth = 450
+            ElseIf e.Column = GridCols.Type Then
+                CmbDivDesc.ColumnEdit = 1
+                CmbDivDesc.DataColumn = 1
+                FpVehicleAdjustmentGrid.Sheets(0).Cells(e.Row, e.Column, e.Row, e.Column).CellType = CmbDivDesc
+                CmbDivDesc.ListWidth = 450
+            End If
+        End Sub
 
         Private Sub dtpDate_Validated(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtDate.Validated
             ErrProvider.SetError(TxtDate, String.Empty)
@@ -943,6 +1323,102 @@ Namespace GeneralLedger
                 ErrProvider.SetError(TxtDate, "You cannot change the Month Or Year for this Transaction Date..." & vbCrLf & "Please specify a valid Date within " & MonthName(Mid(txtTransactionNumber.Text, 3, 2)) & ", " & Year(DateSerial(Mid(txtTransactionNumber.Text, 1, 2), 1, 1)))
             End Try
         End Sub
+        Private Function validComboData(ByVal Col As GridCols, ByVal row As Int16) As Boolean
+            If Col = GridCols.GLCode Then
+                If Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(row, GridCols.GLCode)) <> "" Then
+                    Dim dv As New DataView
+                    dv.Table = DsGLs.Tables(0)
+                    dv.RowFilter = "GLCode='" & Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(row, GridCols.GLCode)) & "'"
+
+                    If dv.Count <> 0 Then
+                        FpVehicleAdjustmentGrid.Sheets(0).SetText(row, GridCols.GLDescription, dv.Item(0).Item("GLDescription"))
+                        Return True
+                    Else
+                        MessageBox.Show("Selected GLCode is not valid." & vbCrLf & "Please Enter an valide Item Code", "Item Validation", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                        FpVehicleAdjustmentGrid.Sheets(0).SetText(row, GridCols.GLCode, String.Empty)
+                        FpVehicleAdjustmentGrid.Sheets(0).SetText(row, GridCols.GLDescription, String.Empty)
+                        Return False
+                    End If
+                Else
+                    Return True
+                End If
+            ElseIf Col = GridCols.GLDescription Then
+                If Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(row, GridCols.GLDescription)) <> "" Then
+                    Dim dv As New DataView
+                    dv.Table = DsGLs.Tables(0)
+                    dv.RowFilter = "GLDescription='" & Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(row, GridCols.GLDescription)) & "'"
+
+                    If dv.Count <> 0 Then
+                        FpVehicleAdjustmentGrid.Sheets(0).SetText(row, GridCols.GLCode, dv.Item(0).Item("GLCode"))
+                        Return True
+                    Else
+                        MessageBox.Show("Selected Item is not valid." & vbCrLf & "Please Enter an valide Item Code", "Item Validation", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                        FpVehicleAdjustmentGrid.Sheets(0).SetText(row, GridCols.GLCode, String.Empty)
+                        FpVehicleAdjustmentGrid.Sheets(0).SetText(row, GridCols.GLDescription, String.Empty)
+                        Return False
+                    End If
+                Else
+                    Return True
+                End If
+
+            ElseIf Col = GridCols.TypeCode Then
+                If Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(row, GridCols.TypeCode)) <> "" Then
+                    Dim dv As New DataView
+                    dv.Table = DsDiv.Tables(0)
+                    dv.RowFilter = "TypeCode='" & Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(row, GridCols.TypeCode)) & "'"
+
+                    If dv.Count <> 0 Then
+                        FpVehicleAdjustmentGrid.Sheets(0).SetText(row, GridCols.Type, dv.Item(0).Item("Type"))
+                        FpVehicleAdjustmentGrid.Sheets(0).SetText(row, GridCols.UrduDescription, IIf(IsDBNull(dv.Item(0).Item("UrduTitle")), "", dv.Item(0).Item("UrduTitle")))
+                        Return True
+                    Else
+                        MessageBox.Show("Selected Type Code is not valid." & vbCrLf & "Please Enter an valide Type Code", "Type Validation", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                        FpVehicleAdjustmentGrid.Sheets(0).SetText(row, GridCols.TypeCode, String.Empty)
+                        FpVehicleAdjustmentGrid.Sheets(0).SetText(row, GridCols.Type, String.Empty)
+                        Return False
+                    End If
+                Else
+                    Return True
+                End If
+            ElseIf Col = GridCols.Type Then
+                If Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(row, GridCols.Type)) <> "" Then
+                    Dim dv As New DataView
+                    dv.Table = DsDiv.Tables(0)
+                    dv.RowFilter = "Type='" & Trim(FpVehicleAdjustmentGrid.Sheets(0).GetText(row, GridCols.Type)) & "'"
+
+                    If dv.Count <> 0 Then
+                        FpVehicleAdjustmentGrid.Sheets(0).SetText(row, GridCols.TypeCode, dv.Item(0).Item("TypeCode"))
+                        FpVehicleAdjustmentGrid.Sheets(0).SetText(row, GridCols.UrduDescription, IIf(IsDBNull(dv.Item(0).Item("UrduTitle")), "", dv.Item(0).Item("UrduTitle")))
+                        Return True
+                    Else
+                        MessageBox.Show("Selected Type  is not valid." & vbCrLf & "Please Enter an valide Type ", "Type Validation", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                        FpVehicleAdjustmentGrid.Sheets(0).SetText(row, GridCols.TypeCode, String.Empty)
+                        FpVehicleAdjustmentGrid.Sheets(0).SetText(row, GridCols.Type, String.Empty)
+                        Return False
+                    End If
+                Else
+                    Return True
+                End If
+            End If
+
+        End Function
+        Private Sub FpVehicleAdjustmentGrid_SubEditorOpening(ByVal sender As Object, ByVal e As FarPoint.Win.Spread.SubEditorOpeningEventArgs) Handles FpVehicleAdjustmentGrid.SubEditorOpening
+            If e.SubEditor.ToString = "a7" Then 'multiple combo box
+                Dim ss As FarPoint.Win.Spread.FpSpread
+                ss = CType(e.SubEditor, FarPoint.Win.Spread.FpSpread)
+                ss.Skin = FpVehicleAdjustmentGrid.Skin
+                ss.BorderStyle = BorderStyle.FixedSingle
+                ss.Sheets(0).Columns(0).AllowAutoSort = True
+                ss.Sheets(0).Columns(1).AllowAutoSort = True
+                If ss.Sheets(0).Columns.Count = 2 Then
+                    ss.Sheets(0).Columns(1).Width = 230
+                ElseIf ss.Sheets(0).Columns.Count = 3 Then
+                    ss.Sheets(0).Columns(1).Width = 160
+                    ss.Sheets(0).Columns(2).Width = 160
+                End If
+            End If
+        End Sub
+
         Private Sub txtBranchCode_EditorButtonClick(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinEditors.EditorButtonEventArgs) Handles txtBranchCode.EditorButtonClick
             If txtBranchCode.Enabled = False Then Exit Sub
             Try

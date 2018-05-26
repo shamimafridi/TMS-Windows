@@ -21,8 +21,8 @@ Namespace Database
         '            MyBase.New()
         '        End Sub
         Public Enum UpdateMode
-            Insert
-            Update
+            Insert = 1
+            Update = 0
         End Enum
         Public Event MessageGenerated(ByVal msg As String)
         Private _dataBase As DataBases
@@ -303,8 +303,8 @@ Namespace Database
         End Function
 #End Region
 #Region " Update A Multiple records or rows"
-        <AutoComplete(True)> _
-        Public Function UpdateDetailData(ByVal storeProcedureName1 As String, ByVal storeProcedureName2 As String, ByVal deleteStoreProcedureName As String, ByRef updatedData1 As DataSet, ByRef updatedData2 As DataSet, ByVal saveMode As Integer) As Integer
+        <AutoComplete(True)>
+        Public Function UpdateDetailData(ByVal storeProcedureName1 As String, ByVal storeProcedureName2 As String, ByVal deleteStoreProcedureName As String, ByRef updatedData1 As DataSet, ByRef updatedData2 As DataSet, ByVal saveMode As UpdateMode) As Integer
             ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             'The purpose of this procedure to update or master and detail insert a DataSets  throw stored procedure
             ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
