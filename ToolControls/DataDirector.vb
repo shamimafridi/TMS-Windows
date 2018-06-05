@@ -744,6 +744,16 @@ Public Class DataDirector
                         'Else
                         rRow.Item(DetailControl.Sheets(iSheet).ColumnHeader.Cells(0, col).Text) = Math.Abs(Val(DetailControl.Sheets(iSheet).GetValue(row, col)))
                         'End If
+                    ElseIf TypeOf DetailControl.Sheets(iSheet).GetCellType(row, col) Is FarPoint.Win.Spread.CellType.DateTimeCellType Then
+
+                        'If DetailControl.Sheets(iSheet).GetValue(row, col) = 0 Then
+                        'Else
+                        If Not IsNothing(DetailControl.Sheets(iSheet).GetValue(row, col)) Then
+                            rRow.Item(DetailControl.Sheets(iSheet).ColumnHeader.Cells(0, col).Text) = Format(DateTime.Parse(DetailControl.Sheets(iSheet).GetValue(row, col)), "MM/dd/yyyy")
+                        Else
+                            rRow.Item(DetailControl.Sheets(iSheet).ColumnHeader.Cells(0, col).Text) = DateTime.Now
+                        End If
+
                     ElseIf TypeOf (DetailControl.Sheets(iSheet).GetCellType(row, col)) Is FarPoint.Win.Spread.CellType.PercentCellType Then
                         If DetailControl.Sheets(iSheet).GetText(row, col) = "" Then
                             rRow.Item(DetailControl.Sheets(iSheet).ColumnHeader.Cells(0, col).Text) = "0.00"
@@ -928,12 +938,14 @@ Public Class DataDirector
         '''''''''''''''''''
     End Sub
     Private Sub InitalizeActiveTabControls(ByRef Tab As UltraTabControl)
+        Tab.SelectedTab = Tab.Tabs(0)
         '  Dim Tab As UltraTabControl = TabControl
         Dim chCtr As Control
         For Each lTabPage As UltraTab In Tab.Tabs
             For Each chCtr In lTabPage.TabPage.Controls
                 Dim ctrType As String = chCtr.GetType.ToString
-                If Not IsNothing(chCtr.Tag) Then
+                If ctrType = "FarPoint.Win.Spread.FpSpread" Or Not IsNothing(chCtr.Tag) Then
+
                     ControlFormatter.InitializedFormat(chCtr)
                     If chCtr.AccessibleDescription = "Last" Then LastControl = chCtr
 
@@ -994,6 +1006,7 @@ Public Class DataDirector
                 End If
             Next
         Next
+
     End Sub
     Const OPTIONVALIDATION As String = "PKVALIDATION"
     Sub PrimaryKeyValidation(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs)

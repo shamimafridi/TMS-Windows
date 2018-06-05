@@ -184,11 +184,11 @@ ad:
                     End If
                     dsSVMaster = GenerateMasterPaymentVouchers(CashPaymentVoucherNature)
                     dsSVDetail = GenerateDetailPaymentVouchers(CashPaymentVoucherNature)
-                    If IsVoucherCancelled = False Then
-                        If DataModify.UpdateDetailData("UpdateVouchers", "UpdateVouchersDetails", "DeleteVouchersDetails", dsSVMaster, dsSVDetail, SaveMode) <> 0 Then
+                    '  If IsVoucherCancelled = False Then
+                    If DataModify.UpdateDetailData("UpdateVouchers", "UpdateVouchersDetails", "DeleteVouchersDetails", dsSVMaster, dsSVDetail, SaveMode) <> 0 Then
                             UpdateReference()
                         End If
-                    End If
+                   ' End If
 
                 Case BankReceiptsVoucherNature ' Bank receipt
 

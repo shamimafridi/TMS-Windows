@@ -79,6 +79,11 @@ Namespace GeneralLedger
         Friend WithEvents UltraTabPageControl2 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
         Friend WithEvents FpVehicleAdjustmentGrid As FarPoint.Win.Spread.FpSpread
         Friend WithEvents FpVehicleAdjustmentGrid_Sheet1 As FarPoint.Win.Spread.SheetView
+        Friend WithEvents mnuGrid As ContextMenuStrip
+        Friend WithEvents MnuInsertRow As ToolStripMenuItem
+        Friend WithEvents MnuDeleteRow As ToolStripMenuItem
+        Friend WithEvents MnuClearGrid As ToolStripMenuItem
+        Friend WithEvents MnuExportToExcel As ToolStripMenuItem
         Friend WithEvents ErrProvider As AzamTechnologies.ATErrorProvider
         <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
             Me.components = New System.ComponentModel.Container()
@@ -164,6 +169,11 @@ Namespace GeneralLedger
             Me.Label17 = New System.Windows.Forms.Label()
             Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
             Me.FpVehicleAdjustmentGrid = New FarPoint.Win.Spread.FpSpread()
+            Me.mnuGrid = New System.Windows.Forms.ContextMenuStrip(Me.components)
+            Me.MnuInsertRow = New System.Windows.Forms.ToolStripMenuItem()
+            Me.MnuDeleteRow = New System.Windows.Forms.ToolStripMenuItem()
+            Me.MnuClearGrid = New System.Windows.Forms.ToolStripMenuItem()
+            Me.MnuExportToExcel = New System.Windows.Forms.ToolStripMenuItem()
             Me.FpVehicleAdjustmentGrid_Sheet1 = New FarPoint.Win.Spread.SheetView()
             Me.UltraTabControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
             Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
@@ -197,6 +207,7 @@ Namespace GeneralLedger
             CType(Me.txtTransactionNumber, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.UltraTabPageControl2.SuspendLayout()
             CType(Me.FpVehicleAdjustmentGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+            Me.mnuGrid.SuspendLayout()
             CType(Me.FpVehicleAdjustmentGrid_Sheet1, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.UltraTabControl1.SuspendLayout()
@@ -873,6 +884,7 @@ Namespace GeneralLedger
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.FpVehicleAdjustmentGrid.BackColor = System.Drawing.SystemColors.Control
+            Me.FpVehicleAdjustmentGrid.ContextMenuStrip = Me.mnuGrid
             Me.FpVehicleAdjustmentGrid.EditModeReplace = True
             Me.FpVehicleAdjustmentGrid.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
             Me.FpVehicleAdjustmentGrid.Location = New System.Drawing.Point(24, 106)
@@ -881,6 +893,36 @@ Namespace GeneralLedger
             Me.FpVehicleAdjustmentGrid.Sheets.AddRange(New FarPoint.Win.Spread.SheetView() {Me.FpVehicleAdjustmentGrid_Sheet1})
             Me.FpVehicleAdjustmentGrid.Size = New System.Drawing.Size(913, 488)
             Me.FpVehicleAdjustmentGrid.TabIndex = 9
+            '
+            'mnuGrid
+            '
+            Me.mnuGrid.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MnuInsertRow, Me.MnuDeleteRow, Me.MnuClearGrid, Me.MnuExportToExcel})
+            Me.mnuGrid.Name = "mnuGrid"
+            Me.mnuGrid.Size = New System.Drawing.Size(153, 92)
+            '
+            'MnuInsertRow
+            '
+            Me.MnuInsertRow.Name = "MnuInsertRow"
+            Me.MnuInsertRow.Size = New System.Drawing.Size(152, 22)
+            Me.MnuInsertRow.Text = "Insert Row"
+            '
+            'MnuDeleteRow
+            '
+            Me.MnuDeleteRow.Name = "MnuDeleteRow"
+            Me.MnuDeleteRow.Size = New System.Drawing.Size(152, 22)
+            Me.MnuDeleteRow.Text = "Delete Row"
+            '
+            'MnuClearGrid
+            '
+            Me.MnuClearGrid.Name = "MnuClearGrid"
+            Me.MnuClearGrid.Size = New System.Drawing.Size(152, 22)
+            Me.MnuClearGrid.Text = "Clear Grid"
+            '
+            'MnuExportToExcel
+            '
+            Me.MnuExportToExcel.Name = "MnuExportToExcel"
+            Me.MnuExportToExcel.Size = New System.Drawing.Size(152, 22)
+            Me.MnuExportToExcel.Text = "Export To Excel"
             '
             'FpVehicleAdjustmentGrid_Sheet1
             '
@@ -929,12 +971,13 @@ Namespace GeneralLedger
             DateTimeCellType1.Calendar = CType(resources.GetObject("DateTimeCellType1.Calendar"), System.Globalization.Calendar)
             DateTimeCellType1.CalendarSurroundingDaysColor = System.Drawing.SystemColors.GrayText
             DateTimeCellType1.DateDefault = New Date(2018, 5, 12, 9, 21, 1, 0)
+            DateTimeCellType1.DateTimeFormat = FarPoint.Win.Spread.CellType.DateTimeFormat.UserDefined
             DateTimeCellType1.DropDownButton = True
             DateTimeCellType1.MaximumTime = System.TimeSpan.Parse("23:59:59.9999999")
             DateTimeCellType1.SimpleEdit = True
             DateTimeCellType1.SpinButton = True
             DateTimeCellType1.TimeDefault = New Date(2018, 5, 12, 9, 21, 1, 0)
-            DateTimeCellType1.UserDefinedFormat = "DD/MMM/YYYY"
+            DateTimeCellType1.UserDefinedFormat = "dd/MM/yyyy"
             Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(5).CellType = DateTimeCellType1
             Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(5).Label = "Date"
             Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(5).Locked = False
@@ -1052,6 +1095,7 @@ Namespace GeneralLedger
             CType(Me.txtTransactionNumber, System.ComponentModel.ISupportInitialize).EndInit()
             Me.UltraTabPageControl2.ResumeLayout(False)
             CType(Me.FpVehicleAdjustmentGrid, System.ComponentModel.ISupportInitialize).EndInit()
+            Me.mnuGrid.ResumeLayout(False)
             CType(Me.FpVehicleAdjustmentGrid_Sheet1, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
             Me.UltraTabControl1.ResumeLayout(False)
@@ -1206,6 +1250,26 @@ Namespace GeneralLedger
             im = FpVehicleAdjustmentGrid.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenAncestorOfFocused)
             im.Put(New FarPoint.Win.Spread.Keystroke(Keys.Enter, Keys.None), FarPoint.Win.Spread.SpreadActions.MoveToNextColumnWrap)
         End Sub
+        Private Sub mnuClearGrid_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MnuClearGrid.Click
+            FpVehicleAdjustmentGrid.Sheets(0).ClearRange(0, 0, FpVehicleAdjustmentGrid.Sheets(0).Rows.Count, FpVehicleAdjustmentGrid.Sheets(0).ColumnCount, True)
+            FpVehicleAdjustmentGrid.Sheets(0).Cells(0, 0, FpVehicleAdjustmentGrid.Sheets(0).Rows.Count - 1, FpVehicleAdjustmentGrid.Sheets(0).ColumnCount - 1).Tag = String.Empty
+
+        End Sub
+        Private Sub mnuDelete_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles MnuDeleteRow.Click
+            FpVehicleAdjustmentGrid.Sheets(0).ClearRange(FpVehicleAdjustmentGrid.Sheets(0).ActiveRowIndex, 0, 1, FpVehicleAdjustmentGrid.Sheets(0).ColumnCount, True)
+            FpVehicleAdjustmentGrid.Sheets(0).Cells(FpVehicleAdjustmentGrid.Sheets(0).ActiveRowIndex, 0, FpVehicleAdjustmentGrid.Sheets(0).ActiveRowIndex, FpVehicleAdjustmentGrid.Sheets(0).ColumnCount - 1).Tag = String.Empty
+
+        End Sub
+        Private Sub MnuInsertRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MnuInsertRow.Click
+            FpVehicleAdjustmentGrid.Sheets(0).Rows.Add(FpVehicleAdjustmentGrid.Sheets(0).ActiveRowIndex, 1)
+        End Sub
+
+        Private Sub JournalVehicleAdjustment_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseDown
+            If e.Button = Windows.Forms.MouseButtons.Right Then
+                Me.ContextMenu = Nothing
+            End If
+        End Sub
+
         Private Sub FpVehicleAdjustmentGrid_LeaveCell(ByVal sender As Object, ByVal e As FarPoint.Win.Spread.LeaveCellEventArgs) Handles FpVehicleAdjustmentGrid.LeaveCell
             Me.Cursor = Cursors.WaitCursor
             ''''''''''''

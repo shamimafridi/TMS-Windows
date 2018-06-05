@@ -1276,8 +1276,12 @@ ERR_SetLastPostingDate:
         Dim Acc As New DataAccess
         Dim dvData As New DataView
 
-        If FromNature = ReceiptNature Or FromNature = SaleInvoiceNature Then
+        If FromNature = ReceiptNature Then
             Acc.PopulateDataSet(dsData, "Select" & FormName, "FromDate", DtpFromDateVG.Value, "ToDate", DtpToDateVG.Value, "OPTION", "DateFilter")
+        ElseIf FromNature = SaleInvoiceNature Then
+            Acc.PopulateDataSet(dsData, "Select" & FormName, "FromDate", DtpFromDateVG.Value, "ToDate", DtpToDateVG.Value, "OPTION", "DateFilter")
+            Acc.PopulateDataSet(dsDetailData, "Select" & FormName & "Details", "FromDate", DtpFromDateVG.Value, "ToDate", DtpToDateVG.Value, "OPTION", "DateFilter", "TransactionNature", FromNature)
+
         Else
             Acc.PopulateDataSet(dsData, "Select" & FormName, "FromDate", DtpFromDateVG.Value, "ToDate", DtpToDateVG.Value, "OPTION", "DateFilter", "TransactionNature", FromNature)
             Acc.PopulateDataSet(dsDetailData, "Select" & FormName & "Details", "FromDate", DtpFromDateVG.Value, "ToDate", DtpToDateVG.Value, "OPTION", "DateFilter", "TransactionNature", FromNature)
@@ -1308,13 +1312,22 @@ ERR_SetLastPostingDate:
                 dvData = Nothing
                 dvData = New DataView
                 dvData.Table = dsData.Tables(0)
-                dvData.RowFilter = "BranchCode='" & dsData.Tables(0).Rows(nRow).Item("BranchCode") & "' AND TransactionNo='" & _
+                dvData.RowFilter = "BranchCode='" & dsData.Tables(0).Rows(nRow).Item("BranchCode") & "' AND TransactionNo='" &
                     dsData.Tables(0).Rows(nRow).Item("TransactionNo") & "' "
 
                 TbMasterRetrieved = dvData.ToTable()
                 DsMasterRetrieved.Tables.Clear()
                 DsMasterRetrieved.Tables.Add(TbMasterRetrieved)
+            ElseIf FromNature = SaleInvoiceNature Then
 
+                dvData = Nothing
+                dvData = New DataView
+                dvData.Table = dsDetailData.Tables(0)
+                dvData.RowFilter = "BranchCode='" & dsData.Tables(0).Rows(nRow).Item("BranchCode") & "' AND TransactionNo='" &
+                    dsData.Tables(0).Rows(nRow).Item("TransactionNo") & "' "
+                TbDetailRetrieved = dvData.ToTable()
+                DsDetailRetrieved.Tables.Clear()
+                DsDetailRetrieved.Tables.Add(TbDetailRetrieved)
             Else
 
                 dvData = Nothing
