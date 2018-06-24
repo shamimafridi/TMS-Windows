@@ -28,7 +28,6 @@ Namespace GeneralLedger
             CmbDivDesc = New FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
             AddHandler Me.Paint, AddressOf mdlFunctions.PaintTheForms
             PainFPGrid(FpVehicleAdjustmentGrid)
-            keychange()
             If Me.Tag = AzamTechnologies.DataManager.DataMode.Insert Or Me.Tag = AzamTechnologies.DataManager.DataMode.Inserting Then
                 TxtDate.Value = CurrentWorkingDate
             End If
@@ -341,15 +340,6 @@ Namespace GeneralLedger
                 CmbDivDesc.ListWidth = 450
             End If
         End Sub
-        Sub keychange()
-            Dim im As New FarPoint.Win.Spread.InputMap
-            ' Define the operation of pressing Enter key in cells not beingedited as "Move to the next row".
-            im = FpVehicleAdjustmentGrid.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenFocused)
-            im.Put(New FarPoint.Win.Spread.Keystroke(Keys.Enter, Keys.None), FarPoint.Win.Spread.SpreadActions.MoveToNextColumnWrap)
-            ' Define the operation of pressing Enter key in cells being editedas "Move to the next row".
-            im = FpVehicleAdjustmentGrid.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenAncestorOfFocused)
-            im.Put(New FarPoint.Win.Spread.Keystroke(Keys.Enter, Keys.None), FarPoint.Win.Spread.SpreadActions.MoveToNextColumnWrap)
-        End Sub
         Private Sub FpVehicleAdjustmentGrid_LeaveCell(ByVal sender As Object, ByVal e As FarPoint.Win.Spread.LeaveCellEventArgs) Handles FpVehicleAdjustmentGrid.LeaveCell
             Me.Cursor = Cursors.WaitCursor
             ''''''''''''
@@ -406,7 +396,7 @@ Namespace GeneralLedger
             End If
             If LockGrid = False Then
                 LockGrid = True
-                
+
                 ' Call VehicleAdjustmentGrid_ButtonClicked(Col, e.row, 0)
                 LockGrid = False
             End If

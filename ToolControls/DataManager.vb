@@ -910,7 +910,14 @@ Public Class DataManager
         Try
             If Not IsNothing(Me.mActiveForm) Then
                 Me.mActiveForm.Cursor = Cursors.WaitCursor
+
                 If mActiveForm.Tag = DataManager.DataMode.Edit Or mActiveForm.Tag = DataManager.DataMode.Inserting Or mActiveForm.Tag = DataManager.DataMode.Insert Then
+                    If Not IsNothing(mDirector.DetailControl) Then
+                        '  mDirector.DetailControl.EditMode = False
+                        ' SendKeys.Send("{ENTER}")
+                        mDirector.DetailControl.ActiveSheet.SetActiveCell(0, 3)
+                    End If
+
                     RaiseEvent Action(Me, New DataActionEveArgs(DataMode.Saving))
                     If Cancel = True Then Me.mActiveForm.Cursor = Cursors.Default : Exit Sub
                     Me.UpdateProcess()

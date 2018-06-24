@@ -879,6 +879,7 @@ Public Class DataDirector
                                     CType(ctr, Infragistics.Win.UltraWinEditors.UltraTimeSpanEditor).Value = New TimeSpan(Now.TimeOfDay.Hours, Now.TimeOfDay.Minutes, 0)
                                 ElseIf ctrType = "FarPoint.Win.Spread.FpSpread" Then
                                     DetailControl = ctr
+                                    SetDetailControlSettings(DetailControl)
                                     DetailControl.TabStripInsertTab = False
                                     EmptyDetailControl()
                                     DetailControl.ActiveSheetIndex = 0
@@ -937,6 +938,34 @@ Public Class DataDirector
         'oldRow = CreateRow(table)
         '''''''''''''''''''
     End Sub
+
+    Sub SetDetailControlSettings(Grid As FarPoint.Win.Spread.FpSpread)
+
+        Dim im As New FarPoint.Win.Spread.InputMap
+
+        ' Deactivate F2 key in cells not being edited.
+
+        im = Grid.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenFocused)
+
+        im.Put(New FarPoint.Win.Spread.Keystroke(Keys.F2, Keys.None), FarPoint.Win.Spread.SpreadActions.None)
+
+        ' Deactivate F2 key in cells being edited.
+
+        im = Grid.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenAncestorOfFocused)
+
+        im.Put(New FarPoint.Win.Spread.Keystroke(Keys.F2, Keys.None), FarPoint.Win.Spread.SpreadActions.StartEditing)
+
+
+
+        'Enter key settings
+        ' Define the operation of pressing Enter key in cells not beingedited as "Move to the next row".
+        im = Grid.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenFocused)
+        im.Put(New FarPoint.Win.Spread.Keystroke(Keys.Enter, Keys.None), FarPoint.Win.Spread.SpreadActions.MoveToNextColumnWrap)
+        ' Define the operation of pressing Enter key in cells being editedas "Move to the next row".
+        im = Grid.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenAncestorOfFocused)
+        im.Put(New FarPoint.Win.Spread.Keystroke(Keys.Enter, Keys.None), FarPoint.Win.Spread.SpreadActions.MoveToNextColumnWrap)
+
+    End Sub
     Private Sub InitalizeActiveTabControls(ByRef Tab As UltraTabControl)
         Tab.SelectedTab = Tab.Tabs(0)
         '  Dim Tab As UltraTabControl = TabControl
@@ -980,6 +1009,7 @@ Public Class DataDirector
                             CType(chCtr, Infragistics.Win.UltraWinEditors.UltraTimeSpanEditor).Value = New TimeSpan(Now.TimeOfDay.Hours, Now.TimeOfDay.Minutes, 0)
                         ElseIf ctrType = "FarPoint.Win.Spread.FpSpread" Then
                             DetailControl = chCtr
+                            SetDetailControlSettings(DetailControl)
                             EmptyDetailControl()
                             DetailControl.ActiveSheetIndex = 0
                         End If
