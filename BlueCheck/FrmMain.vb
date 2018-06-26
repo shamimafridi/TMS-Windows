@@ -1805,7 +1805,6 @@ Public Class frmMain
                 ''''Invoice
                 If Me.ActiveMdiChild.Name = "Invoices" Then
                 ElseIf Me.ActiveMdiChild.Name = "Vouchers" Then
-                    CType(Me.ActiveMdiChild, Vouchers).CalculateTotals()
                 End If
             Case AzamTechnologies.DataManager.DataMode.Insert
                 Me.stpText.Text = "Inserting Record..."

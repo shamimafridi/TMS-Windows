@@ -321,7 +321,7 @@ Public Class FrmLogin
 
         formGraphics.DrawLine(ArrowPen, 0, 0, 1000, 0)
         formGraphics.DrawLine(ArrowPen, 0, 430, 1000, 430)
-        formGraphics.DrawString("Welecome", New Font("Arial", 24, FontStyle.Bold, GraphicsUnit.Point), Brushes.AliceBlue, 550, 20)
+        formGraphics.DrawString("Welcome", New Font("Arial", 24, FontStyle.Bold, GraphicsUnit.Point), Brushes.AliceBlue, 550, 20)
     End Sub
     Protected Overrides Sub Finalize()
         MyBase.Finalize()
