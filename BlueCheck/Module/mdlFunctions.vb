@@ -3,12 +3,8 @@ Module mdlFunctions
     Sub FillCombo(ByRef Ds As DataSet, ByVal storeprocedure As String, ByVal ParamArray parameters() As String)
         Try
             Dim Acc As New AzamTechnologies.Database.DataAccess
-            'Dim com As New AzamTechnologies.Database.DataConnection
-            'Dim sqlCon As SqlClient.SqlConnection = com.GetConnection
             Acc.PopulateDataSet(Ds, storeprocedure, parameters)
             Acc = Nothing
-            'sqlCon = Nothing
-            'com = Nothing
         Catch ex As SqlClient.SqlException
             MsgBox(ex.Message)
         End Try

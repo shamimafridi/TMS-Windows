@@ -31,67 +31,68 @@
         Dim TextCellType3 As FarPoint.Win.Spread.CellType.TextCellType = New FarPoint.Win.Spread.CellType.TextCellType()
         Dim TextCellType4 As FarPoint.Win.Spread.CellType.TextCellType = New FarPoint.Win.Spread.CellType.TextCellType()
         Dim TextCellType5 As FarPoint.Win.Spread.CellType.TextCellType = New FarPoint.Win.Spread.CellType.TextCellType()
-        Dim TextCellType6 As FarPoint.Win.Spread.CellType.TextCellType = New FarPoint.Win.Spread.CellType.TextCellType()
-        Dim CurrencyCellType1 As FarPoint.Win.Spread.CellType.CurrencyCellType = New FarPoint.Win.Spread.CellType.CurrencyCellType()
-        Dim TextCellType7 As FarPoint.Win.Spread.CellType.TextCellType = New FarPoint.Win.Spread.CellType.TextCellType()
-        Dim TextCellType8 As FarPoint.Win.Spread.CellType.TextCellType = New FarPoint.Win.Spread.CellType.TextCellType()
-        Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VehicleAdjustments))
-        Dim ValueListItem1 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem2 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Me.txtBranchCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.FpVehicleAdjustmentGrid = New FarPoint.Win.Spread.FpSpread()
-        Me.mnuGrid = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.MnuInsertRow = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuDeleteRow = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuClearGrid = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MnuExportToExcel = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FpVehicleAdjustmentGrid_Sheet1 = New FarPoint.Win.Spread.SheetView()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtBranch = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.ATUrduTitle = New ATUrduTextBox.UrduTextBox()
-        Me.ErrProvider = New AzamTechnologies.ATErrorProvider(Me.components)
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtTransactionNumber = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.NATURE = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.Desc = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TxtDate = New System.Windows.Forms.DateTimePicker()
-        Me.lblCheque = New System.Windows.Forms.Label()
-        Me.TxtChequeNo = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.lblMode = New System.Windows.Forms.Label()
-        Me.CmbMode = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
-        Me.TxtVehicle = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TxtVehicleCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
-        CType(Me.txtBranchCode,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.FpVehicleAdjustmentGrid,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.mnuGrid.SuspendLayout
-        CType(Me.FpVehicleAdjustmentGrid_Sheet1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txtBranch,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ATUrduTitle,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ErrProvider,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txtTransactionNumber,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NATURE,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.Desc,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtChequeNo,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.CmbMode,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtVehicle,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TxtVehicleCode,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SuspendLayout
-        '
-        'txtBranchCode
-        '
-        Me.txtBranchCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-        Appearance1.BackColor = System.Drawing.SystemColors.Window
-        Me.txtBranchCode.Appearance = Appearance1
-        Me.txtBranchCode.BackColor = System.Drawing.SystemColors.Window
-        Me.txtBranchCode.Location = New System.Drawing.Point(201, 81)
+            Dim DateTimeCellType1 As FarPoint.Win.Spread.CellType.DateTimeCellType = New FarPoint.Win.Spread.CellType.DateTimeCellType()
+            Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VehicleAdjustments))
+            Dim TextCellType6 As FarPoint.Win.Spread.CellType.TextCellType = New FarPoint.Win.Spread.CellType.TextCellType()
+            Dim CurrencyCellType1 As FarPoint.Win.Spread.CellType.CurrencyCellType = New FarPoint.Win.Spread.CellType.CurrencyCellType()
+            Dim TextCellType7 As FarPoint.Win.Spread.CellType.TextCellType = New FarPoint.Win.Spread.CellType.TextCellType()
+            Dim TextCellType8 As FarPoint.Win.Spread.CellType.TextCellType = New FarPoint.Win.Spread.CellType.TextCellType()
+            Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim ValueListItem1 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+            Dim ValueListItem2 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+            Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+            Me.txtBranchCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.FpVehicleAdjustmentGrid = New FarPoint.Win.Spread.FpSpread()
+            Me.mnuGrid = New System.Windows.Forms.ContextMenuStrip(Me.components)
+            Me.MnuInsertRow = New System.Windows.Forms.ToolStripMenuItem()
+            Me.MnuDeleteRow = New System.Windows.Forms.ToolStripMenuItem()
+            Me.MnuClearGrid = New System.Windows.Forms.ToolStripMenuItem()
+            Me.MnuExportToExcel = New System.Windows.Forms.ToolStripMenuItem()
+            Me.FpVehicleAdjustmentGrid_Sheet1 = New FarPoint.Win.Spread.SheetView()
+            Me.Label4 = New System.Windows.Forms.Label()
+            Me.txtBranch = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.ATUrduTitle = New ATUrduTextBox.UrduTextBox()
+            Me.ErrProvider = New AzamTechnologies.ATErrorProvider(Me.components)
+            Me.Label3 = New System.Windows.Forms.Label()
+            Me.txtTransactionNumber = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.NATURE = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Desc = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label2 = New System.Windows.Forms.Label()
+            Me.Label1 = New System.Windows.Forms.Label()
+            Me.Label9 = New System.Windows.Forms.Label()
+            Me.TxtDate = New System.Windows.Forms.DateTimePicker()
+            Me.lblCheque = New System.Windows.Forms.Label()
+            Me.TxtChequeNo = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.lblMode = New System.Windows.Forms.Label()
+            Me.CmbMode = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
+            Me.TxtVehicle = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            Me.Label10 = New System.Windows.Forms.Label()
+            Me.TxtVehicleCode = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+            CType(Me.txtBranchCode, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.FpVehicleAdjustmentGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+            Me.mnuGrid.SuspendLayout()
+            CType(Me.FpVehicleAdjustmentGrid_Sheet1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.txtBranch, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.ATUrduTitle, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.ErrProvider, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.txtTransactionNumber, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.NATURE, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.Desc, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtChequeNo, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.CmbMode, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtVehicle, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.TxtVehicleCode, System.ComponentModel.ISupportInitialize).BeginInit()
+            Me.SuspendLayout()
+            '
+            'txtBranchCode
+            '
+            Me.txtBranchCode.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Appearance1.BackColor = System.Drawing.SystemColors.Window
+            Me.txtBranchCode.Appearance = Appearance1
+            Me.txtBranchCode.BackColor = System.Drawing.SystemColors.Window
+            Me.txtBranchCode.Location = New System.Drawing.Point(201, 81)
             Me.txtBranchCode.MaxLength = 2
             Me.txtBranchCode.Name = "txtBranchCode"
             Me.txtBranchCode.Size = New System.Drawing.Size(133, 21)
@@ -151,7 +152,7 @@
             Me.FpVehicleAdjustmentGrid_Sheet1.SheetName = "Sheet1"
             'Formulas and custom names must be loaded with R1C1 reference style
             Me.FpVehicleAdjustmentGrid_Sheet1.ReferenceStyle = FarPoint.Win.Spread.Model.ReferenceStyle.R1C1
-            FpVehicleAdjustmentGrid_Sheet1.ColumnCount = 10
+            FpVehicleAdjustmentGrid_Sheet1.ColumnCount = 11
             FpVehicleAdjustmentGrid_Sheet1.RowCount = 10
             Me.FpVehicleAdjustmentGrid_Sheet1.ColumnFooter.DefaultStyle.Border = BevelBorder1
             Me.FpVehicleAdjustmentGrid_Sheet1.ColumnFooter.DefaultStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -164,11 +165,12 @@
             Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 2).Value = "TransactionNo"
             Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 3).Value = "TypeCode"
             Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 4).Value = "Type"
-            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 5).Value = "UrduDescription"
-            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 6).Value = "Description"
-            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 7).Value = "Amount"
-            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 8).Value = "GLCode"
-            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 9).Value = "GLDescription"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 5).Value = "Date"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 6).Value = "UrduDescription"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 7).Value = "Description"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 8).Value = "Amount"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 9).Value = "GLCode"
+            Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Cells.Get(0, 10).Value = "GLDescription"
             Me.FpVehicleAdjustmentGrid_Sheet1.ColumnHeader.Rows.Get(0).Height = 19.0!
             Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(0).CellType = TextCellType1
             Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(0).Label = "BranchCode"
@@ -188,12 +190,26 @@
             Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(4).Label = "Type"
             Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(4).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Bottom
             Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(4).Width = 176.0!
-            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(5).CellType = TextCellType6
-            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(5).Label = "UrduDescription"
-            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(5).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Bottom
-            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(5).Width = 120.0!
-            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(6).Label = "Description"
-            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(6).Width = 218.0!
+            DateTimeCellType1.Calendar = CType(resources.GetObject("DateTimeCellType1.Calendar"), System.Globalization.Calendar)
+            DateTimeCellType1.CalendarSurroundingDaysColor = System.Drawing.SystemColors.GrayText
+            DateTimeCellType1.DateDefault = New Date(2018, 5, 12, 9, 21, 1, 0)
+            DateTimeCellType1.DateTimeFormat = FarPoint.Win.Spread.CellType.DateTimeFormat.UserDefined
+            DateTimeCellType1.DropDownButton = True
+            DateTimeCellType1.MaximumTime = System.TimeSpan.Parse("23:59:59.9999999")
+            DateTimeCellType1.SimpleEdit = True
+            DateTimeCellType1.SpinButton = True
+            DateTimeCellType1.TimeDefault = New Date(2018, 5, 12, 9, 21, 1, 0)
+            DateTimeCellType1.UserDefinedFormat = "dd/MMM/yyyy"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(5).CellType = DateTimeCellType1
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(5).Label = "Date"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(5).Locked = False
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(5).Width = 85.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(6).CellType = TextCellType6
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(6).Label = "UrduDescription"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(6).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Bottom
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(6).Width = 120.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(7).Label = "Description"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(7).Width = 218.0!
             CurrencyCellType1.DecimalPlaces = 2
             CurrencyCellType1.MaximumValue = New Decimal(New Integer() {-727379969, 232, 0, 131072})
             CurrencyCellType1.MinimumValue = New Decimal(New Integer() {1215752191, 23, 0, -2147352576})
@@ -201,18 +217,18 @@
             CurrencyCellType1.Separator = ","
             CurrencyCellType1.ShowCurrencySymbol = False
             CurrencyCellType1.ShowSeparator = True
-            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(7).CellType = CurrencyCellType1
-            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(7).Label = "Amount"
-            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(7).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Bottom
-            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(7).Width = 88.0!
-            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(8).CellType = TextCellType7
-            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(8).Label = "GLCode"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(8).CellType = CurrencyCellType1
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(8).Label = "Amount"
             Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(8).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Bottom
-            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(8).Width = 123.0!
-            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(9).CellType = TextCellType8
-            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(9).Label = "GLDescription"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(8).Width = 88.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(9).CellType = TextCellType7
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(9).Label = "GLCode"
             Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(9).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Bottom
-            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(9).Width = 194.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(9).Width = 123.0!
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(10).CellType = TextCellType8
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(10).Label = "GLDescription"
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(10).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Bottom
+            Me.FpVehicleAdjustmentGrid_Sheet1.Columns.Get(10).Width = 194.0!
             Me.FpVehicleAdjustmentGrid_Sheet1.DefaultStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
             Me.FpVehicleAdjustmentGrid_Sheet1.DefaultStyle.NoteIndicatorColor = System.Drawing.Color.Red
             Me.FpVehicleAdjustmentGrid_Sheet1.DefaultStyle.Parent = "DataAreaDefault"
@@ -449,11 +465,11 @@
             '
             'VehicleAdjustments
             '
-            Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1016, 741)
-        Me.Controls.Add(Me.TxtVehicle)
-        Me.Controls.Add(Me.Label10)
+            Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+            Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+            Me.ClientSize = New System.Drawing.Size(1016, 741)
+            Me.Controls.Add(Me.TxtVehicle)
+            Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.TxtVehicleCode)
         Me.Controls.Add(Me.txtBranchCode)
         Me.Controls.Add(Me.CmbMode)

@@ -415,7 +415,7 @@ Public Class DataDirector
                                 ElseIf TypeOf (mDetailData.Tables(0).Rows(row).Item(strColName)) Is TimeSpan Then
                                     DetailControl.Sheets(iSheet).SetValue(row, col, (mDetailData.Tables(0).Rows(row).Item(strColName)))
                                 Else
-                                    DetailControl.Sheets(iSheet).SetText(row, col, (mDetailData.Tables(0).Rows(row).Item(strColName)))
+                                    DetailControl.Sheets(iSheet).SetText(row, col, Trim((mDetailData.Tables(0).Rows(row).Item(strColName))))
                                 End If
                             End If
                         End If

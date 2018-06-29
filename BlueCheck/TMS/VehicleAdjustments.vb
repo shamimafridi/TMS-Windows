@@ -3,8 +3,8 @@ Namespace GeneralLedger
     Public Class VehicleAdjustments
         Dim CmbGlCode As FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
         Dim CmbGlDesc As FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
-        Dim CmbDivCode As FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
-        Dim CmbDivDesc As FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
+        Dim CmbTrTypeCode As FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
+        Dim CmbTrTypeDesc As FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
         Private Dr As SqlDataReader
         Dim FreshMode As Boolean
         Dim LockGrid As Boolean
@@ -14,18 +14,19 @@ Namespace GeneralLedger
             VehicleAdjustmentNumber = 2
             TypeCode = 3
             Type = 4
-            UrduDescription = 5
-            Description = 6
-            Amount = 7
-            GLCode = 8
-            GLDescription = 9
+            [Date] = 5
+            UrduDescription = 6
+            Description = 7
+            Amount = 8
+            GLCode = 9
+            GLDescription = 10
         End Enum
         Private Sub JournalVehicleAdjustment_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
             ''''''''''''For just solving the problem of this form when closing then mdi windows handling problum
             CmbGlCode = New FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
             CmbGlDesc = New FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
-            CmbDivCode = New FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
-            CmbDivDesc = New FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
+            CmbTrTypeCode = New FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
+            CmbTrTypeDesc = New FarPoint.Win.Spread.CellType.MultiColumnComboBoxCellType
             AddHandler Me.Paint, AddressOf mdlFunctions.PaintTheForms
             PainFPGrid(FpVehicleAdjustmentGrid)
             If Me.Tag = AzamTechnologies.DataManager.DataMode.Insert Or Me.Tag = AzamTechnologies.DataManager.DataMode.Inserting Then
@@ -80,26 +81,26 @@ Namespace GeneralLedger
             Me.FpVehicleAdjustmentGrid.ButtonDrawMode = FarPoint.Win.Spread.ButtonDrawModes.CurrentCell
 
             With DsDiv.Tables(0)
-                CmbDivCode.DataSourceList = DsDiv
-                CmbDivCode.ListOffset = 10
-                CmbDivCode.AutoSearch = FarPoint.Win.AutoSearch.MultipleCharacter
-                CmbDivCode.ShowColumnHeaders = True
-                CmbDivCode.DataMemberList = "Table"
+                CmbTrTypeCode.DataSourceList = DsDiv
+                CmbTrTypeCode.ListOffset = 10
+                CmbTrTypeCode.AutoSearch = FarPoint.Win.AutoSearch.MultipleCharacter
+                CmbTrTypeCode.ShowColumnHeaders = True
+                CmbTrTypeCode.DataMemberList = "Table"
 
             End With
 
 
 
             With DsDiv.Tables(0)
-                CmbDivDesc.DataSourceList = DsDiv
-                CmbDivDesc.ListOffset = 10
-                CmbDivDesc.AutoSearch = FarPoint.Win.AutoSearch.MultipleCharacter
-                CmbDivDesc.ShowColumnHeaders = True
-                CmbDivDesc.DataMemberList = "Table"
+                CmbTrTypeDesc.DataSourceList = DsDiv
+                CmbTrTypeDesc.ListOffset = 10
+                CmbTrTypeDesc.AutoSearch = FarPoint.Win.AutoSearch.MultipleCharacter
+                CmbTrTypeDesc.ShowColumnHeaders = True
+                CmbTrTypeDesc.DataMemberList = "Table"
 
             End With
             FpVehicleAdjustmentGrid.Sheets(0).Tag = "VehicleAdjustmentsDetails"
-            CmbDivDesc.ListWidth = 500
+            CmbTrTypeDesc.ListWidth = 500
 
             If Me.NATURE.Text = VehicleAdjustmentPaymentNature Or Me.NATURE.Text = VehicleAdjustmentReceiptNature Then
                 Me.lblCheque.Visible = False : Me.CmbMode.Visible = False : Me.lblMode.Visible = False : Me.TxtChequeNo.Visible = False
@@ -108,15 +109,15 @@ Namespace GeneralLedger
             End If
 
 
-            
+
             'TOTAL CELL SETTINGS
-            Dim TotalCellType= New FarPoint.Win.Spread.CellType.CurrencyCellType
-            TotalCellType.ShowCurrencySymbol=False
+            Dim TotalCellType = New FarPoint.Win.Spread.CellType.CurrencyCellType
+            TotalCellType.ShowCurrencySymbol = False
             Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.Cells(0, GridCols.Amount - 1).Value = "Total:"
 
-            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.Cells(0, GridCols.Amount).HorizontalAlignment=FarPoint.Win.Spread.CellHorizontalAlignment.Right
-            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.Cells(0, GridCols.Amount - 1).HorizontalAlignment=FarPoint.Win.Spread.CellHorizontalAlignment.Right
-            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.Cells(0, GridCols.Amount).CellType= TotalCellType
+            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.Cells(0, GridCols.Amount).HorizontalAlignment = FarPoint.Win.Spread.CellHorizontalAlignment.Right
+            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.Cells(0, GridCols.Amount - 1).HorizontalAlignment = FarPoint.Win.Spread.CellHorizontalAlignment.Right
+            Me.FpVehicleAdjustmentGrid.Sheets(0).ColumnFooter.Cells(0, GridCols.Amount).CellType = TotalCellType
             Dim r As Integer
             Dim j As Integer
             For r = 0 To Me.FpVehicleAdjustmentGrid.Sheets(0).RowCount
@@ -135,7 +136,7 @@ Namespace GeneralLedger
         Dim DsVehicle As DataSet
         Dim DsGLs As DataSet
         Dim DsDiv As DataSet
-        
+
         Public Function ValidateData() As Boolean
             Dim nGridRowCount As Long
             If CheckGridData(nGridRowCount) Then
@@ -203,12 +204,12 @@ Namespace GeneralLedger
         Private Sub mnuClearGrid_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MnuClearGrid.Click
             FpVehicleAdjustmentGrid.Sheets(0).ClearRange(0, 0, FpVehicleAdjustmentGrid.Sheets(0).Rows.Count, FpVehicleAdjustmentGrid.Sheets(0).ColumnCount, True)
             FpVehicleAdjustmentGrid.Sheets(0).Cells(0, 0, FpVehicleAdjustmentGrid.Sheets(0).Rows.Count - 1, FpVehicleAdjustmentGrid.Sheets(0).ColumnCount - 1).Tag = String.Empty
-            
+
         End Sub
         Private Sub mnuDelete_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles MnuDeleteRow.Click
             FpVehicleAdjustmentGrid.Sheets(0).ClearRange(FpVehicleAdjustmentGrid.Sheets(0).ActiveRowIndex, 0, 1, FpVehicleAdjustmentGrid.Sheets(0).ColumnCount, True)
             FpVehicleAdjustmentGrid.Sheets(0).Cells(FpVehicleAdjustmentGrid.Sheets(0).ActiveRowIndex, 0, FpVehicleAdjustmentGrid.Sheets(0).ActiveRowIndex, FpVehicleAdjustmentGrid.Sheets(0).ColumnCount - 1).Tag = String.Empty
-            
+
         End Sub
         Private Sub MnuInsertRow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MnuInsertRow.Click
             FpVehicleAdjustmentGrid.Sheets(0).Rows.Add(FpVehicleAdjustmentGrid.Sheets(0).ActiveRowIndex, 1)
@@ -329,15 +330,15 @@ Namespace GeneralLedger
                 FpVehicleAdjustmentGrid.Sheets(0).Cells(e.Row, e.Column, e.Row, e.Column).CellType = CmbGlDesc
                 CmbGlDesc.ListWidth = 380
             ElseIf e.Column = GridCols.TypeCode Then
-                CmbDivCode.ColumnEdit = 0
-                CmbDivCode.DataColumn = 0
-                FpVehicleAdjustmentGrid.Sheets(0).Cells(e.Row, e.Column, e.Row, e.Column).CellType = CmbDivCode
-                CmbDivCode.ListWidth = 450
+                CmbTrTypeCode.ColumnEdit = 0
+                CmbTrTypeCode.DataColumn = 0
+                FpVehicleAdjustmentGrid.Sheets(0).Cells(e.Row, e.Column, e.Row, e.Column).CellType = CmbTrTypeCode
+                CmbTrTypeCode.ListWidth = 450
             ElseIf e.Column = GridCols.Type Then
-                CmbDivDesc.ColumnEdit = 1
-                CmbDivDesc.DataColumn = 1
-                FpVehicleAdjustmentGrid.Sheets(0).Cells(e.Row, e.Column, e.Row, e.Column).CellType = CmbDivDesc
-                CmbDivDesc.ListWidth = 450
+                CmbTrTypeDesc.ColumnEdit = 1
+                CmbTrTypeDesc.DataColumn = 1
+                FpVehicleAdjustmentGrid.Sheets(0).Cells(e.Row, e.Column, e.Row, e.Column).CellType = CmbTrTypeDesc
+                CmbTrTypeDesc.ListWidth = 450
             End If
         End Sub
         Private Sub FpVehicleAdjustmentGrid_LeaveCell(ByVal sender As Object, ByVal e As FarPoint.Win.Spread.LeaveCellEventArgs) Handles FpVehicleAdjustmentGrid.LeaveCell
@@ -374,25 +375,33 @@ Namespace GeneralLedger
                     FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.GLCode, String.Empty)
                     FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.GLDescription, String.Empty)
 
+                    FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.Date, String.Empty)
+
 
                 Else
                     FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.VehicleAdjustmentNumber, txtTransactionNumber.Text)
                     FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.VehicleAdjustmentNature, NATURE.Text)
                     FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.BranchCode, txtBranchCode.Text)
 
-                    FpVehicleAdjustmentGrid.Sheets(0).SetTag(e.Row, GridCols.BranchCode, "BranchCode")
-                    FpVehicleAdjustmentGrid.Sheets(0).SetTag(e.Row, GridCols.VehicleAdjustmentNumber, "TransactionNo")
-                    FpVehicleAdjustmentGrid.Sheets(0).SetTag(e.Row, GridCols.VehicleAdjustmentNature, "TransactionNature")
-
-
-                    'If Val(FpVehicleAdjustmentGrid.Sheets(0).GetText(e.Row, GridCols.Amount)) = 0 Then
-                    '    FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.Amount, 0D)
-                    'End If
-                    If e.NewRow = FpVehicleAdjustmentGrid.Sheets(0).RowCount - 1 Then
-                        FpVehicleAdjustmentGrid_Sheet1.AddRows(FpVehicleAdjustmentGrid.Sheets(0).RowCount, 1)
+                    If (String.IsNullOrEmpty(FpVehicleAdjustmentGrid.Sheets(0).GetValue(e.Row, GridCols.Date))) Then
+                        FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.Date, TxtDate.Value)
                     End If
-                End If
-                LockGrid = False
+
+
+
+                    FpVehicleAdjustmentGrid.Sheets(0).SetTag(e.Row, GridCols.BranchCode, "BranchCode")
+                        FpVehicleAdjustmentGrid.Sheets(0).SetTag(e.Row, GridCols.VehicleAdjustmentNumber, "TransactionNo")
+                        FpVehicleAdjustmentGrid.Sheets(0).SetTag(e.Row, GridCols.VehicleAdjustmentNature, "TransactionNature")
+
+
+                        'If Val(FpVehicleAdjustmentGrid.Sheets(0).GetText(e.Row, GridCols.Amount)) = 0 Then
+                        '    FpVehicleAdjustmentGrid.Sheets(0).SetText(e.Row, GridCols.Amount, 0D)
+                        'End If
+                        If e.NewRow = FpVehicleAdjustmentGrid.Sheets(0).RowCount - 1 Then
+                            FpVehicleAdjustmentGrid_Sheet1.AddRows(FpVehicleAdjustmentGrid.Sheets(0).RowCount, 1)
+                        End If
+                    End If
+                    LockGrid = False
             End If
             If LockGrid = False Then
                 LockGrid = True
