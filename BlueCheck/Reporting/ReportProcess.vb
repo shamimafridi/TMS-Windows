@@ -131,7 +131,7 @@ Module ReportProcess
     End Enum
     Public TargetControl As ReportTargetControl
     ' Dim Reports As ReportFiles
-    Function TransactionDocumentsProcess(ByVal File As ReportFiles, ByVal FromCode As String, ByVal ToCode As String, _
+    Function TransactionDocumentsProcess(ByVal File As ReportFiles, ByVal FromCode As String, ByVal ToCode As String,
       ByVal FromDate As Date, ByVal ToDate As Date, ByVal FromPartyCode As String, ByVal ToPartyCode As String, ByRef reportDoc As ReportDocument) As Boolean
 
         Dim TransNature As String = String.Empty
@@ -164,7 +164,7 @@ Module ReportProcess
             Dim Acc As AzamTechnologies.Database.DataAccess
             Acc = New AzamTechnologies.Database.DataAccess
             Dim Ds As DataSet = Nothing
-            Acc.PopulateDataSet(Ds, "SelectTransactionDocumentReports", "OPTION", "", _
+            Acc.PopulateDataSet(Ds, "SelectTransactionDocumentReports", "OPTION", "",
             "TransactionNature", TransNature, "FromCode", FromCode, "ToCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "FromPartyCode", FromPartyCode, "ToPartyCode", ToPartyCode)
 
             If Ds.Tables(0).Rows.Count = 0 Then
@@ -196,7 +196,7 @@ Module ReportProcess
         End Try
     End Function
 #Region "General Ledger Reports"
-    Public Function ChartOfAccountList(ByVal File As ReportFiles, ByVal FromCode As String, ByVal ToCode As String, _
+    Public Function ChartOfAccountList(ByVal File As ReportFiles, ByVal FromCode As String, ByVal ToCode As String,
       ByVal FromDate As Date, ByVal ToDate As Date, ByRef reportDoc As ReportDocument, Optional ByVal nGroupedBy As Integer = 0, Optional ByVal PageBreak As Boolean = False) As Boolean
 
         Dim strReporTitle As String = String.Empty
@@ -225,7 +225,7 @@ Module ReportProcess
             Dim Acc As AzamTechnologies.Database.DataAccess
             Acc = New AzamTechnologies.Database.DataAccess
             Dim Ds As DataSet = Nothing
-            Acc.PopulateDataSet(Ds, "SelectCOAListReports", "OPTION", StrOption, _
+            Acc.PopulateDataSet(Ds, "SelectCOAListReports", "OPTION", StrOption,
             "FromCode", FromCode, "ToCode", ToCode, "FromDate", FromDate, "ToDate", ToDate)
 
             If Ds.Tables(0).Rows.Count = 0 Then
@@ -262,7 +262,7 @@ Module ReportProcess
         End Try
     End Function
     ' Dim Reports As ReportFiles
-    Function VoucherDocumentsProcess(ByVal File As ReportFiles, ByVal FromCode As String, ByVal ToCode As String, _
+    Function VoucherDocumentsProcess(ByVal File As ReportFiles, ByVal FromCode As String, ByVal ToCode As String,
       ByVal FromDate As Date, ByVal ToDate As Date, ByVal VoucherTypes As String, ByRef reportDoc As ReportDocument) As Boolean
 
         Dim TransNature As String = String.Empty
@@ -293,7 +293,7 @@ Module ReportProcess
             Dim Acc As AzamTechnologies.Database.DataAccess
             Acc = New AzamTechnologies.Database.DataAccess
             Dim Ds As DataSet = Nothing
-            Acc.PopulateDataSet(Ds, "SelectVoucherDocumentReports", "OPTION", "", _
+            Acc.PopulateDataSet(Ds, "SelectVoucherDocumentReports", "OPTION", "",
             "TransactionNature", VoucherTypes, "FromCode", FromCode, "ToCode", ToCode, "FromDate", FromDate, "ToDate", ToDate)
 
             If Ds.Tables(0).Rows.Count = 0 Then
@@ -347,7 +347,7 @@ Module ReportProcess
             Dim Acc As AzamTechnologies.Database.DataAccess
             Acc = New AzamTechnologies.Database.DataAccess
             Dim Ds As DataSet = Nothing
-            Acc.PopulateDataSet(Ds, "SelectVehicleFreightStatementsReports", "OPTION", "", _
+            Acc.PopulateDataSet(Ds, "SelectVehicleFreightStatementsReports", "OPTION", "",
             "BranchCode", StationCode, "FromCode", FromCode, "ToCode", ToCode, "FromDate", fromDate, "ToDate", ToDate, "FromPartyCode", FromPartyCode, "ToPartyCode", ToPartyCode, "FromVehicleCode", FromVehicle, "ToVehicleCode", ToVehicle)
 
             If Ds.Tables(0).Rows.Count = 0 Then
@@ -392,7 +392,7 @@ Module ReportProcess
     End Function
 
 
-    Public Function TransactionListProcess(ByVal File As ReportFiles, ByVal FromCode As String, ByVal ToCode As String, _
+    Public Function TransactionListProcess(ByVal File As ReportFiles, ByVal FromCode As String, ByVal ToCode As String,
       ByVal FromDate As Date, ByVal ToDate As Date, ByVal FromPartyCode As String, ByVal ToPartyCode As String, ByVal FromItemCode As String, ByVal ToItemCode As String, ByVal TransactionNature As String, ByRef reportDoc As ReportDocument, Optional ByVal nGroupedBy As Integer = 0, Optional ByVal PageBreak As Boolean = False) As Boolean
 
         Dim strReporTitle As String
@@ -412,7 +412,7 @@ Module ReportProcess
             Dim Acc As AzamTechnologies.Database.DataAccess
             Acc = New AzamTechnologies.Database.DataAccess
             Dim Ds As DataSet = Nothing
-            Acc.PopulateDataSet(Ds, "SelectTransactionListReports", "OPTION", "", _
+            Acc.PopulateDataSet(Ds, "SelectTransactionListReports", "OPTION", "",
             "TransactionNature", TransactionNature, "FromCode", FromCode, "ToCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "FromVehicleCode", FromPartyCode, "ToVehicleCode", ToPartyCode, "FromItemCode", FromItemCode, "ToItemCode", ToItemCode)
 
             If Ds.Tables(0).Rows.Count = 0 Then
@@ -449,7 +449,7 @@ Module ReportProcess
             Return False
         End Try
     End Function
-    Public Function VoucherListProcess(ByVal File As ReportFiles, ByVal FromCode As String, ByVal ToCode As String, _
+    Public Function VoucherListProcess(ByVal File As ReportFiles, ByVal FromCode As String, ByVal ToCode As String,
       ByVal FromDate As Date, ByVal ToDate As Date, ByVal FromGLCode As String, ByVal ToGLCode As String, ByVal VoucherNature As String, ByRef reportDoc As ReportDocument, Optional ByVal nGroupedBy As Integer = 0, Optional ByVal PageBreak As Boolean = False) As Boolean
 
         Dim strReporTitle As String
@@ -467,7 +467,7 @@ Module ReportProcess
             Dim Acc As AzamTechnologies.Database.DataAccess
             Acc = New AzamTechnologies.Database.DataAccess
             Dim Ds As DataSet = Nothing
-            Acc.PopulateDataSet(Ds, "SelectVoucherListReports", "OPTION", "", _
+            Acc.PopulateDataSet(Ds, "SelectVoucherListReports", "OPTION", "",
             "VoucherNature", VoucherNature, "FromCode", FromCode, "ToCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "FromGLCode", FromGLCode, "ToGLCode", ToGLCode)
 
             If Ds.Tables(0).Rows.Count = 0 Then
@@ -626,13 +626,13 @@ Module ReportProcess
             Acc = New AzamTechnologies.Database.DataAccess
             Dim Ds As DataSet = Nothing
 
-            if(IsSummaryReport) 
+            If (IsSummaryReport) Then
                 Acc.PopulateDataSet(Ds, "[SelectVehicleRevenueSummaryReport]",
                     "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "ShowOpening", IsShowOpeinging)
 
                 strReporTitle = "INCOME & EXPENSES SUMMERY"
                 strReportPath = Application.StartupPath & "\Reports\VehicleRevenueSummary.rpt"
-            Else 
+            Else
                 Acc.PopulateDataSet(Ds, "[SelectVehicleRevenueReport]",
                     "FromVehicleCode", FromCode, "ToVehicleCode", ToCode, "FromDate", FromDate, "ToDate", ToDate, "ShowOpening", IsShowOpeinging)
 
@@ -646,7 +646,7 @@ Module ReportProcess
                 Exit Function
             End If
             Ds.WriteXmlSchema(Application.StartupPath & "\Reports\VehicleRevenueReport.xsd")
-            
+
             If Not IO.File.Exists(strReportPath) Then
                 Throw (New Exception("Unable to locate report file:" & vbCrLf & strReportPath))
             End If
@@ -972,7 +972,7 @@ Module ReportProcess
         End Try
     End Function
 
-    Public Function GeneralLedgerProcess(ByVal ReportType As ReportFiles, ByVal FromDate As Date, ByVal ToDate As Date, ByVal FromBranchCode As String, ByVal ToBranchCode As String, ByVal FromDivisionCode As String, ByVal ToDivisionCode As String, ByVal FromGLCode As String, ByVal ToGLCode As String, ByVal nDocumentNature As String, ByVal nParametersRange As String, _
+    Public Function GeneralLedgerProcess(ByVal ReportType As ReportFiles, ByVal FromDate As Date, ByVal ToDate As Date, ByVal FromBranchCode As String, ByVal ToBranchCode As String, ByVal FromDivisionCode As String, ByVal ToDivisionCode As String, ByVal FromGLCode As String, ByVal ToGLCode As String, ByVal nDocumentNature As String, ByVal nParametersRange As String,
     ByRef reportDoc As ReportDocument, Optional ByVal Progress As Object = Nothing, Optional ByVal nReportType As Integer = 0, Optional ByVal nReportType1 As Integer = 0, Optional ByVal nNarration As String = "", Optional ByVal nPageBreak As Boolean = False) As Boolean
 
 
@@ -1037,49 +1037,68 @@ Module ReportProcess
 
             Dim DataReader As SqlDataReader
 
-
+            Dim dsLedger As DataSet
             Call Acc.GetRecord("SelectGeneralLedgerReports", "FromDate", FromDate, "ToDate", ToDate, "FromBranchCode", Trim(FromBranchCode), "ToBranchCode", Trim(ToBranchCode), "FromDivisionCode", Trim(FromDivisionCode), "ToDivisionCode", Trim(ToDivisionCode), "FromGLCode", Trim(FromGLCode), "ToGLCode", Trim(ToGLCode), "VoucherNatureCode", nDocumentNature, "Posted", False And 1, "PostedED", False And 1, "nType", 1)
-            DataReader = Acc.GetRecord("SelectGeneralLedgerReports", "FromDate", FromDate, "ToDate", ToDate, "FromBranchCode", Trim(FromBranchCode), "ToBranchCode", Trim(ToBranchCode), "FromDivisionCode", Trim(FromDivisionCode), "ToDivisionCode", Trim(ToDivisionCode), "FromGLCode", Trim(FromGLCode), "ToGLCode", Trim(ToGLCode), "VoucherNatureCode", nDocumentNature, "Posted", False And 1, "PostedED", False And 1, "nType", 4)
+            Acc.PopulateDataSet(dsLedger, "SelectGeneralLedgerReports", "FromDate", FromDate, "ToDate", ToDate, "FromBranchCode", Trim(FromBranchCode), "ToBranchCode", Trim(ToBranchCode), "FromDivisionCode", Trim(FromDivisionCode), "ToDivisionCode", Trim(ToDivisionCode), "FromGLCode", Trim(FromGLCode), "ToGLCode", Trim(ToGLCode), "VoucherNatureCode", nDocumentNature, "Posted", False And 1, "PostedED", False And 1, "nType", 4)
 
-            If DataReader.HasRows Then
+            If dsLedger.Tables(0).Rows.Count > 0 Then
                 'If Not (Progress Is Nothing) Then Progress.Limit = DataReader.RecordCount + 10
-                While DataReader.Read
+                For Each ledgerRow In dsLedger.Tables(0).Rows
                     Dim Row As DataRow
                     Row = Ds.Tables(0).NewRow
-
-                    Row.Item("BranchCode") = Trim(DataReader!BranchCode)
-                    Row.Item("Branch") = Trim(DataReader!BranchRptTitle)
-                    Row.Item("DivisionCode") = Trim(DataReader!DivisionCode)
-                    Row.Item("Division") = Trim(DataReader!DivisionRptTitle)
-                    Row.Item("GLCode") = Trim(DataReader!GLCode)
-                    Row.Item("GLDescription") = Trim(DataReader!GLRptTitle)
-                    Row.Item("TransactionDate") = Trim(DataReader!VoucherDate) 'DateAdd("D", -1, FromDate)
-                    Row.Item("DocumentNature") = Trim(DataReader!NatureCode)
-                    Row.Item("DocumentNo") = Trim(DataReader!VoucherNo)
-                    Row.Item("Reference") = Trim(DataReader!Reference)
-                    If nNarration = "Main" Then
-                        Row.Item("Narration") = IIf(IsDBNull(Trim(DataReader!NarrationMain)), "", Trim(DataReader!NarrationMain))
+                    Dim getOtherHeadExpression As String
+                    'Get the account head against which this transaction done   
+                    If (ledgerRow("Debit")) > 0 Then
+                        getOtherHeadExpression = "BranchCode='" + Trim(ledgerRow("BranchCode")) + "'AND VoucherNo='" + Trim(ledgerRow("VoucherNo")) + "' AND NatureCode='" + Trim(ledgerRow("NatureCode")) + "' AND GLCode<>'" + Trim(ledgerRow("GLCode") + "' AND Credit>0")
                     Else
-                        Row.Item("Narration") = IIf(IsDBNull(Trim(DataReader!Narration)), "", Trim(DataReader!Narration))
+                        getOtherHeadExpression = "BranchCode='" + Trim(ledgerRow("BranchCode")) + "'AND VoucherNo='" + Trim(ledgerRow("VoucherNo")) + "' AND NatureCode='" + Trim(ledgerRow("NatureCode")) + "' AND GLCode<>'" + Trim(ledgerRow("GLCode") + "' AND Debit>0")
+
+                    End If
+                    Dim rows = dsLedger.Tables(0).Select(getOtherHeadExpression)
+                    Dim headerTitle As String = ""
+                    For Each findRow In rows
+                        If (ledgerRow("Debit")) > 0 Then
+                            headerTitle += Trim(findRow.Item("GLCode")) + "-" + Trim(findRow.Item("GLRptTitle")) + vbCrLf
+
+                        Else
+                            headerTitle += Trim(findRow.Item("GLCode")) + "-" + Trim(findRow.Item("GLRptTitle")) + vbCrLf
+
+                        End If
+                    Next
+                    Row.Item("OpGLCode") = headerTitle 'Account head against this transaction done
+                    Row.Item("BranchCode") = Trim(ledgerRow("BranchCode"))
+                    Row.Item("Branch") = Trim(ledgerRow("BranchRptTitle"))
+                    Row.Item("DivisionCode") = Trim(ledgerRow("DivisionCode"))
+                    Row.Item("Division") = Trim(ledgerRow("DivisionRptTitle"))
+                    Row.Item("GLCode") = Trim(ledgerRow("GLCode"))
+                    Row.Item("GLDescription") = Trim(ledgerRow("GLRptTitle"))
+                    Row.Item("TransactionDate") = Trim(ledgerRow("VoucherDate")) 'DateAdd("D", -1, FromDate)
+                    Row.Item("DocumentNature") = Trim(ledgerRow("NatureCode"))
+                    Row.Item("DocumentNo") = Trim(ledgerRow("VoucherNo"))
+                    Row.Item("Reference") = Trim(ledgerRow("Reference"))
+                    If nNarration = "Main" Then
+                        Row.Item("Narration") = IIf(IsDBNull(Trim(ledgerRow("NarrationMain"))), "", Trim(ledgerRow("NarrationMain"))) + vbCrLf
+                    Else
+                        Row.Item("Narration") = IIf(IsDBNull(Trim(ledgerRow("Narration"))), "", Trim(ledgerRow("Narration"))) + vbCrLf
                     End If
 
-                    Row.Item("Debit") = (DataReader!Debit)
-                    Row.Item("Credit") = (DataReader!Credit)
-                    Row.Item("ControlCode") = Trim(DataReader!ControlCode)
-                    Row.Item("Control") = Trim(DataReader!ControlRptTitle)
-                    Row.Item("GeneralCode") = Trim(DataReader!GeneralCode)
-                    Row.Item("General") = Trim(DataReader!GeneralRptTitle)
-                    Row.Item("SubsidiaryCode") = Trim(DataReader!SubsidiaryCode)
-                    Row.Item("Subsidiary") = Trim(DataReader!SubsidiaryRptTitle)
-                    Row.Item("Subsubcode") = Trim(DataReader!Subsubcode)
-                    Row.Item("SubSub") = Trim(DataReader!SubSubRptTitle)
-                    Row.Item("OldRef") = Trim(DataReader!OldRef & "")
-                    Row.Item("RecordNo") = Val(DataReader!RecordNo & "")
-                    Row.Item("DetailRecordNo") = Val(DataReader!DetailRecordNo & "")
-                    Row.Item("DocumentStatus") = IIf(IsDBNull(DataReader!Posted), False, DataReader!Posted)
-                    Row.Item("DocumentStatus") = IIf(Row.Item("DocumentStatus") = True, "P", IIf(IsDBNull(DataReader!Locked) = True, "U", IIf(IsDBNull(DataReader!Locked) = True, "U", "L")))
+                    Row.Item("Debit") = (ledgerRow("Debit"))
+                    Row.Item("Credit") = (ledgerRow("Credit"))
+                    Row.Item("ControlCode") = Trim(ledgerRow("ControlCode"))
+                    Row.Item("Control") = Trim(ledgerRow("ControlRptTitle"))
+                    Row.Item("GeneralCode") = Trim(ledgerRow("GeneralCode"))
+                    Row.Item("General") = Trim(ledgerRow("GeneralRptTitle"))
+                    Row.Item("SubsidiaryCode") = Trim(ledgerRow("SubsidiaryCode"))
+                    Row.Item("Subsidiary") = Trim(ledgerRow("SubsidiaryRptTitle"))
+                    Row.Item("Subsubcode") = Trim(ledgerRow("Subsubcode"))
+                    Row.Item("SubSub") = Trim(ledgerRow("SubSubRptTitle"))
+                    Row.Item("OldRef") = Trim(ledgerRow("OldRef") & "")
+                    Row.Item("RecordNo") = Val(ledgerRow("RecordNo") & "")
+                    Row.Item("DetailRecordNo") = Val(ledgerRow("DetailRecordNo") & "")
+                    Row.Item("DocumentStatus") = IIf(IsDBNull(ledgerRow("Posted")), False, ledgerRow("Posted"))
+                    Row.Item("DocumentStatus") = IIf(Row.Item("DocumentStatus") = True, "P", IIf(IsDBNull(ledgerRow("Locked")) = True, "U", IIf(IsDBNull(ledgerRow("Locked")) = True, "U", "L")))
                     Ds.Tables(0).Rows.Add(Row)
-                End While
+                Next
             End If
             Ds.AcceptChanges()
             ''
@@ -1088,7 +1107,7 @@ Module ReportProcess
             Ds.WriteXmlSchema(Application.StartupPath & "\Reports\" & GeneralLedgerReportFileName & ".xsd")
             Dim strReportPath As String = Application.StartupPath & "\Reports\" & GeneralLedgerReportFileName & ".rpt"
             If Not IO.File.Exists(strReportPath) Then
-                Throw (New Exception("Unable to locate report file:" & vbCrLf & strReportPath))
+                Throw (New Exception("Unable to locate report file: " & vbCrLf & strReportPath))
             End If
             reportDoc = New ReportDocument
             reportDoc.Load(strReportPath)
@@ -1118,7 +1137,7 @@ Module ReportProcess
             Return False
         End Try
     End Function
-    Public Function FinancialStatementsProcess(ByVal ReportType As ReportFiles, ByVal FromDate As Date, ByVal ToDate As Date, ByVal FromBranchCode As String, ByVal ToBranchCode As String, ByVal FromDivisionCode As String, ByVal ToDivisionCode As String, ByVal FromGLCode As String, ByVal ToGLCode As String, ByVal FromFSFCode As String, ByVal ToFSFCode As String, ByVal nDocumentNature As String, ByVal nParametersRange As String, Optional ByVal nReportType As Integer = 0, Optional ByVal nReportName As String = "", Optional ByVal nReportType1 As Integer = 0, _
+    Public Function FinancialStatementsProcess(ByVal ReportType As ReportFiles, ByVal FromDate As Date, ByVal ToDate As Date, ByVal FromBranchCode As String, ByVal ToBranchCode As String, ByVal FromDivisionCode As String, ByVal ToDivisionCode As String, ByVal FromGLCode As String, ByVal ToGLCode As String, ByVal FromFSFCode As String, ByVal ToFSFCode As String, ByVal nDocumentNature As String, ByVal nParametersRange As String, Optional ByVal nReportType As Integer = 0, Optional ByVal nReportName As String = "", Optional ByVal nReportType1 As Integer = 0,
         Optional ByRef reportDoc As ReportDocument = Nothing, Optional ByVal nReportFor As String = "", Optional ByVal Progress As Object = Nothing, Optional ByVal nNarration As String = "", Optional ByVal nPageBreak As Boolean = False) As Boolean
 
         If Trim(FromBranchCode) = "" Then FromBranchCode = StartParameter
@@ -1963,6 +1982,7 @@ Module ReportProcess
         Table.Columns.Add("Branch", System.Type.GetType("System.String"))
         Table.Columns.Add("DivisionCode", System.Type.GetType("System.String"))
         Table.Columns.Add("Division", System.Type.GetType("System.String"))
+        Table.Columns.Add("OpGLCode", System.Type.GetType("System.String"))
         Table.Columns.Add("GLCode", System.Type.GetType("System.String"))
         Table.Columns.Add("GLDescription", System.Type.GetType("System.String"))
         Table.Columns.Add("DocumentNo", System.Type.GetType("System.String"))

@@ -10,6 +10,7 @@
               <xs:element name="Branch" type="xs:string" minOccurs="0" />
               <xs:element name="DivisionCode" type="xs:string" minOccurs="0" />
               <xs:element name="Division" type="xs:string" minOccurs="0" />
+              <xs:element name="OpGLCode" type="xs:string" minOccurs="0" />
               <xs:element name="GLCode" type="xs:string" minOccurs="0" />
               <xs:element name="GLDescription" type="xs:string" minOccurs="0" />
               <xs:element name="DocumentNo" type="xs:string" minOccurs="0" />
