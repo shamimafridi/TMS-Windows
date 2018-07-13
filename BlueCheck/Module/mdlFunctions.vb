@@ -129,7 +129,19 @@ Module mdlFunctions
         ArrowPen1.EndCap = Drawing2D.LineCap.ArrowAnchor
         formGraphics.DrawLine(ArrowPen, 0, 0, 1000, 0)
         formGraphics.DrawLine(ArrowPen1, 0, 75, 0, 700)
-        formGraphics.DrawString(sender.Text, New Font("Arial", 24, FontStyle.Bold, GraphicsUnit.Point), Brushes.AliceBlue, 550, 20)
+        If TypeOf sender Is Panel Then
+            'Some report has exist in the same panel so we need here the tag of the panel instead the text of the form
+            If Not String.IsNullOrEmpty(CType(sender, Panel).Tag) Then
+                formGraphics.DrawString(CType(sender, Panel).Tag, New Font("Arial", 24, FontStyle.Bold, GraphicsUnit.Point), Brushes.AliceBlue, 550, 20)
+
+            Else
+                formGraphics.DrawString(sender.Text, New Font("Arial", 24, FontStyle.Bold, GraphicsUnit.Point), Brushes.AliceBlue, 550, 20)
+
+            End If
+        Else
+            formGraphics.DrawString(sender.Text, New Font("Arial", 24, FontStyle.Bold, GraphicsUnit.Point), Brushes.AliceBlue, 550, 20)
+
+        End If
     End Sub
     Sub loadStyle()
         Try

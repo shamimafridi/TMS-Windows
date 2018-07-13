@@ -12,6 +12,9 @@
               <xs:element name="ReportDetailType" type="xs:string" minOccurs="0" />
               <xs:element name="TransactionNature" type="xs:string" minOccurs="0" />
               <xs:element name="TransactionDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Capacity" type="xs:string" minOccurs="0" />
+              <xs:element name="ExpenceDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VehicleDescription" type="xs:string" minOccurs="0" />
               <xs:element name="VehicleCode" type="xs:string" minOccurs="0" />
               <xs:element name="AmountReceived" type="xs:decimal" minOccurs="0" />
               <xs:element name="AmountPaid" type="xs:decimal" minOccurs="0" />

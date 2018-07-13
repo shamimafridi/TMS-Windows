@@ -4673,6 +4673,7 @@ End Sub
                 GrpOtherReports.Visible = False
                 GrpVehicleRevenue.Visible = True
                 Me.Text = "Vehicle Revenue Pivot"
+                GrpVehicleRevenue.Tag = "Vehicle Revenue Pivot"
                 FillVehicleList(LstVehicleVR, "COMBO")
                 AddHandler GrpVehicleRevenue.Paint, AddressOf mdlFunctions.PaintTheForms
                 GrpButtons.Visible = True
@@ -4762,6 +4763,7 @@ End Sub
                 OptSummary.Visible = True
                 OptDetail.Visible = True
                 Me.Text = "Trial Balance "
+                GrpGeneralLedger.Tag = "Trial Balance "
                 AddHandler GrpGeneralLedger.Paint, AddressOf mdlFunctions.PaintTheForms
                 GrpButtons.Visible = True
                 FillDocTypeList(lstTransactionNatureIL, "GENERALLEDGER")

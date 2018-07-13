@@ -660,6 +660,8 @@ Module ReportProcess
             paramFields = reportDoc.DataDefinition.ParameterFields
             SetParameter(paramFields, "ReportTitle", strReporTitle)
             SetParameter(paramFields, "CompanyName", My.Settings.CompanyName)
+            SetParameter(paramFields, "FromDate", FromDate)
+            SetParameter(paramFields, "ToDate", ToDate)
             '  SetParameter(paramFields, "GroupedBy", nGroupedBy)
             SetParameter(paramFields, "UserInfo", OperatorID)
             Return True
@@ -724,6 +726,8 @@ Module ReportProcess
             Dim paramFields As ParameterFieldDefinitions
             paramFields = reportDoc.DataDefinition.ParameterFields
             SetParameter(paramFields, "ReportTitle", strReporTitle)
+            SetParameter(paramFields, "FromDate", FromDate)
+            SetParameter(paramFields, "ToDate", ToDate)
             SetParameter(paramFields, "CompanyName", My.Settings.CompanyName)
             '  SetParameter(paramFields, "GroupedBy", nGroupedBy)
             SetParameter(paramFields, "UserInfo", OperatorID)
