@@ -758,7 +758,7 @@ Public Class DataManager
                     For Each chCtr As UltraTab In tabCantrol.Tabs
                         Dim ctrType As String = ctr.GetType.ToString
                         If ctr.Tag <> "" Or Not IsNothing(ctr.Tag) Then
-                            If Mid(ctr.Tag, 1, 2).ToUpper = "IM" Or Mid(ctr.Tag, 1, 2).ToUpper = "PK" Or Mid(ctr.Tag, 1, 2).ToUpper = "CK" Then
+                            If Mid(ctr.Tag, 1, 2).ToUpper = "IM" Or Mid(ctr.Tag, 1, 2).ToUpper = "PK" Or Mid(ctr.Tag, 1, 2).ToUpper = "CK" Or Mid(ctr.Tag, 1, 2).ToUpper = "FK" Then
                                 If ctrType = "System.Windows.Forms.TextBox" Or ctrType = "System.Windows.Forms.ComboBox" Or ctrType = "ATUrduTextBox.UrduTextBox" Or ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" _
                                         Or ctrType = "Infragistics.Win.UltraWinEditors.UltraComboEditor" Then
                                     If ctr.Text Is Nothing Or Trim(ctr.Text) = "" Then
@@ -767,7 +767,7 @@ Public Class DataManager
                                         Throw New InvalidDataEntryInformation(" Please Enter a valid " & Mid(ctr.Tag, 4, Len(ctr.Tag)))
                                     End If
                                 End If
-                            ElseIf Mid(ctr.Tag, 1, 2).ToUpper = "PK" Or Mid(ctr.Tag, 1, 2).ToUpper = "CK" Then
+                            ElseIf Mid(ctr.Tag, 1, 2).ToUpper = "PK" Or Mid(ctr.Tag, 1, 2).ToUpper = "CK" Or Mid(ctr.Tag, 1, 2).ToUpper = "FK" Then
                                 If ctrType = "System.Windows.Forms.TextBox" Or ctrType = "System.Windows.Forms.ComboBox" Or ctrType = "ATUrduTextBox.UrduTextBox" Or ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" _
                                         Or ctrType = "Infragistics.Win.UltraWinEditors.UltraComboEditor" Then
                                     If ctr.Text.Length <> CType(ctr, TextBox).MaxLength Then
@@ -781,7 +781,7 @@ Public Class DataManager
                 Else
                     Dim ctrType As String = ctr.GetType.ToString
                     If ctr.Tag <> "" Or Not IsNothing(ctr.Tag) Then
-                        If Mid(ctr.Tag, 1, 2).ToUpper = "IM" Or Mid(ctr.Tag, 1, 2).ToUpper = "PK" Or Mid(ctr.Tag, 1, 2).ToUpper = "CK" Then
+                        If Mid(ctr.Tag, 1, 2).ToUpper = "IM" Or Mid(ctr.Tag, 1, 2).ToUpper = "PK" Or Mid(ctr.Tag, 1, 2).ToUpper = "CK" Or Mid(ctr.Tag, 1, 2).ToUpper = "FK" Then
                             If ctrType = "System.Windows.Forms.TextBox" Or ctrType = "System.Windows.Forms.ComboBox" Or ctrType = "ATUrduTextBox.UrduTextBox" Or ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" _
                                             Or ctrType = "Infragistics.Win.UltraWinEditors.UltraComboEditor" Then
                                 If ctr.Text Is Nothing Or Trim(ctr.Text) = "" Then
@@ -790,7 +790,7 @@ Public Class DataManager
                                     Throw New InvalidDataEntryInformation(" Please Enter a valid " & Mid(ctr.Tag, 4, Len(ctr.Tag)))
                                 End If
                             End If
-                        ElseIf Mid(ctr.Tag, 1, 2).ToUpper = "PK" Or Mid(ctr.Tag, 1, 2).ToUpper = "CK" Then
+                        ElseIf Mid(ctr.Tag, 1, 2).ToUpper = "PK" Or Mid(ctr.Tag, 1, 2).ToUpper = "CK" Or Mid(ctr.Tag, 1, 2).ToUpper = "FK" Then
                             If ctrType = "System.Windows.Forms.TextBox" Or ctrType = "System.Windows.Forms.ComboBox" Or ctrType = "ATUrduTextBox.UrduTextBox" Or ctrType = "Infragistics.Win.UltraWinEditors.UltraTextEditor" _
                                             Or ctrType = "Infragistics.Win.UltraWinEditors.UltraComboEditor" Then
                                 If ctr.Text.Length <> CType(ctr, TextBox).MaxLength Then

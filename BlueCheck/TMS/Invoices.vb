@@ -1462,13 +1462,79 @@ Namespace GeneralLedger
                 ss = CType(e.SubEditor, FarPoint.Win.Spread.FpSpread)
                 ss.Skin = FpVehicleAdjustmentGrid.Skin
                 ss.BorderStyle = BorderStyle.FixedSingle
-                ss.Sheets(0).Columns(0).AllowAutoSort = True
-                ss.Sheets(0).Columns(1).AllowAutoSort = True
+                'ss.Sheets(0).Columns(0).AllowAutoSort = True
+                'ss.Sheets(0).Columns(1).AllowAutoSort = True
                 If ss.Sheets(0).Columns.Count = 2 Then
                     ss.Sheets(0).Columns(1).Width = 230
+                    ' ss.Sheets(0).Columns(1).AutoSortIndex = 1
                 ElseIf ss.Sheets(0).Columns.Count = 3 Then
                     ss.Sheets(0).Columns(1).Width = 160
                     ss.Sheets(0).Columns(2).Width = 160
+                End If
+
+                If e.Column = GridCols.TypeCode Then
+                    '''''SORT FALSE AND THEN SORT TRUE 
+                    ss.Sheets(0).SetColumnAllowAutoSort(0, False)
+                    ss.Sheets(0).SetColumnShowSortIndicator(0, False)
+                    ss.Sheets(0).AutoSortColumn(1)
+                    ''''''''''''''''''''''''''''''''
+
+                    ss.Sheets(0).SetColumnAllowAutoSort(1, False)
+                    ss.Sheets(0).SetColumnAllowAutoSort(0, True)
+                    ss.Sheets(0).SetColumnShowSortIndicator(0, True)
+                    ss.Sheets(0).AutoSortColumn(0)
+                ElseIf e.Column = GridCols.Type Then
+                    '''''SORT FALSE AND THEN SORT TRUE 
+                    ss.Sheets(0).SetColumnAllowAutoSort(1, False)
+                    ss.Sheets(0).SetColumnShowSortIndicator(1, False)
+                    ss.Sheets(0).AutoSortColumn(0)
+                    ''''''''''''''''''''''''''''''''
+
+                    ss.Sheets(0).SetColumnAllowAutoSort(0, False)
+                    ss.Sheets(0).SetColumnAllowAutoSort(1, True)
+                    ss.Sheets(0).SetColumnShowSortIndicator(1, True)
+                    ss.Sheets(0).AutoSortColumn(1)
+
+                End If
+            End If
+            If e.SubEditor.ToString = "a7" Then 'multiple combo box
+                Dim ss As FarPoint.Win.Spread.FpSpread
+                ss = CType(e.SubEditor, FarPoint.Win.Spread.FpSpread)
+                ss.Skin = FpVehicleAdjustmentGrid.Skin
+                ss.BorderStyle = BorderStyle.FixedSingle
+                'ss.Sheets(0).Columns(0).AllowAutoSort = True
+                'ss.Sheets(0).Columns(1).AllowAutoSort = True
+                If ss.Sheets(0).Columns.Count = 2 Then
+                    ss.Sheets(0).Columns(1).Width = 230
+                    ' ss.Sheets(0).Columns(1).AutoSortIndex = 1
+                ElseIf ss.Sheets(0).Columns.Count = 3 Then
+                    ss.Sheets(0).Columns(1).Width = 160
+                    ss.Sheets(0).Columns(2).Width = 160
+                End If
+
+                If e.Column = GridCols.GLCode Then
+                    '''''SORT FALSE AND THEN SORT TRUE 
+                    ss.Sheets(0).SetColumnAllowAutoSort(0, False)
+                    ss.Sheets(0).SetColumnShowSortIndicator(0, False)
+                    ss.Sheets(0).AutoSortColumn(1)
+                    ''''''''''''''''''''''''''''''''
+
+                    ss.Sheets(0).SetColumnAllowAutoSort(1, False)
+                    ss.Sheets(0).SetColumnAllowAutoSort(0, True)
+                    ss.Sheets(0).SetColumnShowSortIndicator(0, True)
+                    ss.Sheets(0).AutoSortColumn(0)
+                ElseIf e.Column = GridCols.GLDescription Then
+                    '''''SORT FALSE AND THEN SORT TRUE 
+                    ss.Sheets(0).SetColumnAllowAutoSort(1, False)
+                    ss.Sheets(0).SetColumnShowSortIndicator(1, False)
+                    ss.Sheets(0).AutoSortColumn(0)
+                    ''''''''''''''''''''''''''''''''
+
+                    ss.Sheets(0).SetColumnAllowAutoSort(0, False)
+                    ss.Sheets(0).SetColumnAllowAutoSort(1, True)
+                    ss.Sheets(0).SetColumnShowSortIndicator(1, True)
+                    ss.Sheets(0).AutoSortColumn(1)
+
                 End If
             End If
         End Sub
